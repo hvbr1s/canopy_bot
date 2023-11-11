@@ -1,5 +1,6 @@
 import json
 import random
+import typing
 
 def convert_json_to_jsonl(json_file_path, jsonl_file_path):
     """
@@ -95,4 +96,50 @@ def remove_specific_keys(jsonl_file_path, keys_to_remove):
 
 # Go!
 remove_specific_keys("/home/dan/canopy/pinecone_pipeline/output_files/output.jsonl", ["source-type", "locale", "zd-article-id", "classification"])
+
+
+def reorganize_jsonl_file(jsonl_file_path):
+    """
+    Reorganize each dictionary in the JSONL file to match the specified schema and order.
+
+    Args:
+    jsonl_file_path (str): The path to the JSONL file.
+    """
+    try:
+        updated_lines = []
+
+        with open(jsonl_file_path, 'r') as file:
+            for line in file:
+                data = json.loads(line)
+
+                # Convert 'metadata' from a string representation to an actual dictionary
+                if 'metadata' in data and isinstance(data['metadata'], str):
+                    try:
+                        data['metadata'] = json.loads(data['metadata'].replace("'", '"'))
+                    except json.JSONDecodeError:
+                        data['metadata'] = {}  # Default to an empty dictionary if parsing fails
+
+                # Reorganize the dictionary to the specified order: id, source, text, metadata
+                new_data = {
+                    'id': data.get('id', ''),
+                    'source': data.get('source', ''),
+                    'text': data.get('text', ''),
+                    'metadata': data.get('metadata', {})
+                }
+
+                updated_lines.append(json.dumps(new_data))
+
+        # Write the updated data back to the file
+        with open(jsonl_file_path, 'w') as file:
+            for line in updated_lines:
+                file.write(line + '\n')
+
+        print("File reorganized successfully.")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+
+# Go!
+reorganize_jsonl_file("/home/dan/canopy/pinecone_pipeline/output_files/output.jsonl")
+
 

@@ -87,11 +87,10 @@ def scrape_zendesk(output_folder: str, article_ids_to_skip: list = None, zendesk
                 url = article['html_url']
                 metadata = {
                     'source': url,
-                    'source-type': 'zendesk',
-                    'locale': locale,
-                    'zd-article-id': article['id'],
-                    'title': article['title'],
-                    'classification': 'public'
+                    'metadata':{
+                        "title": article['title'],
+                    }
+                    
                     }
                 filename = f"zd_{article['id']}_{locale}.html"
                 with open(os.path.join(output_folder, filename), mode='w', encoding='utf-8') as f:

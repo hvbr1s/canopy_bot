@@ -136,8 +136,6 @@ def run_chunker(output_directory_path: str = None, chunk_size: int = 500, chunk_
     scraped_articles_folder = os.path.join(output_directory_path, 'articles')
     output_json_file_path = os.path.join(output_directory_path, 'output.json')
     chunk_list = [] # list of chunks to be written to the json file
-    #docs = load_files(scraped_articles_folder)  
-    #print(len(docs))
 
     # Initialize the text splitter
     text_splitter = TextChunker(
@@ -170,9 +168,7 @@ def run_chunker(output_directory_path: str = None, chunk_size: int = 500, chunk_
                 entry = {}
                 entry.update(doc.metadata)
                 entry.update({
-                    'id': f'{uid}-{i}',
-                    'chunk-uid': uid,
-                    'chunk-page-index': i,
+                    'id': f'{uid}{i}',
                     'text': chunk.strip()
                     })
                 chunk_list.append(entry)

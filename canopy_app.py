@@ -22,8 +22,6 @@ os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
 # initialize tokenizer
 Tokenizer.initialize()
 tokenizer = Tokenizer()
-tokenizer.tokenize("Hello world!")
-
 
 # connect to knowledge base
 kb = KnowledgeBase(index_name="canopy--canopybot")
@@ -37,9 +35,12 @@ context_engine = ContextEngine(kb)
 chat_engine = ChatEngine(context_engine)
 
 # Start chatting
-response = chat_engine.chat(messages=[UserMessage(content="who are you?")], stream=False)
+response = chat_engine.chat(messages=[UserMessage(content="What is a Ledger device for?")], stream=False)
 print(response.choices[0].message.content)
 
+
+# to change system_prompt -> lib/python3.10/site-packages/canopy/chat_engine/query_generator/function_calling.py
+# to change llm -> lib/python3.10/site-packages/canopy/llm/models.py
 
 
 

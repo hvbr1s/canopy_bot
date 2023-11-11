@@ -1,0 +1,50 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/360033802154-Change-addresses-for-UTXO-based-crypto-assets"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="360033802154"/><meta name="title" content="Change addresses for UTXO-based crypto assets"/><meta name="classification" content="public"/></head>                            <body><h1>Change addresses for UTXO-based crypto assets</h1>
+<div class="mw-parser-output">
+<p>Bitcoin (BTC) transactions often include <strong>two</strong> destination addresses: one for the recipient and another as a <strong>change address</strong> linked to your Ledger account. This system resembles cash transactions and stems from Bitcoin's use of <a href="https://www.ledger.com/academy/glossary/unspent-transaction-output-utxo#:~:text=An%20Unspent%20Transaction%20Output%20or,leftover%20cryptocurrency%20in%20a%20transaction." target="_self">UTXOs</a> to track your BTC balance.</p>
+<p>This change-address system is also seen in blockchains similar to Bitcoin, which employ UTXO accounting, such as Bitcoin Cash (BCH), Litecoin (LTC), Dogecoin (DOGE), Avalanche X-Chain and Zcash (ZEC).</p>
+<p><span>However, the change-address system does <strong>not</strong> apply to accounts like Ethereum (ETH), XRP, and many others. For instance, Ethereum (ETH) or XRP addresses are <strong>static</strong> and remain unchanged after each transaction.</span></p>
+<h2>How it works</h2>
+<p>When a transaction<span> </span>does not entirely consume the coins it is spending, the difference is known as change. The change is sent back to an automatically generated address called the <strong>change address</strong>.</p>
+<p>You can compare UTXO-based transactions with cash. Imagine you buy a hotdog that costs $5 with a $10 bill. In return, you will get a $5 bill of change. This change belongs to you and it will come back to your wallet. In that comparison, your wallet with $5 is a <strong>change address</strong>, still yours but a different bill. The same goes for BTC.</p>
+<p>Example: </p>
+<ol>
+<li>John has 1 BTC and sends it to me. John has 0 BTC, and I now have 1 BTC.</li>
+<li>I then send 0.2 BTC to my friend Suzy 
+<ul>
+<li>0.2 BTC goes to Suzy's account</li>
+<li>0.8 BTC goes to <strong>my </strong>change address =&gt; my BTC account</li>
+</ul>
+</li>
+<li>My total account reflects the remaining 0.8 BTC</li>
+</ol>
+<p><img src="https://support.ledger.com/hc/article_attachments/6470394372253" alt="Change_Address_example.PNG"></p>
+<ul class="list-bullet">
+<li>Ledger Live automatically generates a fresh change address for every new transaction that does not fully spend its inputs.</li>
+<li>Ledger Live automatically takes care of change, you do not have to track the coins on your change addresses.</li>
+<li>It is not possible to check which address is your change address in Ledger Live. You can check your Bitcoin change addresses using <a title="Apps:Electrum" href="https://support.ledger.com/hc/en-us/articles/115005161925" target="_self">Electrum</a>.</li>
+</ul>
+</div>
+<div class="callout callout--warning callout--dashed">
+<h4 class="callout__title">
+<em class="fa fa-exclamation-triangle"> </em> Address verification</h4>
+<p>Always verify receiving addresses on your Ledger device and send a small amount first before sending larger amounts. Never assume that an address shown in the transaction details is yours!</p>
+<p><a class="btn btn--primary" href="https://support.ledger.com/hc/articles/360020838914" target="_self">Learn more</a> </p>
+</div>
+<h2>Change addresses in Ledger Live</h2>
+<p>It is not only Bitcoin that uses the change addresses model in Ledger Live but other crypto-assets apply the same UTXO model too:</p>
+<ul>
+<li>Bitcoin</li>
+<li>All Bitcoin-similar crypto-assets
+<ul>
+<li>Bitcoin Cash</li>
+<li>Bitcoin SV</li>
+<li>Litecoin</li>
+<li>Dogecoin</li>
+</ul>
+</li>
+<li>Zcash</li>
+<li>Dash</li>
+<li>Cardano</li>
+<li>Qtum</li>
+<li>Other assets that use <a href="https://support.ledger.com/hc/en-us/articles/360011069619-Extended-public-key-xPub-?docs=true" target="_blank" rel="noopener">xpub</a> (extended public key) and generate different receiving addresses</li>
+</ul></body></html>

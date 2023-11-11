@@ -1,0 +1,357 @@
+<html>
+ <head>
+  <meta content="https://www.ledger.com/academy/security/the-secure-element-whistanding-security-attacks" name="source"/>
+  <meta content="academy" name="source-type"/>
+  <meta content="en" name="locale"/>
+  <meta content="N/A" name="zd-article-id"/>
+  <meta content="the secure element whistanding security attacks" name="title"/>
+  <meta content="public" name="classification"/>
+ </head>
+ <body>
+  <article class="plain-text margin-sm article" id="article">
+   <h1 class="margin-xs">
+    The Secure Element Chip: How It Keeps Your Ledger Secure
+   </h1>
+   <div class="article-author">
+    <div>
+     By
+     <b>
+      Kirsty Moreland
+     </b>
+    </div>
+    <div>
+     <img alt="" height="21" src="https://www.ledger.com/wp-content/uploads/2022/09/Me3-104x104.jpg" width="21">
+     </img>
+    </div>
+   </div>
+   <div class="color-grey-500 small-text uppercase margin-xs article-date">
+    Oct 23, 2019
+          |
+    <b>
+     Updated May 29, 2023
+    </b>
+   </div>
+   <div class="caption-for-article flexbox flex-start">
+    <div class="flex-none time-to-read">
+     <span class="badge badge-nude">
+      <i class="icon-copy">
+      </i>
+      Read
+     </span>
+     <span>
+      4 min
+     </span>
+    </div>
+    <div class="with-point level level-2">
+     <span>
+      Medium
+     </span>
+    </div>
+   </div>
+   <div class="align-center share-box" id="fixed-share-box">
+    <span>
+     SHARE
+    </span>
+    <div class="heateor_sss_sharing_container heateor_sss_horizontal_sharing" data-heateor-ss-offset="0" data-heateor-sss-href="https://www.ledger.com/academy/security/the-secure-element-whistanding-security-attacks">
+     <div class="heateor_sss_sharing_ul">
+      <a aria-label="Instagram" class="heateor_sss_button_instagram" href="https://www.instagram.com/ledger" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Instagram">
+       <span class="heateor_sss_svg" style="background-color:#53beee;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg height="100%" style="display:block;border-radius:999px;" version="1.1" viewbox="-10 -10 148 148" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+         <g>
+          <g>
+           <path d="M86,112H42c-14.336,0-26-11.663-26-26V42c0-14.337,11.664-26,26-26h44c14.337,0,26,11.663,26,26v44 C112,100.337,100.337,112,86,112z M42,24c-9.925,0-18,8.074-18,18v44c0,9.925,8.075,18,18,18h44c9.926,0,18-8.075,18-18V42 c0-9.926-8.074-18-18-18H42z" fill="#fff">
+           </path>
+          </g>
+          <g>
+           <path d="M64,88c-13.234,0-24-10.767-24-24c0-13.234,10.766-24,24-24s24,10.766,24,24C88,77.233,77.234,88,64,88z M64,48c-8.822,0-16,7.178-16,16s7.178,16,16,16c8.822,0,16-7.178,16-16S72.822,48,64,48z" fill="#fff">
+           </path>
+          </g>
+          <g>
+           <circle cx="89.5" cy="38.5" fill="#fff" r="5.5">
+           </circle>
+          </g>
+         </g>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Facebook" class="heateor_sss_facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fsecurity%2Fthe-secure-element-whistanding-security-attacks" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Facebook">
+       <span class="heateor_sss_svg" style="background-color:#3c589a;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="-5 -5 42 42" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M17.78 27.5V17.008h3.522l.527-4.09h-4.05v-2.61c0-1.182.33-1.99 2.023-1.99h2.166V4.66c-.375-.05-1.66-.16-3.155-.16-3.123 0-5.26 1.905-5.26 5.405v3.016h-3.53v4.09h3.53V27.5h4.223z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Twitter" class="heateor_sss_button_twitter" href="http://twitter.com/intent/tweet?via=ledger&amp;text=The%20Secure%20Element%20Chip%3A%20How%20It%20Keeps%20Your%20Ledger%20Secure&amp;url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fsecurity%2Fthe-secure-element-whistanding-security-attacks" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Twitter">
+       <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_twitter" style="background-color:#55acee;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="-4 -4 39 39" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M28 8.557a9.913 9.913 0 0 1-2.828.775 4.93 4.93 0 0 0 2.166-2.725 9.738 9.738 0 0 1-3.13 1.194 4.92 4.92 0 0 0-3.593-1.55 4.924 4.924 0 0 0-4.794 6.049c-4.09-.21-7.72-2.17-10.15-5.15a4.942 4.942 0 0 0-.665 2.477c0 1.71.87 3.214 2.19 4.1a4.968 4.968 0 0 1-2.23-.616v.06c0 2.39 1.7 4.38 3.952 4.83-.414.115-.85.174-1.297.174-.318 0-.626-.03-.928-.086a4.935 4.935 0 0 0 4.6 3.42 9.893 9.893 0 0 1-6.114 2.107c-.398 0-.79-.023-1.175-.068a13.953 13.953 0 0 0 7.55 2.213c9.056 0 14.01-7.507 14.01-14.013 0-.213-.005-.426-.015-.637.96-.695 1.795-1.56 2.455-2.55z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Linkedin" class="heateor_sss_button_linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fsecurity%2Fthe-secure-element-whistanding-security-attacks" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Linkedin">
+       <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_linkedin" style="background-color:#0077b5;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="0 0 32 32" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M6.227 12.61h4.19v13.48h-4.19V12.61zm2.095-6.7a2.43 2.43 0 0 1 0 4.86c-1.344 0-2.428-1.09-2.428-2.43s1.084-2.43 2.428-2.43m4.72 6.7h4.02v1.84h.058c.56-1.058 1.927-2.176 3.965-2.176 4.238 0 5.02 2.792 5.02 6.42v7.395h-4.183v-6.56c0-1.564-.03-3.574-2.178-3.574-2.18 0-2.514 1.7-2.514 3.46v6.668h-4.187V12.61z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Reddit" class="heateor_sss_button_reddit" href="http://reddit.com/submit?url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fsecurity%2Fthe-secure-element-whistanding-security-attacks&amp;title=The%20Secure%20Element%20Chip%3A%20How%20It%20Keeps%20Your%20Ledger%20Secure" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Reddit">
+       <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_reddit" style="background-color:#ff5700;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="-3.5 -3.5 39 39" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M28.543 15.774a2.953 2.953 0 0 0-2.951-2.949 2.882 2.882 0 0 0-1.9.713 14.075 14.075 0 0 0-6.85-2.044l1.38-4.349 3.768.884a2.452 2.452 0 1 0 .24-1.176l-4.274-1a.6.6 0 0 0-.709.4l-1.659 5.224a14.314 14.314 0 0 0-7.316 2.029 2.908 2.908 0 0 0-1.872-.681 2.942 2.942 0 0 0-1.618 5.4 5.109 5.109 0 0 0-.062.765c0 4.158 5.037 7.541 11.229 7.541s11.22-3.383 11.22-7.541a5.2 5.2 0 0 0-.053-.706 2.963 2.963 0 0 0 1.427-2.51zm-18.008 1.88a1.753 1.753 0 0 1 1.73-1.74 1.73 1.73 0 0 1 1.709 1.74 1.709 1.709 0 0 1-1.709 1.711 1.733 1.733 0 0 1-1.73-1.711zm9.565 4.968a5.573 5.573 0 0 1-4.081 1.272h-.032a5.576 5.576 0 0 1-4.087-1.272.6.6 0 0 1 .844-.854 4.5 4.5 0 0 0 3.238.927h.032a4.5 4.5 0 0 0 3.237-.927.6.6 0 1 1 .844.854zm-.331-3.256a1.726 1.726 0 1 1 1.709-1.712 1.717 1.717 0 0 1-1.712 1.712z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+     </div>
+     <div class="heateorSssClear">
+     </div>
+    </div>
+   </div>
+   <figure class="wp-block-image size-large">
+    <img alt="Ledger devices on a podium" class="wp-image-269343" decoding="async" height="432" loading="lazy" sizes="(max-width: 1024px) 100vw, 1024px" src="https://www.ledger.com/wp-content/uploads/2023/01/10_Ledger-Ecosystem_Cover_Orange-1024x432.jpg" srcset="https://www.ledger.com/wp-content/uploads/2023/01/10_Ledger-Ecosystem_Cover_Orange-1024x432.jpg 1024w, https://www.ledger.com/wp-content/uploads/2023/01/10_Ledger-Ecosystem_Cover_Orange-300x127.jpg 300w, https://www.ledger.com/wp-content/uploads/2023/01/10_Ledger-Ecosystem_Cover_Orange-768x324.jpg 768w, https://www.ledger.com/wp-content/uploads/2023/01/10_Ledger-Ecosystem_Cover_Orange-1536x648.jpg 1536w, https://www.ledger.com/wp-content/uploads/2023/01/10_Ledger-Ecosystem_Cover_Orange-490x207.jpg 490w, https://www.ledger.com/wp-content/uploads/2023/01/10_Ledger-Ecosystem_Cover_Orange.jpg 1600w" width="1024"/>
+   </figure>
+   <figure class="wp-block-table cover-text">
+    <table>
+     <tbody>
+      <tr>
+       <td class="has-text-align-left" data-align="left">
+        KEY TAKEAWAYS:
+       </td>
+      </tr>
+      <tr>
+       <td class="has-text-align-left" data-align="left">
+        — Ledger hardware wallets make use of a specialized Secure Element chip for ensuring industry-leading security.
+        <br/>
+        <br/>
+        —  Secure Element provides the highest level of security for a chip, and are much stronger than traditional chips.
+        <br/>
+        <br/>
+        — Secure Elements are used for high-end security solutions such as credit cards and passports.
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </figure>
+   <p>
+    <em>
+     Let’s dig deeper into a critical component of our technology: the Secure Element.
+    </em>
+   </p>
+   <p>
+    Self-custody can be a place of extremes. You’ll enjoy more freedom than ever before, but you’ll also find yourself with more responsibility than ever. So how do you navigate a system where details are hard to understand?
+   </p>
+   <p>
+    We get it – we had all the same questions. So let’s attack each point; what sort of attacks do hardware wallets face, and how do I know my Ledger device will remain secure?
+   </p>
+   <h2 class="wp-block-heading" id="the-purpose-of-a-hardware-wallet">
+    Hardware Wallets: Why Does Security Matter Anyway?
+   </h2>
+   <p>
+    Simply, a
+    <a href="https://www.ledger.com/academy/crypto-hardware-wallet" rel="noreferrer noopener" target="_blank">
+     hardware wallet
+    </a>
+    allows you to access your
+    <a href="https://www.ledger.com/academy/whats-a-private-key" rel="noreferrer noopener" target="_blank">
+     private keys
+    </a>
+    easily and quickly for transactions, while keeping them completely secure and concealed. With your private keys effectively existing within your Ledger, the security of that device is a central question. So how do you know they’ll be safe?
+   </p>
+   <h2 class="wp-block-heading" id="secure-element-putting-ledger-nano-ahead">
+    Secure Element: The Key Component of Your Ledger Device
+   </h2>
+   <p>
+    Ledger devices differ from other hardware wallets on the market. They are the only web3 devices to contains a component known as a
+    <a href="https://www.ledger.com/academy/security/not-all-chips-are-born-equal">
+     Secure Element
+    </a>
+    . This special computer chip is commonly used in passports, credit cards and payment systems. In fact, you probably use these chips on multiple devices: in any environment where your most sensitive personal data needs to be present, but also completely secure and concealed.
+   </p>
+   <p>
+    But don’t all wallets contain some sort of chip? Yes – but the point of using Secure Element (a type of Smart Card) is that provides an
+    <em>
+     extra
+    </em>
+    layer of security that standard components don’t have. It not only protects your data, but also embeds intrinsic countermeasures against many known attacks. This makes it tamper-proof and resistant to hacks.
+   </p>
+   <figure class="wp-block-image is-resized">
+    <img alt="Secure Element applications" class="wp-image-11167" decoding="async" height="250" loading="lazy" src="https://www.ledger.com/wp-content/uploads/2019/10/Secure-element-1.jpg" width="650"/>
+   </figure>
+   <p>
+    In all of these cases, there is highly sensitive information, such as biometric information, banking and transaction information. Without a secure chip, an attacker could easily hack you and take all your money.
+   </p>
+   <div class="wp-block-columns has-2-columns is-layout-flex wp-container-core-columns-layout-1 wp-block-columns-is-layout-flex">
+    <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+     <p>
+      <br/>
+      Ledger devices use the Secure Element to generate and store private keys for your crypto assets.
+     </p>
+    </div>
+    <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+     <figure class="wp-block-image is-resized">
+      <img alt="Ledger hardware wallet includes a secure element" class="wp-image-11168" decoding="async" height="188" loading="lazy" src="https://www.ledger.com/wp-content/uploads/2019/10/Secure-element-2-1.jpg" width="470"/>
+     </figure>
+    </div>
+   </div>
+   <h2 class="wp-block-heading" id="what-sort-of-attacks-could-my-nano-face">
+    What Sort of Attacks Could My Ledger Device Face?
+   </h2>
+   <p>
+    We’ve mentioned that Secure Element is important because it can withstand attacks to your Ledger device and therefore protect those critical private keys. But if you’re not a developer (and most of us aren’t) it might not be clear what kind of attacks we’re talking about. So let’s look closer in order to understand.
+   </p>
+   <p>
+    There are several types of attack which a Secure Element provides protection against, where regular chips would be unreliable or ineffective.
+   </p>
+   <h3 class="wp-block-heading" id="side-channel-attack-a-shazam-for-power-consumption">
+    Side-channel attack: a “Shazam” for power consumption
+   </h3>
+   <p>
+    When there’s a song on the radio, Shazam can listen to it and tell you what is currently playing. To do so, Shazam tries to find a match in the extensive library of original songs they’ve built. With the right tools, you can equally listen to the power consumption of a device extract key data from it.
+   </p>
+   <p>
+    Suppose an attacker has physical access to your device. They could then measure the power consumption and, just like Shazam with sound, match that power consumption pattern with an entry in the database that corresponds with your cryptographic key.  This will eventually allow the listener to crack the PIN code.
+   </p>
+   <p>
+    This is one specific form of a side channel attack, but there are several others.
+   </p>
+   <p>
+    A Secure Element chip is specifically designed with complex countermeasures inside the chip. These help to hide the electromagnetic radiation and power usage, protecting it against those who want to listen to its emissions, and use this as an attack vector.
+   </p>
+   <h3 class="wp-block-heading" id="fault-attacks-applying-changes-to-the-circuit-while-running">
+    Fault attacks: applying changes to the circuit while running
+   </h3>
+   <p>
+    A fault attack is the act of perturbing a circuit while it is running. This causes an error within a device or machine, which can lead to either learning more about its functions or even force a different, faulty behavior. Such behavior can include skipping steps of a process or providing a wrong output. All of this is the goal of a fault attack.
+   </p>
+   <p>
+    A Secure Element has built-in ountermeasures to prevent these types of attacks from succeeding; these allow for an efficient fault detection and appropriate security reactions.
+   </p>
+   <h3 class="wp-block-heading" id="software-attacks-learning-what-makes-a-device-tick">
+    Software attacks: learning what makes a device tick
+   </h3>
+   <p>
+    Software attacks aim to expose, alter, disable, destroy or steal information. They can be divided into several types; which all try to find unexpected behaviors obtained by targeting its software. These unexpected behaviors in software are caused by inputs that would normally not be given and can actually show vulnerabilities or give out sensitive information.
+   </p>
+   <p>
+    By playing around with inputs, you can learn more about how a device’s software is programmed to react to false inputs. This understanding of the software can then lead to discovering its weaknesses. A Secure Element helps to prevent this type of attack, however. Indeed, it drastically reduces the attack surface by keeping a very simple system that uses very few interfaces.
+   </p>
+   <h2 class="wp-block-heading" id="secure-element-prepared-for-anything">
+    Secure Element Chip Protects Your Ledger From Attacks
+   </h2>
+   <p>
+    A Secure Element is a highly advanced chip that mitigates a lot of different types of attacks. This cutting-edge chip, which is used in high-level security solutions, really sets Ledger apart as a top-end security solution for crypto assets. All of our devices use a Secure Element, which greatly enhances their security. Ledger uses them to generate and store private keys for your crypto assets.
+   </p>
+   <p>
+    In short, Secure Elements are a critical security component of your Ledger device because:
+    <br/>
+    <br/>
+   </p>
+   <div class="wp-block-columns has-2-columns is-layout-flex wp-container-core-columns-layout-2 wp-block-columns-is-layout-flex">
+    <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+     <div class="wp-block-image">
+      <figure class="alignleft is-resized">
+       <img alt="" class="wp-image-11170" decoding="async" height="100" loading="lazy" src="https://www.ledger.com/wp-content/uploads/2019/10/Secure-element-3-keypoint-1.jpg" width="100"/>
+      </figure>
+     </div>
+     <p>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      The
+      <strong>
+       Secure Element chip is the go-to solution for protecting critical data
+      </strong>
+      , being the standard for banks to protect credit card information and governments to protect biometric data in passports.
+     </p>
+    </div>
+    <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+     <div class="wp-block-image">
+      <figure class="alignleft is-resized">
+       <img alt="" class="wp-image-11171" decoding="async" height="100" loading="lazy" src="https://www.ledger.com/wp-content/uploads/2019/10/Secure-element-4-keypoint-2.jpg" width="100"/>
+      </figure>
+     </div>
+     <p>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      Secure Element chips are designed to withstand highly sophisticated and costly attacks.
+     </p>
+    </div>
+   </div>
+   <div class="wp-block-columns has-2-columns is-layout-flex wp-container-core-columns-layout-3 wp-block-columns-is-layout-flex">
+    <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+     <div class="wp-block-image">
+      <figure class="alignleft is-resized">
+       <img alt="" class="wp-image-11176" decoding="async" height="100" loading="lazy" src="https://www.ledger.com/wp-content/uploads/2019/10/Secure-element-5-keypoint-3-1.jpg" width="100"/>
+      </figure>
+     </div>
+     <p>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <strong>
+       Secure Element chips go through a thorough evaluation done by a third party
+      </strong>
+      and need to successfully withstand the attacks described earlier to be able to receive a security certificate.
+     </p>
+    </div>
+    <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+     <div class="wp-block-image">
+      <figure class="alignleft is-resized">
+       <img alt="" class="wp-image-11177" decoding="async" height="100" loading="lazy" src="https://www.ledger.com/wp-content/uploads/2019/10/Secure-element-6-keypoint-4-1.jpg" width="100"/>
+      </figure>
+     </div>
+     <p>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      Without a Secure Element, critical information (such as PIN codes or even private keys) can be extracted much more easily.
+     </p>
+    </div>
+   </div>
+   <p>
+    Now we’ve covered the main vulnerabilities of hardware wallets – and how Secure Element overcomes them. So, now you have the foundation you need to understand the technological aspects of self-custody.
+   </p>
+   <p>
+    Decentralized finance and self-custody is about freedom – but freedom means assuming personal responsibility and taking appropriate measures to protect yourself. So the more you understand, the more free you’ll be to enjoy this booming new system. If you want to keep learning, find out here why Ledger is the
+    <a aria-label=" (s’ouvre dans un nouvel onglet)" href="https://www.ledger.com/academy/hardwarewallet/why-you-should-choose-ledger-hardware-wallets" rel="noreferrer noopener" target="_blank">
+     only hardware wallet
+    </a>
+    that uses a custom Operating System, called
+    <a href="https://www.ledger.com/academy/security/our-custom-operating-system-bolos" rel="noreferrer noopener" target="_blank">
+     BOLOS
+    </a>
+    – and what it means for your security.
+   </p>
+   <p>
+    Welcome to your new crypto life – be safe, keep reading and enjoy the journey!
+    <br/>
+   </p>
+   <h3 class="wp-block-heading has-text-align-center" id="knowledge-is-power">
+    Knowledge is power.
+   </h3>
+   <figure class="wp-block-image size-large">
+    <a href="https://www.ledger.com/academy/school-of-block/episode-20-in-the-head-of-a-scammer" rel="noreferrer noopener" target="_blank">
+     <img alt="" class="wp-image-21804" decoding="async" height="1080" loading="lazy" src="https://www.ledger.com/wp-content/uploads/2021/11/SOB020_Youtube-Placeholder-3.jpg" width="1920"/>
+    </a>
+   </figure>
+   <p>
+    <em>
+     Trust yourself and keep learning! If you enjoy getting to grips with crypto and blockchain, check out our School of Block video that gets inside  a crypto scammer’s head.
+    </em>
+   </p>
+  </article>
+ </body>
+</html>

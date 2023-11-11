@@ -1,0 +1,324 @@
+<html>
+ <head>
+  <meta content="https://www.ledger.com/academy/ethereum-erc-4337-standard-explained" name="source"/>
+  <meta content="academy" name="source-type"/>
+  <meta content="en" name="locale"/>
+  <meta content="N/A" name="zd-article-id"/>
+  <meta content="ethereum erc 4337 standard explained" name="title"/>
+  <meta content="public" name="classification"/>
+ </head>
+ <body>
+  <article class="plain-text margin-sm article" id="article">
+   <h1 class="margin-xs">
+    Ethereum’s ERC-4337 Standard: Explained
+   </h1>
+   <div class="article-author">
+    <div>
+     By
+     <b>
+      Jemima Conlon
+     </b>
+    </div>
+   </div>
+   <div class="color-grey-500 small-text uppercase margin-xs article-date">
+    Mar 24, 2023
+          |
+    <b>
+     Updated May 29, 2023
+    </b>
+   </div>
+   <div class="caption-for-article flexbox flex-start">
+    <div class="flex-none time-to-read">
+     <span class="badge badge-nude">
+      <i class="icon-copy">
+      </i>
+      Read
+     </span>
+     <span>
+      6 min
+     </span>
+    </div>
+    <div class="with-point level level-2">
+     <span>
+      Medium
+     </span>
+    </div>
+   </div>
+   <div class="align-center share-box" id="fixed-share-box">
+    <span>
+     SHARE
+    </span>
+    <div class="heateor_sss_sharing_container heateor_sss_horizontal_sharing" data-heateor-ss-offset="0" data-heateor-sss-href="https://www.ledger.com/academy/ethereum-erc-4337-standard-explained">
+     <div class="heateor_sss_sharing_ul">
+      <a aria-label="Instagram" class="heateor_sss_button_instagram" href="https://www.instagram.com/ledger" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Instagram">
+       <span class="heateor_sss_svg" style="background-color:#53beee;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg height="100%" style="display:block;border-radius:999px;" version="1.1" viewbox="-10 -10 148 148" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+         <g>
+          <g>
+           <path d="M86,112H42c-14.336,0-26-11.663-26-26V42c0-14.337,11.664-26,26-26h44c14.337,0,26,11.663,26,26v44 C112,100.337,100.337,112,86,112z M42,24c-9.925,0-18,8.074-18,18v44c0,9.925,8.075,18,18,18h44c9.926,0,18-8.075,18-18V42 c0-9.926-8.074-18-18-18H42z" fill="#fff">
+           </path>
+          </g>
+          <g>
+           <path d="M64,88c-13.234,0-24-10.767-24-24c0-13.234,10.766-24,24-24s24,10.766,24,24C88,77.233,77.234,88,64,88z M64,48c-8.822,0-16,7.178-16,16s7.178,16,16,16c8.822,0,16-7.178,16-16S72.822,48,64,48z" fill="#fff">
+           </path>
+          </g>
+          <g>
+           <circle cx="89.5" cy="38.5" fill="#fff" r="5.5">
+           </circle>
+          </g>
+         </g>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Facebook" class="heateor_sss_facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fethereum-erc-4337-standard-explained" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Facebook">
+       <span class="heateor_sss_svg" style="background-color:#3c589a;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="-5 -5 42 42" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M17.78 27.5V17.008h3.522l.527-4.09h-4.05v-2.61c0-1.182.33-1.99 2.023-1.99h2.166V4.66c-.375-.05-1.66-.16-3.155-.16-3.123 0-5.26 1.905-5.26 5.405v3.016h-3.53v4.09h3.53V27.5h4.223z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Twitter" class="heateor_sss_button_twitter" href="http://twitter.com/intent/tweet?via=ledger&amp;text=Ethereum%27s%20ERC-4337%20Standard%3A%20Explained&amp;url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fethereum-erc-4337-standard-explained" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Twitter">
+       <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_twitter" style="background-color:#55acee;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="-4 -4 39 39" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M28 8.557a9.913 9.913 0 0 1-2.828.775 4.93 4.93 0 0 0 2.166-2.725 9.738 9.738 0 0 1-3.13 1.194 4.92 4.92 0 0 0-3.593-1.55 4.924 4.924 0 0 0-4.794 6.049c-4.09-.21-7.72-2.17-10.15-5.15a4.942 4.942 0 0 0-.665 2.477c0 1.71.87 3.214 2.19 4.1a4.968 4.968 0 0 1-2.23-.616v.06c0 2.39 1.7 4.38 3.952 4.83-.414.115-.85.174-1.297.174-.318 0-.626-.03-.928-.086a4.935 4.935 0 0 0 4.6 3.42 9.893 9.893 0 0 1-6.114 2.107c-.398 0-.79-.023-1.175-.068a13.953 13.953 0 0 0 7.55 2.213c9.056 0 14.01-7.507 14.01-14.013 0-.213-.005-.426-.015-.637.96-.695 1.795-1.56 2.455-2.55z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Linkedin" class="heateor_sss_button_linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fethereum-erc-4337-standard-explained" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Linkedin">
+       <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_linkedin" style="background-color:#0077b5;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="0 0 32 32" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M6.227 12.61h4.19v13.48h-4.19V12.61zm2.095-6.7a2.43 2.43 0 0 1 0 4.86c-1.344 0-2.428-1.09-2.428-2.43s1.084-2.43 2.428-2.43m4.72 6.7h4.02v1.84h.058c.56-1.058 1.927-2.176 3.965-2.176 4.238 0 5.02 2.792 5.02 6.42v7.395h-4.183v-6.56c0-1.564-.03-3.574-2.178-3.574-2.18 0-2.514 1.7-2.514 3.46v6.668h-4.187V12.61z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Reddit" class="heateor_sss_button_reddit" href="http://reddit.com/submit?url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fethereum-erc-4337-standard-explained&amp;title=Ethereum%27s%20ERC-4337%20Standard%3A%20Explained" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Reddit">
+       <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_reddit" style="background-color:#ff5700;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="-3.5 -3.5 39 39" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M28.543 15.774a2.953 2.953 0 0 0-2.951-2.949 2.882 2.882 0 0 0-1.9.713 14.075 14.075 0 0 0-6.85-2.044l1.38-4.349 3.768.884a2.452 2.452 0 1 0 .24-1.176l-4.274-1a.6.6 0 0 0-.709.4l-1.659 5.224a14.314 14.314 0 0 0-7.316 2.029 2.908 2.908 0 0 0-1.872-.681 2.942 2.942 0 0 0-1.618 5.4 5.109 5.109 0 0 0-.062.765c0 4.158 5.037 7.541 11.229 7.541s11.22-3.383 11.22-7.541a5.2 5.2 0 0 0-.053-.706 2.963 2.963 0 0 0 1.427-2.51zm-18.008 1.88a1.753 1.753 0 0 1 1.73-1.74 1.73 1.73 0 0 1 1.709 1.74 1.709 1.709 0 0 1-1.709 1.711 1.733 1.733 0 0 1-1.73-1.711zm9.565 4.968a5.573 5.573 0 0 1-4.081 1.272h-.032a5.576 5.576 0 0 1-4.087-1.272.6.6 0 0 1 .844-.854 4.5 4.5 0 0 0 3.238.927h.032a4.5 4.5 0 0 0 3.237-.927.6.6 0 1 1 .844.854zm-.331-3.256a1.726 1.726 0 1 1 1.709-1.712 1.717 1.717 0 0 1-1.712 1.712z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+     </div>
+     <div class="heateorSssClear">
+     </div>
+    </div>
+   </div>
+   <div class="wp-block-image">
+    <figure class="aligncenter size-large">
+     <img alt="Coins spiraling in a circle" class="wp-image-269231" decoding="async" height="432" loading="lazy" sizes="(max-width: 1024px) 100vw, 1024px" src="https://www.ledger.com/wp-content/uploads/2023/03/06_Crypto_Cover_Purple-Tint-1024x432.jpg" srcset="https://www.ledger.com/wp-content/uploads/2023/03/06_Crypto_Cover_Purple-Tint-1024x432.jpg 1024w, https://www.ledger.com/wp-content/uploads/2023/03/06_Crypto_Cover_Purple-Tint-300x127.jpg 300w, https://www.ledger.com/wp-content/uploads/2023/03/06_Crypto_Cover_Purple-Tint-768x324.jpg 768w, https://www.ledger.com/wp-content/uploads/2023/03/06_Crypto_Cover_Purple-Tint-1536x648.jpg 1536w, https://www.ledger.com/wp-content/uploads/2023/03/06_Crypto_Cover_Purple-Tint-490x207.jpg 490w, https://www.ledger.com/wp-content/uploads/2023/03/06_Crypto_Cover_Purple-Tint.jpg 1600w" width="1024"/>
+    </figure>
+   </div>
+   <figure class="wp-block-table">
+    <table>
+     <tbody>
+      <tr>
+       <td>
+        KEY TAKEAWAYS
+       </td>
+      </tr>
+      <tr>
+       <td>
+        —  Ethereum’s ERC-4337 standard makes it easier to design interoperable smart wallets.
+        <br/>
+        <br/>
+        — The ERC-4337 standard is commonly misconceived as achieving account abstraction, instead, it defines a decentralized relay network.
+        <br/>
+        <br/>
+        — While smart wallets already existed, this ERC-4337 standard allows for new capabilities which will improve user experience.
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </figure>
+   <p>
+    If you follow the latest in Ethereum news, you may have heard about the ERC-4337 standard announcement. If you haven’t, let us explain.
+   </p>
+   <p>
+    ERC-4337 sets a new standard for crypto accounts using smart contracts. They may seem familiar on the surface, but this contract standard allows for something very different from the smart wallets you might know thus far. These accounts have capabilities that may affect the wider Ethereum Ecosystem.
+   </p>
+   <p>
+    But hold on a minute. Smart wallets aren’t a new thing, right?
+    <br/>
+    <br/>
+    Correct!  In fact, popular smart wallets such as Argent and Gnosis Safe existed long before ERC-4337’s inception. These wallets have similar capabilities, such as social recovery for those who lose access to their accounts. However ERC-4337 accounts can actually do much more.
+   </p>
+   <p>
+    But what is the ERC-4337 really about?  Plus how do these wallets work compared to the smart wallets we are already familiar with?
+   </p>
+   <p>
+    Let’s explore, as Ledger Academy takes you through what ERC-4337 smart wallets really mean for the Ethereum network.
+   </p>
+   <h2 class="wp-block-heading">
+    What is ERC-4337?
+   </h2>
+   <p>
+    ERC-4337 is a Smart Wallet standard on the
+    <a href="https://www.ledger.com/academy/what-is-ethereum" rel="noreferrer noopener" target="_blank">
+     Ethereum Blockchain
+    </a>
+    . While the
+    <a href="https://eips.ethereum.org/EIPS/eip-4337" rel="noreferrer noopener" target="_blank">
+     concept was proposed back in 2021
+    </a>
+    , Yoav Weiss, an Ethereum Foundation developer, announced its availability for use at WalletCon in Colorado on March 1, 2023. The standard can be deployed on any Ethereum Virtual Machine compatible blockchain and allows for a new
+    <a href="https://www.ledger.com/coin/wallet/ethereum" rel="noreferrer noopener" target="_blank">
+     Ethereum wallet account
+    </a>
+    capable of arbitrary verification logic.
+   </p>
+   <p>
+    If that sounds too technical for you, in short, this innovation allows you to perform complex actions straight from your wallet.  Another key feature of these kinds of wallets is: they are not solely based on
+    <a href="https://www.ledger.com/academy/whats-a-private-key" rel="noreferrer noopener" target="_blank">
+     private key
+    </a>
+    ownership, opting for a smart contract solution instead.   That said, many smart wallets use mechanisms for validation that may still require a private key.
+   </p>
+   <p>
+    Put simply, it’s a way to make the user experience better, allowing users to customize how to pay transaction fees. While many have said ERC-4337 achieves account abstraction, that’s not exactly the case.
+   </p>
+   <p>
+    But to understand that, let’s first understand what account abstraction means.
+   </p>
+   <h2 class="wp-block-heading">
+    What is Account Abstraction?
+   </h2>
+   <p>
+    Account abstraction is a way to let people use smart contracts as their primary accounts, essentially creating “smart wallets”.
+    <br/>
+    But it’s a bit more than that. Account abstraction aims to do a few important (and ambitious) things.
+   </p>
+   <p>
+    Firstly, it allows you to execute functions directly from your wallet. It also gives your wallet the “intelligence” to determine how much to pay for a transaction fee and who will pay it. Account abstraction also allows for more advanced security features. For example, it allows you to set up transactions that require multiple signatures.
+   </p>
+   <p>
+    Furthermore, recovery becomes a problem of the past: You can even recover your account without centralized help.
+   </p>
+   <p>
+    Perhaps most excitingly, account abstraction allows for quantum-safe cryptography, meaning even a quantum computer wouldn’t be able to hack the system.
+   </p>
+   <h2 class="wp-block-heading">
+    ERC-4337 Vs Account Abstraction: What’s the difference
+   </h2>
+   <p>
+    Although ERC-4337 accounts allow you to execute functions and have more flexibility over who pays transaction fees, it does not achieve true account abstraction.
+   </p>
+   <p>
+    Ethereum founder Vitalik Buterin stated, “The big really valuable, and necessary thing that ERC-4337 provides for account abstraction is a decentralized fee market for user operations going into smart contract wallets.”
+   </p>
+   <p>
+    To explain, instead of allowing for true account abstraction, ERC-4337 is like a transaction relayer: It allows you to organize transactions in an off-chain order book, and then relay the final transaction to the blockchain.
+   </p>
+   <p>
+    True account abstraction will offer much more than that: It aims to change the way Externally Owned Accounts (EOAs) interact with the Ethereum blockchain itself.
+   </p>
+   <p>
+    However, these functionalities will require an upgrade to Ethereum’s whole
+    <a href="https://www.ledger.com/academy/consensus-protocols-how-are-blockchains-secure">
+     consensus
+    </a>
+    – which is no easy feat. While the ERC-4337 standard is an important step in the right direction, Ethereum account abstraction is still a way away.
+   </p>
+   <h2 class="wp-block-heading">
+    What is ERC-4337 for?
+   </h2>
+   <p>
+    Well, now you know that ERC-4337 is one step on the path to account abstraction. But what does it actually let us do?  Some of the most exciting things about this standard include;
+   </p>
+   <h3 class="wp-block-heading">
+    Performing Multiple Actions in One Transaction
+   </h3>
+   <p>
+    Firstly the standard allows you to bundle multiple transactions together. This means you can set approval for, initiate and execute a trade all in one go, and it’s only possible due to “bundling”. This is great for traders and gamers specifically, who currently must sign multiple transactions just to carry out one action.
+   </p>
+   <h3 class="wp-block-heading">
+    Performing One Transaction with Multiple People
+   </h3>
+   <p>
+    There are a couple of instances you might want to share a transaction with your friends or family and ERC-4337 makes that possible.
+   </p>
+   <p>
+    Firstly, it allows you to set up a transaction that requires multiple signatures. So for example, you could set up a transaction that needs the signature of both you and your partner before validation.
+   </p>
+   <p>
+    The advancement also lets you share transactions in other ways. For example, while using ERC-4337 wallets you don’t always have to pay a gas fee.,   That’s because “sponsored transactions” are now possible, allowing another entity, such as a
+    <a href="https://www.ledger.com/academy/what-is-a-dapp">
+     dApp
+    </a>
+    or wallet provider, to pick up the transaction fee for you. To make it even easier, these wallets will also let you pay transactions with arbitrary tokens, such as ERC-20 tokens.
+   </p>
+   <h3 class="wp-block-heading">
+    <strong>
+     A more Seamless User Experience
+    </strong>
+   </h3>
+   <p>
+    The ERC-4337 standard allows for other functionalities too. For example, blockchain subscriptions will be possible, as the ERC-4337 standard can process automated and recurring payments. You can now set up a recurring payment to an online magazine or even a monthly coffee subscription using these types of accounts.
+   </p>
+   <p>
+    Additionally, you can set pre-approval and auto-approve transactions. This allows a more seamless experience for users, which is especially important for players of blockchain games.
+   </p>
+   <h3 class="wp-block-heading">
+    <strong>
+     Improved Security Measures
+    </strong>
+   </h3>
+   <p>
+    Finally, the ERC-4337 standard gives users more flexibility with their security. For example, it allows you to define rules regarding spending or approval. For example, you may want to limit the amount you can spend in a single transaction, within a single day, or even over a whole month. You can also use this standard to set up more complex methods to access your funds, requiring 2FA and a
+    <a href="https://www.ledger.com/academy/crypto-hardware-wallet" rel="noreferrer noopener" target="_blank">
+     hardware wallet signature
+    </a>
+    for transactions over a certain amount.
+   </p>
+   <p>
+    Like many smart wallets today ERC-4337 also has the power to let you recover your wallet.
+   </p>
+   <p>
+    If you lose access to your account, smart wallets use a  feature called Social recovery. This is not a new concept. Argent is a good example of a smart wallet that allows specific people, called guardians, to help you regain access to your assets.
+   </p>
+   <p>
+    The ERC-4337 standard aims to allow you to do something similar in a more decentralized way. The idea is that each thing you interact with on the blockchain can now help provide a piece of proof of who you are, instead of having to rely on a centralized validator.
+   </p>
+   <h2 class="wp-block-heading">
+    So, How Does ERC-4337 Work?
+   </h2>
+   <p>
+    To explain the ERC-4337 smart wallet standard introduces a new object (a basic unit of data that contains information and allows certain functions) to the Ethereum network.
+   </p>
+   <p>
+    The new object introduced by the ERC-4337 standard is called “UserOperation”. When a user initiates a UserOperation, it’s sent to the mempool – a place where transactions go to be validated. This is an entirely separate mempool from the one used for processing transactions on the Ethereum mainnet.
+   </p>
+   <p>
+    Firstly, you must understand that all transactions on the Ethereum network must be triggered and paid for by an Externally owned Account (EOA). Using a separate mempool lets users bypass these rules without affecting Ethereum’s underlying system.
+   </p>
+   <p>
+    It has different requirements to the mainnet, meaning you have more flexibility with the details of your transaction.
+   </p>
+   <p>
+    Firstly, you can perform multiple transactions at once. But more importantly, anyone with an EOA, such as a wallet provider, can pay the fees on behalf of the user.
+   </p>
+   <p>
+    To explain, once the userOperations are bundled into an Ethereum mainnet transaction, they still require payment via an EOA. However, ERC-4337 defines a way where it doesn’t actually need to be the user themselves. This makes the process more efficient and minimizes user fees.
+   </p>
+   <h2 class="wp-block-heading">
+    How To Use Smart Wallets Securely
+   </h2>
+   <p>
+    While a smart wallet may have more functionality than a traditional wallet, it doesn’t have to operate alone. It contains valuable assets, thus securing your smart wallet is very important.
+   </p>
+   <p>
+    To do so, it’s recommended that you set up your smart wallet with a hardware wallet. In short, your hardware wallet is designed to keep your private key safe from the internet and its risks. Working in tandem with your smart wallet, your hardware wallet can act as an unhackable verification method, allowing you to sign transactions with your smart wallet with confidence.
+   </p>
+   <p>
+    While web2 hardware like smartphones and laptops are subject to hacks, web3 hardware wallets are not. For this reason, using a hardware wallet with your smart wallet is still the most secure option for securing your digital assets. Ledger hardware wallets secure your keys with a
+    <a href="https://www.ledger.com/academy/security/not-all-chips-are-born-equal">
+     secure Element chip
+    </a>
+    , known to be one of the safest computer chips in existence. This means you can sign transactions with absolute confidence. For now, a Ledger Device is still the most secure option for protecting your keys- and therefore your assets.
+   </p>
+  </article>
+ </body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/4411320518161-SIGBUS-SIGSEGV"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="4411320518161"/><meta name="title" content="SIGBUS / SIGSEGV"/><meta name="classification" content="public"/></head>                            <body><h1>SIGBUS / SIGSEGV</h1>
+<div class="callout callout--primary">
+<h4 class="callout__title"><strong>The error was fixed!</strong></h4>
+<ul>
+<li>This error was solved in the latest releases of Ledger Live. </li>
+<li>Make sure to <strong><a href="https://support.ledger.com/hc/en-us/articles/4410960111889-Update-Ledger-Live-?docs=true">update Ledger Live</a></strong> to the <strong>latest</strong> version and update the device's firmware (<a href="https://support.ledger.com/hc/en-us/articles/360002731113-Update-Ledger-Nano-S-firmware?docs=true"><span>update Nano S</span></a><span> / <a href="https://support.ledger.com/hc/en-us/articles/360013349800-Update-Ledger-Nano-X-firmware?docs=true">Nano X </a>/ </span><a href="https://support.ledger.com/hc/en-us/articles/4445777839901-Update-Ledger-Nano-S-Plus-firmware?docs=true">Nano S Plus</a>) and <a href="https://support.ledger.com/hc/en-us/articles/4404382258961-Install-uninstall-and-update-apps?docs=true" target="_blank" rel="noopener">all the apps</a> on the Ledger device if updates are available.</li>
+<li>Try to make your transaction and it should work.</li>
+</ul>
+</div>
+<p><span class="wysiwyg-color-black40"><span style="font-weight: 400;">The article describes the </span><strong>SIGBUS / SIGSEGV </strong><span style="font-weight: 400;">errors that users were facing in Ledger Live on old releases of Ledger Live. These errors were occuring when trying to access My Ledger, making an Algorand (ALGO) or Cosmos (ATOM) transactions, or adding accounts for one of these two assets.</span></span></p>
+<h2><span class="wysiwyg-color-black40" style="font-weight: 400;">Why did these problems occur?</span></h2>
+<p><span class="wysiwyg-color-black40" style="font-weight: 400;">These problems were due to the presence of some specific transaction types in an Algorand (ALGO) or Cosmos (ATOM) account that were not supported by Ledger Live in the past.</span></p>
+<p><span class="wysiwyg-color-black40" style="font-weight: 400;">Ledger Live did not support these specific transaction types (like hub transactions for Cosmos for instance) as they did not exist at the time we implemented Algorand and Cosmos in Ledger Live, resulting in the mentioned errors.</span></p>
+<p><span class="wysiwyg-color-black40" style="font-weight: 400;">Examples of errors users could face while adding an account with not supported transaction types:</span></p>
+<p class="wysiwyg-text-align-center"><span class="wysiwyg-color-black40"><img src="https://support.ledger.com/hc/article_attachments/4411328019089/SIGSEGV.png" width="261" height="302"></span></p>
+<p class="wysiwyg-text-align-center"><span class="wysiwyg-color-black40"><em>SIGSEGV error (ALGO)</em></span></p>
+<p class="wysiwyg-text-align-center"><span class="wysiwyg-color-black40"><img src="https://support.ledger.com/hc/article_attachments/4411313431697/SIGBUS.png" width="261" height="302"></span></p>
+<p class="wysiwyg-text-align-center"><span class="wysiwyg-color-black40"><em>SIGBUS error (ATOM)</em></span></p>
+<p> </p></body></html>

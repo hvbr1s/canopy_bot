@@ -1,0 +1,20 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/4406279901969-Out-of-gas-issue-ERC20-Failed-transactions"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="4406279901969"/><meta name="title" content="Out of gas issue (ERC20) - Failed transactions"/><meta name="classification" content="public"/></head>                            <body><h1>Out of gas issue (ERC20) - Failed transactions</h1>
+<p><span style="font-weight: 400;">Out of gas issues can happen when Ethereum miners run out of gas while processing your transaction. </span><span style="font-weight: 400;">This issue mainly affects </span><a href="https://support.ledger.com/hc/en-us/articles/4404389645329-Manage-ERC20-tokens?docs=true"><span style="font-weight: 400;">ERC20 tokens</span></a><span style="font-weight: 400;"> transactions.<br></span></p>
+<p><span style="font-weight: 400;">You can learn more about gas, gas limit and how fees work on Ethereum <a href="https://ethereum.org/en/developers/docs/gas/" target="_blank" rel="noopener">here</a>. </span></p>
+<div class="callout callout--primary">
+<h4 class="callout__title">What is Ledger doing to prevent "out of gas" issues?</h4>
+<ul>
+<li><span style="font-weight: 400;">Ledger Live automatically estimates the optimal fee required for your ETH and ERC20 transactions.</span></li>
+<li><span style="font-weight: 400;">However, Ethereum transactions might still fail because of network congestion. Besides, some smart contracts involved in transferring ERC20 tokens consume lots of gas and might also cause your transaction to fail if the gas limit is set to low.</span></li>
+<li><span style="font-weight: 400;"><strong>This can be prevented by using custom Ethereum transactions in Ledger Live</strong>. You can learn how to create custom transactions <strong><a href="https://support.ledger.com/hc/en-us/articles/4406211657233?docs=true" target="_blank" rel="noopener">here</a></strong>.</span></li>
+</ul>
+</div>
+<h2>How to identify an "out of gas" issue?</h2>
+<p>When an ERC20 transaction fails, following icon will show in Ledger Live:</p>
+<p><strong><img src="https://support.ledger.com/hc/article_attachments/4406279885969/1.PNG" alt="1.PNG"></strong></p>
+<p><strong><span style="font-weight: 400;">Click on the transaction to expand it, then click <strong>View in explorer.</strong></span></strong></p>
+<p><img src="https://support.ledger.com/hc/article_attachments/4406397375761/1.PNG" alt="1.PNG"></p>
+<p> </p>
+<p><span style="font-weight: 400;">You will be redirected to <a href="https://etherscan.io/" target="_blank" rel="noopener">Etherscan.io</a> (an Ethereum blockchain explorer) look for the following error warning.</span></p>
+<p><strong><img src="https://support.ledger.com/hc/article_attachments/4406286828305/1.PNG" alt="1.PNG"></strong></p>
+<p><span style="font-weight: 400;">The full list of errors can be found </span><a href="https://info.etherscan.com/reason-for-failed-transaction/" target="_blank" rel="noopener">here</a><span style="font-weight: 400;">.</span></p></body></html>

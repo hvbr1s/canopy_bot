@@ -1,0 +1,21 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/360010892360-Address-gap-limit"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="360010892360"/><meta name="title" content="Address gap limit"/><meta name="classification" content="public"/></head>                            <body><h1>Address gap limit</h1>
+<p><span>The address gap limit refers to the standard number of public addresses that are checked for transactions in the blockchain in order to calculate an account's balance. Transactions received on an address beyond the address gap limit are not detected. This can only happen when using an external wallet to derive addresses.</span></p>
+<h2>How it works</h2>
+<p>A blockchain contains a record of public addresses and their balances. To display your account balance, Ledger Live checks your transaction history in the blockchain. As accounts for Bitcoin and Bitcoin-based coins use <a href="https://support.ledger.com/hc/en-us/articles/360034336713" target="_blank" rel="noopener">multiple public addresses</a>, Ledger Live needs to look up only the public addresses that are used.</p>
+<p>Public addresses are derived from an account's <a href="https://support.ledger.com/hc/en-us/articles/360011069619" target="_blank" rel="noopener">extended public key (xpub)</a> by incrementing the address index in the derivation path. <span>Ledger Live follows the <a href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki#Address_gap_limit" target="_self">BIP44</a> standard which prescribes that wallets look ahead 20 addresses from the last used address</span><span>. </span></p>
+<div class="callout callout--primary">
+<h4 class="callout__title">
+<em class="fa fa-info-circle"> </em> Address gap limit example</h4>
+<p>If you receive a transaction on the first address, address 1, Ledger Live will scan addresses 2 to 21 for any additional transaction history. If nothing is found, it will stop looking. If address 22 has been received, Ledger Live will not see<span> it because it stopped at address 21.</span></p>
+</div>
+<h2>Custom address gap limit (Advanced users)</h2>
+<p>Ledger Live lets you set a custom address gap limit in case you have received a transaction beyond the address gap limit. This feature should only be used temporarily for wallet recovery purposes.</p>
+<ol>
+<li>Go to the <strong>Settings</strong>.</li>
+<li>Click on the <strong>Experimental features </strong>tab.</li>
+<li>Enable the <strong>Custom gap limit </strong>option and set a custom number. <br><strong>Caution: Setting a high gap limit will negatively affect synchronization performance.</strong>
+</li>
+<li>Click on the <strong>Help </strong>tab.</li>
+<li>Click on the <strong>Clear</strong> button to clear the cache.</li>
+<li>Click on <strong>Confirm</strong>.</li>
+</ol></body></html>

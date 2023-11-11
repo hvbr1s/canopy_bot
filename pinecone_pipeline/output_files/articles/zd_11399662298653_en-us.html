@@ -1,0 +1,22 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/11399662298653-What-is-entropy-and-how-does-Ledger-Recover-provided-by-Coincover-use-it-to-create-a-backup-for-your-Secret-Recovery-Phrase-"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="11399662298653"/><meta name="title" content="What is entropy and how does Ledger Recover, provided by Coincover, use it to create a backup for your Secret Recovery Phrase?"/><meta name="classification" content="public"/></head>                            <body><h1>What is entropy and how does Ledger Recover, provided by Coincover, use it to create a backup for your Secret Recovery Phrase?</h1>
+<p>This article explains what entropy is and what happens during the Ledger Recover, provided by Coincover, backup creation process.</p>
+<h2><span style="color: #434343;">What is entropy?</span></h2>
+<p>When setting up your Ledger device, you are given a 24-word Secret Recovery Phrase. Your Secret Recovery Phrase gives you access to your assets.</p>
+<p><span style="color: #0e101a;">To create a Secret Recovery Phrase, your Ledger device first needs to </span><a href="https://support.ledger.com/hc/en-us/articles/360010073520-Quality-of-randomness?docs=true"><span class="wysiwyg-underline" style="color: #4a6ee0;">generate</span></a><span style="color: #0e101a;"> entropy. You can think of entropy as being a large random number—a series of bits (e.g. 10011010010001), which is how computers store numbers.</span></p>
+<p><span style="color: #0e101a;">Now that we have this large random number, your Ledger device needs to make it human-readable, taking those series of bits and mapping them into words. This is where the </span><a href="https://www.ledger.com/academy/bip-39-the-low-key-guardian-of-your-crypto-freedom"><span class="wysiwyg-underline" style="color: #1155cc;">Bitcoin Improvement Proposal number 39 (BIP39)</span></a><span style="color: #0e101a;"> comes in.</span></p>
+<p><span style="color: #0e101a;">BIP39 takes the random number (entropy) and creates a Secret Recovery Phrase from it, using a dictionary of 2048 words to map the entropy to human-readable words. </span></p>
+<p><span style="color: #0e101a;">In other </span><em><span style="color: #0e101a;">words</span></em><span style="color: #0e101a;">, your Ledger device generates the entropy, and the Secret Recovery Phrase is the convenient, human-readable way to store it and maintain secure access to your funds, whenever you choose.</span></p>
+<h2><span style="color: #434343;">Entropy and Ledger Recover</span></h2>
+<p>When you create a backup for your Secret Recovery Phrase with Ledger Recover, provided by Coincover, it's not the private key that gets encrypted and sharded, but the entropy. </p>
+<p>Here is how the process works:</p>
+<ol>
+<li>First, you need to verify your identity using a valid ID document and a selfie recording. </li>
+<li>Then you need to connect your Ledger device and approve the creation of the backup for your Secret Recovery Phrase. </li>
+<li>Once approved, the entropy is encrypted and fragmented into three pieces that become the backup for your Secret Recovery Phrase.</li>
+<li>The fragments are then each sent using end-to-end encrypted and authenticated channels to the Hardware Security Modules (HSMs) of three independent companies—Ledger, Coincover, and EscrowTech. Each fragment is useless on its own.</li>
+<li>Each fragment is linked to your verified identity from Step 1, ensuring that only <span class="wysiwyg-underline">you</span> can request to retrieve the backup.</li>
+<li>When you go through the Restore process to regain the backup for your Secret Recovery Phrase, two of the three fragments will be sent to your Ledger device, reassembling the entropy fragments and decrypting the result to derive your Secret Recovery Phrase. </li>
+</ol>
+<h2><span style="color: #434343;">Wrap-up</span></h2>
+<p>This is really important: Ledger Recover, provided by Coincover, does not directly interact with your Secret Recovery Phrase to create the backup. It only interacts with the <em>fragments</em> of the encrypted entropy. </p>
+<p><span style="color: #0e101a;">Ledger doesn't have access to your Secret Recovery Phrase(s), whether or not you subscribe to Ledger Recover. It's an optional and paid subscription service. You are required to go through the process described above to subscribe and activate Ledger Recover.</span></p></body></html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/4404807946001-How-to-verify-the-authenticity-of-Ledger-Live-"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="4404807946001"/><meta name="title" content="How to verify the authenticity of Ledger Live?"/><meta name="classification" content="public"/></head>                            <body><h1>How to verify the authenticity of Ledger Live?</h1>
+<p>This article will explain how to verify the authenticity of a Ledger Live installation package using <a href="https://www.ledger.com/ledger-live/lld-signatures" target="_blank" rel="noopener">Ledger Live Download Signatures</a> on Windows / macOS / Linux.</p>
+<div class="tabs tabs--colored-2">
+<div class="tabs-menu">
+<span id="windows" class="tabs-link is-active">Windows</span> <span id="mac" class="tabs-link">macOS</span> <span id="linux" class="tabs-link">Linux</span>
+</div>
+<div class="tab">
+<p class="wysiwyg-text-align-center"><iframe src="//www.youtube-nocookie.com/embed/w6X6sfPa9zw" width="560" height="315"></iframe></p>
+<ol class="list-colored">
+<li>
+<span>Begin by opening your preferred browser and navigating </span>to the <span></span><a href="https://www.ledger.com/ledger-live/download" target="_blank" rel="noopener">Ledger website.</a> </li>
+<li>
+<span>Click on <strong>Download the app</strong> and proceed to download the Windows installation package onto your computer.</span><br><br><img src="https://support.ledger.com/hc/article_attachments/13582929326493" width="547" height="302"><br><br>
+</li>
+<li>
+<span>Once downloaded, locate the <span class="wysiwyg-underline">installation package</span> on your computer. You can find its path by right-clicking on the package and selecting <strong>Properties</strong>.<br><br></span><span><em class="fas fa-exclamation-triangle"> </em>Please remember that it's important to check the hash of the installation package <strong>before</strong> you go ahead with the installation of the Ledger Live app. The hash check must be performed <span class="wysiwyg-underline">on the package file</span> since the installed application won't provide the correct hash value. Follow each step in this guide carefully <strong>before</strong> you install the Ledger Live software.</span><br><br><img src="https://support.ledger.com/hc/article_attachments/13582926773533" width="550" height="302"><br><img src="https://support.ledger.com/hc/article_attachments/13583125895453" width="551" height="305"><br><br>
+</li>
+<li>On your computer, open <strong>Windows PowerShell</strong>.<br><br><img src="https://support.ledger.com/hc/article_attachments/9108192241565" alt="mceclip0.png" width="378" height="285"><br><br>
+</li>
+<li>
+<span>In the PowerShell, input the following command to retrieve the SHA-512 hash of the downloaded file:<br></span><br>
+<pre>Get-FileHash "path/to/downloaded/ledger-live/installation/package.exe" -Algorithm SHA512 | Format-List</pre>
+<em class="fas fa-exclamation-triangle"> </em><span>Remember to replace "path/to/downloaded/ledger-live/installation/package.exe" with the specific path noted in step 3. Ensure the path <strong>remains wrapped</strong> in "quotation marks".</span><br><br><img src="https://support.ledger.com/hc/article_attachments/13583251764509" width="557" height="269"><br><br>
+</li>
+<li><span>Hit <strong>Enter</strong> to initiate the hashing process.</span></li>
+<li>
+<span>Once the hash appears in the console, double-click on it to highlight it and copy it using Ctrl+C.</span><br><br><img src="https://support.ledger.com/hc/article_attachments/13583366024733" width="564" height="272"><br><br>
+</li>
+<li>
+<p><span>Navigate to the <a href="https://www.ledger.com/ledger-live/lld-signatures" target="_blank" rel="noopener noreferrer">Ledger Live Download Signatures</a> page. Use <strong>Ctrl+F</strong> to open the search function, paste the hash, and press <strong>Enter</strong> to verify.</span><br><br>If the search returns a hit, it's a match! <br>Remember, SHA-512 hashes are not case-sensitive so a == A, b == B, etc.<br><br><img src="https://support.ledger.com/hc/article_attachments/9109122759837" alt="mceclip4.png"></p>
+</li>
+</ol>
+<div class="callout callout--warning">
+<h4 id="h_01HACHCHRP4RJZZF3XANZ6NJ7M" class="callout__title">
+<em class="fas fa-exclamation-triangle"> </em><strong>The hashes don't match!</strong>
+</h4>
+<ul>
+<li>Your copy of Ledger Live might not be genuine.</li>
+<li>Please immediately contact <a href="https://support.ledger.com/hc/en-us/requests/new?support=true" target="_blank" rel="noopener">Ledger support</a>, you will be provided with a safe link to install Ledger Live to the latest version.</li>
+</ul>
+</div>
+</div>
+<div class="tab is-hidden">
+<ol class="list-colored">
+<li style="font-weight: 400;" aria-level="1">
+<span style="font-weight: 400;">Go to the </span><a href="https://www.ledger.com/ledger-live/download" target="_blank" rel="noopener">Ledger website</a><span style="font-weight: 400;">, scroll down to the </span><strong>Download Ledger Live app</strong><span style="font-weight: 400;"> section and download the macOS installation package.</span>
+</li>
+<li>
+<span style="font-weight: 400;">In the </span><strong>Finder</strong><span style="font-weight: 400;">, open the</span><strong> /Applications/Utilities</strong><span style="font-weight: 400;"> folder. Then double-click </span><strong>Terminal</strong><span style="font-weight: 400;">.</span>
+</li>
+<li>
+<span style="font-weight: 400;">To verify the Ledger Live installation package checksum, type the following command in the </span><strong>Terminal <span style="font-weight: 400;">followed by space:</span></strong>
+<pre><span style="font-weight: 400;">shasum -a 512</span></pre>
+</li>
+<li>
+<span style="font-weight: 400;">Drag and drop the installation file to the </span><strong>Terminal. Then press Enter. <span style="font-weight: 400;">After some time, you should see the checksum hash on a new line in </span>Terminal<span style="font-weight: 400;">.</span><img src="https://support.ledger.com/hc/article_attachments/4413281547153" alt="Terminal_mac.png"></strong>
+</li>
+<li><span style="font-weight: 400;">Compare the checksum hashes.</span></li>
+<li>
+<span style="font-weight: 400;">Go to the </span><a href="https://www.ledger.com/ledger-live/lld-signatures" target="_blank" rel="noopener">Ledger Live Download Signatures page</a><span style="font-weight: 400;">, ​scroll down to the Ledger Live binaries section and copy the macOS hash.</span>
+</li>
+<li style="font-weight: 400;" aria-level="1">
+<span style="font-weight: 400;">Use </span><a href="https://www.diffchecker.com/" target="_blank" rel="noopener">Diffchecker</a><span style="font-weight: 400;"> to compare if there are any differences between the hash from Terminal and the hash from the </span><a href="https://www.ledger.com/ledger-live/lld-signatures" target="_blank" rel="noopener">Ledger Live Download Signatures page</a><span style="font-weight: 400;">.</span><br><br>If your hashes are identical, your copy of Ledger Live is genuine.<br><img src="https://support.ledger.com/hc/article_attachments/4413274661649" alt="authenticity.png">
+</li>
+</ol>
+<div class="callout callout--warning">
+<h4 id="h_01HACHCHRQH3TVQKTXPKBGHDRV" class="callout__title">
+<em class="fas fa-exclamation-triangle"> </em><strong>My hashes don't match!</strong>
+</h4>
+<ul>
+<li>Your copy of Ledger Live might not be genuine.</li>
+<li>Please immediately contact <a href="https://support.ledger.com/hc/en-us/requests/new?support=true" target="_blank" rel="noopener">Ledger support</a>, you will be provided with a safe link to install Ledger Live to the latest version.</li>
+</ul>
+</div>
+</div>
+<div class="tab is-hidden">
+<ol class="list-colored">
+<li>
+<span style="font-weight: 400;">Go to the </span><a href="https://www.ledger.com/ledger-live/download" target="_blank" rel="noopener">Ledger website</a><span style="font-weight: 400;">, scroll down to the </span><strong>Download Ledger Live app</strong><span style="font-weight: 400;"> section and download the Linux installation package.</span>
+</li>
+<li>
+<span style="font-weight: 400;">On your Linux machine, download </span><a href="https://github.com/tristanheaven/gtkhash" target="_blank" rel="noopener">GtkHash</a><span style="font-weight: 400;"> from Github by using the following command in Terminal:</span><span style="font-weight: 400;">sudo apt-get install gtkhash</span>
+</li>
+<li>
+<span style="font-weight: 400;">When </span><strong>GtkHash</strong><span style="font-weight: 400;"> is installed, launch the app and select SHA512 in </span><strong>GtkHash preferences</strong><span style="font-weight: 400;">.</span><br><img src="https://support.ledger.com/hc/article_attachments/4413274857617" alt="SHA512.png">
+</li>
+<li>
+<span style="font-weight: 400;">Click the </span><strong>Browse </strong><span style="font-weight: 400;">icon in the </span><strong>File </strong><span style="font-weight: 400;">section to add the Ledger Live installation file.</span><br>A window with Ledger Live installation file checksum details appears.<br><img src="https://support.ledger.com/hc/article_attachments/4413266927121" alt="gtkhash.png">
+</li>
+<li>
+<span style="font-weight: 400;">Go to the</span><a href="https://www.ledger.com/ledger-live/lld-signatures" target="_blank" rel="noopener"> Ledger Live Download Signatures page</a><span style="font-weight: 400;">, ​scroll down to the Ledger Live binaries section and copy the Linux hash.</span>
+</li>
+<li>
+<span style="font-weight: 400;">To match the checksum from the website with your downloaded copy, paste the website hash value in the </span><strong>Check </strong><span style="font-weight: 400;">field and click the </span><strong>Hash </strong><span style="font-weight: 400;">button.</span><br><img src="https://support.ledger.com/hc/article_attachments/4413266954385" alt="checkmark.png"><br><br><span style="font-weight: 400;">A checkmark appears. Your Ledger Live is genuine.</span>
+</li>
+</ol>
+<div class="callout callout--warning">
+<h4 id="h_01HACHCHRQKP0P37AENADHC9TD" class="callout__title">
+<em class="fas fa-exclamation-triangle"> </em><strong>I am getting a cross instead of a checkmark!</strong>
+</h4>
+<ul>
+<li>Your copy of Ledger Live might not be genuine.</li>
+<li>Please immediately contact <a href="https://support.ledger.com/hc/en-us/articles/4423020306705-Contact-Us?support=true" target="_blank" rel="noopener">Ledger support</a>, you will be provided with a safe link to install Ledger Live to the latest version.</li>
+</ul>
+</div>
+</div>
+</div></body></html>

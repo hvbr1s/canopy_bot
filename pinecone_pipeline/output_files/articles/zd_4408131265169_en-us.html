@@ -1,0 +1,90 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/4408131265169-Set-up-and-use-Phantom-to-access-your-Ledger-Solana-SOL-account"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="4408131265169"/><meta name="title" content="Set up and use Phantom to access your Ledger Solana (SOL) account"/><meta name="classification" content="public"/></head>                            <body><h1>Set up and use Phantom to access your Ledger Solana (SOL) account</h1>
+<div class="callout callout--primary">
+<h4 class="callout__title"><strong>Temporary issue with signing messages on OpenSea</strong></h4>
+<ul>
+<li><span>Currently, there might be issues signing a message when connecting to OpenSea using the Phantom wallet in conjunction with a Ledger device. Our engineering team is aware of the situation and is actively working on a resolution. We appreciate your patience. </span></li>
+<li><span>As a temporary workaround, consider using your Ledger device connected to an alternative third-party application, like <a href="https://support.ledger.com/hc/en-us/articles/4405485585041-Connecting-your-Ledger-Solana-SOL-account-to-Solflare?docs=true" target="_blank" rel="noopener">Solflare</a>.</span></li>
+</ul>
+</div>
+<p>This tutorial describes how to set up and use the Phantom browser extension with your Ledger device to access your Ledger Solana (SOL) account(s).</p>
+<h2><span>Before you start</span></h2>
+<ul class="list-bullet">
+<li>Ensure the latest version of the <strong>Solana (SOL)</strong> app is installed on your Ledger device.</li>
+<li>Make sure to <strong>close Ledger Live</strong> as it can conflict with the Phantom extension.</li>
+<li>
+<em class="fas fa-exclamation-triangle"> </em>Phantom on Firefox <strong>doesn't support</strong> Ledger devices so <strong>we recommend</strong> <strong>using <a href="https://www.google.com/chrome/" target="_blank" rel="noopener">Chrome</a> or <a href="https://brave.com/" target="_blank" rel="noopener">Brave</a> browser</strong>. </li>
+</ul>
+<h2>Accessing your Ledger Solana account(s) via Phantom</h2>
+<ol class="list-colored">
+<li>Open your browser and install the <a href="https://phantom.app/" target="_blank" rel="noopener">Phantom extension</a>.</li>
+<li>Select <strong>Create New Wallet</strong>, <strong>copy</strong> your 12-word Phantom recovery phrase and click <strong>Ok, I saved it somewhere</strong>.<br><em class="fas fa-exclamation-triangle"> </em>Your 12-word phantom recovery phrase does <strong>not</strong> replace your 24-word Ledger recovery phrase. Make sure to keep them both secure and secret.</li>
+<li>Choose a <strong>password</strong>, <strong>confirm</strong> it, agree to the terms of service and click <strong>Save.</strong>
+</li>
+<li>Finish the onboarding then <strong>open the Phantom extension</strong> in your browser.</li>
+<li><span>Connect your Ledger device and open the <strong>Solana (SOL)</strong> app on your device.</span></li>
+<li>In the Phantom extension, go to the <strong>Settings</strong> <strong>(=)</strong> then select <strong>Add / Connect Wallet.</strong>
+</li>
+<li>Select <strong>Connect Hardware Wallet</strong> and click <strong>Continue.</strong>
+</li>
+<li>You'll be prompted to choose a chain. Pick <strong>Solana</strong> from the menu and click <strong>Continue</strong>.<strong><span><br></span></strong>Phantom will start detecting your Ledger accounts.</li>
+<li>
+<strong>Select</strong> the Ledger account(s) you wish to add to Phantom then click <strong>Continue</strong> followed by <strong>Done</strong>.</li>
+<li>
+<span>Once your accounts are successfully added, highlight your Ledger account and click the <strong>copy</strong> icon. This will copy your Ledger address.</span><br><span>Use this copied address to receive SOL, USDC, or other SPL tokens directly into your Ledger account<br><br></span><img src="https://support.ledger.com/hc/article_attachments/13148231762205">
+</li>
+</ol>
+<h2><span>Resolving Ledger Connectivity Issues with Phantom</span></h2>
+<p><span>If you encounter any issues using your Ledger Nano S, S Plus, or X with Phantom, rest assured that there are several common troubleshooting methods to help you resolve the problem. Follow these steps to ensure a smooth connection:</span></p>
+<div class="accordion accordion--default">
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>Remove the Ledger Account</strong></div>
+<div class="accordion__item-content">
+<p>If the transaction is not being broadcasted to the Nano for approval, try completely removing the Ledger account from Phantom, then go through the steps to add it back in. To do this, go to:</p>
+<ul>
+<li>Settings &gt; Manage accounts &gt; Select the Ledger wallet, then "Remove Account." Then re-add, as laid out at the beginning of the article.</li>
+</ul>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>Turn on "Blind Sign"</strong></div>
+<div class="accordion__item-content">
+<p>Go to the Solana or Ethereum App, then click right to settings, then turn on Blind Sign.</p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>Use Supported Browsers</strong></div>
+<div class="accordion__item-content">
+<p>Make sure you are using Chrome, Edge, or Brave as Ledger isn't currently supported on Firefox.</p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>Close Ledger Live</strong></div>
+<div class="accordion__item-content">
+<p>Ensure the Ledger Live app is closed on your computer while attempting to connect with Phantom.</p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>Check Cable Connection</strong></div>
+<div class="accordion__item-content">
+<p>Verify that the cable connecting your Ledger device to the computer is properly plugged in. If the cable is old or faulty, consider replacing it. </p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>Maintain Native Tokens on Ledger</strong></div>
+<div class="accordion__item-content">
+<p>Make sure you leave some native tokens on the Ledger to ensure smooth communication with Phantom.</p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>Send a Simple Transaction</strong></div>
+<div class="accordion__item-content">
+<p>Send a simple transaction from your Ledger to your Phantom Address. If it does not work, try the following:</p>
+<ul>
+<li>Restart your computer and try again.</li>
+<li>Try adding your Ledger in a brand new browser, e.g., Brave (if you are using Chrome). Install the extension from the phantom.app only.</li>
+</ul>
+</div>
+</div>
+</div>
+<h2>Still need help? </h2>
+<p>If you're experiencing issues using the Phantom wallet, please reach out to <a href="https://help.phantom.app/hc/en-us/requests/new" target="_blank" rel="noopener">Phantom wallet support</a>.</p></body></html>

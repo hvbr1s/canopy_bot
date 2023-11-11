@@ -1,0 +1,30 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/8085235615133-Tether-USDT-transaction-on-Tron-failed-and-ran-out-of-energy"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="8085235615133"/><meta name="title" content="Tether (USDT) transaction on Tron failed and ran out of energy"/><meta name="classification" content="public"/></head>                            <body><h1>Tether (USDT) transaction on Tron failed and ran out of energy</h1>
+<p>This article describes how to troubleshoot <strong>failed Tether USD (USDT) and token transactions on Tron</strong>.</p>
+<div class="callout callout--warning">
+<h4 id="h_01HEN4EAWM197ZMBXYKJVWM8PY" class="callout__title"><strong>TLDR;</strong></h4>
+<ul>
+<li>Tron's latest <a href="https://github.com/tronprotocol/tips/blob/master/tip-491.md" target="_blank" rel="noopener">governance proposal</a> has resulted in an <strong>increase in the price of energy</strong>.</li>
+<li>Tron tokens transactions in Ledger Live might <strong>fail</strong> and return an <strong>OUT_OF_ENERGY</strong> error.</li>
+<li>The fee limit was increased to 50 TRX in Ledger Live Desktop <strong>2.53.1</strong>. Make sure to <a href="https://support.ledger.com/hc/articles/4410960111889-Update-Ledger-Live-?support=true" target="_blank" rel="noopener">update Ledger Live</a> to avoid errors. </li>
+<li>Make sure you have <strong>at least 50 TRX on your available balance</strong> to pay for network fees.</li>
+<li>For Ledger Live <strong>mobile</strong> users, make sure to update to the latest version of Ledger Live mobile. <a href="https://support.ledger.com/hc/en-us/articles/360020773319-What-s-new-in-Ledger-Live-?docs=true">Learn more</a>. </li>
+</ul>
+</div>
+<h2 id="h_01HEN4EAWMGJSG5K9R10WBABBG">The issue</h2>
+<p>Your transaction <strong>fails</strong> and returns a <strong>FAILED -OUT OF ENERGY&gt;</strong> error message on <a href="https://tronscan.org/#/" target="_blank" rel="noopener">TronScan</a>.<br><br></p>
+<p><img src="https://support.ledger.com/hc/article_attachments/8085465107357" alt="mceclip0.png"></p>
+<h2 id="h_01HEN4EAWM5TJ92WDA6C7704G0">Why is this happening?</h2>
+<p>Sending tokens on Tron requires burning <strong>energy</strong>. Your energy balance shows in your <strong>Ledger Tron account</strong>.</p>
+<p><img src="https://support.ledger.com/hc/article_attachments/8085823626525" alt="mceclip1.png"></p>
+<p>Small amounts of energy are distributed daily to all activated Tron accounts but additional energy can also be acquired by <strong>freezing TRX</strong>.<br><br><img src="https://support.ledger.com/hc/article_attachments/8085891300381" alt="mceclip2.png"></p>
+<p>If your Ledger Tron account <strong>doesn't have enough energy</strong> to cover the transaction cost to move your tokens, <strong>TRX will be burned instead</strong> to generate <strong>additional energy</strong>.</p>
+<p>If not enough TRX is available in your wallet at this point, <strong>the transaction will run out of energy</strong> and <strong>fail</strong>.</p>
+<p>Recently, <a href="https://github.com/tronprotocol/tips/blob/master/tip-491.md" target="_blank" rel="noopener">a Tron governance proposal</a> <strong>increased the price of energy</strong>. This means that more TRX needs to be burned by your account in order to purchase the energy to move your tokens.</p>
+<p>Ledger Live currently limits the amount of TRX that can be burned which, in some cases, is not enough to generate enough energy and will lead the transaction to <strong>fail</strong> and return an <strong>OUT_OF_ENERGY</strong> error.</p>
+<h2 id="h_01HEN4EAWM2BATZP9X0GTV6QBJ">Troubleshooting</h2>
+<ul>
+<li>The fee limit was increased to 30 TRX in Ledger Live Desktop 2.53.1 version. Make sure to <a href="https://support.ledger.com/hc/articles/4410960111889-Update-Ledger-Live-?support=true" target="_blank" rel="noopener">update Ledger Live</a> to avoid errors. </li>
+<li>Make sure you have <strong>at least 30 TRX</strong> to pay for network fees.</li>
+<li>For Ledger Live Mobile users, there is no fix at the moment. Please use Ledger Live Desktop or <a href="https://support.ledger.com/hc/en-us/articles/8134754722973-Connect-your-Ledger-Tron-TRX-account-to-TronLink?support=true" target="_blank" rel="noopener">TronLink</a> with your Ledger device and phone to transfer your tokens.</li>
+</ul>
+<p> </p></body></html>

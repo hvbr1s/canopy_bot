@@ -1,0 +1,38 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/6275459128989-How-to-analyze-a-Bitcoin-BTC-account-xPub"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="6275459128989"/><meta name="title" content="How to analyze a Bitcoin (BTC) account xPub"/><meta name="classification" content="public"/></head>                            <body><h1>How to analyze a Bitcoin (BTC) account xPub</h1>
+<p><span>This guide provides steps to analyze a Bitcoin (BTC) extended public key (xPub) with a block explorer. It focuses solely on Bitcoin (BTC) xPubs. Analysis for xPubs from other Bitcoin-like accounts, including Dogecoin (DOGE), Litecoin (LTC), Bitcoin Cash (BCH), or Zcash (ZEC), is not currently supported. </span>You can <strong>learn more</strong> about xPubs <a href="https://www.ledger.com/academy/crypto/what-are-hierarchical-deterministic-hd-wallets" target="_blank" rel="noopener">here</a>.</p>
+<div class="callout callout--primary">
+<h4 class="callout__title">
+<em class="fa fa-info-circle"> </em><strong>Is it safe?</strong>
+</h4>
+<p>Yes, <a href="https://support.ledger.com/hc/en-us/articles/360005514233-How-to-keep-my-24-word-recovery-phrase-and-PIN-code-safe-?docs=true" target="_blank" rel="noopener">unlike sharing your 24-word recovery phrase</a>, it is <strong>safe</strong> to share your xPub (extended public key). However, anyone with access to your xPub could use it to <strong>spy </strong>on your Bitcoin accounts. As such it's best to keep your xPub as private as possible.</p>
+</div>
+<h2>Step-by-step</h2>
+<ol class="list-colored">
+<li>Open <strong>Ledger Live</strong> and select your <strong>Bitcoin (BTC) account</strong>.</li>
+<li>In the account, select the <strong>settings wrench</strong> icon.<br><br><img src="https://support.ledger.com/hc/article_attachments/6275524993309" alt="mceclip0.png" width="588" height="72"><br><br>
+</li>
+<li>Click on <strong>&gt; Advanced</strong> to reveal your <strong>xPub</strong> and <strong>copy</strong> it.<br>Make sure to <strong>only</strong> copy the characters contained <strong>inside</strong> the <strong>" ",<br></strong><em>For example:<br><span><strong>xpub</strong>6BkMTgBrwVvFZ8bDfVCKv88(...)KLCFLiNc4XbuQUaXXXJa<br></span></em><br><img src="https://support.ledger.com/hc/article_attachments/6275562513053" alt="mceclip1.png" width="588" height="333"><br><br>
+</li>
+<li>Click <a href="https://jlopp.github.io/xpub-converter/" target="_blank" rel="noopener">this link</a> to access the <strong>converter tool</strong>
+</li>
+<li>Paste your xpub in the text box.<br><br><img src="https://support.ledger.com/hc/article_attachments/10589471420573">
+</li>
+<li>Select the <strong>version</strong> you want to convert your xpub into:<br><br><img src="https://support.ledger.com/hc/article_attachments/10589486588445"><br><br>
+<div class="callout callout--primary">
+<h4 class="callout__title"><strong><em class="fa fa-info-circle"> </em>Which version should I choose?</strong></h4>
+<ul>
+<li>It depends on your account type.</li>
+<li>Ledger Live displays the<strong> account type</strong> next to the account name:<br><img src="https://support.ledger.com/hc/article_attachments/6279049207197" alt="mceclip0.png" width="552" height="71">
+</li>
+<li>If you're converting a <strong>Native Segwit xPub</strong>, select <strong>zpub </strong>spelled with a <span class="wysiwyg-underline">lowercase</span> "z".</li>
+<li>If you're converting a <strong>Segwit xPub</strong>, select <strong>ypub</strong> with a <span class="wysiwyg-underline">lowercase</span> "y".</li>
+<li>Converting a<strong> Legacy </strong>or <strong>Taproot</strong> account is <strong>not supported</strong>.</li>
+</ul>
+</div>
+<br>The tool will output a <strong>zpub...</strong> or a <strong>ypub...</strong> public key.</li>
+<li>
+<strong>Copy</strong> the zpub or ypub public key and navigate to <a href="https://blockpath.com/" target="_blank" rel="noopener">this website</a>.<br><em class="fa fa-info-circle"> </em>Alternatively, you can also use <a href="https://btc1.trezor.io/" target="_blank" rel="noopener">the Trezor Bitcoin explorer</a>.</li>
+<li>
+<strong>Paste</strong> the public key into the <strong>search box</strong> and click <strong>Explore</strong>.<br>Your account's entire <strong>transaction history</strong>, <strong>total received/sent</strong> and <strong>balance </strong>appears.</li>
+</ol>
+<p><img src="https://support.ledger.com/hc/article_attachments/6275939153821" alt="mceclip4.png" width="622" height="223"><br><br><br></p></body></html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/13397792429469-My-funds-did-not-arrive-at-the-exchange"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="13397792429469"/><meta name="title" content="My funds did not arrive at the exchange"/><meta name="classification" content="public"/></head>                            <body><h1>My funds did not arrive at the exchange</h1>
+<p>This article explains why your transfer of crypto from your Ledger account in Ledger Live may not reach the exchange. There are many scenarios why this could be happening and this article can't cover all of them but it covers the most common scenarios.</p>
+<h2 id="h_01H9QFJGAWYBEFZ5M88E471121">Most common scenarios</h2>
+<div class="accordion accordion--default">
+<div class="accordion__item">
+<div class="accordion__item-title">Forgot to include a Memo/Destination tag</div>
+<div class="accordion__item-content">
+<p>For some assets like XRP, Stellar, ATOM, HBAR, and others, exchanges require you to insert a memo/destination tag.</p>
+<p><span>A </span><strong>Memo or Destination Tag</strong><span> is an additional address property (numeric and/or string) that allows identifying the transfer recipient behind XRP/XLM/ATOM/HBAR address on a centralized exchange. <a href="https://support.ledger.com/hc/articles/4409603715217-What-is-a-Memo-Tag-?support=true" target="_blank" rel="noopener">Learn more.</a></span></p>
+<p><span>This Tag is provided by the exchanges and you need to insert it during the Send operation in Ledger Live.  </span></p>
+<p>If you already made a transaction without the Tag, your transaction would be still confirmed and the funds would reach the address of the exchange. <span>However, they <strong>won’t be able to identify and assign the transaction to your exchange’s account.</strong></span></p>
+<p><span>As transactions on the blockchain can’t be canceled, Ledger won’t be able to help you in this situation. Your only solution is to </span><strong>contact the exchange’s support</strong><span> and assist them in identifying your deposit transfer. <img src="https://support.ledger.com/hc/article_attachments/13398880947741" alt="Network choice - Page 2.png"></span></p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title">Wrong network of deposit</div>
+<div class="accordion__item-content">
+<p>Quite often, your transfer won't appear at the exchange <strong>if you selected the wrong network</strong> for the deposit of funds. This is a very <strong>crucial step</strong> since it is very easy to get confused when sending similar assets to the exchange. For example, for EVM assets like Ethereum, Arbitrum, Optimism, Polygon, and many others, the system uses the same address format for all the addresses. They all start with 0x...</p>
+<p>Thus, when sending Ethereum (ETH) to the exchange, Ledger Live won't detect the wrong address format if you send ETH to the Polygon Deposit address. </p>
+<p>The rule of thumb is to always select the network of the asset you transfer. </p>
+<p>For example: </p>
+<ul>
+<li>If your ETH is on the Ethereum network, select Ethereum/ERC20 network for deposit and select this address for transfer. </li>
+<li>If your ETH is on Optimism network, select Optimism network for deposit</li>
+</ul>
+<p>Any deviation from the correct network will result in you not seeing the assets at the exchange and you needing to contact the exchange so they can recover your assets.</p>
+<p><img src="https://support.ledger.com/hc/article_attachments/13398906888861" alt="Network choice.png"></p>
+<p><strong><em class="fa fa-lightbulb"> </em>TIP</strong>: Not sure if you selected the correct network for the deposit? Try to send the smallest amount first. You can also <a href="https://support.ledger.com/hc/articles/4423020306705-Contact-Us" target="_blank" rel="noopener noreferrer">contact Ledger Support</a> for guidance.</p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title">Transaction is still pending in Ledger Live</div>
+<div class="accordion__item-content">
+<p>Very often, due to low network fees or network congestion, transactions may get stuck while waiting for confirmation.</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.ledger.com/hc/article_attachments/13398880971805" alt="mceclip0.png" width="284" height="447"></p>
+<p class="wysiwyg-text-align-left">In that case, depending on which network it is, you have the following options: </p>
+<ul>
+<li class="wysiwyg-text-align-left">Wait for transaction confirmation, from a few minutes to several hours.</li>
+<li class="wysiwyg-text-align-left">Speed up the pending transaction with third-party wallets (<a href="https://support.ledger.com/hc/articles/9231137322525-Speed-up-or-cancel-pending-Ethereum-transaction-with-MetaMask-and-Ledger-device?docs=true" target="_blank" rel="noopener noreferrer">Ethereum</a> / <a href="https://support.ledger.com/hc/articles/6183300395037-Speeding-up-slow-Bitcoin-BTC-transactions-using-Electrum" target="_blank" rel="noopener noreferrer">Bitcoin</a>).</li>
+<li class="wysiwyg-text-align-left">Wait till the transaction drops from the mempool (up to several days).</li>
+<li class="wysiwyg-text-align-left">Try to <a href="https://support.ledger.com/hc/articles/4404381846929-Clear-cache-in-Ledger-Live" target="_blank" rel="noopener noreferrer">clear cache</a> in Ledger Live.</li>
+<li class="wysiwyg-text-align-left">Try to <a href="https://support.ledger.com/hc/articles/8865593716125-How-to-remove-an-account-from-Ledger-Live" target="_blank" rel="noopener noreferrer">remove</a> the account and re-add it back.</li>
+</ul>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title">Exchange is having maintenance or delay with deposits</div>
+<div class="accordion__item-content">
+<p>Check if the exchange is having maintenance for a particular asset at the moment. You can also contact the exchange to find out if they have some delays with the deposits at the moment.</p>
+<p>Most common exchanges: </p>
+<ul>
+<li><a href="https://www.binance.com/en/support" target="_blank" rel="noopener noreferrer">Binance Support</a></li>
+<li><a href="https://help.coinbase.com/en" target="_blank" rel="noopener noreferrer">Coinbase Support</a></li>
+<li><a href="https://support.kraken.com/hc/en-us" target="_blank" rel="noopener noreferrer">Kraken Support</a></li>
+<li><a href="https://www.kucoin.com/support" target="_blank" rel="noopener noreferrer">KuCoin Support</a></li>
+<li><a href="https://www.bybit.com/en-US/help-center/" target="_blank" rel="noopener noreferrer">ByBit Support</a></li>
+<li><a href="https://www.bitstamp.net/customer-support/" target="_blank" rel="noopener noreferrer">Bitstamp Support</a></li>
+<li><a href="https://www.okx.com/support-center.html" target="_blank" rel="noopener noreferrer">OKX Support</a></li>
+<li><a href="https://help.crypto.com/en/" target="_blank" rel="noopener noreferrer">Crypto.com Support</a></li>
+</ul>
+</div>
+</div>
+</div>
+<h2 id="h_01HEW2N514B2NW5SK5W1NX4QWT">I am having the opposite issue, my transfer from an exchange is not reflected in Ledger Live</h2>
+<p>If you’re unable to locate a token transaction or deposit <strong>from an exchange</strong> to your Ledger within your Ledger Live account, <strong>Zerion</strong> may help. Zerion, a comprehensive portfolio manager, can be found in the <strong>Discover</strong> section of Ledger Live. It's designed to detect and allow you to manage balances of unsupported ERC20 and BEP20 tokens.</p>
+<p>To use Zerion, navigate to the <strong>Discover</strong> section in Ledger Live, open the <strong>Zerion</strong> app, and head to the '<strong>Tokens</strong>' section. Remember to select the <strong>'All Networks</strong>' filter to search for your token on all different blockchains.<br><br><img src="https://support.ledger.com/hc/article_attachments/14717960030365"><br><span><br>Should your token appear, it will be marked with the icon of the network on which it was deposited.<br><br></span></p>
+<p><span class="wysiwyg-font-size-medium"><img src="https://support.ledger.com/hc/article_attachments/14717960035869"></span></p>
+<p><span>In case the network is supported by Ledger Live, you can return to the <strong>Accounts</strong> section in Ledger Live and add a corresponding account. If Ledger Live supports the token on that network, it will be displayed within your account. If it doesn’t, you can still manage your assets through Zerion while awaiting official support. </span></p>
+<p><span>To request the addition of token support, visit our <strong>Developer Portal</strong> at </span><a href="https://developers.ledger.com/docs/token/evm-chains-tokens/" target="_new">https://developers.ledger.com/docs/token/evm-chains-tokens/</a></p>
+<p><span>Upon approval of your support request, your token will be included in a subsequent Ledger Live update, so keep your application updated.</span></p>
+<h2 id="h_01H9QFVX84K52P7MAPEV0FDX85">Still can't see your funds at the exchange?</h2>
+<p>Reach out to Ledger Support with all the relevant information about the transfer (transaction ID, the asset transferred, <a href="https://support.ledger.com/hc/articles/360007174573-Export-logs" target="_blank" rel="noopener noreferrer">logs</a>).</p></body></html>

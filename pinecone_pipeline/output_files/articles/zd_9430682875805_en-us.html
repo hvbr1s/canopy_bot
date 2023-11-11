@@ -1,0 +1,77 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/9430682875805-Storing-and-managing-Bitcoin-ordinals-with-your-Ledger"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="9430682875805"/><meta name="title" content="Storing and managing Bitcoin ordinals with your Ledger"/><meta name="classification" content="public"/></head>                            <body><h1>Storing and managing Bitcoin ordinals with your Ledger</h1>
+<p> </p>
+<p>This tutorial describes how to store and manage Bitcoin <strong>ordinals</strong> in a Ledger Bitcoin (BTC) account.</p>
+<div class="callout callout--warning">
+<h4 class="callout__title">
+<em class="fas fa-exclamation-triangle"> </em><strong>Important note</strong>
+</h4>
+<ul>
+<li><span>The development of Bitcoin ordinals is still in its early stages and, therefore, it is advised that <strong>only advanced users</strong> with a solid understanding of UTXO management should store and manage ordinals using their Ledger device. Further information on UTXO management can be found at the following links: <a href="https://www.ledger.com/academy/glossary/unspent-transaction-output-utxo" target="_blank" rel="noopener">here</a> and <a href="https://river.com/learn/bitcoins-utxo-model/" target="_blank" rel="noopener">here</a>.</span></li>
+<li><span>In addition, it is important to note that transferring ordinals still carries the risk of <strong>potential loss</strong> and should only be undertaken <strong>at your own risk</strong>.</span></li>
+</ul>
+</div>
+<h2>Before you start</h2>
+<ul class="list-bullet">
+<li>Do a <strong>complete update</strong> of your Ledger setup to ensure Ledger Live and your Ledger device are running the latest apps and software. <a href="https://support.ledger.com/hc/en-us/articles/8458939792669-How-to-perform-a-complete-update-of-your-Ledger-setup?docs=true" target="_blank" rel="noopener">Learn more</a>.</li>
+</ul>
+<h2>Creating a dedicated Bitcoin account to store your ordinals</h2>
+<p><span><em class="fa fa-info-circle"> </em>Your Bitcoin ordinals should be stored in a <strong>dedicated account</strong> as they are linked to specific UTXOs. This will also prevent accidentally sending your ordinals along with regular BTC transfers.</span></p>
+<ol class="list-colored">
+<li>Open Ledger Live and click the <strong>+Add account</strong> button.<br><br><img src="https://support.ledger.com/hc/article_attachments/9431032262941" alt="mceclip0.png"><br><br>
+</li>
+<li>Select <strong>Bitcoin (BTC)</strong> and click <strong>Continue</strong>.<br><br><img src="https://support.ledger.com/hc/article_attachments/9431071145757" alt="mceclip1.png"><br><br>
+</li>
+<li>On your device, press both buttons simultaneously to <strong>Allow a secure connection</strong> <strong>with Ledger</strong>.<br><br><img src="https://support.ledger.com/hc/article_attachments/9431230186397" alt="mceclip2.png"><br><br>
+</li>
+<li>Press both buttons simultaneously to <strong>Open the Bitcoin app</strong> on your Ledger.<br><br><img src="https://support.ledger.com/hc/article_attachments/9431238156189" alt="mceclip3.png"><br><br>
+</li>
+<li>Toggle <strong>Show all address types</strong>, select a <span class="wysiwyg-underline"><strong>Taproot</strong></span> account, <strong>rename</strong> it and click <strong>Add account</strong>.<br><em class="fas fa-exclamation-triangle"> </em>Again, make sure to select a <strong><span class="wysiwyg-underline">Taproot</span></strong> account.<br><br><img src="https://support.ledger.com/hc/article_attachments/9431298108957" alt="mceclip4.png"><br><br>
+</li>
+<li>
+<strong>Open</strong> your newly created Taproot account, and click the <strong>Receive</strong> button to create a deposit address and verify it on your Ledger screen.<br><br><img src="https://support.ledger.com/hc/article_attachments/9431475844125" alt="mceclip6.png"><br><br>
+</li>
+<li>If all looks good, <strong>copy</strong> the address and <strong>approve</strong> it on your device.<br><br><img src="https://support.ledger.com/hc/article_attachments/9431501315485" alt="mceclip7.png"><br><br>
+</li>
+<li>Using the <a href="https://docs.ordinals.com/guides/inscriptions.html" target="_blank" rel="noopener">Ord wallet</a>, send your ordinal to your Ledger address. Wait for the transaction to confirm on the Bitcoin blockchain and to appear in your transaction history.<br><br><img src="https://support.ledger.com/hc/article_attachments/9431555825437" alt="mceclip8.png"><br><br><br>All done!<br>Go to <a href="https://ordinals.com/">https://ordinals.com/</a> and search for your ordinal. The <strong>address</strong> field should now display your Ledger address.<br><br><img src="https://support.ledger.com/hc/article_attachments/9466871842205" alt="mceclip0.png">
+</li>
+</ol>
+<h2>Managing your ordinals</h2>
+<p><em class="fas fa-exclamation-triangle"> </em><span>Again, it's very important to note that transferring your ordinals <strong>carries a risk of loss</strong> and it's strongly advised that <strong>only experienced users</strong> with knowledge of UTXO management should attempt it. If you're not confident in managing UTXOs, it's best to avoid transferring your ordinals.</span></p>
+<div class="accordion accordion--default">
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>Sending ordinals with Ledger Live</strong></div>
+<div class="accordion__item-content">Sending ordinals with Ledger Live is <strong>not supported for the moment</strong>. Instead, please connect your Ledger account to Sparrow Wallet to manage your ordinals.</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>Sending ordinals with Sparrow Wallet</strong></div>
+<div class="accordion__item-content">
+<div class="callout callout--warning">
+<h4 class="callout__title"><strong><em class="fas fa-exclamation-triangle"> </em>Before you continue</strong></h4>
+<p><span>It is not recommended to transfer your ordinals, and any such action is <strong>undertaken at your own risk</strong>. Prior to sending your ordinals, please visit </span><a href="https://docs.ordinals.com/guides/collecting/sparrow-wallet.html" target="_new">https://docs.ordinals.com/guides/collecting/sparrow-wallet.html</a><span> and carefully review the section titled <strong>"Sending inscriptions with Sparrow Wallet."</strong></span></p>
+</div>
+<ol class="list-colored">
+<li>Go to <a href="https://sparrowwallet.com/" target="_self">https://sparrowwallet.com/</a> and click <strong>Download</strong>.<br><br><img src="https://support.ledger.com/hc/article_attachments/9443005968157" alt="mceclip1.png"><br><br>
+</li>
+<li>Install Sparrow Wallet on your computer and open it.</li>
+<li>Click <strong>File</strong> &gt; <strong>New Wallet</strong>.<br><br><img src="https://support.ledger.com/hc/article_attachments/9442985226525" alt="mceclip2.png"><br><br>
+</li>
+<li>Name your wallet then click <strong>Create Wallet</strong>.<br><br><img src="https://support.ledger.com/hc/article_attachments/9442987028509" alt="mceclip3.png"><br><br>
+</li>
+<li>Open the <strong>Bitcoin app</strong> on your Ledger device, select a <strong>Taproot (P2TR)</strong> account then click <strong>Connected Hardware Wallet</strong>.<br><br><img src="https://support.ledger.com/hc/article_attachments/9443152200733" alt="mceclip7.png"><br><br>
+</li>
+<li>Click <strong>Scan</strong>.<br><br><img src="https://support.ledger.com/hc/article_attachments/9443054646301" alt="mceclip5.png"><br><br>
+</li>
+<li>Click <strong>Import Keystore</strong>.<br><br><img src="https://support.ledger.com/hc/article_attachments/9443081230365" alt="mceclip6.png"><br><br>
+</li>
+<li>Click <strong>Apply &gt; No Password</strong><br><br><img src="https://support.ledger.com/hc/article_attachments/9443590728861" alt="mceclip9.png"><br><br>
+</li>
+<li>Select the <strong>UTXO</strong> tab, then <strong>freeze</strong> <span class="wysiwyg-underline">all</span> your UTXOs using <strong>right click</strong> &gt; <strong>Freeze UTXO</strong>.<br><br><img src="https://support.ledger.com/hc/article_attachments/9443698726173" alt="mceclip10.png">
+</li>
+<li>To send an ordinal, <strong>unfreeze <span class="wysiwyg-underline">only</span></strong> the corresponding UTXO then go to <strong>Send</strong> to prepare the transaction.<br><br><img src="https://support.ledger.com/hc/article_attachments/9443741706653" alt="mceclip11.png"><br><br>
+</li>
+<li>Go to <a href="https://docs.ordinals.com/guides/collecting/sparrow-wallet.html" target="_blank" rel="noopener">https://docs.ordinals.com/guides/collecting/sparrow-wallet.html</a>, scroll down to the<span> section titled <strong>"Sending inscriptions with Sparrow Wallet" </strong>and follow the instructions to prepare and broadcast your transaction.</span>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div></body></html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/9330590476829-How-to-cancel-a-stuck-transaction-in-MetaMask-using-nonce"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="9330590476829"/><meta name="title" content="How to cancel a stuck transaction in MetaMask using nonce"/><meta name="classification" content="public"/></head>                            <body><h1>How to cancel a stuck transaction in MetaMask using nonce</h1>
+<p>This article describes the process of canceling a stuck transaction in MetaMask using nonce.</p>
+<p>If you've ever sent a transaction on Ethereum, you know how frustrating it can be when your transaction gets stuck. Thankfully, there is a way to cancel a transaction in MetaMask using nonce. Nonce is a unique number that identifies a transaction and prevents replay attacks on the network.</p>
+<h2 id="h_01HEPZJ9DM25GBPX9RZWR520TE">Video instructions</h2>
+<p><iframe src="//www.youtube-nocookie.com/embed/gybH9p-_ONc" width="560" height="315" frameborder="0" allowfullscreen=""></iframe></p>
+<h2 id="h_01HEPZ6GXRE7DW1G263E5X6TMJ">Before you start</h2>
+<ul class="list-bullet">
+<li>Update Ledger Live to the latest version by using <a href="https://www.ledger.com/ledger-live/download" target="_blank" rel="noopener">this link</a>.</li>
+<li>Connect your Ledger device to Ledger Live and check that it has the latest <strong>firmware</strong> version.</li>
+<li>Make sure the latest version of the <strong>Ethereum (ETH)</strong> app is installed on your Ledger device.</li>
+</ul>
+<p><span>After completing these steps, <strong>close Ledger Live</strong> as it may cause conflicts with MetaMask.</span></p>
+<div class="callout callout--primary">
+<h4 id="h_01HEPZ6GXRAQFBQXM1CSHKJ1MP" class="callout__title"><strong>Where can I find my nonce value?</strong></h4>
+<p>To cancel out a stuck transaction, you first need to find the nonce value of the transaction. You can do this by searching for the transaction hash on a blockchain explorer like <a href="https://etherscan.io/" target="_blank" rel="noopener">Etherscan</a>. Once you've found the transaction, you can see its nonce value listed in the details.</p>
+</div>
+<ol>
+<li>Connect your <strong>Ledger device to MetaMask</strong>. Unsure about how to connect? Click <a href="https://support.ledger.com/hc/articles/4404366864657-How-to-access-your-Ledger-Ethereum-ETH-account-via-Metamask?docs=true" target="_blank" rel="noopener">here</a> to learn more.  <br><br>
+</li>
+<li>Enable custom nonces by clicking on the <strong>profile icon</strong> in the top right corner of the MetaMask window, selecting <strong>Settings</strong>, clicking on <strong>Advanced</strong>, and turning on <strong>Customize transaction nonce</strong>.<br><br>
+</li>
+<li>Create a new transaction in MetaMask by clicking <strong>Send</strong>.<br><br>
+</li>
+<li>Paste <strong>your address</strong> in the <strong>To</strong> field and set the value to <strong>0 ETH</strong>.<br><br>
+</li>
+<li>Before confirming the transaction, you will see a box to input a nonce. Input the <strong>same nonce as the stuck transaction</strong>. For example, if the stuck transaction was "4," then you should input "4" as the nonce for the new transaction.<br><br>
+</li>
+<li>Set a <strong>higher gas limit</strong> for the new transaction than the one that is stuck. If the gas limit is the same or lower, the new transaction will fail immediately.<br><br>
+</li>
+<li>Set the <strong>gas fee</strong> to a <strong>high estimate</strong> to ensure that the transaction goes through quickly.<br><br>
+</li>
+<li>Confirm <strong>the transaction</strong> to send the new transaction.<br><br>
+</li>
+<li>This will replace the stuck transaction with the new one, effectively canceling the original transaction.</li>
+</ol>
+<div class="callout callout--success">
+<h4 id="h_01HEPZ6GXRHA20BBJX96A3H8XX" class="callout__title">
+<em class="fa fa-smile-o"> </em><strong> Have multiple stuck transactions?</strong>
+</h4>
+<p>If you have multiple stuck transactions, it's important to cancel them out in the correct order. This means canceling the transaction with the lowest nonce value first, then moving on to higher nonce values. This is because the Ethereum network processes transactions in order of their nonce values, so if a lower nonce transaction is stuck, it can block subsequent transactions with higher nonce values.</p>
+</div>
+<p><span>Canceling a stuck transaction in MetaMask using nonce is a simple process that can save you a lot of time and frustration. Just make sure to enable custom nonces, create a new transaction with the same nonce, <strong>set a high gas limit</strong>, and confirm the transaction. With these steps, you can easily cancel any stuck transaction on the Ethereum network.</span></p>
+<div class="callout callout--success">
+<h4 id="h_01HEPZ6GXR11252AANFBJ2A2KT" class="callout__title">
+<em class="fa fa-smile-o"> </em><strong> Still having issues canceling a stuck transaction?</strong>
+</h4>
+<p><span>If you've attempted all the above steps and are still encountering issues, consider <a href="https://docs.llama.fi/chainlist/how-to-change-ethereums-rpc" target="_blank" rel="noopener">changing the RPC value</a> to the <a href="https://chainlist.org/" target="_blank" rel="noopener">Chainlist RPC</a>: </span><a href="https://api.securerpc.com/v1" target="_new">https://api.securerpc.com/v1</a><span> and resending the transaction. Learn more about <a href="https://support.ledger.com/hc/articles/9360567408029-Use-Chainlist-to-connect-MetaMask-to-any-EVM-network?docs=true" target="_blank" rel="noopener">connecting to Chainlist here</a>. </span></p>
+</div></body></html>

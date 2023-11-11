@@ -1,0 +1,870 @@
+<html>
+ <head>
+  <meta content="https://www.ledger.com/blog/part-4-genesis-of-ledger-recover-controlling-access-to-the-backup-identity-verification" name="source"/>
+  <meta content="academy" name="source-type"/>
+  <meta content="en" name="locale"/>
+  <meta content="N/A" name="zd-article-id"/>
+  <meta content="part 4 genesis of ledger recover controlling access to the backup identity verification" name="title"/>
+  <meta content="public" name="classification"/>
+ </head>
+ <body>
+  <article class="margin-lg" id="article-281485">
+   <header class="header margin-sm">
+    <div class="content">
+     <div class="margin-sm is-hidden-tablet is-hidden-desktop blog-category-breadcrumb">
+      <a href="https://www.ledger.com/company-updates" title="">
+       Blog
+      </a>
+      <i class="icon-chevron-right">
+      </i>
+      <a href="https://www.ledger.com/category/blog-posts" title="Blog posts">
+       Blog posts
+      </a>
+     </div>
+     <p class="datetime caption margin-xs">
+      <a class="is-primary" href="https://www.ledger.com/category/blog-posts" title="Blog posts">
+       Blog posts
+      </a>
+      ,
+      <a class="is-primary" href="https://www.ledger.com/category/tech" title="Tech">
+       Tech
+      </a>
+      |           09/07/2023
+     </p>
+     <h1 class="h2 title margin-s">
+      Part 4: Genesis of Ledger Recover – Controlling Access to the Backup: Identity Verification
+     </h1>
+     <p class="font-size-l margin-s">
+      How can Ledger Recover protect the entropy of a Secret Recovery Phrase without just introducing yet another additional mechanism secret-based such as a password, a two-factor authentication or similar? In this section, we will delve into Identity Verification mechanisms which provide access to your backup by yourself and only you.
+     </p>
+    </div>
+    <div class="illustration" style="background-image: url('https://www.ledger.com/wp-content/uploads/2023/09/LEDGER_RECOVER_STILLFRAME_COFFRE.jpg');">
+    </div>
+   </header>
+   <div class="row no-margin-mobile margin-md is-hidden-mobile">
+    <div class="row blog-category-breadcrumb">
+     <a href="https://www.ledger.com/company-updates" title="">
+      Blog
+     </a>
+     <i class="icon-chevron-right">
+     </i>
+     <a href="https://www.ledger.com/category/blog-posts" title="Blog posts">
+      Blog posts
+     </a>
+    </div>
+   </div>
+   <div class="row margin-lg plain-text">
+    <p>
+     Part 5 of our Genesis of Ledger Recover blog series
+     <a href="https://www.ledger.com/blog/part-5-genesis-of-ledger-recover-operational-security">
+      is available here.
+     </a>
+    </p>
+    <p>
+     Welcome back to the fourth part of our blog series on
+     <a href="https://www.ledger.com/recover" rel="noreferrer noopener" target="_blank">
+      Ledger Recover
+     </a>
+     genesis. Our goal is to explore the many technical hurdles encountered when building a seed recovery service, and how Ledger Recover, provided by Coincover, solves them with a secure design and infrastructure.
+    </p>
+    <p>
+     In the previous parts, we explained how the entropy of a Secret Recovery Phrase can be
+     <a href="https://www.ledger.com/blog/part-1-genesis-of-ledger-recover-self-custody-without-compromise" rel="noreferrer noopener" target="_blank">
+      split in multiple shares (or fragments)
+     </a>
+     , then
+     <a href="https://www.ledger.com/blog/part-2-genesis-of-ledger-recover-securely-distributing-the-shares" rel="noreferrer noopener" target="_blank">
+      sent to trusted Backup Providers
+     </a>
+     , and finally
+     <a href="https://www.ledger.com/blog/part-3-genesis-of-ledger-recover-avoiding-collusion-and-leaks" rel="noreferrer noopener" target="_blank">
+      stored safely
+     </a>
+     while always maintaining the highest level of security.
+    </p>
+    <p>
+     In more details,
+     <a href="https://www.ledger.com/blog/part-1-genesis-of-ledger-recover-self-custody-without-compromise">
+      Genesis of Ledger Recover Part 1 – “Self-custody without compromise,”
+     </a>
+     delves into how we carefully considered all potential challenges when building Ledger Recover, provided by Coincover, to make this feature a great and secure solution to back up your Secret Recovery Phrase.
+    </p>
+    <p>
+     <a href="https://www.ledger.com/blog/part-2-genesis-of-ledger-recover-securely-distributing-the-shares">
+      Genesis of Ledger Recover Part 2 – “Securely distributing the shares,”
+     </a>
+     introduces several cryptographic tools and mathematical concepts that Ledger Recover leverages to securely distribute your seed shares to backup providers.
+    </p>
+    <p>
+     <a href="https://www.ledger.com/blog/part-3-genesis-of-ledger-recover-avoiding-collusion-and-leaks">
+      Genesis of Ledger Recover Part 3 – “Avoiding collusions and leaks,”
+     </a>
+     tackles how we ensure that the shares are stored safely, and how we prevent backup providers from colluding to reconstruct your Secret Recovery Phrase.
+    </p>
+    <p>
+     The next question you may have now is:
+     <strong>
+     </strong>
+     how can Ledger Recover protect the entropy of a Secret Recovery Phrase without just introducing yet another additional mechanism secret-based such as a password, a two-factor authentication or similar? Especially in a situation where you might have lost access to all means of digital authentication (like your email, various hardware wallets and authenticators, etc…).
+    </p>
+    <p>
+     The key to granting Ledger Recover users complete control over unlocking their secrets lies in
+     <strong>
+      leveraging their identity
+     </strong>
+     , which is the core essence of ownership.
+    </p>
+    <p>
+     In this section, we will delve into
+     <strong>
+      Identity Verification
+     </strong>
+     mechanisms which provide access to your backup by yourself and
+     <strong>
+      only you
+     </strong>
+     . Let’s start with some definitions.
+     <strong>
+     </strong>
+    </p>
+    <h5 class="wp-block-heading">
+     A primer on Identity Verification
+    </h5>
+    <p>
+     <strong>
+      Identity Verification
+     </strong>
+     is the process of confirming the accuracy and legitimacy of an individual’s claimed identity. It involves verifying personal information from trusted sources, namely official documents. The goal is to prevent fraudulent activities or unauthorized access to sensitive information by validating the accuracy of an individual’s claimed identity.
+    </p>
+    <div class="wp-block-image">
+     <figure class="aligncenter size-full is-resized">
+      <img alt="" class="wp-image-281494" decoding="async" height="663" loading="lazy" sizes="(max-width: 674px) 100vw, 674px" src="https://www.ledger.com/wp-content/uploads/2023/09/biometric-verification.png" srcset="https://www.ledger.com/wp-content/uploads/2023/09/biometric-verification.png 674w, https://www.ledger.com/wp-content/uploads/2023/09/biometric-verification-300x295.png 300w, https://www.ledger.com/wp-content/uploads/2023/09/biometric-verification-280x275.png 280w" style="width:390px;height:383px" width="674"/>
+     </figure>
+    </div>
+    <p>
+     Note that from now on, we will use the
+     <strong>
+      IDV
+     </strong>
+     acronym for
+     <strong>
+      Identity Verification.
+     </strong>
+    </p>
+    <blockquote class="wp-block-quote">
+     <p>
+     </p>
+     <cite>
+      <strong>
+       <em>
+        Wait ! What If someone stole my identity documents ? Would this person be able to pass the Identity Verification process ?
+       </em>
+      </strong>
+     </cite>
+    </blockquote>
+    <p>
+     Ledger Recover is resilient to such scenarios as it does compare several sources of information over the process including:
+    </p>
+    <ul>
+     <li>
+      <strong>
+       Identity certified information:
+      </strong>
+      the data extracted from the official document using OCR
+      <sup class="fn" data-fn="4ea77215-469c-4858-85f1-031fd2bf6bfe">
+       <a href="#4ea77215-469c-4858-85f1-031fd2bf6bfe" id="4ea77215-469c-4858-85f1-031fd2bf6bfe-link">
+        1
+       </a>
+      </sup>
+      technologies
+     </li>
+     <li>
+      <strong>
+       Biometrics data
+      </strong>
+      <sup class="fn" data-fn="b628f000-93b0-4e53-a7b1-393b43bd7699">
+       <a href="#b628f000-93b0-4e53-a7b1-393b43bd7699" id="b628f000-93b0-4e53-a7b1-393b43bd7699-link">
+        2
+       </a>
+      </sup>
+      : live data extracted from a human and matched against the official documents records, in Ledger Recover case, your face
+     </li>
+     <li>
+      <strong>
+       Liveness check
+      </strong>
+      : checks to make sure a real human is behind the biometrics data and not spoofed
+     </li>
+     <li>
+      <strong>
+       Live interviews
+      </strong>
+      from different
+      <strong>
+       IDV
+      </strong>
+      service providers.
+     </li>
+    </ul>
+    <p>
+     Going through the
+     <strong>
+      IDV
+     </strong>
+     process will require you to film a small video and follow instructions in order to allow the system to capture sufficient information to confirm that you are effectively the holder of the identity documents provided.
+    </p>
+    <h5 class="wp-block-heading">
+     Master your Secret : Ledger Recover empowers you as Ultimate Key
+    </h5>
+    <div class="wp-block-image">
+     <figure class="aligncenter size-full is-resized">
+      <img alt="" class="wp-image-281506" decoding="async" height="512" loading="lazy" sizes="(max-width: 512px) 100vw, 512px" src="https://www.ledger.com/wp-content/uploads/2023/09/ultimate-key-sm.png" srcset="https://www.ledger.com/wp-content/uploads/2023/09/ultimate-key-sm.png 512w, https://www.ledger.com/wp-content/uploads/2023/09/ultimate-key-sm-300x300.png 300w, https://www.ledger.com/wp-content/uploads/2023/09/ultimate-key-sm-150x150.png 150w, https://www.ledger.com/wp-content/uploads/2023/09/ultimate-key-sm-275x275.png 275w, https://www.ledger.com/wp-content/uploads/2023/09/ultimate-key-sm-104x104.png 104w" style="width:394px;height:394px" width="512"/>
+     </figure>
+    </div>
+    <p>
+     At Ledger, we promote self-custody and individual autonomy, which is why Identity Verification (
+     <strong>
+      IDV
+     </strong>
+     ) is a crucial component of Ledger Recover.
+    </p>
+    <p>
+     By utilizing
+     <strong>
+      IDV
+     </strong>
+     , Ledger Recover, provided by Coincover, ensures that you, as the account owner, have complete control over the recovery process, as opposed to relying on social recovery methods that require the involvement of others or multiple parties.
+    </p>
+    <p>
+     One of the key advantages of
+     <strong>
+      IDV
+     </strong>
+     is that it leverages your government-issued identification document, which is typically securely within your possession and readily accessible. This means that you can confidently authenticate your identity without having to rely on external entities or complicated procedures. It is also one of the only forms of authentication that can be restored after catastrophic events like losing everything (papers, digital accesses, etc…).
+    </p>
+    <p>
+     By integrating
+     <strong>
+      IDV
+     </strong>
+     into Ledger Recover self-custody framework, it empowers you to maintain full control over your assets and personal information. Its streamlined and secure verification process prioritizes your convenience, allowing you to confidently recover your account while adhering to the principles of self-custody and individual autonomy.
+    </p>
+    <div style="border-radius:10px; border: 2px solid #D4A0FF; padding:30px; margin-bottom:20px;">
+     <b>
+      IDV isn’t a regular KYC…
+     </b>
+     <br/>
+     The ID verification process differs from a full Know Your Customer (KYC) process, as we prioritize minimizing any unnecessary disclosure of personal information. We understand the importance of safeguarding your privacy, which is why our verification method only reveals the essential details needed for identity confirmation, ensuring that your sensitive data remains protected.
+    </div>
+    <h6 class="wp-block-heading">
+     How does Ledger Recover use IDV service providers?
+    </h6>
+    <p>
+     During the backup process, Ledger Recover captures your ID data through the
+     <strong>
+      IDV
+     </strong>
+     service provider identification process, has the user confirm it on his device and associates it to the shares of the entropy of your Secret Recovery Phrase. Then the only way to restore your private keys is to unlock your shares by proving your identity to two of the three backup providers through two independent
+     <strong>
+      IDV
+     </strong>
+     service providers.
+    </p>
+    <p>
+     Ledger Recover prioritizes the security and accuracy of
+     <strong>
+      IDV
+     </strong>
+     , which is why it employs independent
+     <strong>
+      IDV
+     </strong>
+     service providers, namely Coincover and Tessi, that are leveraging the Digital IDV technology from Onfido and Veridas respectively.
+    </p>
+    <p>
+     Ledger Recover
+     <strong>
+      IDV
+     </strong>
+     service providers are renowned for their expertise and cutting-edge solutions in the
+     <strong>
+      IDV
+     </strong>
+     industry, making them ideal choices for a rigorous verification process. Onfido and Veridas both rely on technologies that passed
+     <em>
+      Presentation Attack
+     </em>
+     <sup class="fn" data-fn="02211833-a2a5-442e-adef-ba7fcf4381c7">
+      <a href="#02211833-a2a5-442e-adef-ba7fcf4381c7" id="02211833-a2a5-442e-adef-ba7fcf4381c7-link">
+       3
+      </a>
+     </sup>
+     <em>
+      Detection
+     </em>
+     (PAD) level 2 test conducted by iBeta Quality Assurance.
+    </p>
+    <p>
+     <strong>
+      By utilizing multiple IDV service providers, Ledger Recover ensures a robust and thorough verification process model, as each provider brings a unique perspective and set of algorithms to the table.
+     </strong>
+    </p>
+    <p>
+     Multiple
+     <strong>
+      IDV
+     </strong>
+     s is the core mechanism with which Ledger Recover ensures a Restore request is coming from a legitimate user. But implementing this correctly introduces many questions and additional security considerations:
+    </p>
+    <div class="wp-block-image">
+     <figure class="aligncenter size-full is-resized">
+      <img alt="" class="wp-image-281517" decoding="async" height="227" loading="lazy" sizes="(max-width: 892px) 100vw, 892px" src="https://www.ledger.com/wp-content/uploads/2023/09/questionmark.png" srcset="https://www.ledger.com/wp-content/uploads/2023/09/questionmark.png 892w, https://www.ledger.com/wp-content/uploads/2023/09/questionmark-300x76.png 300w, https://www.ledger.com/wp-content/uploads/2023/09/questionmark-768x195.png 768w, https://www.ledger.com/wp-content/uploads/2023/09/questionmark-490x125.png 490w" style="width:474px;height:121px" width="892"/>
+     </figure>
+    </div>
+    <blockquote class="wp-block-quote">
+     <p>
+     </p>
+     <cite>
+      <strong>
+       <em>
+        But what if the two IDV service providers do not reach a consensus ?
+       </em>
+       <br/>
+       <em>
+        Is this process time resilient ?
+       </em>
+       <br/>
+       <em>
+        What if I change appearance between Backup and Restore ?
+       </em>
+       <br/>
+       <em>
+        How do I make sure I’m performing an IDV for the right device and seed?
+       </em>
+      </strong>
+     </cite>
+    </blockquote>
+    <p>
+     Concretely how does all of this work within Ledger Recover ? Let’s look at some of the implementation details answering those questions.
+    </p>
+    <h5 class="wp-block-heading">
+     Intrication of Identity Verification within Ledger Recover
+    </h5>
+    <p>
+     As introduced in part 1 to 3 of this blog post series, Ledger Recover has strong cryptographic mechanisms to split, distribute, store, collect and re-assemble the shares of a seed on your device. Using
+     <strong>
+      IDV
+     </strong>
+     to authorize restoring a seed introduces two broad categories of challenges:
+    </p>
+    <ul>
+     <li>
+      Verify with certainty that you are the legitimate owner of the secret when the recovery comes
+     </li>
+     <li>
+      Establishing a strong binding between your identity and your shares, throughout the lifecycle of the shares
+     </li>
+    </ul>
+    <h6 class="wp-block-heading">
+     Binding Identity, Shares and Devices
+    </h6>
+    <p>
+     The main purpose of binding Identity and Shares is to ensure that shares are only released when a real human has proven his identity, ownership of the share, and has confirmed his consent on a trusted device. The goal is also to avoid an attacker (external or insiders) being able to intercept or modify any steps of the backup or restore processes, and re-route to their own devices.
+    </p>
+    <p>
+     To ensure this binding, Ledger Recover introduces a few mechanisms binding closely the identity being verified, to the shares and the device in use.
+    </p>
+    <h6 class="wp-block-heading">
+     Confirmation Data at the very beginning of Backup and Recovery Process
+    </h6>
+    <p>
+     Let us take a moment to explain why your identity data is stored and how it is leveraged to ensure you are always in control of what’s happening over the process.
+    </p>
+    <p>
+     During the backup process, after
+     <strong>
+      having explicitly allowed the usage of the Ledger Recover service
+     </strong>
+     <strong>
+      on your hardware device
+     </strong>
+     and passed the
+     <strong>
+      IDV
+     </strong>
+     steps, you are asked to confirm within your trusted display that the correct information has been effectively extracted from your official document thanks to OCR.
+    </p>
+    <div class="wp-block-image">
+     <figure class="aligncenter size-large is-resized">
+      <img alt="" class="wp-image-281528" decoding="async" height="354" loading="lazy" sizes="(max-width: 1024px) 100vw, 1024px" src="https://www.ledger.com/wp-content/uploads/2023/09/nano-1024x354.png" srcset="https://www.ledger.com/wp-content/uploads/2023/09/nano-1024x354.png 1024w, https://www.ledger.com/wp-content/uploads/2023/09/nano-300x104.png 300w, https://www.ledger.com/wp-content/uploads/2023/09/nano-768x266.png 768w, https://www.ledger.com/wp-content/uploads/2023/09/nano-490x170.png 490w, https://www.ledger.com/wp-content/uploads/2023/09/nano.png 1199w" style="width:760px;height:263px" width="1024"/>
+     </figure>
+    </div>
+    <p>
+     If those are correct to you, you can confirm the backup process/restore and allow the backup/restore of your Seed encrypted shares.
+    </p>
+    <p>
+     This confirmation on device allows some key security features for Ledger Recover:
+    </p>
+    <ul>
+     <li>
+      It captures your explicit consent on backing / restoring a share
+     </li>
+     <li>
+      It allows you to validate on a trusted hardware device the correct linking of your shares with your identity.
+     </li>
+     <li>
+      It allows the system to bind your device with the current backup / restore sessions, so that no other device can be used instead.
+     </li>
+    </ul>
+    <p>
+     After this step each share is sent through a secure channel to each Backup Provider, and bound strongly with the identity data that has been confirmed.
+    </p>
+    <p>
+     This is a direct application of common Ledger principles of clear signing all interactions and enabling “Don’t trust, Verify”.
+    </p>
+    <h6 class="wp-block-heading">
+     Binding shares and IDV
+    </h6>
+    <p>
+     As mentioned
+     <a href="https://www.ledger.com/blog/part-3-genesis-of-ledger-recover-avoiding-collusion-and-leaks" rel="noreferrer noopener" target="_blank">
+      in part 3
+     </a>
+     , each share is encrypted at rest by the Backup Provider using the identity, directly inside the HSM. This is done during the backup phase of the SRP.
+    </p>
+    <p>
+     To secure the restore phase and trust the identity used for releasing the share, all communications with
+     <strong>
+      IDV
+     </strong>
+     service providers are secured (encrypted and authenticated) and
+     <strong>
+      all messages received from IDV service providers are signed
+     </strong>
+     . This signature is controlled directly inside the HSM of each Backup Provider, before decrypting internally the share.
+    </p>
+    <h6 class="wp-block-heading">
+     One Time Security Code
+    </h6>
+    <p>
+     The last part to protect is the
+     <strong>
+      IDV
+     </strong>
+     process itself. An attacker with control over your display and that somehow steals your credentials could try and make you pass an
+     <strong>
+      IDV
+     </strong>
+     to restore your seed on their device.
+    </p>
+    <p>
+     Ledger Recover Restore process has therefore been made to be robust against Man-in-the-Middle attack scenarios, by creating a strong binding between the hardware device that initiates the recovery and the
+     <strong>
+      IDV
+     </strong>
+     process itself, using a One Time Security Code.
+    </p>
+    <p>
+     More precisely, the One Time Security Code is a code derived from a shared secret between the Ledger Backup Provider HSM and your hardware device. The One Time Security Code is generated both on both the HSM side and on your hardware device, therefore this code can’t be intercepted as it never transits. This code is unique, it can only be used one time, it is tied to your session and your device, and it will change for every recovery attempt.
+    </p>
+    <div class="wp-block-image">
+     <figure class="aligncenter size-large is-resized">
+      <img alt="" class="wp-image-281539" decoding="async" height="127" loading="lazy" sizes="(max-width: 1024px) 100vw, 1024px" src="https://www.ledger.com/wp-content/uploads/2023/09/nano-2-1024x127.png" srcset="https://www.ledger.com/wp-content/uploads/2023/09/nano-2-1024x127.png 1024w, https://www.ledger.com/wp-content/uploads/2023/09/nano-2-300x37.png 300w, https://www.ledger.com/wp-content/uploads/2023/09/nano-2-768x96.png 768w, https://www.ledger.com/wp-content/uploads/2023/09/nano-2-490x61.png 490w, https://www.ledger.com/wp-content/uploads/2023/09/nano-2.png 1189w" style="width:758px;height:94px" width="1024"/>
+     </figure>
+    </div>
+    <p>
+     Once this code is generated it will be shown only once on your device:
+     <strong>
+      write it down cautiously
+     </strong>
+     ; it will be needed early in the identification process but never shown again. This code will be asked during a liveness check and verified. Any failure here will abort the recovery attempt.
+    </p>
+    <div style="border-radius:10px; border: 2px solid #D4A0FF; padding:30px; margin-bottom:20px;">
+     <b>
+      Ledger Recover golden security rule
+     </b>
+     <br/>
+     All backup and restore sessions should start with connecting your device and generating a one time security code. Never perform an IDV for Ledger Recover if you have not generated this one time security code on your device before!
+    </div>
+    <h5 class="wp-block-heading">
+     Identity Verification
+    </h5>
+    <p>
+     Ledger Recover relies on multiple independent sources to obtain a comprehensive and reliable evaluation of your identity and reliable evaluation of your identity and ensures an extremely high level of certainty on the user’s identity interacting with the system. Let’s look at the details of the
+     <strong>
+      IDV
+     </strong>
+     itself.
+    </p>
+    <h6 class="wp-block-heading">
+     Backup Process
+    </h6>
+    <p>
+     The
+     <strong>
+      IDV
+     </strong>
+     process during backup is made to be straightforward. The goal here is to ensure the real identity is associated with the right shares. The condition to open a backup session is to provide consistent data through the process: Selfie is consistent with your Identity document photo, and Your Identity Document is readable enough to extract information such as place of birth, date of birth, first name, last name and selfie photo.
+    </p>
+    <div class="wp-block-image">
+     <figure class="aligncenter size-large">
+      <img alt="" class="wp-image-281550" decoding="async" height="605" loading="lazy" sizes="(max-width: 1024px) 100vw, 1024px" src="https://www.ledger.com/wp-content/uploads/2023/09/IDV-Flow-1024x605.png" srcset="https://www.ledger.com/wp-content/uploads/2023/09/IDV-Flow-1024x605.png 1024w, https://www.ledger.com/wp-content/uploads/2023/09/IDV-Flow-300x177.png 300w, https://www.ledger.com/wp-content/uploads/2023/09/IDV-Flow-768x454.png 768w, https://www.ledger.com/wp-content/uploads/2023/09/IDV-Flow-1536x908.png 1536w, https://www.ledger.com/wp-content/uploads/2023/09/IDV-Flow-2048x1210.png 2048w, https://www.ledger.com/wp-content/uploads/2023/09/IDV-Flow-465x275.png 465w" width="1024"/>
+     </figure>
+    </div>
+    <p>
+     Once your Identity has been proven to be consistent and processable, this data is then encrypted and stored securely for later comparison (during the recovery process basically) and the backup for your Secret Recovery Phrase is effectively created.
+    </p>
+    <h6 class="wp-block-heading">
+     Recovery Process
+    </h6>
+    <p>
+     The recovery process is much more complex as it does not only check the consistency of your identity but whether or not you are the legitimate owner of the shares.
+    </p>
+    <p>
+     First, as a central concept and mentioned in
+     <a href="https://www.ledger.com/blog/part-3-genesis-of-ledger-recover-avoiding-collusion-and-leaks" rel="noreferrer noopener" target="_blank">
+      part 3 of this series
+     </a>
+     our protocol relies on isolation of share release decisions. This implies that each Backup Provider has its dedicated
+     <strong>
+      IDV
+     </strong>
+     service to accept or deny a release request based on its own
+     <strong>
+      IDV
+     </strong>
+     process result.
+    </p>
+    <p>
+     To recover your backup you’ll have to pass several tests including two
+     <strong>
+      IDV
+     </strong>
+     s. Each
+     <strong>
+      IDV
+     </strong>
+     is bound to a share of your entropy, which is independently released if identification is successful.
+    </p>
+    <h6 class="wp-block-heading">
+     Identity Verification process with Coincover Backup provider
+    </h6>
+    <p>
+     One share of your Secret Recovery Phrase’s entropy is trusted to Coincover as a Backup Provider. Coincover also provides part of the Identification Service in collaboration with Onfido. During this step you will have to provide a photo of your ID document and record a video with various instructions.
+    </p>
+    <p>
+     Then the process goes through 3 distinct validations :
+    </p>
+    <ul>
+     <li>
+      <strong>
+       Biometric test
+      </strong>
+      : Comparison of selfie provided during the backup and video. This check is automatically validated.
+     </li>
+     <li>
+      <strong>
+       ID Information Consistency Check
+      </strong>
+      : Comparison of extracted information from the ID Document with the one provided during backup.
+     </li>
+     <li>
+      <strong>
+       ID Document and Video Consistency Check
+      </strong>
+      : Check the authenticity of the video and consistency with the ID document photo and selfie extracted from the video.
+     </li>
+    </ul>
+    <p>
+     Those three steps go through automatic validation and if necessary, in case the processing output is below a satisfying threshold, it goes through manual verification.
+    </p>
+    <div class="wp-block-image">
+     <figure class="aligncenter size-large is-resized">
+      <img alt="" class="wp-image-281561" decoding="async" height="1024" loading="lazy" sizes="(max-width: 948px) 100vw, 948px" src="https://www.ledger.com/wp-content/uploads/2023/09/IDV-Flow-2-948x1024.png" srcset="https://www.ledger.com/wp-content/uploads/2023/09/IDV-Flow-2-948x1024.png 948w, https://www.ledger.com/wp-content/uploads/2023/09/IDV-Flow-2-278x300.png 278w, https://www.ledger.com/wp-content/uploads/2023/09/IDV-Flow-2-768x830.png 768w, https://www.ledger.com/wp-content/uploads/2023/09/IDV-Flow-2-1421x1536.png 1421w, https://www.ledger.com/wp-content/uploads/2023/09/IDV-Flow-2-1895x2048.png 1895w, https://www.ledger.com/wp-content/uploads/2023/09/IDV-Flow-2-254x275.png 254w" style="width:556px;height:600px" width="948"/>
+      <figcaption class="wp-element-caption">
+       <em>
+        Coincover IDV Logic
+       </em>
+      </figcaption>
+     </figure>
+    </div>
+    <p>
+     If and only if all these verifications are conclusive, the secured share is finally released for this Backup Provider.
+    </p>
+    <h6 class="wp-block-heading">
+     Identity Verification process with Ledger as Backup provider
+    </h6>
+    <p>
+     Ledger as a Backup Provider relies on Tessi services to validate your identity when you request a restore of your entropy. On that second backup provider the
+     <strong>
+      IDV
+     </strong>
+     differs on some key aspects that need to be mentioned :
+    </p>
+    <ul>
+     <li>
+      Each identification involves
+      <strong>
+       two manual verifications
+      </strong>
+      run by trained agents. Those trained agents will make sure your request is authentic and legitimate.
+     </li>
+     <li>
+      It introduces a strong mechanism to bind your device with your session, the
+      <strong>
+       One Time Security Code
+      </strong>
+      described in the previous section. Therefore it ensures that you are effectively running an
+      <strong>
+       IDV
+      </strong>
+      process specifically created for your device only.
+     </li>
+    </ul>
+    <h6 class="wp-block-heading">
+     Manual Identification Verification
+    </h6>
+    <p>
+     As mentioned, a notable aspect of this process is that it involves human-made verification of the provided data. Similar to the tests mentioned earlier for the Coincover backup provider, this verification is carried out separately by two distinct and unconnected agents.
+    </p>
+    <div class="wp-block-image">
+     <figure class="aligncenter size-large is-resized">
+      <img alt="" class="wp-image-281572" decoding="async" height="1024" loading="lazy" sizes="(max-width: 687px) 100vw, 687px" src="https://www.ledger.com/wp-content/uploads/2023/09/IDV-Flow-3-687x1024.png" srcset="https://www.ledger.com/wp-content/uploads/2023/09/IDV-Flow-3-687x1024.png 687w, https://www.ledger.com/wp-content/uploads/2023/09/IDV-Flow-3-201x300.png 201w, https://www.ledger.com/wp-content/uploads/2023/09/IDV-Flow-3-768x1145.png 768w, https://www.ledger.com/wp-content/uploads/2023/09/IDV-Flow-3-1030x1536.png 1030w, https://www.ledger.com/wp-content/uploads/2023/09/IDV-Flow-3-1373x2048.png 1373w, https://www.ledger.com/wp-content/uploads/2023/09/IDV-Flow-3-184x275.png 184w" style="width:471px;height:702px" width="687"/>
+      <figcaption class="wp-element-caption">
+       <em>
+        Tessi IDV Logic
+       </em>
+      </figcaption>
+     </figure>
+    </div>
+    <p>
+     If -and only if- all these verifications are conclusive, the secured share is finally released for this Backup Provider.
+    </p>
+    <h6 class="wp-block-heading">
+     Consolidation of Decisions
+    </h6>
+    <p>
+     Once you’ve run the two proposed
+     <strong>
+      IDV
+     </strong>
+     s, the system consolidates the outputs of the verification processes. Several scenarios are possible here :
+    </p>
+    <div class="wp-block-image">
+     <figure class="aligncenter size-large is-resized">
+      <img alt="" class="wp-image-281583" decoding="async" height="1024" loading="lazy" sizes="(max-width: 617px) 100vw, 617px" src="https://www.ledger.com/wp-content/uploads/2023/09/IDV-Flow-4-617x1024.png" srcset="https://www.ledger.com/wp-content/uploads/2023/09/IDV-Flow-4-617x1024.png 617w, https://www.ledger.com/wp-content/uploads/2023/09/IDV-Flow-4-181x300.png 181w, https://www.ledger.com/wp-content/uploads/2023/09/IDV-Flow-4-768x1275.png 768w, https://www.ledger.com/wp-content/uploads/2023/09/IDV-Flow-4-925x1536.png 925w, https://www.ledger.com/wp-content/uploads/2023/09/IDV-Flow-4-1234x2048.png 1234w, https://www.ledger.com/wp-content/uploads/2023/09/IDV-Flow-4-166x275.png 166w, https://www.ledger.com/wp-content/uploads/2023/09/IDV-Flow-4.png 1891w" style="width:415px;height:689px" width="617"/>
+     </figure>
+    </div>
+    <ol>
+     <li>
+      You successfully passed the two verification processes: the recovery is accepted and the two shares are sent through a secure channel to your device.
+     </li>
+     <li>
+      You got a mixed or full rejection from the two
+      <strong>
+       IDV
+      </strong>
+      s and you decided to not ask for a manual investigation: your recovery is aborted.
+     </li>
+     <li>
+      You got a mixed or full rejection from the two
+      <strong>
+       IDV
+      </strong>
+      s and you decided to fill a claim to continue the recovery process: a Manual Investigation process starts (details below).
+     </li>
+    </ol>
+    <h6 class="wp-block-heading">
+     Manual Investigation Process
+    </h6>
+    <p>
+     Manual Investigation process takes place whenever you are not able to successfully pass the
+     <strong>
+      IDV
+     </strong>
+     tests and you request a deeper assessment  of your request. At this stage there is a reinforced verification workflow that will allow you to securely access your secret.
+    </p>
+    <p>
+     The manual investigation process is performed by Coincover. Its main objective is to precisely identify the reason why the
+     <strong>
+      IDV
+     </strong>
+     process has failed and collect any additional relevant and legitimate element that can rectify the initial issue.
+    </p>
+    <p>
+     This is achieved by performing a third
+     <strong>
+      IDV
+     </strong>
+     using another independent service provider IDNow which is followed by a video chat with an identification specialist trained to determine if the
+     <strong>
+      IDV
+     </strong>
+     is performed under any constraint.
+    </p>
+    <div class="wp-block-image">
+     <figure class="aligncenter size-full is-resized">
+      <img alt="" class="wp-image-281594" decoding="async" height="674" loading="lazy" sizes="(max-width: 677px) 100vw, 677px" src="https://www.ledger.com/wp-content/uploads/2023/09/detective.png" srcset="https://www.ledger.com/wp-content/uploads/2023/09/detective.png 677w, https://www.ledger.com/wp-content/uploads/2023/09/detective-300x300.png 300w, https://www.ledger.com/wp-content/uploads/2023/09/detective-150x150.png 150w, https://www.ledger.com/wp-content/uploads/2023/09/detective-276x275.png 276w, https://www.ledger.com/wp-content/uploads/2023/09/detective-104x104.png 104w" style="width:411px;height:409px" width="677"/>
+     </figure>
+    </div>
+    <p>
+     During this video chat, you may be explicitly asked to confirm the reasons behind the ongoing identification process. Additionally, you may be asked to perform a series of randomized actions aimed at detecting any manipulation or presentation attacks, such as:
+    </p>
+    <ul>
+     <li>
+      Holding your ID document to be captured by the camera while placing a finger on a security-relevant parts of the ID; this location is variable and randomly determined;
+     </li>
+     <li>
+      Answering randomly generated questions;
+     </li>
+     <li>
+      Performing unusual movements.
+     </li>
+    </ul>
+    <blockquote class="wp-block-quote">
+     <p>
+     </p>
+     <cite>
+      <strong>
+       What if the third IDV still fails for a legitimate reason?
+      </strong>
+     </cite>
+    </blockquote>
+    <p>
+     Once the cause behind the unsuccessful
+     <strong>
+      IDV
+     </strong>
+     s is identified, a Coincover investigator will contact you to collect all the necessary documents to support your claim. If relevant, this investigation process might involve a legal officer to:
+    </p>
+    <ul>
+     <li>
+      Physically meet you to corroborate your identity and claim; and/or
+     </li>
+     <li>
+      Certify the official documents provided to support your claim.
+     </li>
+    </ul>
+    <h5 class="wp-block-heading">
+     IDV Data &amp; Privacy regulations
+    </h5>
+    <p>
+     Your
+     <strong>
+      IDV
+     </strong>
+     data is collected and processed through Ledger Recover in compliance with privacy regulations, in particular the European General Data Protection Regulation.
+    </p>
+    <p>
+     Ledger only collects what is strictly necessary to verify your identity, i.e. data extracted from your identity document (name, last name, date and place of birth), a selfie (extracted from the video capture) and, upon recovery request, a photo of your identity document.
+    </p>
+    <p>
+     In accordance with our data retention policy, your
+     <strong>
+      IDV
+     </strong>
+     data is securely retained until you unsubscribe from the service and then archived in a database with strict limited access for litigation purposes only.
+    </p>
+    <p>
+     Security plays a crucial role in safeguarding your privacy, and we are fully committed to handling your data with extra care. To that end, we have implemented all the necessary technical and organizational measures to safeguard and secure the
+     <strong>
+      IDV
+     </strong>
+     information we hold about you. Therefore, your identity data is never stored in plain text within our system. During transit, it is processed in a secure and isolated infrastructure zone with access control and constant monitoring.
+    </p>
+    <p>
+     To learn more about how Ledger manages your data and your rights, check out
+     <a href="https://www.ledger.com/recover/privacy-policy" rel="noreferrer noopener" target="_blank">
+      our Privacy Policy
+     </a>
+     . For more information on Coincover’s data protection practices, please refer to
+     <a href="https://www.coincover.com/privacy-policy" rel="noreferrer noopener" target="_blank">
+      Coincover’s privacy policy
+     </a>
+     .
+    </p>
+    <div class="wp-block-image">
+     <figure class="aligncenter size-large is-resized">
+      <img alt="" class="wp-image-281605" decoding="async" height="1024" loading="lazy" sizes="(max-width: 1024px) 100vw, 1024px" src="https://www.ledger.com/wp-content/uploads/2023/09/gdpr-logo-1024x1024.png" srcset="https://www.ledger.com/wp-content/uploads/2023/09/gdpr-logo-1024x1024.png 1024w, https://www.ledger.com/wp-content/uploads/2023/09/gdpr-logo-300x300.png 300w, https://www.ledger.com/wp-content/uploads/2023/09/gdpr-logo-150x150.png 150w, https://www.ledger.com/wp-content/uploads/2023/09/gdpr-logo-768x768.png 768w, https://www.ledger.com/wp-content/uploads/2023/09/gdpr-logo-1536x1536.png 1536w, https://www.ledger.com/wp-content/uploads/2023/09/gdpr-logo-275x275.png 275w, https://www.ledger.com/wp-content/uploads/2023/09/gdpr-logo-104x104.png 104w, https://www.ledger.com/wp-content/uploads/2023/09/gdpr-logo.png 1574w" style="width:218px;height:218px" width="1024"/>
+     </figure>
+    </div>
+    <h5 class="wp-block-heading">
+     Not Quite The End: The Almost Conclusion
+    </h5>
+    <p>
+     Here we are at the end of the
+     <em>
+      implementation
+     </em>
+     part of our Blog Series. In this part, we’ve seen how Ledger Recover leverages your identity as the ultimate key to unlock your backup. We’ve seen how
+     <strong>
+      IDV
+     </strong>
+     is used in Ledger Recover, fine-tuned compared to existing providers and we’ve also touched some countermeasures used to secure the
+     <strong>
+      IDV
+     </strong>
+     itself, making sure no attackers, external or insiders, can implement man in the middle attacks on the verification.
+    </p>
+    <p>
+     Thank you and congratulations for reading all the way up to this lengthy part! You should now have a detailed picture of the security and implementation details of Ledger Recover, understanding how self-custody was made to go along with convenience and security. We believe we’ve designed a solution that will help Ledger Recover users better manage their Secret Recovery Phrases without compromising on security or self-custody.
+    </p>
+    <p>
+     But this is not the end (the hint is in the title). A security product is nothing if you do not operate it securely… How does Ledger Recover operate to ensure the impregnability of the system’s security measures? That’s what we will set out to answer in the Part 5 of Genesis of the Ledger Recover blog series:
+     <strong>
+      Operational Security
+     </strong>
+     .
+    </p>
+    <p>
+    </p>
+    <ol class="wp-block-footnotes">
+     <li id="4ea77215-469c-4858-85f1-031fd2bf6bfe">
+      <em>
+       OCR stands for Optical Character Recognition. This technology decipher and transform printed or handwritten text into machine-understandable data and make them processable by machine. We use OCR in Recover to extract your personal identity data from official documents to associate them to your backup or verify they keep unchanged when you request a recovery.
+      </em>
+      <a aria-label="Jump to footnote reference 1" href="#4ea77215-469c-4858-85f1-031fd2bf6bfe-link">
+       ↩︎
+      </a>
+     </li>
+     <li id="b628f000-93b0-4e53-a7b1-393b43bd7699">
+      <em>
+       Comparing Biometric data has been well-established as a robust method for accurately verifying individuals identity. Biometric data is measurable, capturing unique physical or behavioral characteristics used for verification.
+      </em>
+      <a aria-label="Jump to footnote reference 2" href="#b628f000-93b0-4e53-a7b1-393b43bd7699-link">
+       ↩︎
+      </a>
+     </li>
+     <li id="02211833-a2a5-442e-adef-ba7fcf4381c7">
+      <em>
+       A presentation attack occurs when a bad actor, or fraud perpetrator, uses someone else’s physical characteristics or biometric data, commonly known as “spoofs,” to impersonate someone else.
+      </em>
+      <a aria-label="Jump to footnote reference 3" href="#02211833-a2a5-442e-adef-ba7fcf4381c7-link">
+       ↩︎
+      </a>
+     </li>
+    </ol>
+   </div>
+   <footer class="row plain-text footer">
+    <div class="social-icons-footer">
+     <a class="h6 icon-facebook" href="https://www.facebook.com/Ledger/" target="_blank">
+     </a>
+     <a class="h6 icon-insta" href="https://www.instagram.com/ledger/" target="_blank">
+      <i class="fab fa-instagram">
+      </i>
+     </a>
+     <a class="h6 icon-twitter" href="https://twitter.com/Ledger" target="_blank">
+     </a>
+     <a class="h6 icon-linkedin" href="https://www.linkedin.com/company/ledgerhq/" target="_blank">
+     </a>
+     <a class="h6 icon-reddit" href="https://www.reddit.com/r/ledgerwallet/" target="_blank">
+     </a>
+     <a class="h6 icon-tiktok" href="https://www.tiktok.com/@ledger" target="_blank">
+      <i class="fab fa-tiktok">
+      </i>
+     </a>
+    </div>
+   </footer>
+  </article>
+ </body>
+</html>

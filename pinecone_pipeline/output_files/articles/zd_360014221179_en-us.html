@@ -1,0 +1,15 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/360014221179-Auto-verification-not-available"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="360014221179"/><meta name="title" content="Auto verification not available"/><meta name="classification" content="public"/></head>                            <body><h1>Auto verification not available</h1>
+<p>If you enter an Ethereum address in Ledger Live that is entirely lower or upper case, the message '<strong>auto verification is not available for this address</strong>' will appear. Please proceed extra carefully by double-checking the address and by sending a small test transaction first.</p>
+<h2>Why this message appears</h2>
+<p><span style="font-weight: 400;">Ethereum addresses can be automatically checked for typing errors if they are mixed lower case and upper case as specified in <a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-55.md" target="_self">EIP-55</a>. The mix of lower case and upper case encodes a checksum enabling Ledger Live to see if the address is a valid Ethereum address. </span></p>
+<p><span style="font-weight: 400;">Even though most wallet applications and services support EIP-55, you may come across one that does not. Ledger Live will inform you by displaying a special message.</span></p>
+<div class="callout callout--primary">
+<h4 class="callout__title">Is an Ethereum Wallet address case-sensitive?</h4>
+<p>Ethereum and EVM apps are not case-sensitive. This means that as long as the exact characters are correct, the case sensitivity does not matter. The network is case-insensitive. A is the same as a. B is the same as b.</p>
+</div>
+<h2>Send your transaction securely</h2>
+<ul class="list-bullet">
+<li><span style="font-weight: 400;">Double-check the address after entering it.</span></li>
+<li><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">Make a small test transaction before proceeding with larger amounts.</span></li>
+<li>For other best practices for transaction security, check <a href="https://support.ledger.com/hc/en-us/articles/360020838914" target="_blank" rel="noopener">this article</a>.</li>
+</ul></body></html>

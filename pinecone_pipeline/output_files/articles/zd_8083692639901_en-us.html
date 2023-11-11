@@ -1,0 +1,30 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/8083692639901--Your-Operating-System-version-is-outdated-error"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="8083692639901"/><meta name="title" content=""Your Operating System version is outdated" error"/><meta name="classification" content="public"/></head>                            <body><h1>"Your Operating System version is outdated" error</h1>
+<p><span style="font-weight: 400;">This article explains the “<strong>Your Operating System version is outdated</strong>” error message which appears on the launch of Ledger Live.</span></p>
+<p><span style="font-weight: 400;"><img src="https://support.ledger.com/hc/article_attachments/8231529196829" alt="NOT_SUPPORTED_OS.png" width="660" height="554"></span></p>
+<p><span style="font-weight: 400;">The message can appear if the operating system on your PC is outdated and not supported by Ledger Live. You can check the system requirement for Ledger Live in this </span><a href="https://support.ledger.com/hc/en-us/articles/4403310017041-Ledger-Live-system-requirements-?docs=true"><span style="font-weight: 400;">article</span></a><span style="font-weight: 400;">.</span></p>
+<h2><span style="font-weight: 400;">Why can’t I use Ledger Live on an outdated OS?</span></h2>
+<p><span style="font-weight: 400;">The main reason is </span><strong>security. </strong><span style="font-weight: 400;">Many outdated operating systems are not maintained by their providers and are not up to date with the latest security patches. On top of that, when developing a new Ledger Live version, we are not testing it on non-supported operating systems. As these systems have security vulnerabilities and Ledger Live is not tested on these OS, </span><strong>we cannot guarantee the safe functioning</strong><span style="font-weight: 400;"> of the application. </span></p>
+<p><span style="font-weight: 400;">Additionally, staying up to date with the latest security updates of OS is an important requirement to fix vulnerabilities in Chromium browsers which are widely used for Web3 applications. </span></p>
+<p><span style="font-weight: 400;">If you want to use Ledger Live safely and you are not on a supported OS, make sure to update your operating system and that it matches the </span><a href="https://support.ledger.com/hc/en-us/articles/4403310017041-Ledger-Live-system-requirements-?docs=true"><span style="font-weight: 400;">Ledger Live requirements</span></a><span style="font-weight: 400;">.</span></p>
+<div class="accordion accordion--default">
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>I'm on a supported Windows 10 and still get the error</strong></div>
+<div class="accordion__item-content">
+<p>In rare cases, some users on Windows 10 may get the error. There is a workaround that may fix the issue.  </p>
+<ol>
+<li>Close Ledger Live</li>
+<li>Press <strong>Windows + R</strong> to open the Windows Run prompt.</li>
+<li>Type in <strong>sysdm.cpl</strong> and click <strong>OK</strong>.<img src="https://lh6.googleusercontent.com/YMmUd7chfW-KV6BscyMdC7Cc2Yu7AmBEo2ODQtSL7G5HR-wP0i3r1j5goNFP3O70tO9POdOHzwSICzDC8QJ6FvfGqOop7N01z1r54V7ZzpjyvtKTFocruKl5YErC4Zn0EyWQQCs3lGHLsi9zAJaWwIA" width="564" height="296">
+</li>
+<li>Open the <strong>Advanced</strong> tab and click on the <strong>Environment Variables</strong> button in the System Properties window.<img src="https://lh4.googleusercontent.com/UruhJ4bMm6pYvfxQEXe-94Zfxk4f3lfSLDyTEU7mWEKCzVP5kXdBAI_tOYKAjWsLrNeMaIcUyHTxF9ezrxL19-FgmLizlFStplqpcITi9OyijhazPBqhAi9R54yCXG1CjK1Ts844Af6Me6Mik872Nqs" width="566" height="648">
+</li>
+<li>The Environment Variables window is divided into two sections. The sections display user-specific and system-wide environment variables. To add a variable, click the <strong>New…</strong> button under the appropriate section.</li>
+<li>Enter the variable name <strong>MOCK_OS_VERSION</strong> and the value <strong>Windows_NT@10.0.0</strong> in the New User Variable prompt and click <strong>OK</strong>.<img src="https://lh4.googleusercontent.com/0qFuHXlqTyLIEwLTnMZoe5_n11vtqfww0ZdTsmyVi7_TpEK69iJvyONFBzsU-RL3KfnHw8qltBP6LBt1ObPSAaGQNv79_bxKmOdSSw6Ht1SUPQLX5N0WgJnkBOQvGQz0rW3iz5I1TIGLUuqlZCJByxo" width="577" height="172"> </li>
+<li>
+<span>Access your </span><strong data-renderer-mark="true">Windows command prompt</strong><span> by searching for "</span><strong data-renderer-mark="true">Command Prompt</strong><span>" in the Windows search bar and input the command: </span><code class="code css-z5oxh7" data-renderer-mark="true">setx MOCK_OS_VERSION "Windows_NT@10.0.0"</code>
+</li>
+</ol>
+<p>Once this is done, you should be able to use Ledger Live on your PC.</p>
+</div>
+</div>
+</div></body></html>

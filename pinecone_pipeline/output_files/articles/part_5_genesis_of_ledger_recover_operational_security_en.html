@@ -1,0 +1,520 @@
+<html>
+ <head>
+  <meta content="https://www.ledger.com/blog/part-5-genesis-of-ledger-recover-operational-security" name="source"/>
+  <meta content="academy" name="source-type"/>
+  <meta content="en" name="locale"/>
+  <meta content="N/A" name="zd-article-id"/>
+  <meta content="part 5 genesis of ledger recover operational security" name="title"/>
+  <meta content="public" name="classification"/>
+ </head>
+ <body>
+  <article class="margin-lg" id="article-282406">
+   <header class="header margin-sm">
+    <div class="content">
+     <div class="margin-sm is-hidden-tablet is-hidden-desktop blog-category-breadcrumb">
+      <a href="https://www.ledger.com/company-updates" title="">
+       Blog
+      </a>
+      <i class="icon-chevron-right">
+      </i>
+      <a href="https://www.ledger.com/category/blog-posts" title="Blog posts">
+       Blog posts
+      </a>
+     </div>
+     <p class="datetime caption margin-xs">
+      <a class="is-primary" href="https://www.ledger.com/category/blog-posts" title="Blog posts">
+       Blog posts
+      </a>
+      ,
+      <a class="is-primary" href="https://www.ledger.com/category/tech" title="Tech">
+       Tech
+      </a>
+      |           09/22/2023
+     </p>
+     <h1 class="h2 title margin-s">
+      Part 5: Genesis of Ledger Recover – Operational Security
+     </h1>
+     <p class="font-size-l margin-s">
+      Welcome to Part 5 of our blog series on Ledger Recover Genesis. This series of blog posts explores the many technical hurdles encountered when building a seed recovery service, and how Ledger Recover, provided by Coincover, solves them with a secure design and infrastructure.
+     </p>
+    </div>
+    <div class="illustration" style="background-image: url('https://www.ledger.com/wp-content/uploads/2023/09/LEDGER_BLOG_POST_RECOVER5.png');">
+    </div>
+   </header>
+   <div class="row no-margin-mobile margin-md is-hidden-mobile">
+    <div class="row blog-category-breadcrumb">
+     <a href="https://www.ledger.com/company-updates" title="">
+      Blog
+     </a>
+     <i class="icon-chevron-right">
+     </i>
+     <a href="https://www.ledger.com/category/blog-posts" title="Blog posts">
+      Blog posts
+     </a>
+    </div>
+   </div>
+   <div class="row margin-lg plain-text">
+    <p>
+     Part 6 of our Genesis of Ledger Recover blog series
+     <a href="https://www.ledger.com/blog/part-6-genesis-of-ledger-recover-security-analysis">
+      is available here.
+     </a>
+    </p>
+    <p>
+     So far, we have shown in part 1 and 2, how Ledger Recover
+     <a href="https://www.ledger.com/blog/part-1-genesis-of-ledger-recover-self-custody-without-compromise" rel="noreferrer noopener" target="_blank">
+      splits your seed into shares
+     </a>
+     and
+     <a href="https://www.ledger.com/blog/part-2-genesis-of-ledger-recover-securely-distributing-the-shares" rel="noreferrer noopener" target="_blank">
+      sends those shares securely
+     </a>
+     to
+     <s>
+      friends
+     </s>
+     trusted backup providers. In part 3, we’ve shown how it
+     <a href="https://www.ledger.com/blog/part-3-genesis-of-ledger-recover-avoiding-collusion-and-leaks" rel="noreferrer noopener" target="_blank">
+      stores (and restore) safely the shares of your seed
+     </a>
+     , protected by hardware encryption, tied to your identity and diversified. In part 4, we’ve explored how Ledger Recover manages to
+     <a href="https://www.ledger.com/blog/part-4-genesis-of-ledger-recover-controlling-access-to-the-backup-identity-verification" rel="noreferrer noopener" target="_blank">
+      give access to your backup to you and you only
+     </a>
+     .
+    </p>
+    <p>
+     It is now time to take a closer look at how we ensure maximum security at the operational level. At a glance, operational security is achieved by:
+    </p>
+    <ul>
+     <li>
+      Hardening the infrastructure underpinning Ledger Recover,
+     </li>
+     <li>
+      Applying separation of duties to the various operators of Ledger Recover,
+     </li>
+     <li>
+      Monitoring critical components and operations,
+     </li>
+     <li>
+      Implementing a Recover-specific Incident Response.
+     </li>
+    </ul>
+    <p>
+     Let’s dive into the details of what each of those items means.
+    </p>
+    <h5 class="wp-block-heading">
+     Hardening of infrastructure
+    </h5>
+    <p>
+     Infrastructure hardening comes in many shapes. It’s a 360° exercise that involves a wide range of activities driven by a thorough analysis of security risks. It usually starts by maintaining a catalog of attack scenarios that could lead to security issues (such as data leaks, impersonation of clients leading to the unauthorized restoration of shares, non-responsive systems, and service disruption). The prevention of these issues at the operational level is organized around activities like resource isolation, system access regulation, network traffic control, vulnerability management, and many more.
+    </p>
+    <figure class="wp-block-image size-large">
+     <img alt="" class="wp-image-282921" decoding="async" height="360" loading="lazy" sizes="(max-width: 1024px) 100vw, 1024px" src="https://www.ledger.com/wp-content/uploads/2023/09/360-security-2-1024x360.png" srcset="https://www.ledger.com/wp-content/uploads/2023/09/360-security-2-1024x360.png 1024w, https://www.ledger.com/wp-content/uploads/2023/09/360-security-2-300x106.png 300w, https://www.ledger.com/wp-content/uploads/2023/09/360-security-2-768x270.png 768w, https://www.ledger.com/wp-content/uploads/2023/09/360-security-2-1536x540.png 1536w, https://www.ledger.com/wp-content/uploads/2023/09/360-security-2-2048x721.png 2048w, https://www.ledger.com/wp-content/uploads/2023/09/360-security-2-490x172.png 490w" width="1024"/>
+    </figure>
+    <p>
+     Here’s a rundown of our key measures to harden Ledger Recover’s infrastructure:
+    </p>
+    <h6 class="wp-block-heading">
+     Service availability
+    </h6>
+    <p>
+     The infrastructure is designed so that there is
+     <strong>
+      no single point of failure (NSPOF)
+     </strong>
+     , meaning that the system is resilient to the failure of any component. Let’s take the following example: our data centers are served by two independent Internet service providers (ISPs), at two opposite ends of the building. If the fiber is damaged due to ongoing construction work in one part of the building, data will simply be routed through the other ISP. Disruption-free maintenance is yet another benefit that enhances availability. Given that there are at least two instances of all software components of Ledger Recover, we can reconfigure the system to use only instance A while replacing/upgrading/fixing instance B.
+    </p>
+    <h6 class="wp-block-heading">
+     Limited admin access to Ledger Recover applications
+    </h6>
+    <p>
+     Only a
+     <strong>
+      reduced set of users are granted admin access
+     </strong>
+     to the resources that are dedicated to Ledger Recover. The shorter the list of users, the more we can reduce the risk of insider threats getting admin access.
+    </p>
+    <h6 class="wp-block-heading">
+     Secured physical data centers
+    </h6>
+    <p>
+     The Backup Providers’ HSMs are hosted in
+     <strong>
+      geographically redundant
+     </strong>
+     physical data centers, protected from physical and virtual threats using
+     <strong>
+      industry-grade security techniques and procedures
+     </strong>
+     . The level of physical protection ensures that no unauthorized individual can casually walk away with an HSM. Relying on data centers across multiple sites means that if one location experiences an issue, another location can take over, providing
+     <strong>
+      uninterrupted service availability
+     </strong>
+     . Last but not least, managing our own HSMs gives us
+     <strong>
+      control over who has access
+     </strong>
+     to them
+     <strong>
+      and what code is deployed
+     </strong>
+     on them.
+    </p>
+    <h6 class="wp-block-heading">
+     Isolation of Ledger Recover resources
+    </h6>
+    <p>
+     All Ledger Recover resources are isolated from any other resources within Ledger Recover’s service providers, including within Coincover and Ledger. This isolation is needed to ensure that we can contain potential attacks from one network slice aimed at exploiting resources of other network slices.
+    </p>
+    <h6 class="wp-block-heading">
+     Code-level security ensured via multiple pillars
+    </h6>
+    <ul>
+     <li>
+      We use
+      <strong>
+       code scanners
+      </strong>
+      to help us identify and address vulnerabilities early on, preventing them from making their way into production.
+     </li>
+     <li>
+      <strong>
+       Code
+      </strong>
+      is
+      <strong>
+       reviewed
+      </strong>
+      and approved
+      <strong>
+       by
+      </strong>
+      <strong>
+       a team independent
+      </strong>
+      of the one developing Ledger Recover. This separation is yet another measure to help improve overall code quality by catching logical flaws that might lead to security concerns.
+     </li>
+     <li>
+      The code of the
+      <strong>
+       critical modules
+      </strong>
+      of Ledger Recover is
+      <strong>
+       signed using a cryptographic signature
+      </strong>
+      . The signature is partly generated based on the code’s content, preventing the deployment of tampered code by comparing the signature to its expected value. This security check is done before the code is executed.
+     </li>
+    </ul>
+    <h6 class="wp-block-heading">
+     Network traffic control
+    </h6>
+    <p>
+     Network traffic is tightly controlled via policies that define rules for traffic flows for all 3 Backup Providers. By
+     <strong>
+      defining rules for allowed and denied traffic
+     </strong>
+     , we limit the attack surface and reduce the risk of unauthorized accesses. Also, restricting communication between individual services ensures that the
+     <strong>
+      attacker’s lateral movement is limited, even if one component is compromised
+     </strong>
+     . In addition, we apply mutual TLS (mTLS) authentication to prevent Man-in-the-Middle (MiM) attacks. By verifying the identity of both parties with certificates, mutual TLS ensures that
+     <strong>
+      only trusted entities can establish a secure connection
+     </strong>
+     .
+    </p>
+    <h6 class="wp-block-heading">
+     Key rotation
+    </h6>
+    <p>
+     Encryption
+     <strong>
+      keys
+     </strong>
+     (used, for example, to encrypt data or communication) are
+     <strong>
+      changed regularly
+     </strong>
+     in line with cryptography best practices. The advantage of this is that if a key gets compromised, the
+     <strong>
+      damage is limited
+     </strong>
+     to the time between rotations and to the data encrypted with the old key.
+    </p>
+    <h6 class="wp-block-heading">
+     Outbound traffic security
+    </h6>
+    <p>
+     Outbound traffic is limited to known domains and IP addresses only (Backup Providers, service providers). Limiting and monitoring outbound traffic is a way to
+     <strong>
+      stay alert to potential data leaks
+     </strong>
+     . If the volume of outbound data flows is higher than expected, a malicious actor might be extracting sensitive data from the Ledger Recover system on a significant scale.
+    </p>
+    <h6 class="wp-block-heading">
+     Inbound traffic security
+    </h6>
+    <p>
+     Incoming traffic is protected by a combination of anti-DDoS, Web Application Filtering (WAF), and IP filtering techniques. Distributed denial-of-service (DDoS) attacks exert harm by overflowing their target system with requests.
+     <strong>
+      Limiting the number of incoming requests
+     </strong>
+     is a well-known measure against such attacks. Now, not all attacks are about quantity, some of them are about quality. This is where WAF comes into play.
+     <strong>
+      WAF
+     </strong>
+     looks at incoming requests and
+     <strong>
+      inspects their intended behavior
+     </strong>
+     : if the request aims at gaining unauthorized access or manipulating data, the filter blocks the request. Finally, IP filtering employs the double technique of a)
+     <strong>
+      whitelisting
+     </strong>
+     , that is, allowing
+     <strong>
+      traffic only from specific IP addresses
+     </strong>
+     or ranges, and b)
+     <strong>
+      blacklisting
+     </strong>
+     , that is, blocking
+     <strong>
+      traffic from known attacker IPs
+     </strong>
+     .
+    </p>
+    <h6 class="wp-block-heading">
+     Vulnerability management
+    </h6>
+    <p>
+     The components of the Ledger Recover infrastructure are continuously and systematically
+     <strong>
+      scanned
+     </strong>
+     <strong>
+      for known vulnerabilities and misconfiguration
+     </strong>
+     , and patches/updates are applied regularly. This helps the response to new types of threats as they emerge and keep security measures up to date and world-class.
+    </p>
+    <h5 class="wp-block-heading">
+     Separation of duties
+    </h5>
+    <p>
+     Separation of duties is at the core of the security strategy of Ledger Recover.
+    </p>
+    <p>
+     The separation of duties between the various
+     <a href="https://www.ledger.com/blog/part-3-genesis-of-ledger-recover-avoiding-collusion-and-leaks" rel="noreferrer noopener" target="_blank">
+      Backup Providers
+     </a>
+     (part 3) and
+     <a href="https://www.ledger.com/blog/part-4-genesis-of-ledger-recover-controlling-access-to-the-backup-identity-verification" rel="noreferrer noopener" target="_blank">
+      IDV Provider
+     </a>
+     s (part 4) has been described in the previous posts. You may recall that there are:
+    </p>
+    <ul>
+     <li>
+      3 shares of the Secret Recovery Phrase managed by 3 independent Backup Providers (with database diversification on top to prevent collusion)
+     </li>
+     <li>
+      2 independent Identity Validators (IDV Providers)
+     </li>
+    </ul>
+    <p>
+     At the infrastructure level,
+     <strong>
+      separation of duties
+     </strong>
+     is applied
+     <strong>
+      between the different roles involved in the development and operation of Ledger Recover
+     </strong>
+     .
+    </p>
+    <p>
+     In addition, we combine the separation of duties with the
+     <strong>
+      “least privilege” principle
+     </strong>
+     . “Least privilege” is the principle applied to system operators and administrators:
+     <strong>
+      they are granted rights to do only what they need to do
+     </strong>
+     , ensuring they are given the lowest level of permission required to perform their duties.
+    </p>
+    <p>
+     So when
+     <strong>
+      “least privilege” is combined with “separation of duties”
+     </strong>
+     ,
+     <strong>
+      various admin roles are allocated to different people
+     </strong>
+     so that no single person can damage/compromise the confidentiality or integrity of any system component. For example, developers of Ledger Recover code do not have access to the system that is running the code they wrote.
+    </p>
+    <figure class="wp-block-image size-large">
+     <img alt="" class="wp-image-282418" decoding="async" height="517" loading="lazy" sizes="(max-width: 1024px) 100vw, 1024px" src="https://www.ledger.com/wp-content/uploads/2023/09/separation-1024x517.png" srcset="https://www.ledger.com/wp-content/uploads/2023/09/separation-1024x517.png 1024w, https://www.ledger.com/wp-content/uploads/2023/09/separation-300x151.png 300w, https://www.ledger.com/wp-content/uploads/2023/09/separation-768x388.png 768w, https://www.ledger.com/wp-content/uploads/2023/09/separation-1536x775.png 1536w, https://www.ledger.com/wp-content/uploads/2023/09/separation-2048x1034.png 2048w, https://www.ledger.com/wp-content/uploads/2023/09/separation-490x247.png 490w" width="1024"/>
+    </figure>
+    <h5 class="wp-block-heading">
+     Governance : Quorums
+    </h5>
+    <p>
+     Similar to Blockchains’ consensus mechanisms that guarantee integrity and security by having multiple actors verify blocks, we have adopted a quorum within Ledger Recover system to enhance our operational security.
+    </p>
+    <p>
+     Despite our robust background checks for our employees, the fact remains that humans can be a weak link in any system, and the cryptosphere is no exception. High-profile security incidents, such as the
+     <a href="https://medium.com/coinmonks/mt-gox-exchange-the-largest-hack-in-the-history-of-cryptocurrencies-d953ad87e85e" rel="noreferrer noopener" target="_blank">
+      Mt. Gox hack of 2014
+     </a>
+     , demonstrate how individuals can be exploited or lead to security lapses. People can be influenced or coerced through various motivations – Money, Ideology, Coercion, Ego (aka, MICE(S)) – rendering even the most stringent background checks not entirely foolproof.
+    </p>
+    <p>
+     To mitigate such risks, we use a system based on the concept of a quorum. This framework requires the consensus of at least three authorized individuals from different teams or departments within backup providers before any significant decisions or critical actions can be taken.
+    </p>
+    <div style="border-radius:10px; border: 2px solid #D4A0FF; padding:30px; margin-bottom:20px;">
+     The exact number of persons involved in our different quorums remains undisclosed for security reasons. Still, its mere existence significantly enhances our operational security by diluting the potential influence of any single compromised individual.
+    </div>
+    <p>
+     Here are some of the activities where we use quorums:
+    </p>
+    <p>
+     1.
+     <strong>
+      Generating the private keys for Ledger Recover HSMs
+     </strong>
+     : This critical operation is safeguarded by independent quorums within each entity – Coincover, EscrowTech, and Ledger. Each member of these distinct quorums must be present to generate private keys in their respective HSMs. Each quorum member has access to a backup key, which is crucial for restoring and regenerating their HSM secrets if needed. This structure does not only protect against the risk of any person having undue influence over one of the three backup provider HSMs but also enhances the overall system integrity as each quorum operates independently and is unaware of each other’s specifics.
+    </p>
+    <figure class="wp-block-image size-large">
+     <img alt="" class="wp-image-282429" decoding="async" height="800" loading="lazy" sizes="(max-width: 1024px) 100vw, 1024px" src="https://www.ledger.com/wp-content/uploads/2023/09/Governance_Quorums-1024x800.png" srcset="https://www.ledger.com/wp-content/uploads/2023/09/Governance_Quorums-1024x800.png 1024w, https://www.ledger.com/wp-content/uploads/2023/09/Governance_Quorums-300x234.png 300w, https://www.ledger.com/wp-content/uploads/2023/09/Governance_Quorums-768x600.png 768w, https://www.ledger.com/wp-content/uploads/2023/09/Governance_Quorums-1536x1200.png 1536w, https://www.ledger.com/wp-content/uploads/2023/09/Governance_Quorums-2048x1600.png 2048w, https://www.ledger.com/wp-content/uploads/2023/09/Governance_Quorums-352x275.png 352w" width="1024"/>
+    </figure>
+    <div style="border-radius:10px; border: 2px solid #D4A0FF; padding:30px; margin-bottom:20px;">
+     Keep in mind that even a fully compromised quorum can’t put user assets at risk. Remember from
+     <a href="https://www.ledger.com/blog/part-2-genesis-of-ledger-recover-securely-distributing-the-shares">
+      blog post 2
+     </a>
+     : Each backup provider handles only a single share. Without all the needed shares, reconstructing a user’s seed is impossible.
+     <br/>
+     Moreover, extracting the private key of the HSM, which is needed to decipher existing shares, cannot be done with the quorum’s backup keys. Backup provider quorum members will only be able to restore and recreate a new HSM.
+    </div>
+    <p>
+     2.
+     <strong>
+      Deciding on an exceptional release of a customer’s share
+     </strong>
+     : Specific, albeit rare, situations may require an exceptional release of a customer’s share. These could be due to Identity Verification failures (name change, physical disfigurement, etc.), or if our undisclosed security measures incorrectly block/blacklist a device. When such a situation arises, a quorum consisting of multiple individuals from the backup providers comes together. This procedure, necessitating broad consensus, ensures that decisions are not made hastily or unilaterally, thus enhancing customer security. Each member of the quorum uses their Ledger Nano device (with their own pin) to approve the release, adding another layer of security against possible collusion or individual errors.
+    </p>
+    <p>
+     3.
+     <strong>
+      Signing HSM firmware code update
+     </strong>
+     : Before deploying a new firmware update to the HSMs, our product security team, the Ledger Donjon, conducts a comprehensive review process. Being part of the firmware quorum, the Ledger Donjon ensures that no backdoors or malicious code have been introduced by a malicious insider or a compromised development pipeline via supply chain attack. That way, they maintain the integrity and security of the firmware update.
+    </p>
+    <p>
+     4.
+     <strong>
+      Signing Ledger devices (Nano &amp; Stax) firmware code update:
+     </strong>
+     Much like the firmware for the HSMs, updates to our Ledger device’s firmware go through a strict review process and require quorum approval before they are proposed to our users via Ledger Live.
+    </p>
+    <p>
+     Wrapping up, quorums are an integral part of Ledger Recover’s security architecture. They play an important role in fortifying defenses against internal rogue threats and collusion during vital operations. Leveraging the top-notch security of Ledger devices and services, quorums help ensure trust and protect users’ digital assets against malicious insiders.
+    </p>
+    <h5 class="wp-block-heading">
+     Monitoring critical components and operations
+    </h5>
+    <p>
+     As we delve into this chapter, it’s important to note that, for security reasons, we’re only disclosing a subset of the extensive monitoring activities for the Ledger Recover service. While we stand by our commitment to transparency, we also recognize the importance of maintaining discretion around the details of the internal controls and monitoring for operational security.
+    </p>
+    <p>
+     At Ledger, security is our priority. It’s at the core of our solutions, which are built on robust cryptographic protocols as detailed in our
+     <a href="https://github.com/LedgerHQ/recover-whitepaper" rel="noreferrer noopener" target="_blank">
+      Ledger Recover whitepaper
+     </a>
+     . But our work continues beyond the creation of secure systems. We constantly monitor and assess our operations, looking for any suspicious activities. This continuous vigilance strengthens our security stance, ensuring we’re always ready to respond.
+    </p>
+    <p>
+     Let’s explore some examples of our multi-layered approach:
+    </p>
+    <p>
+     <strong>
+      Monitoring Administrator Activities:
+     </strong>
+     We enforce stringent access control for our administrators. Not only do we require 2FA (Two-Factor Authentication) for all administrative connections to our infrastructure, but we also mandate multiple-person validation for administrator infrastructure access on critical parts of the system. Furthermore, our systems meticulously log and track every administrative activity. These logs are cross-referenced automatically with our internal ticketing systems to detect any unplanned actions. This cautious correlation enables us to promptly alert our security teams about any unusual or suspicious behavior, reinforcing our operational security.
+    </p>
+    <p>
+     <strong>
+      Cross Control Among Backup Providers
+     </strong>
+     : Transparency and accountability form the basis of the relationships between the backup providers, Ledger, EscrowTech and Coincover. We’ve established a real-time exchange of logs used for system monitoring and security. This enables cross-verification of activities. If any inconsistency is detected, the service is immediately locked to protect users’ assets.
+    </p>
+    <p>
+     <strong>
+      Overseeing Exceptional Release Activity
+     </strong>
+     : The rare instances of manual share releases are meticulously controlled through a multi-quorum process as we explained in the previous section. After the execution of the Exceptional Release Activity, Ledger Recover systems proceed with comprehensive monitoring, including detailed logging and analysis of the parties involved, time of operation, and other relevant details. This process, involving both the multi-quorum execution and the post-action monitoring, ensures that the exceptional release of shares is tightly controlled at all stages of the decision-making process.
+    </p>
+    <p>
+     <strong>
+      Leveraging Security Information and Event Management (SIEM)
+     </strong>
+     : The SIEM solution forms a crucial part of the Ledger Recover monitoring strategy. This dedicated SIEM enhances the ability to identify and respond to potential security issues in real-time. It’s fine-tuned to identify a variety of Indicators of Compromise (IoCs) based on cluster and Ledger Recover application logs, thanks to specific detection rules specifically developed for the Ledger Recover service. If a custom IoC is detected, a response is automatic and immediate – the entire cluster is locked until a thorough analysis is conducted. In the Ledger Recover service, confidentiality is prioritized over availability of the service to ensure the utmost protection of users’ assets.
+    </p>
+    <p>
+     In the dynamic landscape of cybersecurity, we have strategized and prepared for various scenarios. Our threat model accounts for the unlikely situation where multiple infrastructure administrators from different backup providers might be compromised. With rigorous safeguards and automatic responses in place, the Ledger Recover service aims to ensure the continued security of users’ assets even in such extraordinary circumstances. In the following section, we’ll outline the comprehensive response measures built to tackle such hypothetical situations.
+    </p>
+    <h5 class="wp-block-heading">
+     Ledger Recover-specific Incident Response
+    </h5>
+    <p>
+     With the Ledger Recover service, an Incident Response strategy has been built, collaboratively designed with the three backup providers. A central part of this strategy are automatic safeguards that immediately lock the entire system upon detecting suspicious activity in any part of the infrastructure.
+    </p>
+    <p>
+     In essence, an “always secure, never sorry” protocol has been engineered into the Ledger Recover service. Security is the number one priority, and it’s a commitment that will never be compromised on.
+    </p>
+    <p>
+     While we continuously strive to provide a seamless user experience to onboard the next 100 million people into Web3, we will never hesitate to activate these safeguards,
+     <strong>
+      effectively locking down the entire Ledger Recover service, if a potential threat arises
+     </strong>
+     . In our mission to protect, the choice between running a potentially compromised service and ensuring ultimate security is clear – we choose security.
+    </p>
+    <h6 class="wp-block-heading">
+     Conclusion
+    </h6>
+    <p>
+     Here we are at the end of the Operational Security part of this series. In this part, we’ve tried to answer any concern you may have regarding how the impregnability of Ledger Recover system’s security measures are ensured. We talked about the infrastructure, the separation of duties, the governance and monitoring, and finally the Incident Response strategy.
+    </p>
+    <p>
+     Thank you once again for reading all the way up to this point! You should now have a comprehensive understanding of the Ledger Recover’s operational security. The final part of this blog post series will be about the last security concerns we had, and more precisely: how did we manage our internal and external security audits in order to guarantee the maximum level of security to our users? Stay tuned!
+    </p>
+   </div>
+   <footer class="row plain-text footer">
+    <div class="social-icons-footer">
+     <a class="h6 icon-facebook" href="https://www.facebook.com/Ledger/" target="_blank">
+     </a>
+     <a class="h6 icon-insta" href="https://www.instagram.com/ledger/" target="_blank">
+      <i class="fab fa-instagram">
+      </i>
+     </a>
+     <a class="h6 icon-twitter" href="https://twitter.com/Ledger" target="_blank">
+     </a>
+     <a class="h6 icon-linkedin" href="https://www.linkedin.com/company/ledgerhq/" target="_blank">
+     </a>
+     <a class="h6 icon-reddit" href="https://www.reddit.com/r/ledgerwallet/" target="_blank">
+     </a>
+     <a class="h6 icon-tiktok" href="https://www.tiktok.com/@ledger" target="_blank">
+      <i class="fab fa-tiktok">
+      </i>
+     </a>
+    </div>
+   </footer>
+  </article>
+ </body>
+</html>

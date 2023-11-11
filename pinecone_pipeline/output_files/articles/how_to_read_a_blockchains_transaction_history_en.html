@@ -1,0 +1,335 @@
+<html>
+ <head>
+  <meta content="https://www.ledger.com/academy/how-to-read-a-blockchains-transaction-history" name="source"/>
+  <meta content="academy" name="source-type"/>
+  <meta content="en" name="locale"/>
+  <meta content="N/A" name="zd-article-id"/>
+  <meta content="how to read a blockchains transaction history" name="title"/>
+  <meta content="public" name="classification"/>
+ </head>
+ <body>
+  <article class="plain-text margin-sm article" id="article">
+   <h1 class="margin-xs">
+    How to Read a Blockchain Transaction History
+   </h1>
+   <div class="article-author">
+    <div>
+     By
+     <b>
+      Kirsty Moreland
+     </b>
+    </div>
+    <div>
+     <img alt="" height="21" src="https://www.ledger.com/wp-content/uploads/2022/09/Me3-104x104.jpg" width="21">
+     </img>
+    </div>
+   </div>
+   <div class="color-grey-500 small-text uppercase margin-xs article-date">
+    Sep 11, 2020
+          |
+    <b>
+     Updated May 22, 2023
+    </b>
+   </div>
+   <div class="caption-for-article flexbox flex-start">
+    <div class="flex-none time-to-read">
+     <span class="badge badge-nude">
+      <i class="icon-copy">
+      </i>
+      Read
+     </span>
+     <span>
+      6 min
+     </span>
+    </div>
+    <div class="with-point level level-2">
+     <span>
+      Medium
+     </span>
+    </div>
+   </div>
+   <div class="align-center share-box" id="fixed-share-box">
+    <span>
+     SHARE
+    </span>
+    <div class="heateor_sss_sharing_container heateor_sss_horizontal_sharing" data-heateor-ss-offset="0" data-heateor-sss-href="https://www.ledger.com/academy/how-to-read-a-blockchains-transaction-history">
+     <div class="heateor_sss_sharing_ul">
+      <a aria-label="Instagram" class="heateor_sss_button_instagram" href="https://www.instagram.com/ledger" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Instagram">
+       <span class="heateor_sss_svg" style="background-color:#53beee;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg height="100%" style="display:block;border-radius:999px;" version="1.1" viewbox="-10 -10 148 148" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+         <g>
+          <g>
+           <path d="M86,112H42c-14.336,0-26-11.663-26-26V42c0-14.337,11.664-26,26-26h44c14.337,0,26,11.663,26,26v44 C112,100.337,100.337,112,86,112z M42,24c-9.925,0-18,8.074-18,18v44c0,9.925,8.075,18,18,18h44c9.926,0,18-8.075,18-18V42 c0-9.926-8.074-18-18-18H42z" fill="#fff">
+           </path>
+          </g>
+          <g>
+           <path d="M64,88c-13.234,0-24-10.767-24-24c0-13.234,10.766-24,24-24s24,10.766,24,24C88,77.233,77.234,88,64,88z M64,48c-8.822,0-16,7.178-16,16s7.178,16,16,16c8.822,0,16-7.178,16-16S72.822,48,64,48z" fill="#fff">
+           </path>
+          </g>
+          <g>
+           <circle cx="89.5" cy="38.5" fill="#fff" r="5.5">
+           </circle>
+          </g>
+         </g>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Facebook" class="heateor_sss_facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fhow-to-read-a-blockchains-transaction-history" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Facebook">
+       <span class="heateor_sss_svg" style="background-color:#3c589a;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="-5 -5 42 42" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M17.78 27.5V17.008h3.522l.527-4.09h-4.05v-2.61c0-1.182.33-1.99 2.023-1.99h2.166V4.66c-.375-.05-1.66-.16-3.155-.16-3.123 0-5.26 1.905-5.26 5.405v3.016h-3.53v4.09h3.53V27.5h4.223z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Twitter" class="heateor_sss_button_twitter" href="http://twitter.com/intent/tweet?via=ledger&amp;text=How%20to%20Read%20a%20Blockchain%20Transaction%20History&amp;url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fhow-to-read-a-blockchains-transaction-history" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Twitter">
+       <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_twitter" style="background-color:#55acee;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="-4 -4 39 39" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M28 8.557a9.913 9.913 0 0 1-2.828.775 4.93 4.93 0 0 0 2.166-2.725 9.738 9.738 0 0 1-3.13 1.194 4.92 4.92 0 0 0-3.593-1.55 4.924 4.924 0 0 0-4.794 6.049c-4.09-.21-7.72-2.17-10.15-5.15a4.942 4.942 0 0 0-.665 2.477c0 1.71.87 3.214 2.19 4.1a4.968 4.968 0 0 1-2.23-.616v.06c0 2.39 1.7 4.38 3.952 4.83-.414.115-.85.174-1.297.174-.318 0-.626-.03-.928-.086a4.935 4.935 0 0 0 4.6 3.42 9.893 9.893 0 0 1-6.114 2.107c-.398 0-.79-.023-1.175-.068a13.953 13.953 0 0 0 7.55 2.213c9.056 0 14.01-7.507 14.01-14.013 0-.213-.005-.426-.015-.637.96-.695 1.795-1.56 2.455-2.55z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Linkedin" class="heateor_sss_button_linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fhow-to-read-a-blockchains-transaction-history" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Linkedin">
+       <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_linkedin" style="background-color:#0077b5;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="0 0 32 32" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M6.227 12.61h4.19v13.48h-4.19V12.61zm2.095-6.7a2.43 2.43 0 0 1 0 4.86c-1.344 0-2.428-1.09-2.428-2.43s1.084-2.43 2.428-2.43m4.72 6.7h4.02v1.84h.058c.56-1.058 1.927-2.176 3.965-2.176 4.238 0 5.02 2.792 5.02 6.42v7.395h-4.183v-6.56c0-1.564-.03-3.574-2.178-3.574-2.18 0-2.514 1.7-2.514 3.46v6.668h-4.187V12.61z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Reddit" class="heateor_sss_button_reddit" href="http://reddit.com/submit?url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fhow-to-read-a-blockchains-transaction-history&amp;title=How%20to%20Read%20a%20Blockchain%20Transaction%20History" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Reddit">
+       <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_reddit" style="background-color:#ff5700;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="-3.5 -3.5 39 39" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M28.543 15.774a2.953 2.953 0 0 0-2.951-2.949 2.882 2.882 0 0 0-1.9.713 14.075 14.075 0 0 0-6.85-2.044l1.38-4.349 3.768.884a2.452 2.452 0 1 0 .24-1.176l-4.274-1a.6.6 0 0 0-.709.4l-1.659 5.224a14.314 14.314 0 0 0-7.316 2.029 2.908 2.908 0 0 0-1.872-.681 2.942 2.942 0 0 0-1.618 5.4 5.109 5.109 0 0 0-.062.765c0 4.158 5.037 7.541 11.229 7.541s11.22-3.383 11.22-7.541a5.2 5.2 0 0 0-.053-.706 2.963 2.963 0 0 0 1.427-2.51zm-18.008 1.88a1.753 1.753 0 0 1 1.73-1.74 1.73 1.73 0 0 1 1.709 1.74 1.709 1.709 0 0 1-1.709 1.711 1.733 1.733 0 0 1-1.73-1.711zm9.565 4.968a5.573 5.573 0 0 1-4.081 1.272h-.032a5.576 5.576 0 0 1-4.087-1.272.6.6 0 0 1 .844-.854 4.5 4.5 0 0 0 3.238.927h.032a4.5 4.5 0 0 0 3.237-.927.6.6 0 1 1 .844.854zm-.331-3.256a1.726 1.726 0 1 1 1.709-1.712 1.717 1.717 0 0 1-1.712 1.712z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+     </div>
+     <div class="heateorSssClear">
+     </div>
+    </div>
+   </div>
+   <figure class="wp-block-image size-large">
+    <img alt="" class="wp-image-268390" decoding="async" height="432" loading="lazy" sizes="(max-width: 1024px) 100vw, 1024px" src="https://www.ledger.com/wp-content/uploads/2023/04/02_Blockchain_Cover_Orange-1-1024x432.jpg" srcset="https://www.ledger.com/wp-content/uploads/2023/04/02_Blockchain_Cover_Orange-1-1024x432.jpg 1024w, https://www.ledger.com/wp-content/uploads/2023/04/02_Blockchain_Cover_Orange-1-300x127.jpg 300w, https://www.ledger.com/wp-content/uploads/2023/04/02_Blockchain_Cover_Orange-1-768x324.jpg 768w, https://www.ledger.com/wp-content/uploads/2023/04/02_Blockchain_Cover_Orange-1-1536x648.jpg 1536w, https://www.ledger.com/wp-content/uploads/2023/04/02_Blockchain_Cover_Orange-1-490x207.jpg 490w, https://www.ledger.com/wp-content/uploads/2023/04/02_Blockchain_Cover_Orange-1.jpg 1600w" width="1024"/>
+   </figure>
+   <figure class="wp-block-table cover-text">
+    <table>
+     <tbody>
+      <tr>
+       <td class="has-text-align-left" data-align="left">
+        KEY TAKEAWAYS:
+       </td>
+      </tr>
+      <tr>
+       <td class="has-text-align-left" data-align="left">
+        — Blockchains are public ledgers, meaning anyone can see all transactions ever made.
+        <br/>
+        <br/>
+        — You can use Block Explorers to easily navigate and search your blockchain transaction history.
+        <br/>
+        <br/>
+        — A transaction’s main elements are: the Transaction ID, the sending &amp; receiving address, the associated fees and the transaction’s status.
+        <br/>
+        <br/>
+        — Ledger Live allows you to easily access blockchain explorers for each transaction.
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </figure>
+   <p>
+    <em>
+     Cryptocurrencies are known to be completely transparent and that all transactions are verifiable. However, not everyone might know exactly how this works. Today, we’d like to show how you can start verifying your blockchain transaction history and balances for yourself through a block explorer.
+    </em>
+   </p>
+   <h2 class="wp-block-heading">
+    Don’t Trust, Verify: Blockchain Transactions Are There for All To See
+   </h2>
+   <p>
+    Cryptocurrencies like
+    <a aria-label=" (opens in a new tab)" href="https://www.ledger.com/academy/what-is-bitcoin" rel="noreferrer noopener" target="_blank">
+     Bitcoin
+    </a>
+    are unique when comparing them to traditional money. They make use of a technology called blockchain. This is, in short, a distributed ledger of all transactions. What this means is that all the transactions ever made for each cryptocurrency are recorded on a single blockchain, holding its entire history.
+   </p>
+   <p>
+    Remember how you would keep your receipts and check your bank account each month, just to make sure that all transactions on it were correct? Or perhaps you just trusted your bank instead. Well, with cryptocurrencies,
+    <a aria-label="you don’t need to trust anyone (opens in a new tab)" href="https://www.ledger.com/academy/cryptos-greatest-weakness-blind-signing-explained" rel="noreferrer noopener" target="_blank">
+     you don’t need to trust anyone
+    </a>
+    – there are no third parties involved. Nearly all cryptocurrencies use public blockchains, where every detail of each transaction ever made can be seen.
+   </p>
+   <p>
+    What does this mean for you? Well, aside from being able to see how much richer others might be than you, it actually serves a very valuable purpose: you can verify each transaction you’ve ever sent or received. If you feel like the service you are using isn’t showing the correct amount of Bitcoins, you can take a look for yourself and see whether it matches. Also, if your friend “promised he made the transaction already” even though you haven’t received it, you can check the validity of their claim directly on the blockchain itself. As the famous saying goes: “
+    <em>
+     Don’t trust, verify”
+    </em>
+    – with cryptocurrencies, you can verify everything relating to transactions. So how can you check the entire history of a blockchain?
+   </p>
+   <h2 class="wp-block-heading">
+    Block Explorers: How to Read Blockchain Transaction History
+   </h2>
+   <p>
+    Block explorers are your entry point into reading all transactions that have ever existed on a blockchain. From here, you can check the balance of each address and read the details of each blockchain transaction. This transparency is what makes blockchain technology so interesting.
+   </p>
+   <h3 class="wp-block-heading">
+    What Is a Block Explorer?
+   </h3>
+   <p>
+    Block explorers allow you to look up the balance of individual addresses that you enter, or transaction details of any Transaction ID that you fill in. Once entered, you’ll see all the details. For addresses, this includes every incoming and outgoing transaction that the specific address has ever seen. For transactions, it shows you who sent the transaction, how much has been sent, its destination and the fees that were paid for it. In short, a block explorer is kind of like an encyclopedia for blockchain transactions and addresses – its entire history can be looked up.
+   </p>
+   <h3 class="wp-block-heading">
+    How to Choose a Block Explorer
+   </h3>
+   <p>
+    There are a lot of different block explorers out there, which makes sense: there are also a lot of different cryptocurrencies out there. Most often, a block explorer only caters to a single blockchain network.
+   </p>
+   <p>
+    For Bitcoin, the most popular block explorers include
+    <a href="https://blockstream.info/" rel="noreferrer noopener" target="_blank">
+     Blockstream
+    </a>
+    and blockchain.com.
+   </p>
+   <p>
+    For Ethereum, the most popular, and by far the most widespead block explorer is
+    <a href="https://www.ledger.com/academy/topics/blockchain/etherscan-what-is-it-and-how-to-use-it" rel="noreferrer noopener" target="_blank">
+     Etherscan
+    </a>
+    . While there are competitors, such as
+    <a href="https://ethplorer.io/" rel="noreferrer noopener" target="_blank">
+     Ethplorer
+    </a>
+    ,
+    <a href="https://etherscan.io/" rel="noreferrer noopener" target="_blank">
+     Etherscan’s official website
+    </a>
+    allows you to interact with the blockchain in a more user-friendly way than some of its peers.
+   </p>
+   <p>
+    For XRP you have block explorers such as
+    <a href="https://bithomp.com/explorer/" rel="noreferrer noopener" target="_blank">
+     Bithomp
+    </a>
+    and
+    <a href="https://xrpcharts.ripple.com/#/graph" rel="noreferrer noopener" target="_blank">
+     XRP Charts
+    </a>
+    .
+   </p>
+   <p>
+    Then, there are several tools that allow you to visualise blockchain transactions with all sorts of other functionalities. However, usually these are paid services and block explorers are completely free.
+   </p>
+   <h2 class="wp-block-heading">
+    How To Read a Cryptocurrency Transaction on a Block Explorer
+   </h2>
+   <p>
+    Now to the practical part: let’s analyze a transaction on a block explorer. For those unfamiliar with cryptocurrency transactions, learning how to read a blockchain transaction might seem quite confusing.
+   </p>
+   <p>
+    But it’s not just mishmash of numbers and letters. Let’s break this down into smaller sections, and go over each separately so you can read blockchain transactions with ease.
+   </p>
+   <p>
+    Here’s a screenshot from the blockchain.com block explorer for a Bitcoin transaction:
+   </p>
+   <figure class="wp-block-image">
+    <img alt="" decoding="async" src="https://lh6.googleusercontent.com/SxWfBZQyxvBiZDCpbqOikp38HDW6GwB_9VAR3bQbqHXHDdUP9a8ve_7r8qKPAWt_4cxR1B6X-Vy9B-fhf-GfvaP_Shxlb_psyLq8rQ2dgwTGFwe8m-RAYv43hLce1llJAyXBTN1D"/>
+   </figure>
+   <h3 class="wp-block-heading">
+    1. The Transaction Hash ID
+   </h3>
+   <figure class="wp-block-image size-large">
+    <img alt="" class="wp-image-19374" decoding="async" height="295" loading="lazy" src="https://www.ledger.com/wp-content/uploads/2021/09/image-24.png" width="1508"/>
+   </figure>
+   <p>
+    The transaction hash, also known as the Transaction ID, is the identifier of this specific transaction. In simpler words: it’s the code associated with this transaction. If you ever want to look up the details of a certain transaction, you’ll need to enter this string of code into a block explorer.
+   </p>
+   <h3 class="wp-block-heading">
+    2. The Sending Address(es)
+   </h3>
+   <p>
+    Here, you can read which address is performing the transaction and any of its details, including how much cryptocurrency it may be sending. You can also click on the address to see its incoming and outgoing transaction history.
+   </p>
+   <p>
+    When you make a Bitcoin transaction, you will automatically send the full amount from your address with the rest sent to your
+    <a aria-label=" (opens in a new tab)" href="https://support.exodus.io/article/109-what-are-change-addresses" rel="noreferrer noopener" target="_blank">
+     change address
+    </a>
+    . Let’s take a closer look at that:
+   </p>
+   <figure class="wp-block-image size-large">
+    <img alt="Change Address" class="wp-image-14354" decoding="async" height="240" loading="lazy" src="https://www.ledger.com/wp-content/uploads/2020/09/schema-4.png" width="1756"/>
+   </figure>
+   <p>
+    In this example, your address has a balance of 1 BTC. You want to send 0.1 BTC to a friend of yours. When you create a transaction, you will send the entire balance of your address. Of course, this doesn’t all go to your friend. They receive the 0.1 BTC as intended. The remaining 0.9 BTC is sent to your change address, also called your
+    <a href="https://www.ledger.com/academy/glossary/unspent-transaction-output-utxo" rel="noreferrer noopener" target="_blank">
+     UTXOs
+    </a>
+    . This address is fully in
+    <strong>
+     your
+    </strong>
+    control. This is
+    <a aria-label="unique to Bitcoin and its derivatives (opens in a new tab)" href="https://www.ledger.com/academy/crypto/what-are-hierarchical-deterministic-hd-wallets" rel="noreferrer noopener" target="_blank">
+     unique to Bitcoin and its derivatives
+    </a>
+    – Ethereum and XRP wouldn’t send out the entire balance of an address, for example.
+   </p>
+   <h3 class="wp-block-heading">
+    3. The Fees
+   </h3>
+   <p>
+    Most cryptocurrency networks have fees associated with transactions. Bitcoin is no different in this. In this section, you can read how much the blockchain transaction cost in fees. These fees are paid to those validating blocks for the network.
+   </p>
+   <h3 class="wp-block-heading">
+    4. The Receiving Address(es)
+   </h3>
+   <p>
+    In this section, we can read the intended destination addresses of a blockchain transaction. For each address, we can see how much they are receiving. Similarly to the sending address, you can click on the receiving ones to see their transaction history. Usually the bottom of these addresses is the previously explained change address.
+   </p>
+   <h3 class="wp-block-heading">
+    5. The Transaction’s Status
+   </h3>
+   <p>
+    An often overlooked, yet very important part of a transaction: its status. For a transaction to be completed and considered valid, it first needs to be confirmed by those validating them. An unconfirmed transaction like the one shown above can still be ruled invalid or cancelled. It’s best to consider unconfirmed transactions as “not received yet” and wait till it’s actually confirmed.
+   </p>
+   <p>
+    It is possible to see more than one sending or receiving address as well. This’d be through a more advanced feature known as “
+    <a aria-label=" (opens in a new tab)" href="https://btcmanager.com/what-is-bitcoin-batching/" rel="noreferrer noopener" target="_blank">
+     Transaction batching
+    </a>
+    ”. This is a commonly used feature by cryptocurrency exchanges, where they’d send cryptocurrencies to multiple people through a single transaction to reduce fee costs.
+   </p>
+   <h2 class="wp-block-heading">
+    Read Blockchain Transactions in Ledger Live and With A Block Explorer
+   </h2>
+   <p>
+    Whenever you start up Ledger Live, it synchronizes with blockchains to check for any new transactions or changes to your balance as well as how much your cryptocurrencies are currently worth. It updates this frequently when in use as well, to make sure it remains up to date.
+   </p>
+   <p>
+    When you click on any transaction shown in Ledger Live, it will already show you the details.  This means you can read your blockchain transactions directly inside Ledger Live. Additionally, there is also an easy link to a block explorer there too, so you can verify each transaction outside Ledger Live too.
+   </p>
+   <p>
+    To do this, just click on “View in Explorer”. You can from there also continue to check your address’s balance and verify that Ledger Live is showing the correct amount. In case of any outage in Ledger Live, a block explorer will always be able to show you how much of a certain cryptocurrency you currently have.
+   </p>
+   <p>
+    With Ledger Live, we empower you to easily look up your balances – even when not using your hardware wallet. And it can do so much more – learn more about
+    <a aria-label=" (opens in a new tab)" href="https://www.ledger.com/ledger-live-is-more-than-you-think" rel="noreferrer noopener" target="_blank">
+     its powerful features here
+    </a>
+    .
+   </p>
+   <p>
+    <em>
+     Keep learning! If you enjoy getting to grips with crypto and blockchain, check out our School of Block video
+    </em>
+    <a aria-label=" (opens in a new tab)" href="https://youtu.be/rRlmp90p-As" rel="noreferrer noopener" target="_blank">
+     Blockchain Real Use Cases
+    </a>
+    .
+   </p>
+  </article>
+ </body>
+</html>

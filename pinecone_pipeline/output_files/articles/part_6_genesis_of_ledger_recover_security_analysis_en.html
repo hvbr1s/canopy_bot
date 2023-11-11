@@ -1,0 +1,508 @@
+<html>
+ <head>
+  <meta content="https://www.ledger.com/blog/part-6-genesis-of-ledger-recover-security-analysis" name="source"/>
+  <meta content="academy" name="source-type"/>
+  <meta content="en" name="locale"/>
+  <meta content="N/A" name="zd-article-id"/>
+  <meta content="part 6 genesis of ledger recover security analysis" name="title"/>
+  <meta content="public" name="classification"/>
+ </head>
+ <body>
+  <article class="margin-lg" id="article-282475">
+   <header class="header margin-sm">
+    <div class="content">
+     <div class="margin-sm is-hidden-tablet is-hidden-desktop blog-category-breadcrumb">
+      <a href="https://www.ledger.com/company-updates" title="">
+       Blog
+      </a>
+      <i class="icon-chevron-right">
+      </i>
+      <a href="https://www.ledger.com/category/blog-posts" title="Blog posts">
+       Blog posts
+      </a>
+     </div>
+     <p class="datetime caption margin-xs">
+      <a class="is-primary" href="https://www.ledger.com/category/blog-posts" title="Blog posts">
+       Blog posts
+      </a>
+      ,
+      <a class="is-primary" href="https://www.ledger.com/category/tech" title="Tech">
+       Tech
+      </a>
+      |           09/22/2023
+     </p>
+     <h1 class="h2 title margin-s">
+      Part 6: Genesis of Ledger Recover – Threat Analysis / Evaluation
+     </h1>
+     <p class="font-size-l margin-s">
+      This last article explores the security challenges identified by the Ledger Donjon when building a seed recovery service, and how regular internal and external security audits are conducted in order to guarantee the maximum of security to users.
+     </p>
+    </div>
+    <div class="illustration" style="background-image: url('https://www.ledger.com/wp-content/uploads/2023/09/LEDGER_BLOG_POST_RECOVER6.webp');">
+    </div>
+   </header>
+   <div class="row no-margin-mobile margin-md is-hidden-mobile">
+    <div class="row blog-category-breadcrumb">
+     <a href="https://www.ledger.com/company-updates" title="">
+      Blog
+     </a>
+     <i class="icon-chevron-right">
+     </i>
+     <a href="https://www.ledger.com/category/blog-posts" title="Blog posts">
+      Blog posts
+     </a>
+    </div>
+   </div>
+   <div class="row margin-lg plain-text">
+    <p>
+     Welcome back to the sixth part of our blog series on
+     <a href="https://www.ledger.com/recover">
+      Ledger Recover
+     </a>
+     ’s genesis!
+    </p>
+    <p>
+     In the previous parts, we explained how the entropy of a Secret Recovery Phrase can be
+     <a href="https://www.ledger.com/blog/part-1-genesis-of-ledger-recover-self-custody-without-compromise">
+      split in multiple shares (or fragments)
+     </a>
+     , then
+     <a href="https://www.ledger.com/blog/part-2-genesis-of-ledger-recover-securely-distributing-the-shares">
+      sent to trusted Backup Providers
+     </a>
+     , and finally
+     <a href="https://www.ledger.com/blog/part-3-genesis-of-ledger-recover-avoiding-collusion-and-leaks">
+      stored safely
+     </a>
+     while always maintaining the highest level of security.
+    </p>
+    <p>
+     In more details:
+    </p>
+    <p>
+     <a href="https://www.ledger.com/blog/part-1-genesis-of-ledger-recover-self-custody-without-compromise">
+      Genesis of Ledger Recover Part 1 – “Self-custody without compromise,”
+     </a>
+     delves into all the potential challenges when building Ledger Recover, provided by Coincover, and introduces us to the core security feature of Ledger Recover, splitting your Secret Recovery Phrase into shares.
+    </p>
+    <p>
+     <a href="https://www.ledger.com/blog/part-2-genesis-of-ledger-recover-securely-distributing-the-shares">
+      Genesis of Ledger Recover Part 2 – “Securely distributing the shares,”
+     </a>
+     introduces several cryptographic tools and mathematical concepts that Ledger Recover leverages to securely distribute your seed shares to backup providers.
+    </p>
+    <p>
+     <a href="https://www.ledger.com/blog/part-3-genesis-of-ledger-recover-avoiding-collusion-and-leaks">
+      Genesis of Ledger Recover Part 3 – “Avoiding collusions and leaks,”
+     </a>
+     tackles how we ensure that the shares are stored safely, and how we prevent backup providers from colluding to reconstruct your Secret Recovery Phrase.
+    </p>
+    <p>
+     <a href="https://www.ledger.com/blog/part-4-genesis-of-ledger-recover-controlling-access-to-the-backup-identity-verification">
+      Genesis of Ledger Recover Part 4 – “Controlling access to the backup: identity verification,”
+     </a>
+     discusses how the service ensures that the person initiating the request for sharing or recovering their Secret Recovery Phrase is indeed its rightful owner.
+    </p>
+    <p>
+     <a href="https://www.ledger.com/blog/part-5-genesis-of-ledger-recover-operational-security">
+      Genesis of Ledger Recover Part 5 – ‘Operational Security,’
+     </a>
+     takes a closer look at how we ensure maximum security at the operational level, including security infrastructure, separation of duties, governance, monitoring, and finally the Incident Response strategy.
+    </p>
+    <p>
+     For this part, let the authors introduce you to
+     <a href="https://donjon.ledger.com/">
+      Ledger Donjon
+     </a>
+     , Ledger’s internal security evaluation lab. The Ledger Donjon is made up of a world-class expert team with extensive backgrounds in the security and smartcard industries. Its key functions are internal and external security assessment. They work closely with Ledger’s Firmware development and hardware teams to analyze and improve the security of Ledger products.
+    </p>
+    <p>
+     The team is continuously looking for vulnerabilities on Ledger products as well as Ledger’s providers’ products.
+    </p>
+    <p>
+     This last article explores the security challenges identified by the Ledger Donjon when building a seed recovery service, and how regular internal and external security audits are conducted in order to guarantee the maximum of security to users.
+    </p>
+    <h4 class="wp-block-heading">
+     Protocol specification advising
+    </h4>
+    <h5 class="wp-block-heading">
+     Protection of the seed phrase and share
+    </h5>
+    <h6 class="wp-block-heading">
+     Ensuring User Consent for Seed-Related Actions
+    </h6>
+    <p>
+     The aim of a hardware wallet is to protect your keys, either the embedded application’s private keys or the master seed itself. The user’s keys should not be accessed if the user did not grant access to them. Each time a user decides to interact with the keys, for example, by signing a transaction, a pin request is made and the action can only be performed if the user enters his pin code after validating the transaction on the trusted screen of the device.
+    </p>
+    <p>
+     This mechanism is guaranteed by our custom OS, dubbed
+     <a href="https://www.ledger.com/academy/security/our-custom-operating-system-bolos">
+      BOLOS
+     </a>
+     , running on top of the
+     <a href="https://www.ledger.com/academy/security/the-secure-element-whistanding-security-attacks">
+      Secure Element
+     </a>
+     . The Secure Element prevents unwanted access to your wallet by protecting it against most of the attack scenarios, still allowing for legitimate access to your seed or private keys. The combined work of the Secure Element and the custom OS  allows guaranteeing user consent when a user tries to access his secrets.
+    </p>
+    <p>
+     User consent mechanism did not change for Ledger Recover and the creation of the three Secret Recovery Phrase shares: the OS
+     <em>
+      requires
+     </em>
+     user consent because it needs to interact with the seed. From a device point of view, the Ledger Recover opt-in is like interacting with smart contracts or signing transactions. And if you do not grant access to the seed, the share creation is impossible. Moreover, Ledger Recover only allows exporting shares, not the seed itself, and only on fully encrypted secure channels, as described in the previous blog posts.
+    </p>
+    <h6 class="wp-block-heading">
+     Safeguarding Seed Access: Preventing Unauthorized Access
+    </h6>
+    <p>
+     The duo custom OS and Secure Element also allows you to have custom applications on your Ledger devices without compromising security. As reminded by the Donjon when
+     <a href="https://donjon.ledger.com/threat-model/os-seed-confidentiality/">
+      talking about the threat model for confidentiality of the Seed and Private Keys
+     </a>
+     .
+    </p>
+    <p>
+     The applications on the device, therefore, never have access to your seed. They can only interact with private keys dedicated to each application, which are generated from the seed by BOLOS, without the possibility to extract them. Ledger Recover was designed as a feature integrated directly into BOLOS and not as an external app to maintain the validity of the threat model:
+    </p>
+    <ul>
+     <li>
+      No possibility for Applications to interact with the seed, with all the risks it entails and
+     </li>
+     <li>
+      Maintain the current application isolation mechanism (refer to the
+      <a href="https://www.ssi.gouv.fr/uploads/2023/08/anssi-cible-cspn-2023_17en.pdf">
+       Ledger Nano X Security Target
+      </a>
+      , section 7.5 Security Function #5: App Isolation).
+     </li>
+    </ul>
+    <figure class="wp-block-image size-full is-resized">
+     <img alt="" class="wp-image-282727" decoding="async" height="265" loading="lazy" sizes="(max-width: 512px) 100vw, 512px" src="https://www.ledger.com/wp-content/uploads/2023/09/Capture-decran-2023-09-21-a-11.46.38.png" srcset="https://www.ledger.com/wp-content/uploads/2023/09/Capture-decran-2023-09-21-a-11.46.38.png 966w, https://www.ledger.com/wp-content/uploads/2023/09/Capture-decran-2023-09-21-a-11.46.38-300x155.png 300w, https://www.ledger.com/wp-content/uploads/2023/09/Capture-decran-2023-09-21-a-11.46.38-768x398.png 768w, https://www.ledger.com/wp-content/uploads/2023/09/Capture-decran-2023-09-21-a-11.46.38-490x254.png 490w" style="width:512px;height:265px" width="512"/>
+    </figure>
+    <h6 class="wp-block-heading">
+     Guarantee the confidentiality of user seed
+    </h6>
+    <p>
+     Another critical point for Ledger device security is to interact with the seed or the private keys without leaking any information about them.
+    </p>
+    <p>
+     Like for other cryptographic operations on the seed, shares are generated inside the Secure Element, providing us with security mechanisms that prevent external attackers from obtaining any information about the seed. Moreover, as seen in the
+     <a href="https://www.ledger.com/blog/part-1-genesis-of-ledger-recover-self-custody-without-compromise/">
+      first part
+     </a>
+     , the chosen cryptographic protocol allows the creation of shares which alone provides no information about the original seed.
+    </p>
+    <h6 class="wp-block-heading">
+     Communicate the shares safely
+    </h6>
+    <p>
+     The shares also need to be protected during the communication between the Secure Element on the device and the HSM (Hardware Security Module).
+    </p>
+    <p>
+     The communication channels ensure all the properties of a secure channel: confidentiality, integrity, and authenticity. This is done using a
+     <a href="https://developers.ledger.com/docs/embedded-app/bolos-features/#secure-channe">
+      Secure Channel
+     </a>
+     already integrated into Ledger devices and HSMs through the mechanism of Attestation:
+    </p>
+    <ul>
+     <li>
+      The confidentiality is assured by generating ephemeral keypairs on the device and the HSM, and encrypting messages with them. The cryptographic protocols ensure message integrity.
+     </li>
+     <li>
+      The authentication is done through attestations and a chain of trust which guarantees that the communication happens between a genuine Ledger device and a genuine Ledger HSM. No one can impersonate them.
+     </li>
+    </ul>
+    <p>
+     The shares will also transit to the backup providers’ databases, and the same requirements must be fulfilled. To ensure the encryption of the shares, we take advantage of the encryption mechanism brought by the HSM. This way, only a genuine Ledger Recover HSM can decrypt the shares. It also means that even if someone succeeds in stealing the shares databases it will have no information about the shares.
+    </p>
+    <p>
+     These first requirements allow us to ensure that the shares will only be transported through a genuine Ledger device to a genuine Ledger Recover HSM, with no one in between these two elements being able to retrieve the share.
+    </p>
+    <p>
+    </p>
+    <h5 class="wp-block-heading">
+     Concerning the user identity
+    </h5>
+    <p>
+     The other critical asset of Ledger Recover is the user identity information. We also need to protect users from data breaches. This is why we have verified during reviews that:
+    </p>
+    <ul>
+     <li>
+      The communication of the identity from the IDV to the storage should be encrypted and provide confidentiality and integrity.
+     </li>
+     <li>
+      The database for long term storage should have a strong encryption mechanism using a HSM the same way the shares are stored.
+     </li>
+    </ul>
+    <p>
+     All the security reviews have been done by considering external attackers and internal rogue employees. The security requirements must consider the case of an insider trying to steal shares to ultimately steal user funds. This is why all the security behavior is put inside secure components, like HSMs and Nano devices.
+    </p>
+    <h4 class="wp-block-heading">
+     Security Analysis
+    </h4>
+    <p>
+     Security Analyses are done continuously for Ledger components. The analyses are performed in two distinct ways: Internal Security Reviews and External Pentests. The following sections will detail what they are and why two different types of analysis are required.
+    </p>
+    <h5 class="wp-block-heading">
+     Internal Security Reviews
+    </h5>
+    <p>
+     As security is not an option at Ledger, a dedicated in-house team has been created: the Ledger Donjon (
+     <a href="https://blog.ledger.com/tag/donjon/">
+      The Ledger Donjon
+     </a>
+     ,
+     <a href="https://www.ledger.com/academy/enter-the-donjon">
+      Enter the Donjon
+     </a>
+     ). Its primary mission is to improve the security of Ledger’s products. To accomplish this, the Donjon has technical skills allowing them to perform:
+    </p>
+    <ul>
+     <li>
+      rigorous software and hardware attacks
+     </li>
+     <li>
+      code security audits
+     </li>
+     <li>
+      architecture security reviews
+     </li>
+     <li>
+      static analysis
+     </li>
+     <li>
+      validate that products resist the threat model
+     </li>
+    </ul>
+    <p>
+     To give concrete examples of what the team does:
+    </p>
+    <ul>
+     <li>
+      Code security review:
+      <ul>
+       <li>
+        Nano firmware updates are securely analyzed before they can be downloaded on Ledger Live
+       </li>
+       <li>
+        Applications are reviewed before being made available in Ledger Live
+       </li>
+      </ul>
+     </li>
+    </ul>
+    <ul>
+     <li>
+      Architecture security review:
+      <ul>
+       <li>
+        Product architecture and components are reviewed to maintain the level of security of our products
+       </li>
+      </ul>
+     </li>
+    </ul>
+    <ul>
+     <li>
+      Hardware attacks :
+      <ul>
+       <li>
+        <a href="https://blog.ledger.com/new-pin-screen/">
+         https://blog.ledger.com/new-pin-screen/
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+    <ul>
+     <li>
+      Code Signing:
+      <ul>
+       <li>
+        The process of releasing updates is also protected by requiring the signature of several people with different interests in the company
+       </li>
+      </ul>
+     </li>
+    </ul>
+    <h5 class="wp-block-heading">
+     External Pentests
+    </h5>
+    <p>
+     However, as transparency is one of our core values, we at Ledger also want to be challenged by our community. That’s where pentests, also called security evaluations, come into play.
+    </p>
+    <p>
+     These pentests allow us to demonstrate to customers – both individuals and companies – the level of security of products or services, such as our Ledger Nano line or Ledger Recover. By undergoing these evaluations, we are subjecting such products, services, software and knowledge to testing by an independent third-party security laboratory with highly advanced equipment and expertise. As a result of the evaluations, Ledger has been awarded CSPN certificates for the
+     <a href="https://www.ssi.gouv.fr/entreprise/certification_cspn/ledger-nano-s-version-1-5-1-2c970001/">
+      Nano S
+     </a>
+     and
+     <a href="https://www.ssi.gouv.fr/entreprise/certification_cspn/ledger-nano-x-fw-se-version-1-2-5-1-2c970004-fw-mcu-version-2-8/">
+      Nano X
+     </a>
+     by ANSSI.
+    </p>
+    <h6 class="wp-block-heading">
+     Pentesting Laboratory
+    </h6>
+    <p>
+     The pentests are not performed by any random laboratory. We decided to go with the
+     <a href="https://www.ssi.gouv.fr/entreprise/produits-certifies/produits-certifies-cspn/les-centres-devaluation/">
+      ones licensed
+     </a>
+     by
+     <a href="https://www.ssi.gouv.fr/">
+      ANSSI
+     </a>
+     , France’s Cybersecurity Agency, known for its meticulous work in the field of cybersecurity.
+    </p>
+    <p>
+     Our decision led us to onboard
+     <a href="https://www.synacktiv.com/en.html">
+      Synacktiv
+     </a>
+     for this crucial journey. Hailing from Paris, Synacktiv is an offensive security laboratory recognized for the quality of their work and their
+     <a href="https://www.synacktiv.com/en/advisories">
+      findings
+     </a>
+     . Given our utmost desire to uncover any potential flaws, vulnerabilities, or bugs in Ledger Recover, we spared no effort in ensuring they were positioned for success by providing them with all the resources and support they needed:
+    </p>
+    <ul>
+     <li>
+      all documentation (architecture, cryptographic specifications, sequence diagrams)
+     </li>
+     <li>
+      white-box methodology (access to the source code)
+     </li>
+     <li>
+      samples (Nano X)
+     </li>
+     <li>
+      access to Ledger Recover interfaces (even the ones not exposed to the final user)
+     </li>
+     <li>
+      access to Ledger personnel (architects, developers, security experts)
+     </li>
+     <li>
+      80 men.days to perform their assessment
+     </li>
+    </ul>
+    <h4 class="wp-block-heading">
+     Security Analysis Outcome
+    </h4>
+    <p>
+     The outcome was more than positive for Ledger. Despite all the hard work and time we put into developing and reviewing Ledger Recover, bugs and vulnerabilities were still found by Synacktiv, which led to refactoring and architecture changes in the code, adding additional security layers and toughening what was already in place. And, of course, the Ledger Donjon performed an Internal Security Review.
+    </p>
+    <p>
+     As firm believers that “the devil is in the details”, we are committed to forging ahead on that path, conducting regular pentests on Ledger Recover.
+    </p>
+    <p>
+     For example we will detail some outcomes from the different audits and the mitigation planned.
+    </p>
+    <h5 class="wp-block-heading">
+     Man In the Middle attacks
+    </h5>
+    <p>
+     Ledger Recover was designed to take advantage of the security built into our devices and HSMs. But even with such security, we need to ensure users cannot be fooled or manipulated into performing actions that would compromise their seed and therefore assure them maximum security.
+    </p>
+    <p>
+     During one of the reviews, we noticed that the restore process was vulnerable to social engineering attacks. It relied on a prerequisite: having installed beforehand a rogue Ledger Live on the user’s computer. The idea was the following:
+    </p>
+    <ul>
+     <li>
+      With the help of the rogue Ledger Live, the attacker is waiting for the user to start an Identity Verification.
+     </li>
+     <li>
+      Once this latter is initiated, the attacker also launches an Identity Verification.
+     </li>
+     <li>
+      As he controls the rogue Ledger Live, the attacker is able to switch the sessions leading the user to a wrong session and the attacker stealing the real session from the user.
+     </li>
+     <li>
+      At the end the attacker could have been able to retrieve the user’s seed.
+     </li>
+    </ul>
+    <p>
+     This attack could be carried out through social engineering, for example, by manipulating the user into performing an Identity Verification. To fix this issue, we decided to have two lines of actions: first, like for all other products we decided to provide user documentation to give users the right process to follow and not be fooled during some actions. The second action we put in place is a technical measure: preventing a single account from starting two restores from the same seed.
+    </p>
+    <h5 class="wp-block-heading">
+     Internal threats
+    </h5>
+    <p>
+     Other outcomes of the security reviews were about the potential internal threats. This security point of view was already present in the original architecture with the idea of having three companies to store the different parts of seed and prevent a bad actor from stealing elements. But at first the mitigation was designed at a high level by the separation of knowledge. The security reviews showed some weakness which led to additional mitigations.
+     <br/>
+     <br/>
+     For example, we developed the diversification of backup_id. Originally the backup_id was the same in the three databases, so the Ledger Recover service could retrieve easily which part of the share on the first backup provider was linked to the one on the second backup provider. Then we decided to diversify the backup_id in a way that if people from two companies decide to collude it will be difficult to know which share is paired with another share.
+    </p>
+    <p>
+     Another case was the database where the user identity information is stored. At first it was encrypted with a simple encryption. To prevent an internal attacker from being able to retrieve the key we decided to use HSM encryption in that way no one could retrieve the key. Even if we add several infrastructure hardening
+     <a href="https://www.ledger.com/blog/part-5-genesis-of-ledger-recover-operational-security">
+      (see Part 5).
+     </a>
+    </p>
+    <p>
+    </p>
+    <h4 class="wp-block-heading">
+     Next steps
+    </h4>
+    <p>
+     This last chapter shows you that our products are built by prioritizing the safety of our users. This is why several actions are already planned for the future of Ledger Recover: the security will be analyzed regularly either by our internal team or by external security actors.
+     <br/>
+     <br/>
+     Our devices are also repeatedly audited and assessed to assure the pair custom OS and Secure Element guarantee the security of the user secrets. This process is never ending and will continue throughout the life of Ledger Recover as a service.
+    </p>
+    <p>
+     Last but not least, Ledger Recover is part of our
+     <a href="https://donjon.ledger.com/bounty/">
+      Bounty
+     </a>
+     program and the
+     <a href="https://github.com/LedgerHQ/ledger-secure-os">
+      source code containing the implementation of Ledger Recover
+     </a>
+     is also public and can be reviewed by anyone.
+    </p>
+    <p>
+     Thank you again for having stayed with us through this journey of unveiling what’s behind the scene of Ledger Recover. And hoping to see you on the day of the official launch!
+    </p>
+    <p>
+    </p>
+    <blockquote class="wp-block-quote">
+     <p id="block-52fa69c8-13d8-4508-8131-d382aafd143e">
+      Romain Muguet
+     </p>
+     <cite>
+      Security Certification Engineer
+     </cite>
+    </blockquote>
+    <blockquote class="wp-block-quote">
+     <p>
+      Marion Lafon
+     </p>
+     <cite>
+      Software Security Engineer
+     </cite>
+    </blockquote>
+   </div>
+   <footer class="row plain-text footer">
+    <div class="social-icons-footer">
+     <a class="h6 icon-facebook" href="https://www.facebook.com/Ledger/" target="_blank">
+     </a>
+     <a class="h6 icon-insta" href="https://www.instagram.com/ledger/" target="_blank">
+      <i class="fab fa-instagram">
+      </i>
+     </a>
+     <a class="h6 icon-twitter" href="https://twitter.com/Ledger" target="_blank">
+     </a>
+     <a class="h6 icon-linkedin" href="https://www.linkedin.com/company/ledgerhq/" target="_blank">
+     </a>
+     <a class="h6 icon-reddit" href="https://www.reddit.com/r/ledgerwallet/" target="_blank">
+     </a>
+     <a class="h6 icon-tiktok" href="https://www.tiktok.com/@ledger" target="_blank">
+      <i class="fab fa-tiktok">
+      </i>
+     </a>
+    </div>
+   </footer>
+  </article>
+ </body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/4403056215825-Set-up-and-use-polkadot-js-to-access-your-Ledger-Polkadot-DOT-accounts"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="4403056215825"/><meta name="title" content="Set up and use polkadot.js to access your Ledger Polkadot (DOT) accounts"/><meta name="classification" content="public"/></head>                            <body><h1>Set up and use polkadot.js to access your Ledger Polkadot (DOT) accounts</h1>
+<div class="callout callout--warning">
+<h4 id="h_01HAW1X2W2N2HPPSSH2ZXNHX5Q" class="callout__title"><strong>Can't add account / Missing rewards or transactions</strong></h4>
+<ul>
+<li>We're aware of sync issues affecting Polkadot accounts in Ledger Live.</li>
+<li>
+<strong>Transactions</strong> and <strong>rewards</strong>* might <strong>not be displayed correctly</strong> in your transaction history and you might not be able to <strong>add new DOT accounts.</strong>
+</li>
+<li>Your funds are <strong>safe</strong>, this is only a display issue in Ledger Live.</li>
+<li>We're working on a <strong>fix</strong> that should be deployed soon to desktop and mobile.</li>
+<li>In the meantime you can use <a href="https://support.ledger.com/hc/en-us/articles/4904300456861-How-to-access-your-Ledger-Polkadot-DOT-accounts-and-NFTs-via-Talisman?docs=true" target="_blank" rel="noopener">Talisman</a> to add/manage an account and the <a href="https://support.ledger.com/hc/en-us/articles/7402653416477-How-to-use-the-Polkadot-Staking-Dashboard?docs=true" target="_blank" rel="noopener">Polkadot Staking Dashboard</a> to manage your staking.</li>
+<li>
+<strong>Updates</strong> will be posted here and to <a href="https://twitter.com/Ledger_Support" target="_blank" rel="noopener">our official Twitter account</a>.</li>
+</ul>
+</div>
+<p><span>This tutorial describes how to set up and use the polkadot.js app with your Ledger device to access your Ledger Polkadot (DOT) accounts and unbound a staked DOT balance.</span></p>
+<h2 id="h_01HAW1X2W28X2EMSVVBGCP2ZJ3">Before you start</h2>
+<ul class="list-bullet">
+<li>Ensure the <strong>latest version</strong> of the <a href="https://support.ledger.com/hc/en-us/articles/360016289919-Polkadot-DOT-?docs=true" target="_blank" rel="noopener">Polkadot (DOT) app</a> is installed on your Ledger device.</li>
+<li>Ensure that <strong>Ledger Live is closed</strong> as it can conflict with polkadot.js.</li>
+<li>Please note that polkadot.js <strong>does not support Ledger devices on Firefox</strong>. Please ensure you are using <strong><a href="https://www.google.com/chrome/" target="_blank" rel="noopener">Chrome </a></strong>or <strong><a href="https://brave.com/" target="_blank" rel="noopener">Brave</a></strong>.</li>
+</ul>
+<h2 id="h_01HAW1X2W2NAQPTETVVP47S906">Connect your device to polkadot.js</h2>
+<div class="accordion accordion--default">
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>Connect your Ledger device to polkadot.js browser extenstion</strong></div>
+<div class="accordion__item-content">
+<div class="callout callout--primary">
+<h4 id="h_01HAW1X2W245K980WCXC36XQX8" class="callout__title">Alternative way of connecting</h4>
+<p>As an alternative, you can connect directly with the Ledger device to polkadot.js extension. In that case, you can follow the steps below and skip<strong> Connect your device to polkadot.js</strong> and <strong>Add your first Ledger DOT account</strong> parts of this tutorial.</p>
+</div>
+<ol>
+<li>
+<a href="https://polkadot.js.org/extension/" target="_blank" rel="noopener">Install polkadot.js extension</a> to your browser (Chrome/Firefox).</li>
+<li>Open the extension and click on the <strong>+ button.</strong>
+</li>
+<li>Select <strong>Connect Ledger device. <img src="https://support.ledger.com/hc/article_attachments/10359841412381"></strong>
+</li>
+<li>Connect your Ledger device and open Polkadot app.</li>
+<li>Select the network (Polkadot), select your Ledger device, and click Connect.<img src="https://support.ledger.com/hc/article_attachments/10359985354141" width="568" height="476">
+</li>
+<li>Name your Ledger Polkadot account. Leave account index and type as 0. <img src="https://support.ledger.com/hc/article_attachments/10360025340317">
+</li>
+<li>Click <strong>Import Account.</strong>
+</li>
+</ol>
+<p>Once you imported the account to the extension polkadot.js, you can access the website polkadot.js and connect automatically and manage your DOT like send/receive or manage your bonded DOT with a Ledger device.</p>
+</div>
+</div>
+</div>
+<ol class="list-colored">
+<li>Unlock your Ledger device and open the<strong> Polkadot</strong> app</li>
+<li>Go to <a href="https://polkadot.js.org/" target="_blank" rel="noopener">polkadot.js.</a>
+</li>
+<li>Select the <a href="https://polkadot.js.org/apps/" target="_blank" rel="noopener">polkadot.js.org/apps/</a> tile.<br><span>The next page may take some time to load.</span>
+</li>
+<li>Click the <strong>Polkadot logo</strong> to open the side panel and make sure that you're connected <strong>via Parity.</strong>
+</li>
+<li>Close the panel by clicking on the<strong> (X)</strong> button.</li>
+<li>Navigate to <strong>Settings</strong>, select <strong>manage hardware connections</strong> and then choose one of the following:
+<ul>
+<li>
+<p><strong>Attach Ledger via WebUSB</strong> if you are on Windows.</p>
+</li>
+<li>
+<p><strong>Attach Ledger via WebHID</strong> if you are on macOS or Linux.</p>
+</li>
+</ul>
+</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+<p class="wysiwyg-text-align-center"><a class="image-with-lightbox" href="https://support.ledger.com/hc/article_attachments/4403057328145"> <img src="https://support.ledger.com/hc/article_attachments/4403057328145" width="491" height="234"> </a></p>
+<h2 id="h_01HAW1X2W278QKYXKN5Z57B5HT">Add your first Ledger DOT account</h2>
+<ol class="list-colored">
+<li>In the top header, go to <strong>Accounts. </strong>
+</li>
+<li>In the drop-down menu, click <strong>Accounts</strong>.</li>
+<li>Select<strong> Add via Ledger.</strong>
+</li>
+<li>In the subsequent menu, enter a name in the <strong>Name</strong> field, then leave <strong>Account type </strong>and <strong>Address index </strong>as they are. Click <strong>Save</strong>.<br>A pop-up window may appear.</li>
+<li>To confirm the connection with your Ledger device, select your device then click <strong>Connect</strong>.<br><span>Your Ledger Polkadot (DOT) account appears.</span>
+</li>
+</ol>
+<p class="wysiwyg-text-align-center"><a class="image-with-lightbox" href="https://support.ledger.com/hc/article_attachments/4403056491153"> <img src="https://support.ledger.com/hc/article_attachments/4403056491153" width="491" height="234"> </a></p>
+<h2 id="h_01HAW1X2W25MYCZEGP61QRNHW4">Add additional Ledger DOT accounts</h2>
+<p>If you own multiple Polkadot (DOT) accounts, follow the steps below to add them manually:</p>
+<ol class="list-colored">
+<li>Select <strong>Add via Ledger</strong>.</li>
+<li>In the <strong>Name</strong> field, choose a different name for your second account.</li>
+<li>In the <strong>Account type</strong> field, choose <strong>Account type 1.</strong><br><em class="fas fa-exclamation-triangle"> </em>The <strong>address index</strong> field can stay on the default <strong>0</strong> value.</li>
+<li>Click <strong>Save.</strong>
+</li>
+</ol>
+<p>Your second DOT account should now show up next to your first account. If you own a third account, follow the same steps but this time choose <strong>Account type 2</strong>, and so on so forth.</p>
+<p class="wysiwyg-text-align-center"><a class="image-with-lightbox" href="https://support.ledger.com/hc/article_attachments/4403057117969"> <img src="https://support.ledger.com/hc/article_attachments/4403057117969" width="491" height="234"> </a></p>
+<h2 id="h_01HAW1X2W2Y0AABR0MJNWXBJCC"><span>Unbound a staked balance via polkadot.js</span></h2>
+<p>It's possible to use polkadot.js to unbond a staked (nominating) balance. Before it can be unbound, a staked balance needs to be <strong>chilled</strong>:</p>
+<ol class="list-colored">
+<li>On the polkadot.js app, navigate to the <strong>Staking</strong> tab.</li>
+<li>Select <strong>Account Actions</strong>.<br>Your staked DOT balance(s) appear.</li>
+<li>Select your staked balance, click <strong>Stop nominating</strong> and <strong>confirm</strong> the transaction on your<strong> Ledger device</strong>.<br>Your staked balance chills and can now be unbound.
+<p class="wysiwyg-text-align-center"><img src="https://support.ledger.com/hc/article_attachments/4409013161105" alt="chill_balance.png"><br><span class="wysiwyg-font-size-small">(<em style="font-size: x-small; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">Source: <a href="https://wiki.polkadot.network/docs/maintain-guides-how-to-unbond" target="_blank" rel="noopener">Polkadot Wiki)</a></em></span></p>
+</li>
+<li style="list-style-type: none;">Click the <strong>three dots </strong>icon and select <strong>Unbound funds.<br></strong>
+</li>
+<li>
+<strong>Select the amount </strong>you wish to unbound then <strong>confirm</strong> the transaction on your <strong>Ledger device</strong>.<br>The unbonding process starts.<br><em class="fas fa-exclamation-triangle"> </em>Please note that <strong>it takes</strong> <strong>28 days for a DOT balance to unbound</strong> and become available to withdraw.</li>
+<li class="wysiwyg-text-align-left">Once your DOT balance is unbound, select <strong>Withdraw unbounded funds</strong> from the same menu to withdraw your DOT balance to your available balance.
+<p class="wysiwyg-text-align-center"><img src="https://support.ledger.com/hc/article_attachments/4409013344529" alt="unbound_balance.png"><span class="wysiwyg-font-size-small">(<em style="font-size: x-small; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">Source: <a href="https://wiki.polkadot.network/docs/maintain-guides-how-to-unbond" target="_blank" rel="noopener">Polkadot Wiki)</a></em></span></p>
+</li>
+</ol>
+<h2 id="h_01HAW1X2W2B01ACDA5ZTXP961E"><span>Need more help?</span></h2>
+<p><span>Please reach out to <a href="https://support.ledger.com/hc/en-us/articles/4423020306705?support=true" target="_blank" rel="noopener">Ledger support</a>, we will be happy to provide assistance.</span></p>
+<p> </p>
+<p><em><span data-preserver-spaces="true">*Rewards are not guaranteed. Ledger does not provide any financial advice or recommendation. </span></em></p></body></html>

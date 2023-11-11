@@ -1,0 +1,306 @@
+<html>
+ <head>
+  <meta content="https://www.ledger.com/academy/what-are-erc-tokens-and-why-do-we-use-them" name="source"/>
+  <meta content="academy" name="source-type"/>
+  <meta content="en" name="locale"/>
+  <meta content="N/A" name="zd-article-id"/>
+  <meta content="what are erc tokens and why do we use them" name="title"/>
+  <meta content="public" name="classification"/>
+ </head>
+ <body>
+  <article class="plain-text margin-sm article" id="article">
+   <h1 class="margin-xs">
+    Ethereum Tokens: What Is The ERC Token Standard All About?
+   </h1>
+   <div class="article-author">
+    <div>
+     By
+     <b>
+      Mohammad Musharraf
+     </b>
+    </div>
+    <div>
+     <img alt="" height="21" src="https://www.ledger.com/wp-content/uploads/2022/09/Mohammad-104x104.jpeg" width="21">
+     </img>
+    </div>
+   </div>
+   <div class="color-grey-500 small-text uppercase margin-xs article-date">
+    Oct 31, 2021
+          |
+    <b>
+     Updated Jun 27, 2023
+    </b>
+   </div>
+   <div class="caption-for-article flexbox flex-start">
+    <div class="flex-none time-to-read">
+     <span class="badge badge-nude">
+      <i class="icon-copy">
+      </i>
+      Read
+     </span>
+     <span>
+      5 min
+     </span>
+    </div>
+    <div class="with-point level level-1">
+     <span>
+      Beginner
+     </span>
+    </div>
+   </div>
+   <div class="align-center share-box" id="fixed-share-box">
+    <span>
+     SHARE
+    </span>
+    <div class="heateor_sss_sharing_container heateor_sss_horizontal_sharing" data-heateor-ss-offset="0" data-heateor-sss-href="https://www.ledger.com/academy/what-are-erc-tokens-and-why-do-we-use-them">
+     <div class="heateor_sss_sharing_ul">
+      <a aria-label="Instagram" class="heateor_sss_button_instagram" href="https://www.instagram.com/ledger" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Instagram">
+       <span class="heateor_sss_svg" style="background-color:#53beee;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg height="100%" style="display:block;border-radius:999px;" version="1.1" viewbox="-10 -10 148 148" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+         <g>
+          <g>
+           <path d="M86,112H42c-14.336,0-26-11.663-26-26V42c0-14.337,11.664-26,26-26h44c14.337,0,26,11.663,26,26v44 C112,100.337,100.337,112,86,112z M42,24c-9.925,0-18,8.074-18,18v44c0,9.925,8.075,18,18,18h44c9.926,0,18-8.075,18-18V42 c0-9.926-8.074-18-18-18H42z" fill="#fff">
+           </path>
+          </g>
+          <g>
+           <path d="M64,88c-13.234,0-24-10.767-24-24c0-13.234,10.766-24,24-24s24,10.766,24,24C88,77.233,77.234,88,64,88z M64,48c-8.822,0-16,7.178-16,16s7.178,16,16,16c8.822,0,16-7.178,16-16S72.822,48,64,48z" fill="#fff">
+           </path>
+          </g>
+          <g>
+           <circle cx="89.5" cy="38.5" fill="#fff" r="5.5">
+           </circle>
+          </g>
+         </g>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Facebook" class="heateor_sss_facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fwhat-are-erc-tokens-and-why-do-we-use-them" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Facebook">
+       <span class="heateor_sss_svg" style="background-color:#3c589a;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="-5 -5 42 42" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M17.78 27.5V17.008h3.522l.527-4.09h-4.05v-2.61c0-1.182.33-1.99 2.023-1.99h2.166V4.66c-.375-.05-1.66-.16-3.155-.16-3.123 0-5.26 1.905-5.26 5.405v3.016h-3.53v4.09h3.53V27.5h4.223z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Twitter" class="heateor_sss_button_twitter" href="http://twitter.com/intent/tweet?via=ledger&amp;text=Ethereum%20Tokens%3A%20What%20Is%20The%20ERC%20Token%20Standard%20All%20About%3F&amp;url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fwhat-are-erc-tokens-and-why-do-we-use-them" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Twitter">
+       <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_twitter" style="background-color:#55acee;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="-4 -4 39 39" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M28 8.557a9.913 9.913 0 0 1-2.828.775 4.93 4.93 0 0 0 2.166-2.725 9.738 9.738 0 0 1-3.13 1.194 4.92 4.92 0 0 0-3.593-1.55 4.924 4.924 0 0 0-4.794 6.049c-4.09-.21-7.72-2.17-10.15-5.15a4.942 4.942 0 0 0-.665 2.477c0 1.71.87 3.214 2.19 4.1a4.968 4.968 0 0 1-2.23-.616v.06c0 2.39 1.7 4.38 3.952 4.83-.414.115-.85.174-1.297.174-.318 0-.626-.03-.928-.086a4.935 4.935 0 0 0 4.6 3.42 9.893 9.893 0 0 1-6.114 2.107c-.398 0-.79-.023-1.175-.068a13.953 13.953 0 0 0 7.55 2.213c9.056 0 14.01-7.507 14.01-14.013 0-.213-.005-.426-.015-.637.96-.695 1.795-1.56 2.455-2.55z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Linkedin" class="heateor_sss_button_linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fwhat-are-erc-tokens-and-why-do-we-use-them" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Linkedin">
+       <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_linkedin" style="background-color:#0077b5;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="0 0 32 32" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M6.227 12.61h4.19v13.48h-4.19V12.61zm2.095-6.7a2.43 2.43 0 0 1 0 4.86c-1.344 0-2.428-1.09-2.428-2.43s1.084-2.43 2.428-2.43m4.72 6.7h4.02v1.84h.058c.56-1.058 1.927-2.176 3.965-2.176 4.238 0 5.02 2.792 5.02 6.42v7.395h-4.183v-6.56c0-1.564-.03-3.574-2.178-3.574-2.18 0-2.514 1.7-2.514 3.46v6.668h-4.187V12.61z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Reddit" class="heateor_sss_button_reddit" href="http://reddit.com/submit?url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fwhat-are-erc-tokens-and-why-do-we-use-them&amp;title=Ethereum%20Tokens%3A%20What%20Is%20The%20ERC%20Token%20Standard%20All%20About%3F" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Reddit">
+       <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_reddit" style="background-color:#ff5700;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="-3.5 -3.5 39 39" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M28.543 15.774a2.953 2.953 0 0 0-2.951-2.949 2.882 2.882 0 0 0-1.9.713 14.075 14.075 0 0 0-6.85-2.044l1.38-4.349 3.768.884a2.452 2.452 0 1 0 .24-1.176l-4.274-1a.6.6 0 0 0-.709.4l-1.659 5.224a14.314 14.314 0 0 0-7.316 2.029 2.908 2.908 0 0 0-1.872-.681 2.942 2.942 0 0 0-1.618 5.4 5.109 5.109 0 0 0-.062.765c0 4.158 5.037 7.541 11.229 7.541s11.22-3.383 11.22-7.541a5.2 5.2 0 0 0-.053-.706 2.963 2.963 0 0 0 1.427-2.51zm-18.008 1.88a1.753 1.753 0 0 1 1.73-1.74 1.73 1.73 0 0 1 1.709 1.74 1.709 1.709 0 0 1-1.709 1.711 1.733 1.733 0 0 1-1.73-1.711zm9.565 4.968a5.573 5.573 0 0 1-4.081 1.272h-.032a5.576 5.576 0 0 1-4.087-1.272.6.6 0 0 1 .844-.854 4.5 4.5 0 0 0 3.238.927h.032a4.5 4.5 0 0 0 3.237-.927.6.6 0 1 1 .844.854zm-.331-3.256a1.726 1.726 0 1 1 1.709-1.712 1.717 1.717 0 0 1-1.712 1.712z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+     </div>
+     <div class="heateorSssClear">
+     </div>
+    </div>
+   </div>
+   <figure class="wp-block-image size-large">
+    <img alt="Coins spiraling in a circle" class="wp-image-269220" decoding="async" height="432" loading="lazy" sizes="(max-width: 1024px) 100vw, 1024px" src="https://www.ledger.com/wp-content/uploads/2023/03/06_Crypto_Cover_Orange-1024x432.jpg" srcset="https://www.ledger.com/wp-content/uploads/2023/03/06_Crypto_Cover_Orange-1024x432.jpg 1024w, https://www.ledger.com/wp-content/uploads/2023/03/06_Crypto_Cover_Orange-300x127.jpg 300w, https://www.ledger.com/wp-content/uploads/2023/03/06_Crypto_Cover_Orange-768x324.jpg 768w, https://www.ledger.com/wp-content/uploads/2023/03/06_Crypto_Cover_Orange-1536x648.jpg 1536w, https://www.ledger.com/wp-content/uploads/2023/03/06_Crypto_Cover_Orange-490x207.jpg 490w, https://www.ledger.com/wp-content/uploads/2023/03/06_Crypto_Cover_Orange.jpg 1600w" width="1024"/>
+   </figure>
+   <figure class="wp-block-table cover-text">
+    <table>
+     <tbody>
+      <tr>
+       <td class="has-text-align-left" data-align="left">
+        KEY TAKEAWAYS:
+       </td>
+      </tr>
+      <tr>
+       <td class="has-text-align-left" data-align="left">
+        — The terms ‘crypto token’ and ‘cryptocurrency’ are often used interchangeably, but they possess a subtle difference. While cryptocurrencies are native to a blockchain, tokens do not have their exclusive blockchain.
+        <br/>
+        <br/>
+        — On the Ethereum blockchain, crypto tokens can be of different types, each defined by whether or not they are fungible.
+        <br/>
+        <br/>
+        — The degree of fungibility of a token is represented by one of the three token standards on Ethereum
+        <br/>
+        <br/>
+        — ERC20, ERC721, and ERC1155
+        <br/>
+        <br/>
+        — In this article, explore the meaning of ERC tokens in general and delve into each of these three token standards.
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </figure>
+   <p>
+    <em>
+     <span style="font-weight: 400;">
+      Beginnings can be confusing in the crypto space. For the purpose of this article, consider terms like token standards, ERC20, ERC721, and so on. All of it may seem alien to you now, but their concept becomes very simple once you know what role they play. Just what are ERC tokens? Here, let’s explain in plain English.
+     </span>
+    </em>
+   </p>
+   <h2 class="wp-block-heading">
+    Understanding Blockchain Coins Vs Tokens
+   </h2>
+   <p>
+    First came the coins. The story starts with Bitcoin — the first blockchain network. The design of Bitcoin was = to allow people to make global peer-to-peer payments using its native currency also called
+    <a aria-label="Bitcoin (opens in a new tab)" href="https://www.ledger.com/academy/what-is-bitcoin#:~:text=Bitcoin%20is%20the%20first%20financial,the%20security%20of%20the%20network." rel="noreferrer noopener" target="_blank">
+     Bitcoin
+    </a>
+    or BTC. Then came similar blockchains such as Litecoin (LTC) and
+    <a aria-label="Dogecoin (opens in a new tab)" href="https://www.ledger.com/academy/the-backstory-dogecoin" rel="noreferrer noopener" target="_blank">
+     Dogecoin
+    </a>
+    (DOGE) that offered a similar use case.
+   </p>
+   <p>
+    All these cryptocurrencies that live on their own blockchain network are referred to as coins.
+   </p>
+   <p>
+    Then came Ethereum and introduced the concept of blockchain-based decentralized applications and protocols. Although Ethereum too has its own ‘coin’ called ETH that can be used in the same ways as BTC, its primary use case is to serve as gas to power transactions and operations on apps and protocols built on the network.
+   </p>
+   <p>
+    Further, developers of these apps can create in-app currencies that do not have a dedicated blockchain and are instead stored on Ethereum itself. Ethereum also allows users to create other forms of standalone digital assets that can be immutably stored on the Ethereum itself. These in-app currencies or digital assets created and stored on Ethereum are which are called tokens.
+   </p>
+   <p>
+    To sum it all up, a crypto asset that has a dedicated blockchain is technically a coin. While all other assets created on a third-party blockchain are called tokens. But to learn about this further, make sure you check out the full article on
+    <a href="https://www.ledger.com/academy/crypto/what-is-the-difference-between-coins-and-tokens" rel="noreferrer noopener" target="_blank">
+     coins vs tokens
+    </a>
+    .
+   </p>
+   <h2 class="wp-block-heading">
+    What Are Ethereum Tokens? The ERC Standard: Explained
+   </h2>
+   <p>
+    The Ethereum ecosystem is decentralized, but it still needs someone to set the rules, make calls for upgrades, and set standards that define what is possible on the blockchain. To achieve this, the very users of Ethereum need to create
+    <a href="https://www.ledger.com/academy/topics/ethereum/ethereum-improvement-proposals-eip">
+     Ethereum Improvement Proposals (EIPs)
+    </a>
+    , discuss their details, and vote on them to either reject or start their implementation.
+   </p>
+   <p>
+    Now, there are several types of EIPs for different categories of improvements and additions. One such type was defined by the core Etheruem developers to propose, discuss, and implement different technical standards for the creation of tokens, smart contracts, applications, wallet formats, etc. on Ethereum.
+   </p>
+   <p>
+    This
+    <a href="https://eips.ethereum.org/EIPS/eip-1#eip-types" rel="noreferrer noopener" target="_blank">
+     subcategory of an EIP
+    </a>
+    was dubbed the Ethereum Request for Comments, a.k.a. ERC. So far, there have been many Ethereum Request for Comments to set standards for the tokens that can be created on Ethereum. So, all tokens that are created on Ethereum must follow the standards set by these ERCs. Hence, they are ERC tokens.
+   </p>
+   <p>
+    Today, there are three ERC standards that are most common on Ethereum:
+    <a href="https://www.ledger.com/academy/glossary/what-are-erc-20-tokens">
+     ERC-20
+    </a>
+    ,
+    <a href="https://www.ledger.com/academy/glossary/erc-721">
+     ERC-721
+    </a>
+    and
+    <a href="https://www.ledger.com/academy/glossary/erc-1155">
+     ERC-1155
+    </a>
+    . Just in case there is confusion, the numbers following ERC are simply the serial numbers of ‘request for comments’ that proposed these standards.
+   </p>
+   <p>
+    But what do these standards exactly mean, and why is the need for them? Let’s find out.
+   </p>
+   <h2 class="wp-block-heading">
+    Understanding the ERC Token Standards
+   </h2>
+   <h3 class="wp-block-heading">
+    ERC-20: The Fungible Token Standard
+   </h3>
+   <p>
+    First implemented in 2015, ERC20 is the token standard that allows developers to create fungible tokens for their Ethereum-based applications or protocols. Say what?
+   </p>
+   <p>
+    For the start, you can imagine ‘fungible tokens’ as any regular currency based on a blockchain. The term ‘fungible’ simply means that you can interchange one unit of a token with any other unit of that token because they represent the same value. An example of this would be a
+    <a href="https://www.ledger.com/academy/what-are-stablecoins" rel="noreferrer noopener" target="_blank">
+     stablecoin
+    </a>
+    . On that note, take the example of crypto assets like UNI or LINK — the ERC20 tokens of Ethereum-based protocols
+    <a aria-label="Uniswap (opens in a new tab)" href="https://www.ledger.com/academy/defi-the-top-5-dexs" rel="noreferrer noopener" target="_blank">
+     Uniswap
+    </a>
+    or
+    <a aria-label="Chainlink (opens in a new tab)" href="https://www.ledger.com/academy/the-world-of-oracles-chainlink-and-band" rel="noreferrer noopener" target="_blank">
+     Chainlink
+    </a>
+    . Each of these tokens are fungible because one UNI or LINK token will always be equal to any other UNI or LINK token.
+   </p>
+   <p>
+    That means you can exchange the above tokens on a one-to-one basis. It won’t matter which UNI you own because their underlying value will always be the same as all other UNI tokens.
+   </p>
+   <h3 class="wp-block-heading">
+    ERC-721: The Non-fungible Token Standard
+   </h3>
+   <p>
+    As the use cases of blockchain expanded, there was a need to tokenize and represent unique data on the blockchain. Introducing the ERC721 token standard as standard. ERC721 standard allows you to create non-fungible tokens. Tokens that each possess a unique value and act as verifiably unique digital objects that cannot interchange with each other like ERC20 tokens.
+   </p>
+   <p>
+    So, suppose you want to represent a piece of digital art on the blockchain. You clearly cannot use an ERC20 token to do that. Instead, you can use an ERC721 standard token to create an NFT art piece. This
+    <a aria-label="NFT (opens in a new tab)" href="https://www.ledger.com/academy/nfts/nft-beginners-guide" rel="noreferrer noopener" target="_blank">
+     NFT
+    </a>
+    of the digital art piece can easily prove the authenticity of the art work and its record of ownership.
+   </p>
+   <p>
+    As the record of ownership and the identity of the NFT artwork is immutable and stored on a blockchain, it also makes forging any artist’s original work nearly impossible.
+   </p>
+   <h3 class="wp-block-heading">
+    ERC1155: The Semi-Fungible Token Standard
+   </h3>
+   <p>
+    The problem with ERC20 and ERC721 standards was that they allow one smart contract to only support a single type of fungible or non-fungible token. So, every time you want to deploy a new token, you have to write a new smart contract. Besides, the above two standards do not offer a way to create semi-fungible tokens.
+   </p>
+   <p>
+    This led to the establishment of the ERC1155 token standard, enabling Ethereum developers to create fungible, semi-fungible, and non-fungible tokens using the same standard. Furthermore, using ERC-1155, you can create a single contract to support multiple types of individually configurable tokens. Thus reducing the complexity of the token creation process. That got a bit complex, didn’t it? Let’s simplify that.
+   </p>
+   <p>
+    Suppose a developer wants to develop an NFT game. They plan to create one fungible token as the in-game currency and multiple non-fungible tokens for unique in-game assets such as skins, guns, merchandise, etc. If they use ERC-20 and ERC-721 standards, they would have to write new smart contracts to support every new type of asset they create. However, using ERC-1155 would enable them to write just one contract to support all kinds of tokens they want to have in the game.
+   </p>
+   <p>
+    All of this is not to say that one of the standards is better than the other. They simply have different applications.
+   </p>
+   <h2 class="wp-block-heading">
+    The Endless Possibilities on Ethereum
+   </h2>
+   <p>
+    Ethereum has very well propelled blockchain beyond just being a technology for secure digital money. Plus the ability to propose and establish new token standards creates more room for newer use cases of the Ethereum network.
+   </p>
+   <p>
+    Thanks to this innovation, today, it is possible for an artist to create a unique token representing their art piece. It is possible for creators to represent the scarcity of their creations and monetize their work. Possible for game developers to impart real-world value to their gamers using in-game items, and it is possible to create an entirely new, user-governed economy on the internet. Something that was never thought of or worked on before.
+   </p>
+   <h3 class="wp-block-heading has-text-align-center">
+    Knowledge is Power.
+   </h3>
+   <div class="wp-block-image">
+    <figure class="aligncenter size-large">
+     <a href="https://www.ledger.com/academy/school-of-block/episode-11-why-the-nft-hype" rel="noopener" target="_blank">
+      <img alt="" class="wp-image-219888" decoding="async" height="576" loading="lazy" sizes="(max-width: 1024px) 100vw, 1024px" src="https://www.ledger.com/wp-content/uploads/2022/07/14-min-1-1024x576.png" srcset="https://www.ledger.com/wp-content/uploads/2022/07/14-min-1-1024x576.png 1024w, https://www.ledger.com/wp-content/uploads/2022/07/14-min-1-300x169.png 300w, https://www.ledger.com/wp-content/uploads/2022/07/14-min-1-768x432.png 768w, https://www.ledger.com/wp-content/uploads/2022/07/14-min-1-1536x864.png 1536w, https://www.ledger.com/wp-content/uploads/2022/07/14-min-1-490x275.png 490w, https://www.ledger.com/wp-content/uploads/2022/07/14-min-1.png 1920w" width="1024"/>
+     </a>
+    </figure>
+   </div>
+   <p class="has-text-align-center">
+    Trust yourself and keep on learning! If you enjoy getting to grips with crypto and blockchain, check out our highly entertaining
+    <strong>
+     School of Block
+    </strong>
+    video.
+   </p>
+  </article>
+ </body>
+</html>

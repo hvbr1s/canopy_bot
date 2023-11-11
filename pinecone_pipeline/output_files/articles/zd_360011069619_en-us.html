@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/360011069619-Extended-public-key-xPub-"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="360011069619"/><meta name="title" content="Extended public key (xPub)"/><meta name="classification" content="public"/></head>                            <body><h1>Extended public key (xPub)</h1>
+<p><span style="font-weight: 400;">The extended public key (xpub) is the master public key of an account. All public addresses of a Ledger Live account are generated from an xpub, which is why you should handle it with caution to protect your privacy.</span></p>
+<h2>How it works</h2>
+<p><span style="font-weight: 400;">Your Ledger hardware wallet generates a unique xpub for every account you create. Thanks to the xpub, Ledger Live then generates individual public addresses and checks their balances in the blockchain to calculate your account balance.</span></p>
+<div class="callout callout--primary callout--dashed">
+<h4 class="callout__title">
+<em class="fa fa-info-circle"> </em> Getting the xpub in Ledger Live desktop</h4>
+<ol class="list-colored">
+<li>Go to the account to get the xpub for and click on the <em class="fa fa-wrench"> </em> <strong>wrench icon</strong>.</li>
+<li>Expand the <strong>Advanced logs </strong>in the <strong>Edit account</strong> window that appears. <br><span style="font-weight: 400;">There you can copy the xpub which looks like a long alphanumeric string beginning with <strong>xpub</strong>...</span>
+</li>
+</ol>
+<p><img src="https://support.ledger.com/hc/article_attachments/360007686460" alt="xpub.png"></p>
+</div>
+<h2>How do I find my xpub on Ledger Live mobile?</h2>
+<ol>
+<li><span>Open your<strong> Bitcoin account(s)</strong> on the wallet page.</span></li>
+<li><span>Scroll down, and <strong>choose the desired Bitcoin account.</strong></span></li>
+<li><span>Tap the <strong>settings cog</strong> in the top right corner.</span></li>
+<li>
+<span>Select <strong>Advanced logs</strong>.</span><span></span>
+</li>
+</ol>
+<p><span><img src="https://support.ledger.com/hc/article_attachments/12818876251037" alt="File.jpg" width="270" height="442"></span></p>
+<h2>Xpub and Privacy</h2>
+<p><span style="font-weight: 400;">For enhanced privacy, Ledger Live stores the xpub locally on your computer when you </span><a href="https://support.ledger.com/hc/en-us/articles/4404389482641" target="_blank" rel="noopener">add the account</a><span style="font-weight: 400;">. <strong>Your xpub is never sent to Ledger's servers.</strong> It is encrypted by your Ledger Live password if you have set one.</span></p>
+<p><span style="font-weight: 400;">With the xpub, Ledger Live or any other wallet can generate public addresses for you to request payments on. Ledger Live prompts you to verify all your addresses on your Ledger device for optimal security. Please be careful with third-party wallets generating addresses without on-device verification. They are less secure.</span></p>
+<div class="callout callout--primary">
+<h4 class="callout__title">
+<em class="fa fa-shield"> </em> Protect your privacy</h4>
+<ul class="list-bullet">
+<li style="font-weight: 400;"><span style="font-weight: 400;">With your xpub, anyone can track all past and future transactions of the account. Be critical of how you share your xpub.</span></li>
+<li style="font-weight: 400;">
+<span style="font-weight: 400;">If you've already shared the xpub of an account and want to increase your privacy for future transactions, you can transfer your coins to a new account which has a new xpub.</span><span style="font-weight: 400;"></span>
+</li>
+</ul>
+</div>
+<h2>Xpub and Security</h2>
+<p><span style="font-weight: 400;">Using an external wallet to generate addresses from your Ledger xpub may cause two security problems:</span></p>
+<ul>
+<li style="font-weight: 400;">
+<span style="font-weight: 400;">An external wallet may not let you verify generated addresses on your Ledger device. Using unverified addresses is not secure. </span><span style="font-weight: 400;"><a href="https://support.ledger.com/hc/en-us/articles/360020838914" target="_blank" rel="noopener">Learn more</a></span>
+</li>
+<li style="font-weight: 400;">An external wallet may generate more than 20 unused addresses, exceeding the <a style="background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;" href="https://support.ledger.com/hc/en-us/articles/360010892360" target="_blank" rel="noopener">address gap limit</a><span style="font-weight: 400;">. Ledger Live does not detect transactions on addresses beyond the gap limit. An incorrect account balance will be displayed and you may not be able to spend the coins using Ledger Live.</span>
+</li>
+</ul></body></html>

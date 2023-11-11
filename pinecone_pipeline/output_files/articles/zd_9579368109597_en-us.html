@@ -1,0 +1,281 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/9579368109597-Ledger-Recover-FAQs"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="9579368109597"/><meta name="title" content="Ledger Recover FAQs"/><meta name="classification" content="public"/></head>                            <body><h1>Ledger Recover FAQs</h1>
+<p>This article compiles answers to the most common questions about Ledger Recover.</p>
+<h2 id="h_01HA7F5E9VVDT748FGZB5MT5W2">Ledger Recover FAQ</h2>
+<div class="accordion accordion--default">
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>What is Ledger Recover?</strong></div>
+<div class="accordion__item-content">
+<p><span>Ledger Recover is an ID-based key recovery service that provides a backup for your Secret Recovery Phrase. If you lose or don't have access to your Secret Recovery Phrase, the service allows you to securely restore your private keys using a Ledger device.</span></p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>Where can I learn more about Ledger Recover?</strong></div>
+<div class="accordion__item-content">
+<p><span data-preserver-spaces="true">Check out these resources:</span></p>
+<ul>
+<li><a class="editor-rtfLink" href="https://support.ledger.com/hc/articles/14267220315037?docs=true" target="_blank" rel="noopener noreferrer">Ledger Recover Help Center resources</a></li>
+<li><a class="editor-rtfLink" href="https://support.ledger.com/hc/articles/14267295450141?docs=true" target="_blank" rel="noopener noreferrer">Ledger Recover resources on Ledger Academy</a></li>
+<li><a class="editor-rtfLink" href="https://support.ledger.com/hc/articles/14267332941341?docs=true" target="_blank" rel="noopener noreferrer">Ledger Recover technical documents</a></li>
+</ul>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>Why do I need Ledger Recover?</strong></div>
+<div class="accordion__item-content">
+<p><span>You’re responsible for storing your Secret Recovery Phrase. While this setup makes you enjoy all the benefits of self-custody and complete control over your assets, it also makes you solely responsible for their protection. Ledger Recover is designed for users who want to add an enhanced layer of security in case their Secret Recovery Phrase is lost or when they can't access it.</span></p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>Who has access to my wallet with Ledger Recover?</strong></div>
+<div class="accordion__item-content">
+<p><span>In short, only you can access your wallet. When you subscribe to Ledger Recover, a pre-BIP39 version of your private key is encrypted, duplicated and divided into three fragments, with each fragment secured by a separate company—Coincover, Ledger and EscrowTech. Each of these encrypted fragments is useless on its own. When you want to get access to your wallet, 2 of the 3 parties will send fragments back to your Ledger device, reassembling them to build your private key.</span></p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>Does Ledger Recover compromise the security of my private key?</strong></div>
+<div class="accordion__item-content">
+<p>No, it doesn’t. Ledger Recover service follows the same principle as signing the transaction on a blockchain—securely and only with your permission. No access to your private key was made to enable Ledger Recover to work.</p>
+<p><span style="color: #0e101a;">To better understand this, let's go back to the basics and see how hardware wallets—which can be described as signing devices—work. </span><span></span></p>
+<p><span style="color: #0e101a;">Hardware wallets have two primary purposes: to safeguard your private key and sign transactions on the blockchain. To sign the transactions, wallets need to access your private key. They can't sign transactions otherwise.</span><span></span></p>
+<p><span style="color: #0e101a;">Ledger devices protect your private key with a Secure Element, a technology that has been battle-tested and used in the finance industry for 30 years, from storing passwords and fingerprints to processing contactless payments.</span></p>
+<p><span style="color: #0e101a;">Ledger's Operating System allows access to the private key stored within the Secure Element, but only after you manually approve and confirm it. </span><span><span style="color: #0e101a;">To learn more about how the process works behind the scenes, read </span><a href="https://twitter.com/P3b7_/status/1659187049331654658" target="_blank" rel="noopener">this explanation</a><span style="color: #0e101a;"> from Ledger's CTO Charles Guillemet and check out </span><a href="https://www.youtube.com/watch?v=X7WjuxE6K5w" target="_blank" rel="noopener">his interview about wallet security</a><span style="color: #0e101a;">. For a technical explanation of how Ledger Recover operates, </span><a href="https://twitter.com/P3b7_/status/1658580819030441990" target="_blank" rel="noopener">see Charles Guillemet's tweet</a><span style="color: #0e101a;">.</span></span></p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>Why don't you build a second operating system without Ledger Recover?<span><span style="color: #0e101a;"></span></span></strong></div>
+<div class="accordion__item-content">
+<p><span style="color: #0e101a;">In terms of security, there is no difference in having this part of the code in the operating system or not. In reality, it is up to the user to choose if they want to activate the feature or not. We have no doubt that implementing this feature in our firmware does not increase the threat model or the attack surface area.  </span></p>
+<p><span style="color: #0e101a;">Our OS implements plenty of cryptographic primitives. These primitives manipulate secrets. They all must be properly implemented and this is Ledger’s job. Finally, our contract with users is that whenever the OS touches any secret, the user is prompted to give his consent.</span><span><span style="color: #0e101a;"></span></span></p>
+<p><span data-preserver-spaces="true">For more information please read the </span><a class="editor-rtfLink" href="https://github.com/LedgerHQ/recover-whitepaper" target="_blank" rel="noopener noreferrer">Ledger Recover white paper</a><span data-preserver-spaces="true">.</span></p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>What would happen to my Ledger Recover subscription and related data if one of the companies goes out of business?</strong></div>
+<div class="accordion__item-content">
+<p>To restore your keys, you need two out of three fragments that are securely kept by the three independent and trusted companies. If one of the companies holding a fragment shuts down, you will still be able to restore your keys until another trusted company replaces it.</p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>What should I do with my recovery sheet once I subscribe to Ledger Recover?</strong></div>
+<div class="accordion__item-content">
+<p><span>Ledger Recover can restore your private keys to your device, but it can't provide you with your Secret Recovery Phrase. If you have any other physical/digital copies of your recovery sheet or Secret Recovery Phrase, it's your responsibility to secure them. Keep in mind that anyone who obtains your Secret Recovery Phrase can access your wallet. </span></p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>What is Coincover?</strong></div>
+<div class="accordion__item-content">
+<p><span>Coincover provides the gold standard in digital asset security, addressing the most significant barrier to mainstream adoption: trust. If wallet access is lost, Coincover offers encrypted and military-grade storage for retrieving the key.</span></p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>What if I have a passphrase-protected wallet? Is it covered by Ledger Recover? </strong></div>
+<div class="accordion__item-content">
+<p>The passphrase feature is available on all Ledger devices and allows you to create an additional password tied to your Secret Recovery Phrase. For each Secret Recovery Phrase, a different passphrase leads to a new set of private keys and accounts.<span></span> The Ledger Recover service, if used, does not backup your passphrase. <a href="https://support.ledger.com/hc/en-us/articles/115005214529-How-to-set-up-a-passphrase-?docs=true" target="_blank" rel="noopener noreferrer">Learn how to set up a passphrase</a></p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>What is a Secret Recovery Phrase (SRP) or a seed phrase?</strong></div>
+<div class="accordion__item-content">
+<p><span>Secret Recovery Phrase (SRP) is a unique list of 24 words that backs up the private keys and gives you access to your crypto assets. Learn more → <a class="waffle-rich-text-link" href="https://www.ledger.com/academy/crypto/what-is-a-recovery-phrase" target="_blank" rel="noopener noreferrer">What is a Secret Recovery Phrase?</a> </span></p>
+</div>
+</div>
+</div>
+<h2 id="h_01HA7F5E9V6XPRSVK0JZX9VSZZ"><span>Restrictions</span></h2>
+<div class="accordion accordion--default">
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>What Ledger devices are compatible with Ledger Recover?</strong></div>
+<div class="accordion__item-content">
+<p><span>Ledger Recover is compatible with Ledger Nano X. Soon, it will be compatible with Ledger Stax and Ledger Nano S Plus.</span></p>
+<p><span>⚠️ Ledger Recover isn't compatible with Ledger Nano S.</span></p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>In which countries is Ledger Recover available?</strong></div>
+<div class="accordion__item-content">
+<p><span>Ledger Recover availability depends on the country in which your passport, national identity card, or driving license was issued. At the moment, a passport/national identity card issued by the European Union, the United Kingdom, Canada, and the United States, or a driving license issued in the United States, is required to subscribe to the service. We will be covering more countries and adding support for more documents. Stay tuned.</span></p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>Can I have multiple Ledger Recover subscriptions?</strong></div>
+<div class="accordion__item-content">
+<p><span>Currently, you can set up a backup for one Secret Recovery Phrase per subscription.</span></p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>Is Ledger Recover available both on desktop and mobile?</strong></div>
+<div class="accordion__item-content">
+<p><span>Ledger Recover is available on desktop and Android and iOS phones running the latest version of the Ledger Live app. </span></p>
+</div>
+</div>
+</div>
+<h2 id="h_01HA7F5E9VCFQAP4VXTD2NS7K8"><span>Managing Ledger Recover subscription</span></h2>
+<div class="accordion accordion--default">
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>How and when can I cancel my Ledger Recover subscription?</strong></div>
+<div class="accordion__item-content">
+<p><span>You can cancel your subscription anytime. Connect to the Ledger Live app and navigate to My Ledger. You will need to go through reasonable checks to verify your identity. Once your identity is verified, your subscription will be canceled. Please ensure that you have your Secret Recovery Phrase before canceling your subscription.</span></p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>What if I change my identity information, for example, my last name?</strong></div>
+<div class="accordion__item-content">
+<p><span>You will have to go through additional identity checks and provide evidence of your identity change. We are working together with certified legal professionals that will support the investigation if necessary.</span></p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>What happens if I stop paying my subscription?</strong></div>
+<div class="accordion__item-content">
+<p><span>If you don't update your payment info and pay the subscription within 7 days, you won't be able to restore your private keys using Ledger Recover. If you don't regularize your payment within 3 months, your subscription will be suspended. After your subscription is suspended, you have 9 months to contact Ledger Recover Support and reactivate your subscription. You will need to pay an administration fee of 50 EUR along with any outstanding balance. </span></p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>How long is my Secret Recovery Phrase secured by Ledger Recover?</strong></div>
+<div class="accordion__item-content">
+<p><span>As long as you're subscribed to the service. </span></p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>What if I lose my Ledger device that is associated with my Ledger Recover subscription?</strong></div>
+<div class="accordion__item-content">
+<p><span>Simply get another Ledger device and follow the process to recover access to your wallet.</span></p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>What payment methods are accepted?</strong></div>
+<div class="accordion__item-content">
+<p><span>Visa and MasterCard. Payments are settled in the currency of your country of residence. For example, if you're based in the United States, you will pay in the US dollar. In the event of a rejected payment, please contact your bank directly. For any other issues related to credit card payments, reach out to Ledger Recover Support. </span></p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>What duties and taxes will I have to pay?</strong></div>
+<div class="accordion__item-content">You may have VAT/GST or other taxes to pay depending on your country of residence.</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>What if my identity verification check fails?</strong></div>
+<div class="accordion__item-content">
+<p><span>If this happens, please contact Ledger Recover Support.</span></p>
+</div>
+</div>
+</div>
+<h2 id="h_01HA7F5E9VDMEM711AQ93Q9GET"><span>Setting up Ledger Recover</span></h2>
+<div class="accordion accordion--default">
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>Is Ledger Recover available both on desktop and mobile?</strong></div>
+<div class="accordion__item-content">
+<p><span>Ledger Recover is available on desktop and Android and iOS phones running the latest version of the Ledger Live app.</span></p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>Can I subscribe and use Ledger Recover without a Ledger device?</strong></div>
+<div class="accordion__item-content">
+<p><span>You can subscribe to Ledger Recover without a Ledger device, but you will need it to activate and use the service.</span></p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>Which documents are accepted for identity verification?</strong></div>
+<div class="accordion__item-content">
+<p><span>A passport/national identity card issued by the European Union, the United Kingdom, Canada, and the United States or a driving license issued in the United States, is required to subscribe to the service. </span></p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>What is the difference between Ledger Recover identity verification and KYC?</strong></div>
+<div class="accordion__item-content">
+<p>Identity verification is not the same as KYC. Identity verification inherently collects much less information compared to KYC. To go through Ledger Recover identity verification you need a valid, government-issued document and be the rightful owner of that document. KYC involves ID verification but it can also include revenue information, record of criminal activity, citizenship check, etc. Again, Ledger Recover uses identity verification, not KYC.</p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>How are the three fragments of my Secret Recovery Phrase secured?</strong></div>
+<div class="accordion__item-content">
+<p><span>Ledger Recover is provided by Coincover. When you subscribe to the service, your Ledger device after your approval will encrypt the entropy of your Secret Recovery Phrase—a string of random 1s and 0s from which your Secret Recovery Phrase is computed. The encrypted entropy is fragmented into three pieces within the Secure Element chip. Your Ledger device will send the fragments to 3 separate and independent companies that will store them using Hardware Security Modules.</span></p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>How can I delete my Ledger Recover login?</strong></div>
+<div class="accordion__item-content">
+<p><span>You first need to cancel your Ledger Recover subscription, and then your login will be automatically deleted.</span></p>
+</div>
+</div>
+</div>
+<h2 id="h_01HA7F5E9V1NW3MG14CBAP5MBG"><span>Managing Ledger Recover password</span></h2>
+<div class="accordion accordion--default">
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>How can I update Ledger Recover password?</strong></div>
+<div class="accordion__item-content">
+<p><span>Log in to Ledger Recover to update your password.</span></p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>I forgot my password. Can I reset it?</strong></div>
+<div class="accordion__item-content">
+<p><span>You can reset your password by clicking the <strong>Forgot password</strong> button on the login page or navigating to <strong>Manage subscription</strong> -&gt; <strong>Send email to change password</strong> and following the instructions.</span></p>
+</div>
+</div>
+<div class="accordion__item"></div>
+</div>
+<h2 id="h_01HA7F5E9W8WJVTW6ZW773R1CK"><span>Recovering access to your wallet</span></h2>
+<div class="accordion accordion--default">
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>What if someone gets access to my wallet using Ledger Recover?</strong></div>
+<div class="accordion__item-content">
+<p><span>Ledger Recover comprises extensive identity verification processes—performed by Coincover within a secure environment built by Ledger. As an added layer of protection, subject to investigation, $50,000 compensation may be available from Coincover in the unlikely event that something were to go wrong.</span></p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>How many times per month/year can I try to recover access to my wallet?</strong></div>
+<div class="accordion__item-content">
+<p><span>You can try to recover access to your wallet up to 3 times per month and up to 10 times per year.</span></p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>Do I need a new Ledger Nano X to recover access to my wallet?</strong></div>
+<div class="accordion__item-content">
+<p><span>Using a new device makes the process as safe as possible. Another option is to reset an already-used device to its factory settings. </span></p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>How can I recover access to my wallet?</strong></div>
+<div class="accordion__item-content">
+<p><span>The steps are as follows:</span></p>
+<ol>
+<li><span>Get a new Ledger Nano X.</span></li>
+<li><span>Open the Ledger Live mobile app and navigate to My Ledger -&gt; Ledger Recover.</span></li>
+<li>Go through reasonable checks to verify your identity.</li>
+<li>Follow the onscreen instructions.</li>
+</ol>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>What is a One-Time Security Code?</strong></div>
+<div class="accordion__item-content">
+<p><span>One-Time Security Code provides an additional level of security to Ledger Recover. The code will be displayed on the Ledger device that you're using to recover access to your wallet. You'll be asked to provide the code during the identity verification process. If you can't provide the code, you'll need to start over.</span></p>
+<p><span>⚠️ Do not share or use the code in any other way. Only use a code that is displayed on your Ledger device.</span></p>
+</div>
+</div>
+</div>
+<h2 id="h_01HA7F5E9WQNZB69RGAFAFFF5A"><span>Data &amp; Privacy</span></h2>
+<div class="accordion accordion--default">
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>Why do I need to provide my identity information to subscribe to Ledger Recover?</strong></div>
+<div class="accordion__item-content">
+<p><span>Ledger Recover uses ID verification because we believe in self-custody and individual autonomy. Unlike the full KYC process, ID verifications are less complicated and reveal only the necessary information.</span></p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>Does Ledger Recover store my personal data?</strong></div>
+<div class="accordion__item-content">
+<p><span>Your identity details are collected by Ledger Recover ID verification service providers. Coincover and Ledger store an encrypted excerpt of this data. Only authorized third parties have access to it. To learn more about how we collect and use this information, please read our </span><a class="waffle-rich-text-link" href="http://ledger.com//recover/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a><span>.</span></p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-content"><strong>Where can I find Ledger Recover Terms &amp; Conditions?</strong></div>
+<div class="accordion__item-content">
+<p><span>You can find the Terms and Conditions here: <a class="waffle-rich-text-link" href="https://www.coincover.com/ledger-recover-terms-and-conditions" target="_blank" rel="noopener noreferrer">Terms &amp; Conditions</a></span></p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>How does Coincover handle formal subpoenas/warrants from governmental agencies under Ledger Recover?</strong></div>
+<div class="accordion__item-content">
+<p><span>You can find more information in </span><a class="waffle-rich-text-link" href="https://www.coincover.com/faq" target="_blank" rel="noopener noreferrer">Coincover FAQs</a><span>. </span></p>
+</div>
+</div>
+</div></body></html>

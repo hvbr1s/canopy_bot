@@ -1,0 +1,32 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/9949980566173-Tron-Stake-2-0-not-supported"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="9949980566173"/><meta name="title" content="Tron Stake 2.0 not supported"/><meta name="classification" content="public"/></head>                            <body><h1>Tron Stake 2.0 not supported</h1>
+<p><span>Stake 2.0, a recently introduced stake model on the TRON network, has been deployed to mainnet on April 7, 2023. This new model decouples resource delegation from staking, eliminating the need for unstaking when delegating or undelegating bandwidth and energy. For more details on Stake 2.0, please refer to <a href="https://coredevs.medium.com/what-is-stake-2-0-e04f59b948a6">this article</a>.</span></p>
+<p><span>Following the launch of Stake 2.0, staking can only be conducted via the Stake 2.0 API. Any TRX assets that have been staked under Stake 1.0 will continue to exist and can only be retrieved using the 1.0 unstake API which is no longer supported in Ledger Live.</span></p>
+<h2 id="h_01HAS0MMFWD961NFPMCSM6YTPD"><span>Impact on Ledger users</span></h2>
+<p><span>Currently, Ledger Live <strong>does not offer support for Stake 2.0</strong>. As of version <strong>2.57.0</strong>, Ledger Live has also discontinued the previous Stake 1.0 API, with plans to integrate Stake 2.0 in the future.<br><br><img src="https://support.ledger.com/hc/article_attachments/10484385250077"><br><br>This lack of support does <strong>not</strong> impact the accrual of rewards* on <strong>existing</strong> staked TRX balances. </span></p>
+<p><span>To stake <strong>new</strong> TRX balances and manage <strong>current</strong> staked ones, users should utilize a third-party wallet like <a href="https://support.ledger.com/hc/en-us/articles/4403786119569-Connect-your-Ledger-to-Tron-with-TronScan?docs=true" target="_blank" rel="noopener">TronScan</a>.</span></p>
+<div class="accordion accordion--default">
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>I have an active Stake 1.0 stake and want to unstake my TRX</strong></div>
+<div class="accordion__item-content">
+<p> </p>
+<ol class="list-colored">
+<li>Ensure version <strong>0.4.2 or higher </strong>of the Tron app is installed on your Ledger device.<br><br><img src="https://support.ledger.com/hc/article_attachments/10282046330653">
+</li>
+<li>Follow <a href="https://support.ledger.com/hc/en-us/articles/4403786119569-Connect-your-Ledger-to-Tron-with-TronScan?docs=true" target="_blank" rel="noopener">these steps</a> to connect your Ledger to TronScan.</li>
+<li>On TronScan, navigate to <strong>Resources</strong> &gt; <strong>Stake 1.0 </strong>and unstake your TRX.<br><br><img src="https://support.ledger.com/hc/article_attachments/10484690905885"><br><br>
+</li>
+<li>Review the transaction on your Ledger device. If all looks good, navigate to <strong>Sign transaction</strong> and <strong>press both buttons simultaneously</strong> to confirm the transaction and unstake your funds.<strong><br></strong>Unstaking via the Stake 1.0 API is now <strong>instantaneous</strong>.<strong><br></strong><strong><br></strong>If you wish to continue staking, you can restake your TRX using Stake 2.0 API. Follow the steps listed in the <strong>I want to stake a new TRX balance with Stake 2.0</strong> <strong>API</strong> section below.<br><br>
+</li>
+</ol>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>I want to stake a new TRX balance with Stake 2.0 API</strong></div>
+<div class="accordion__item-content">Comprehensive step-by-step instructions for staking TRX using TronScan can be found <a href="https://support.ledger.com/hc/en-us/articles/12121265774365?support=true" target="_blank" rel="noopener">here</a>.</div>
+</div>
+</div>
+<p>
+<script src="chrome-extension://ldinpeekobnhjjdofggfgjlcehhmanlj/inpage.js" id="stacks-wallet-provider"></script>
+</p>
+<p> </p>
+<p><em><span data-preserver-spaces="true">*Rewards are not guaranteed. Ledger does not provide any financial advice or recommendation. </span></em></p></body></html>

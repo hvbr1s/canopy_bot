@@ -1,0 +1,286 @@
+<html>
+ <head>
+  <meta content="https://www.ledger.com/academy/blockchain/what-are-public-keys-and-private-keys" name="source"/>
+  <meta content="academy" name="source-type"/>
+  <meta content="en" name="locale"/>
+  <meta content="N/A" name="zd-article-id"/>
+  <meta content="what are public keys and private keys" name="title"/>
+  <meta content="public" name="classification"/>
+ </head>
+ <body>
+  <article class="plain-text margin-sm article" id="article">
+   <h1 class="margin-xs">
+    What Are Public Keys Vs Private Keys?
+   </h1>
+   <div class="article-author">
+    <div>
+     By
+     <b>
+      Kirsty Moreland
+     </b>
+    </div>
+    <div>
+     <img alt="" height="21" src="https://www.ledger.com/wp-content/uploads/2022/09/Me3-104x104.jpg" width="21">
+     </img>
+    </div>
+   </div>
+   <div class="color-grey-500 small-text uppercase margin-xs article-date">
+    Oct 23, 2019
+          |
+    <b>
+     Updated Jul 12, 2023
+    </b>
+   </div>
+   <div class="caption-for-article flexbox flex-start">
+    <div class="flex-none time-to-read">
+     <span class="badge badge-nude">
+      <i class="icon-copy">
+      </i>
+      Read
+     </span>
+     <span>
+      4 min
+     </span>
+    </div>
+    <div class="with-point level level-1">
+     <span>
+      Beginner
+     </span>
+    </div>
+   </div>
+   <div class="align-center share-box" id="fixed-share-box">
+    <span>
+     SHARE
+    </span>
+    <div class="heateor_sss_sharing_container heateor_sss_horizontal_sharing" data-heateor-ss-offset="0" data-heateor-sss-href="https://www.ledger.com/academy/blockchain/what-are-public-keys-and-private-keys">
+     <div class="heateor_sss_sharing_ul">
+      <a aria-label="Instagram" class="heateor_sss_button_instagram" href="https://www.instagram.com/ledger" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Instagram">
+       <span class="heateor_sss_svg" style="background-color:#53beee;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg height="100%" style="display:block;border-radius:999px;" version="1.1" viewbox="-10 -10 148 148" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+         <g>
+          <g>
+           <path d="M86,112H42c-14.336,0-26-11.663-26-26V42c0-14.337,11.664-26,26-26h44c14.337,0,26,11.663,26,26v44 C112,100.337,100.337,112,86,112z M42,24c-9.925,0-18,8.074-18,18v44c0,9.925,8.075,18,18,18h44c9.926,0,18-8.075,18-18V42 c0-9.926-8.074-18-18-18H42z" fill="#fff">
+           </path>
+          </g>
+          <g>
+           <path d="M64,88c-13.234,0-24-10.767-24-24c0-13.234,10.766-24,24-24s24,10.766,24,24C88,77.233,77.234,88,64,88z M64,48c-8.822,0-16,7.178-16,16s7.178,16,16,16c8.822,0,16-7.178,16-16S72.822,48,64,48z" fill="#fff">
+           </path>
+          </g>
+          <g>
+           <circle cx="89.5" cy="38.5" fill="#fff" r="5.5">
+           </circle>
+          </g>
+         </g>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Facebook" class="heateor_sss_facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fblockchain%2Fwhat-are-public-keys-and-private-keys" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Facebook">
+       <span class="heateor_sss_svg" style="background-color:#3c589a;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="-5 -5 42 42" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M17.78 27.5V17.008h3.522l.527-4.09h-4.05v-2.61c0-1.182.33-1.99 2.023-1.99h2.166V4.66c-.375-.05-1.66-.16-3.155-.16-3.123 0-5.26 1.905-5.26 5.405v3.016h-3.53v4.09h3.53V27.5h4.223z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Twitter" class="heateor_sss_button_twitter" href="http://twitter.com/intent/tweet?via=ledger&amp;text=What%20Are%20Public%20Keys%20Vs%20Private%20Keys%3F&amp;url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fblockchain%2Fwhat-are-public-keys-and-private-keys" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Twitter">
+       <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_twitter" style="background-color:#55acee;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="-4 -4 39 39" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M28 8.557a9.913 9.913 0 0 1-2.828.775 4.93 4.93 0 0 0 2.166-2.725 9.738 9.738 0 0 1-3.13 1.194 4.92 4.92 0 0 0-3.593-1.55 4.924 4.924 0 0 0-4.794 6.049c-4.09-.21-7.72-2.17-10.15-5.15a4.942 4.942 0 0 0-.665 2.477c0 1.71.87 3.214 2.19 4.1a4.968 4.968 0 0 1-2.23-.616v.06c0 2.39 1.7 4.38 3.952 4.83-.414.115-.85.174-1.297.174-.318 0-.626-.03-.928-.086a4.935 4.935 0 0 0 4.6 3.42 9.893 9.893 0 0 1-6.114 2.107c-.398 0-.79-.023-1.175-.068a13.953 13.953 0 0 0 7.55 2.213c9.056 0 14.01-7.507 14.01-14.013 0-.213-.005-.426-.015-.637.96-.695 1.795-1.56 2.455-2.55z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Linkedin" class="heateor_sss_button_linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fblockchain%2Fwhat-are-public-keys-and-private-keys" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Linkedin">
+       <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_linkedin" style="background-color:#0077b5;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="0 0 32 32" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M6.227 12.61h4.19v13.48h-4.19V12.61zm2.095-6.7a2.43 2.43 0 0 1 0 4.86c-1.344 0-2.428-1.09-2.428-2.43s1.084-2.43 2.428-2.43m4.72 6.7h4.02v1.84h.058c.56-1.058 1.927-2.176 3.965-2.176 4.238 0 5.02 2.792 5.02 6.42v7.395h-4.183v-6.56c0-1.564-.03-3.574-2.178-3.574-2.18 0-2.514 1.7-2.514 3.46v6.668h-4.187V12.61z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Reddit" class="heateor_sss_button_reddit" href="http://reddit.com/submit?url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fblockchain%2Fwhat-are-public-keys-and-private-keys&amp;title=What%20Are%20Public%20Keys%20Vs%20Private%20Keys%3F" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Reddit">
+       <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_reddit" style="background-color:#ff5700;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="-3.5 -3.5 39 39" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M28.543 15.774a2.953 2.953 0 0 0-2.951-2.949 2.882 2.882 0 0 0-1.9.713 14.075 14.075 0 0 0-6.85-2.044l1.38-4.349 3.768.884a2.452 2.452 0 1 0 .24-1.176l-4.274-1a.6.6 0 0 0-.709.4l-1.659 5.224a14.314 14.314 0 0 0-7.316 2.029 2.908 2.908 0 0 0-1.872-.681 2.942 2.942 0 0 0-1.618 5.4 5.109 5.109 0 0 0-.062.765c0 4.158 5.037 7.541 11.229 7.541s11.22-3.383 11.22-7.541a5.2 5.2 0 0 0-.053-.706 2.963 2.963 0 0 0 1.427-2.51zm-18.008 1.88a1.753 1.753 0 0 1 1.73-1.74 1.73 1.73 0 0 1 1.709 1.74 1.709 1.709 0 0 1-1.709 1.711 1.733 1.733 0 0 1-1.73-1.711zm9.565 4.968a5.573 5.573 0 0 1-4.081 1.272h-.032a5.576 5.576 0 0 1-4.087-1.272.6.6 0 0 1 .844-.854 4.5 4.5 0 0 0 3.238.927h.032a4.5 4.5 0 0 0 3.237-.927.6.6 0 1 1 .844.854zm-.331-3.256a1.726 1.726 0 1 1 1.709-1.712 1.717 1.717 0 0 1-1.712 1.712z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+     </div>
+     <div class="heateorSssClear">
+     </div>
+    </div>
+   </div>
+   <figure class="wp-block-image size-large">
+    <img alt="securitycover" class="wp-image-267428" decoding="async" height="432" loading="lazy" sizes="(max-width: 1024px) 100vw, 1024px" src="https://www.ledger.com/wp-content/uploads/2023/04/09_Security_Cover_Purple-1024x432.jpg" srcset="https://www.ledger.com/wp-content/uploads/2023/04/09_Security_Cover_Purple-1024x432.jpg 1024w, https://www.ledger.com/wp-content/uploads/2023/04/09_Security_Cover_Purple-300x127.jpg 300w, https://www.ledger.com/wp-content/uploads/2023/04/09_Security_Cover_Purple-768x324.jpg 768w, https://www.ledger.com/wp-content/uploads/2023/04/09_Security_Cover_Purple-1536x648.jpg 1536w, https://www.ledger.com/wp-content/uploads/2023/04/09_Security_Cover_Purple-490x207.jpg 490w, https://www.ledger.com/wp-content/uploads/2023/04/09_Security_Cover_Purple.jpg 1600w" width="1024"/>
+   </figure>
+   <figure class="wp-block-table cover-text">
+    <table>
+     <tbody>
+      <tr>
+       <td class="has-text-align-left" data-align="left">
+        KEY TAKEAWAYS:
+       </td>
+      </tr>
+      <tr>
+       <td class="has-text-align-left" data-align="left">
+        — The goal of public and private keys is to prove that a spent transaction was indeed signed by the owner of the funds, and was not forged.
+        <br/>
+        <br/>
+        — When you own cryptocurrencies, what you really own is a “private key” which unlocks the right for its owner to spend the associated cryptocurrencies. As it provides access to your cryptocurrencies, it should remain private.
+        <br/>
+        <br/>
+        — It’s possible to recover the public key if you own the private key. However, it’s impossible to find the private key using only the public key.
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </figure>
+   <p>
+    If you want to understand the theory behind how your wallet works, it’s important to understand the nuances of public vs private keys. This is the basis upon which your whole interaction with web3 is based. But actually, the concept of public and private keys existed long before cryptocurrency. It’s actually a cryptography concept called Public Key Cryptography (PKC) or Asymmetric Encryption.
+   </p>
+   <p>
+    But what on earth is that exactly? Well, it’s a rather technical subject, so let’s explore how they came to be.
+   </p>
+   <h2 class="wp-block-heading">
+    The Origin of Public and Private Keys
+   </h2>
+   <p>
+    As you may already know, Public and private keys are part of a larger field of cryptography known as
+    <a href="https://en.wikipedia.org/wiki/Public-key_cryptography" rel="noreferrer noopener" target="_blank">
+     Public Key Cryptography
+    </a>
+    (PKC) or Asymmetric Encryption. However, you’re probably here to learn about how they relate to blockchains. But before we get there, let’s first explore what PKC is even for.
+   </p>
+   <p>
+    The general purpose of PKC is to enable secure, private communication using digital signatures in a public channel with potentially malicious eavesdroppers.
+   </p>
+   <p>
+    In doing so, PKC allows for transitions from one state to another while making reversing the process nearly impossible. This process proves you have access to the secret without exposing it to any other parties. To do this successfully, PKC uses an important one-way mathematical concept called a Trapdoor function. Put simply, Trapdoor Functions are mathematics problems that are easy to compute in one direction but nearly impossible to reverse.  In essence, it’s perfect for validating authenticity as the trapdoor function means it cannot be forged.
+   </p>
+   <p>
+    To clarify, solving this problem will take computers enormous amounts of time (i.e., thousands of years) to compute the correct answer. In the context of PKC, such mathematical tricks like Prime Factorization are the trapdoor functions that make reverse-engineering (i.e., forging) cryptographic signatures impossible. Essentially it requires the computer to solve a virtually unsolvable math problem.
+   </p>
+   <p>
+    To keep you secure, PKC relies on a two-key model: the public and private keys. It’s these two important components that work together to keep your important information safe. But what’s that to do with crypto?
+   </p>
+   <h2 class="wp-block-heading">
+    Public and Private keys in Cryptocurrency
+   </h2>
+   <p>
+    Well private and public keys are integral for public
+    <a href="https://www.ledger.com/academy/what-is-blockchain">
+     blockchains
+    </a>
+    to operate. In the context of cryptocurrencies, PKC is used to prove that a spent transaction was actually signed by the owner of the funds rather than the result of forgery. The reason it’s so important is due to public blockchains’ transparency. Since all of the transactions are viewable by any network participant, it’s integral to have a method that protects users’ sensitive information. Otherwise, anyone using the blockchain could reverse engineer the password to your digital funds! In short, PKC keeps you safe from Charlie in the middle.
+   </p>
+   <p>
+    So how does that fit into the blockchain tech you already know about? And what on earth does “signing” a transaction actually entail? Well, before we attack transactions, it’s important to know exactly what public and private keys are.
+   </p>
+   <h2 class="wp-block-heading">
+    What Are Public and Private Keys?
+   </h2>
+   <p>
+    There is a cryptographic link between the public key and the private key. It’s possible to recover the public key if you own the private key. However, it’s impossible to find the private key using only the public key. Although not equivalent, public and private keys are analogous to an email address and password, respectively.
+   </p>
+   <figure class="wp-block-image">
+    <img alt="Private key and Public key" decoding="async" src="https://lh3.googleusercontent.com/9cP0_AOh9EGxzoOUkWzRtOW7nt886DGH7tWeUPphgtTr6RSZd8fany-11EGhWVF3fCfN5fJWqBYIwUDbJPKhwIf1QrKR-dg88MWRrf9DUdkTKQLWLa917KmpMDkHxuZBoLRFNzN3JBwTyOxR0AHS17Y"/>
+   </figure>
+   <p>
+    Typically, crypto wallets each use a private and public key. To clarify, your public key is responsible for the address to your blockchain wallet and you can share it with anyone. Conversely, your private key is the code that will allow anyone access to the funds stored at that public address.
+   </p>
+   <p>
+    But actually, there’s a little more to it than that.
+   </p>
+   <h3 class="wp-block-heading">
+    What Are Private Keys?
+   </h3>
+   <p>
+    <a href="https://www.ledger.com/academy/whats-a-private-key" rel="noreferrer noopener" target="_blank">
+     Private keys
+    </a>
+    are at the base of every blockchain account, and necessary for even the simplest of actions. For starters, when people say they “own” cryptocurrencies, what they really own is the private key to the wallet that stores those assets. To clarify, cryptocurrencies are always stored on the blockchain network, not within a crypto wallet itself. Instead, you own the special code that allows access to the account.
+   </p>
+   <p>
+    This private key unlocks the right for its owner to spend the associated cryptocurrencies. However, should anyone get hold of it, it would also grant them access to your account too. That’s why – as the name suggests – it should remain private. There’s only one private key to your account and it functions as your private password only you should know.
+   </p>
+   <p>
+    However, that’s not the end of the story for private keys. It doesn’t just grant access to funds, it controls the whole basis of how your
+    <a href="https://www.ledger.com/academy/basic-basics/2-how-to-own-crypto/what-is-a-crypto-wallet" rel="noreferrer noopener" target="_blank">
+     crypto wallet
+    </a>
+    works and how you interact with other accounts too. To explain, it’s your private key that generates your public key in the first place. And it’s not just capable of generating a single public key, it can create multiple. This is not just for show though, it’s this process that keeps these keys linked, creating that special trapdoor function.
+   </p>
+   <h3 class="wp-block-heading">
+    What Are Public Keys?
+   </h3>
+   <p>
+    Public keys are visible to all users in the network, and sometimes even beyond the network too. Essentially, public keys act like an account number. They make each wallet uniquely identifiable to participants on the network. Like the private key, a public key is actually made up of a long sequence of numbers far too long for a human to read. However, this is the code you need to create a blockchain address. To explain, a blockchain address is simply a hashed version of this public key.
+   </p>
+   <h3 class="wp-block-heading">
+    What Is a Blockchain Address?
+   </h3>
+   <p>
+    Your blockchain address, the code you can share with others to receive cryptocurrencies, is derived from your public key. When you send cryptocurrency to someone else, this is the address they will see. For Ethereum, it’s that long hexadecimal number starting with 0x. Then for Bitcoin, you might notice that your wallet will generate a new address each time you transact. Both of these methods are fine, and, to clarify, this blockchain address is completely safe to share. PKC guarantees that no one can access your funds with only your blockchain address or the public key it was derived from.
+   </p>
+   <h2 class="wp-block-heading">
+    Public Vs Private Keys: How Do They Work?
+   </h2>
+   <p>
+    So now you know what private and public keys are; what about how they work? Well, each of them have their specific roles but are equally important when executing transactions or signing approvals. That said, how your public and private keys interact depends entirely on what you’re trying to do with your crypto wallet.
+   </p>
+   <p>
+    There are two main uses for private and public keys: encryption and signing. Encryption is for protecting sensitive information, by making sure only the intended recipient can read it. Signing, on the other hand, is for verifying the authenticity of a transaction, guaranteeing it wasn’t forged or tampered with. However, it’s important to note that while encryption with a person’s public key is crucial in multiple security contexts, it is not used in standard public blockchains. On blockchain networks, the most important function is signing.
+   </p>
+   <p>
+    So, let’s look at exactly how this function works.
+   </p>
+   <h3 class="wp-block-heading">
+    Signing In Action
+   </h3>
+   <p>
+    For example, let’s say you want to send 1ETH to your friend Bob using the
+    <a href="https://www.ledger.com/academy/what-is-ethereum">
+     Ethereum Network
+    </a>
+    . In this case, you would find out Bob’s blockchain address, which was derived from his public key. Just like you, Bob also has a set of public and private keys, and his private key is the only one that controls the address of the corresponding public key.
+   </p>
+   <p>
+    When you try to send any Ether, you will have to initiate a transaction request. Within that request, you specify the amount you want to send and where you want to send it—in this case we want to send 1 ETH to Bob’s account.
+   </p>
+   <p>
+    From there, your crypto wallet uses your private key to sign the transaction. To explain, a signature is like a digital fingerprint; it proves to the blockchain that you intend to carry out the plan in the attached message. It also proves you are who you say you are. Your signature is created by your private key and includes the transaction details, which eventually become part of the transaction’s data.
+   </p>
+   <p>
+    Once the transaction is signed using your private key, transaction and signature are then broadcast to the network. That means every node in the network can review the transaction. To follow, Ethereum
+    <a href="https://www.ledger.com/academy/what-is-a-blockchain-validator">
+     validators
+    </a>
+    verify that the signature matches your public key, guaranteeing you are who you say you are, and thus own the funds that you are trying to spend. They also check that Bob’s address actually exists on the network, and that the transaction is sound overall. If all of these conditions are met, the transaction will be confirmed. The 1 Ether will disappear from your account and arrive in Bob’s.
+   </p>
+   <p>
+    It’s important to reiterate that throughout this process, and as the owner of your private key, only you can sign the transaction capable of moving your own funds. That’s because your blockchain address is directly derived from your public key, which was originally derived from your private key. Thus, as long as you keep your private key private, no one can move your funds on the blockchain. Yes– even though you are sharing your public key, your address, and signatures of all your transactions, your funds remain safe. This is the brilliance of trapdoor functions in action.
+   </p>
+   <h2 class="wp-block-heading">
+    Private Vs Public Keys: Helping You Retain Custody of Your Crypto
+   </h2>
+   <p>
+    As you now know, Private and public keys are an integral, but often overlooked, part of blockchain technology. Without public and private keys, your funds on a public network would be at risk of malicious onlookers. The great part about the trapdoor function is that when you use crypto, you are protected from the other participants on the network.
+   </p>
+   <p>
+    This is why understanding how they interact within a
+    <a href="https://www.ledger.com/academy/how-does-a-blockchain-transaction-work">
+     blockchain transaction
+    </a>
+    and how they are even derived in the first place is so important. Without them, an open peer-to-peer network would not be possible. Put simply, your private and public keys can allow you to go completely bankless, while actually owning the cryptocurrencies you buy. This is a core tenet of Ledger’s.
+   </p>
+   <p>
+    While traditional banking accounts and
+    <a href="https://www.ledger.com/academy/topics/crypto/what-is-a-centralized-cryptocurrency-exchange-cex">
+     centralized exchanges
+    </a>
+    don’t actually give you unbridled access to your own funds, Ledger devices always do. Ledger believes in self-custody, meaning that only you should control your private key, and therefore the access to your funds.
+   </p>
+  </article>
+ </body>
+</html>

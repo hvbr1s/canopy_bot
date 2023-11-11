@@ -1,0 +1,352 @@
+<html>
+ <head>
+  <meta content="https://www.ledger.com/academy/create-your-own-nft-smart-contract" name="source"/>
+  <meta content="academy" name="source-type"/>
+  <meta content="en" name="locale"/>
+  <meta content="N/A" name="zd-article-id"/>
+  <meta content="create your own nft smart contract" name="title"/>
+  <meta content="public" name="classification"/>
+ </head>
+ <body>
+  <article class="plain-text margin-sm article" id="article">
+   <h1 class="margin-xs">
+    Create Your Own NFT Smart Contract
+   </h1>
+   <div class="article-author">
+    <div>
+     By
+     <b>
+      Kirsty Moreland
+     </b>
+    </div>
+    <div>
+     <img alt="" height="21" src="https://www.ledger.com/wp-content/uploads/2022/09/Me3-104x104.jpg" width="21">
+     </img>
+    </div>
+   </div>
+   <div class="color-grey-500 small-text uppercase margin-xs article-date">
+    May 27, 2022
+          |
+    <b>
+     Updated May 5, 2023
+    </b>
+   </div>
+   <div class="caption-for-article flexbox flex-start">
+    <div class="flex-none time-to-read">
+     <span class="badge badge-nude">
+      <i class="icon-copy">
+      </i>
+      Read
+     </span>
+     <span>
+      6 min
+     </span>
+    </div>
+    <div class="with-point level level-2">
+     <span>
+      Medium
+     </span>
+    </div>
+   </div>
+   <div class="align-center share-box" id="fixed-share-box">
+    <span>
+     SHARE
+    </span>
+    <div class="heateor_sss_sharing_container heateor_sss_horizontal_sharing" data-heateor-ss-offset="0" data-heateor-sss-href="https://www.ledger.com/academy/create-your-own-nft-smart-contract">
+     <div class="heateor_sss_sharing_ul">
+      <a aria-label="Instagram" class="heateor_sss_button_instagram" href="https://www.instagram.com/ledger" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Instagram">
+       <span class="heateor_sss_svg" style="background-color:#53beee;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg height="100%" style="display:block;border-radius:999px;" version="1.1" viewbox="-10 -10 148 148" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+         <g>
+          <g>
+           <path d="M86,112H42c-14.336,0-26-11.663-26-26V42c0-14.337,11.664-26,26-26h44c14.337,0,26,11.663,26,26v44 C112,100.337,100.337,112,86,112z M42,24c-9.925,0-18,8.074-18,18v44c0,9.925,8.075,18,18,18h44c9.926,0,18-8.075,18-18V42 c0-9.926-8.074-18-18-18H42z" fill="#fff">
+           </path>
+          </g>
+          <g>
+           <path d="M64,88c-13.234,0-24-10.767-24-24c0-13.234,10.766-24,24-24s24,10.766,24,24C88,77.233,77.234,88,64,88z M64,48c-8.822,0-16,7.178-16,16s7.178,16,16,16c8.822,0,16-7.178,16-16S72.822,48,64,48z" fill="#fff">
+           </path>
+          </g>
+          <g>
+           <circle cx="89.5" cy="38.5" fill="#fff" r="5.5">
+           </circle>
+          </g>
+         </g>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Facebook" class="heateor_sss_facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fcreate-your-own-nft-smart-contract" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Facebook">
+       <span class="heateor_sss_svg" style="background-color:#3c589a;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="-5 -5 42 42" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M17.78 27.5V17.008h3.522l.527-4.09h-4.05v-2.61c0-1.182.33-1.99 2.023-1.99h2.166V4.66c-.375-.05-1.66-.16-3.155-.16-3.123 0-5.26 1.905-5.26 5.405v3.016h-3.53v4.09h3.53V27.5h4.223z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Twitter" class="heateor_sss_button_twitter" href="http://twitter.com/intent/tweet?via=ledger&amp;text=Create%20Your%20Own%20NFT%20Smart%20Contract&amp;url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fcreate-your-own-nft-smart-contract" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Twitter">
+       <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_twitter" style="background-color:#55acee;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="-4 -4 39 39" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M28 8.557a9.913 9.913 0 0 1-2.828.775 4.93 4.93 0 0 0 2.166-2.725 9.738 9.738 0 0 1-3.13 1.194 4.92 4.92 0 0 0-3.593-1.55 4.924 4.924 0 0 0-4.794 6.049c-4.09-.21-7.72-2.17-10.15-5.15a4.942 4.942 0 0 0-.665 2.477c0 1.71.87 3.214 2.19 4.1a4.968 4.968 0 0 1-2.23-.616v.06c0 2.39 1.7 4.38 3.952 4.83-.414.115-.85.174-1.297.174-.318 0-.626-.03-.928-.086a4.935 4.935 0 0 0 4.6 3.42 9.893 9.893 0 0 1-6.114 2.107c-.398 0-.79-.023-1.175-.068a13.953 13.953 0 0 0 7.55 2.213c9.056 0 14.01-7.507 14.01-14.013 0-.213-.005-.426-.015-.637.96-.695 1.795-1.56 2.455-2.55z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Linkedin" class="heateor_sss_button_linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fcreate-your-own-nft-smart-contract" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Linkedin">
+       <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_linkedin" style="background-color:#0077b5;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="0 0 32 32" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M6.227 12.61h4.19v13.48h-4.19V12.61zm2.095-6.7a2.43 2.43 0 0 1 0 4.86c-1.344 0-2.428-1.09-2.428-2.43s1.084-2.43 2.428-2.43m4.72 6.7h4.02v1.84h.058c.56-1.058 1.927-2.176 3.965-2.176 4.238 0 5.02 2.792 5.02 6.42v7.395h-4.183v-6.56c0-1.564-.03-3.574-2.178-3.574-2.18 0-2.514 1.7-2.514 3.46v6.668h-4.187V12.61z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Reddit" class="heateor_sss_button_reddit" href="http://reddit.com/submit?url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fcreate-your-own-nft-smart-contract&amp;title=Create%20Your%20Own%20NFT%20Smart%20Contract" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Reddit">
+       <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_reddit" style="background-color:#ff5700;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="-3.5 -3.5 39 39" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M28.543 15.774a2.953 2.953 0 0 0-2.951-2.949 2.882 2.882 0 0 0-1.9.713 14.075 14.075 0 0 0-6.85-2.044l1.38-4.349 3.768.884a2.452 2.452 0 1 0 .24-1.176l-4.274-1a.6.6 0 0 0-.709.4l-1.659 5.224a14.314 14.314 0 0 0-7.316 2.029 2.908 2.908 0 0 0-1.872-.681 2.942 2.942 0 0 0-1.618 5.4 5.109 5.109 0 0 0-.062.765c0 4.158 5.037 7.541 11.229 7.541s11.22-3.383 11.22-7.541a5.2 5.2 0 0 0-.053-.706 2.963 2.963 0 0 0 1.427-2.51zm-18.008 1.88a1.753 1.753 0 0 1 1.73-1.74 1.73 1.73 0 0 1 1.709 1.74 1.709 1.709 0 0 1-1.709 1.711 1.733 1.733 0 0 1-1.73-1.711zm9.565 4.968a5.573 5.573 0 0 1-4.081 1.272h-.032a5.576 5.576 0 0 1-4.087-1.272.6.6 0 0 1 .844-.854 4.5 4.5 0 0 0 3.238.927h.032a4.5 4.5 0 0 0 3.237-.927.6.6 0 1 1 .844.854zm-.331-3.256a1.726 1.726 0 1 1 1.709-1.712 1.717 1.717 0 0 1-1.712 1.712z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+     </div>
+     <div class="heateorSssClear">
+     </div>
+    </div>
+   </div>
+   <figure class="wp-block-image size-large">
+    <img alt="Grey background and computer with NFT text." class="wp-image-268877" decoding="async" height="432" loading="lazy" sizes="(max-width: 1024px) 100vw, 1024px" src="https://www.ledger.com/wp-content/uploads/2023/02/07_NFT_Cover_White-1-1024x432.jpg" srcset="https://www.ledger.com/wp-content/uploads/2023/02/07_NFT_Cover_White-1-1024x432.jpg 1024w, https://www.ledger.com/wp-content/uploads/2023/02/07_NFT_Cover_White-1-300x127.jpg 300w, https://www.ledger.com/wp-content/uploads/2023/02/07_NFT_Cover_White-1-768x324.jpg 768w, https://www.ledger.com/wp-content/uploads/2023/02/07_NFT_Cover_White-1-1536x648.jpg 1536w, https://www.ledger.com/wp-content/uploads/2023/02/07_NFT_Cover_White-1-490x207.jpg 490w, https://www.ledger.com/wp-content/uploads/2023/02/07_NFT_Cover_White-1.jpg 1600w" width="1024"/>
+   </figure>
+   <figure class="wp-block-table cover-text">
+    <table>
+     <tbody>
+      <tr>
+       <td class="has-text-align-left" data-align="left">
+        KEY TAKEAWAYS:
+       </td>
+      </tr>
+      <tr>
+       <td class="has-text-align-left" data-align="left">
+        — You might think NFTs are about art, music and communities – but none of these are the main story.
+        <br/>
+        <br/>
+        — NFTs allow ANYTHING to be tokenized, owned and programmed by the creator. In other words, NFTs mean complete digital sovereignty.
+        <br/>
+        <br/>
+        —  They give you the individual an enormous amount of power – but we’re still not using them to their full potential! Why? It’s all about the smart contract.
+        <br/>
+        <br/>
+        — Here is how open-sourced platform Manifold Creator empowers you to write your own NFT smart contracts without needing a ton of technical insight – and why that’s so important.
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </figure>
+   <p>
+    <em>
+     Wondering how to create an NFT smart contract – and why it’s so important? Here’s your answer!
+    </em>
+   </p>
+   <p>
+    <strong>
+     Digital. Sovereignty.
+    </strong>
+   </p>
+   <p>
+    If you’re not already familiar with this phrase, you should get familiar with it. This is the #1 contribution blockchain is making to your life, and the NFT space is where it can be seen most clearly. Beyond all the hype and jargon, NFTs are about giving power back to individuals.
+   </p>
+   <p>
+    But there’s a catch. The vast majority of creators (and regular people) are not using NFTs to their full potential (yet), and you may not even realize it. In this article, let’s explore the unbelievable potential of NFTs, what’s stopping us from accessing it, and chat about one tool that may help you unlock the power of your own digital sovereignty. Ready?
+   </p>
+   <p>
+    L.
+   </p>
+   <p>
+    F.
+   </p>
+   <p>
+    G.
+   </p>
+   <h2 class="wp-block-heading">
+    The (Un-tapped) Power of NFTs
+   </h2>
+   <p>
+    Unless you’ve been under a rock, you’ll know that the past 18 months has seen NFTs take the world by storm. From PFPs, to art, from music to metaverse land, fashion and
+    <a href="https://www.ledger.com/academy/your-dao-guide" rel="noreferrer noopener" target="_blank">
+     DAO
+    </a>
+    memberships – you name it, NFTs are doing it. For sure, all these things are exciting. But there is news for you: they barely even touch on the most important element of non-fungible tokens. So what is missing?
+   </p>
+   <p>
+    <em>
+     NFTs allow absolutely ANYTHING to be tokenized, owned by you, and programmed with your own conditions – autonomously.
+    </em>
+   </p>
+   <p>
+    That’s right – an NFT is a token asset driven by an internal smart contract. That contract is controlled by you, the creator of the token. When you think about it, that’s an incredible amount of power. Not just for
+    <a href="https://www.ledger.com/academy/series/on-the-ledger/34-creators-digital-sovereignty-w-lady-pheonix" rel="noreferrer noopener" target="_blank">
+     digital creators looking to have control over their work
+    </a>
+    , but for anyone looking to control any element of their digital existence.
+   </p>
+   <h3 class="wp-block-heading">
+    Minting on an Exchange = Someone Else’s Rules
+   </h3>
+   <p>
+    But despite the huge potential of NFTs, unlocking it is not that simple. Smart contracts need coding and technical know-how, and for many creators, that’s not familiar terrain. So the vast majority of us make the same compromise: minting our NFTs on a trusty exchange interface. This means accepting the generic smart contract terms determined by the platform. Even those variables have a limit relative to what could be done by coding our own contract.
+   </p>
+   <p>
+    This cut-and-paste approach to our non-fungibles zaps a lot of our control out of those assets, limiting our digital sovereignty. Knowing how to create your own bespoke contract instead of using a standard one is the only way to unlock the full potential of digital ownership. Without a few examples of how that works in practice, it can be hard to grasp what we’re missing.
+   </p>
+   <p>
+    To give you an idea of just how important that is, here are a few of the things you can determine via the humble smart contract, once you know how to do it:
+   </p>
+   <h3 class="wp-block-heading">
+    Provenance
+   </h3>
+   <p>
+    With blockchain permitting digital ownership of anything – and facilitating a completely liquid market for those items – knowing the provenance of an asset has never been more important.
+   </p>
+   <p>
+    Say you’re an artist building a brand for yourself. Ensuring that all items you create bear your digital identity, and cannot be copied by another digital creator, will ensure you can build a profile and reputation. Your buyers can always be sure they’re buying a genuine creation made by you. Provenance is one immutable detail controlled by the internal smart contract of an NFT.
+   </p>
+   <h3 class="wp-block-heading">
+    Collection Size
+   </h3>
+   <p>
+    Scarcity is a central element of NFTs. Defining whether they are 1/1 art pieces, or part of a collection with deeper meaning. This is an area where creativity can really come to the fore in the digital space. Pak is a great example of how this element of NFT smart contracts can define the meaning of a release. He recently launched an unusual
+    <a href="https://www.theblockcrypto.com/post/101419/pak-nft-burning-platform-burn-art-token-ash" rel="noreferrer noopener" target="_blank">
+     project
+    </a>
+    where you burn NFTs (yep) to get ASH tokens, and vice versa. The
+    <a href="https://burn.art/" rel="noreferrer noopener" target="_blank">
+     burn.art
+    </a>
+    project was essentially a game based on value and scarcity. It is a great example of just how much creativity and potential can be programmed into an NFT via its smart contract.
+   </p>
+   <h3 class="wp-block-heading">
+    Function and Behaviour
+   </h3>
+   <p>
+    You might think NFTs are all about art and gaming. In fact they’re also making a really interesting impact in unexpected places.
+   </p>
+   <ul>
+    <li>
+     <strong>
+      NFT Smart Contracts in DeFi
+     </strong>
+    </li>
+   </ul>
+   <p>
+    DeFi platform Stake DAO recently launched its collection of
+    <a href="https://stakedaohq.medium.com/unlocking-the-full-potential-of-defi-with-stake-dao-nfts-c8e17d6879c8#:~:text=As%20the%20NFTs%20are%20intended,swapping%20for%20SDT%20on%20UniSwap." rel="noreferrer noopener" target="_blank">
+     staking reward NFTs
+    </a>
+    , designed to act as an incentive for users locking their crypto up with the protocol.
+   </p>
+   <p>
+    What’s really interesting about
+    <a href="https://stakedaohq.medium.com/unlocking-the-full-potential-of-defi-with-stake-dao-nfts-c8e17d6879c8" rel="noreferrer noopener" target="_blank">
+     Stake DAO NFTs
+    </a>
+    (and others like them) is that they have programmed functions – access to particular trading strategies and rewards. For example – depending on how much crypto you’ve staked. The tokens themselves might look like playing cards and have their own designs. Their value and utility is the way they interact with the Stake DAO protocol and the different things they unlock for users. All of this is determined by the totally unique smart contract they’re powered by.
+   </p>
+   <ul>
+    <li>
+     <strong>
+      NFTs Going Meta
+     </strong>
+    </li>
+   </ul>
+   <p>
+    Another exciting iteration of this idea is
+    <a href="https://www.ledger.com/academy/altered-state-machine-why-do-nfts-need-intelligence" rel="noreferrer noopener" target="_blank">
+     ASM Brains
+    </a>
+    – consciousness and unique behavioural traits that can be purchased as a token, and applied to your existing NFT to bring it to life. This enables a whole new generation of digital/human interaction. As we train our NFTs ourselves, watch them interact with other programmed tokens and see a part of ourselves represented as a unique entity in the digital space.
+   </p>
+   <p>
+    Both of the above are great examples of how NFTs go beyond simple “items”. They are really about whatever has been programmed into them by the creator.
+   </p>
+   <h3 class="wp-block-heading">
+    Personal Documentation
+   </h3>
+   <p>
+    You’re probably starting to realize that NFTs are a lot more than just pictures. Tokenized ownership gives creators complete control over any different asset. One place where that has important utility is managing sensitive personal documents and data.
+   </p>
+   <p>
+    Let’s say you’re renting out your home. You have given the tenant their lease document in the form of an NFT. Rather than use an intermediary to draw up a contract and manage it, you can simply program your NFT lease to be transferred back to yourself when the term comes to an end.
+   </p>
+   <p>
+    The same utility can also be useful for personal data. Let’s say you hold a birth certificate or university qualification in tokenized format and need to present it to a third party. You can simply transfer access to the document for a set period of time, taking it back once reaching the time limit.
+   </p>
+   <p>
+    This enables you to retain absolute control over who has your data, and for how long. No more storage on big servers, or offering up your personal information to advertisers. Digital ownership via smart contracts means power is given back to the individual.
+   </p>
+   <h3 class="wp-block-heading">
+    Royalties
+   </h3>
+   <p>
+    And last but not least – let’s talk cold hard crypto. In web3, the
+    <a href="https://www.ledger.com/academy/school-of-block/episode-12-how-to-make-an-nft-and-sell-it-maybe" rel="noreferrer noopener" target="_blank">
+     creator economy
+    </a>
+    is one of the areas being disrupted the most, and it’s all thanks to digital ownership on the blockchain.
+   </p>
+   <p>
+    As a real-world artist or designer, you get paid just one time. But the digital space is different, you can program your tokenized creation, be it metaverse fashion, an album on a limited release or a piece of journalism – to pay you not just at the initial purchase, but after every subsequent sale, in perpetuity. How does that look in practice?
+   </p>
+   <p>
+    Say you create an album and sell it as an NFT to your friend Jess. You’d receive the sale price in that first transaction. Thanks to the token’s smart contract, you can also receive a percentage of the sale price when Jess eventually sells it on. This will happen for every single sale, forever, if you’ve determined it in the smart contract at the point of creation.
+   </p>
+   <h2 class="wp-block-heading">
+    NFTs: Digital Sovereignty Just Out of Reach
+   </h2>
+   <p>
+    We’ve covered just a few of the things smart contracts are capable of executing. The point is already clear: being able to mint an NFT with your own bespoke smart contract gives you, the individual, incredible power over your digital life.
+   </p>
+   <p>
+    But basic coding literacy is holding us back. If only there was a way to write your own smart contract without needing years of background dev experience to code it.
+   </p>
+   <h2 class="wp-block-heading">
+    Manifold Contract Creator: Your First Taste of Self Sovereignty
+   </h2>
+   <p>
+    If the possibilities of digital sovereignty have you all revved up (us too), but you’re stuck on how to unlock it for yourself, there is some news for you:
+    <a href="https://manifoldxyz.substack.com/p/manifold-creator?s=r" rel="noreferrer noopener" target="_blank">
+     Manifold Contract Creator
+    </a>
+    is a platform aiming to help you overcome this problem, and unleash your Web3 power.
+   </p>
+   <p>
+    Manifold is an open-source platform with an easy-to-use interface. It allows NFT creators to write their own bespoke NFT smart contracts – without a degree in coding – and mint them to the blockchain.
+   </p>
+   <p>
+    Forget using one size fits all contracts like the ones on NFT marketplaces. Manifold lets creators define their own unique smart contract conditions, giving meaningful ownership of the resulting assets. Tools like these may not give the same depth of options as building code from scratch. For creators engaging with the Web3 marketplace, or anyone looking to explore the limits of what digital ownership means, Manifold is the ultimate NFT minting platform where you can learn the ropes. As you get to grips with the ins and outs of coding.
+   </p>
+   <h2 class="wp-block-heading">
+    Digital Ownership: Your Path to Freedom
+   </h2>
+   <p>
+    NFTs might be surrounded by hype and technical jargon. At their core, they’re about empowering us to exist in, own, and shape our digital universe. To create a “life” online.
+   </p>
+   <p>
+    Individuals can now meaningfully own parts of their digital experience, just like they do physically. They can program those items to behave and interact in particular ways. Ensuring their digital identity is enshrined with authenticity in the digital space. All of this is done via token assets – this is the real power of NFTs, and we’re barely even tapping it yet.
+   </p>
+   <p>
+    Do not let the tech put you off – this is the very beginning of a revolution. This will produce a totally different world within our lifetimes. So keep on learning and make sure you understand exactly how much power is in your hands – may be very surprising.
+   </p>
+   <h3 class="wp-block-heading has-text-align-center">
+    Knowledge is Power.
+   </h3>
+   <figure class="wp-block-image size-large">
+    <img alt="" class="wp-image-216630" decoding="async" height="576" loading="lazy" sizes="(max-width: 1024px) 100vw, 1024px" src="https://www.ledger.com/wp-content/uploads/2022/06/14-min-1024x576.png" srcset="https://www.ledger.com/wp-content/uploads/2022/06/14-min-1024x576.png 1024w, https://www.ledger.com/wp-content/uploads/2022/06/14-min-300x169.png 300w, https://www.ledger.com/wp-content/uploads/2022/06/14-min-768x432.png 768w, https://www.ledger.com/wp-content/uploads/2022/06/14-min-1536x864.png 1536w, https://www.ledger.com/wp-content/uploads/2022/06/14-min-490x275.png 490w, https://www.ledger.com/wp-content/uploads/2022/06/14-min.png 1920w" width="1024"/>
+   </figure>
+   <p>
+    <em>
+     NFTs are your creation, so let’s get back to basics! Check out how to make your own NFT right here – thanks,
+     <strong>
+      School of Block!
+     </strong>
+    </em>
+   </p>
+  </article>
+ </body>
+</html>

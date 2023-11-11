@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Updater</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #0F0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .spinner {
+            display: none;
+            margin: 60px auto;
+            width: 40px;
+            height: 40px;
+            border: 5px solid #f3f3f3; /* Light grey */
+            border-top: 5px solid #0F0; /* Green */
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        button {
+            background-color: #0F0;  /* Green background */
+            border: none;
+            color: #000;  /* Black text */
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+        }
+
+        button:hover {
+            background-color: #0D0;  /* Slightly darker green on hover */
+        }
+    </style>
+</head>
+<body>
+
+<div id="dbInfo"></div>
+
+<button onclick="executeScript('orchestrator.py')">Update academyzd</button>
+<button onclick="executeScript('orchestrator_b.py')">Update hc</button>
+
+<div class="spinner" id="loader"></div>
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function() {
+        fetchDatabaseInfo();
+    });
+
+    async function fetchDatabaseInfo() {
+        try {
+            const response = await fetch('/fetch_data');  // Call your FastAPI endpoint
+            const data = await response.json();
+            const indexValue = data.index;
+
+            const dbInfoElement = document.getElementById('dbInfo');
+            dbInfoElement.innerText = "Production database: " + indexValue;
+        } catch (error) {
+            console.error("Error fetching database info:", error);
+        }
+    }
+
+    async function executeScript(scriptName) {
+        let endpoint;
+        if (scriptName === 'orchestrator.py') {
+            endpoint = "/execute/orchestrator";
+        } else if (scriptName === 'orchestrator_b.py') {
+            endpoint = "/execute/orchestrator_b";
+        }
+
+        showLoader();
+
+        if (endpoint) {
+            const response = await fetch(endpoint, {
+                method: 'POST',
+            });
+            const data = await response.json();
+            hideLoader();
+
+            if (data.status) {
+                alert(data.status); 
+            } else {
+                alert(data.error);
+            }
+        }
+    }
+
+    function showLoader() {
+        document.getElementById("loader").style.display = "block";
+    }
+
+    function hideLoader() {
+        document.getElementById("loader").style.display = "none";
+    }
+
+</script>
+
+</body>
+</html>

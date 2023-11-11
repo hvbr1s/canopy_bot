@@ -1,0 +1,223 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/4413768794257-Managing-NFTs-in-Ledger-Live-"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="4413768794257"/><meta name="title" content="Managing NFTs in Ledger Live "/><meta name="classification" content="public"/></head>                            <body><h1>Managing NFTs in Ledger Live </h1>
+<div class="callout callout--primary">
+<h4 class="callout__title">
+<em class="fa fa-info-circle"> </em>Note for Ledger Nano S users</h4>
+<p>Sending NFTs is not currently available for Ledger Nano S users. Attempting to send an NFT using your Ledger Nano S will result in an error. However, you can utilize <a href="https://support.ledger.com/hc/en-us/articles/4408112281361-Managing-your-NFT-collection-with-OpenSea?docs=true" target="_blank" rel="noopener">OpenSea through MetaMask</a> to send your NFTs with your Ledger Nano S.</p>
+</div>
+<p><span style="font-weight: 400;">This tutorial describes how to manage your Ethereum and Polygon-based NFTs inside Ledger Live.</span></p>
+<h2><span style="font-weight: 400;">Before you start</span></h2>
+<ul class="list-bullet">
+<li>
+<span style="font-weight: 400;">Ensure the latest version of the </span><a href="https://support.ledger.com/hc/en-us/articles/360009576554-Ethereum-ETH-?docs=true" target="_blank" rel="noopener">Ethereum (ETH) app</a> /<a href="https://support.ledger.com/hc/en-us/articles/4413601680785-Polygon-MATIC-?docs=true" target="_blank" rel="noopener"> Polygon (MATIC)</a><span style="font-weight: 400;"> is installed on your Ledger device.</span>
+</li>
+<li>
+<span style="font-weight: 400;">Ensure </span><strong>blind signing is enabled</strong><span style="font-weight: 400;"> in the Ethereum (ETH) / Polygon (MATIC) app on your Ledger device.<br>You can learn how to do this </span><a href="https://support.ledger.com/hc/en-us/articles/4405481324433-Enable-blind-signing-in-the-Ethereum-ETH-app?docs=true"><span style="font-weight: 400;">here</span></a><span style="font-weight: 400;">.</span>
+</li>
+<li>
+<span style="font-weight: 400;">Ensure that your Ledger device runs the latest firmware version. You can learn more </span><a href="https://support.ledger.com/hc/en-us/articles/360002731113-Update-Ledger-Nano-S-firmware?docs=true"><span style="font-weight: 400;">here</span></a><span style="font-weight: 400;"> (Nano S users), <a href="https://support.ledger.com/hc/en-us/articles/4445777839901-Update-Ledger-Nano-S-Plus-firmware?docs=true" target="_blank" rel="noopener">here</a> (Nano S Plus users), or </span><a href="https://support.ledger.com/hc/en-us/articles/360013349800-Update-Ledger-Nano-X-firmware?docs=true"><span style="font-weight: 400;">here</span></a><span style="font-weight: 400;"> (Nano X users).</span>
+</li>
+<li>
+<span style="font-weight: 400;">Ensure you are running </span><strong>Ledger Live 2.40 or above</strong><span style="font-weight: 400;">. You can learn how to update Ledger Live </span><a href="https://support.ledger.com/hc/en-us/articles/4410960111889-Update-Ledger-Live-?docs=true"><span style="font-weight: 400;">here</span></a><span style="font-weight: 400;">.</span>
+</li>
+</ul>
+<div class="callout callout--warning">
+<h4 class="callout__title"><strong><em class="fas fa-exclamation-triangle"> </em>I received or was airdropped an unknown NFT</strong></h4>
+<p>Occasionally, you might receive or will be airdropped unknown NFTs in Ledger Live. If you notice a new NFT in Ledger Live that you don’t remember collecting, please do not send it or interact with it, as it could be malicious. Instead, it's recommended to hide it in Ledger Live as explained <a href="https://support.ledger.com/hc/en-us/articles/5198957427869-How-to-hide-an-NFT-in-Ledger-Live?docs=true" target="_blank" rel="noopener">here</a>.</p>
+</div>
+<div class="tabs tabs--colored-2">
+<div class="tabs-menu">
+<span class="tabs-link is-active"><em class="fa fa-desktop">  </em>Ledger Live Desktop</span> <span class="tabs-link"><em class="fa fa-mobile">  </em>Ledger Live Mobile</span>
+</div>
+<div class="tab">
+<h2>Viewing your NFTs on account in Ledger Live</h2>
+<div class="callout callout--warning">
+<h4 class="callout__title">My NFT is not showing in Ledger Live</h4>
+<ul>
+<li>
+<p>Some NFTs might take a while to update their metadata (information) from the explorer's API, so your NFT's image may not be immediately visible. If you're experiencing this, attempt to <a href="https://support.ledger.com/hc/en-us/articles/8725591240349-How-to-refresh-metadata-with-OpenSea-and-Rarible-to-view-your-NFTs?support=true" target="_blank" rel="noopener">refresh the metadata on Rarible</a>. Note, it can take up to 24 hours for the information to update.</p>
+</li>
+<li>
+<p>If your NFT doesn't comply with the ERC721 or ERC1155 standards (like the CryptoPunks collection), it won't appear in Ledger Live. Instead, you can <a href="https://support.ledger.com/hc/en-us/articles/4408112281361-Managing-your-NFT-collection-with-OpenSea?docs=true" target="_blank" rel="noopener">use OpenSea</a> in conjunction with MetaMask to access NFTs stored on your Ledger account.</p>
+</li>
+</ul>
+</div>
+<ol class="list-colored">
+<li>
+<span style="font-weight: 400;">Go to the </span><strong>Accounts </strong><span style="font-weight: 400;">section in Ledger Live.</span>
+</li>
+<li>Click <span style="font-weight: 400;">on the Ethereum / Polygon account that holds your NFT.</span><br><span style="font-weight: 400;">Detailed information about your account will open.</span>
+</li>
+<li>
+<span style="font-weight: 400;">Scroll down to the </span><strong>“NFT (Non-Fungible Tokens) collections”</strong><span style="font-weight: 400;"> section.</span><br><span style="font-weight: 400;">Your NFTs should be located here.</span>
+</li>
+<li>
+<span style="font-weight: 400;">Click on the NFT you want to manage.</span><br><span style="font-weight: 400;">A window with your NFT in bigger resolution and with NFT metadata will appear.</span>
+</li>
+<li>
+<span style="font-weight: 400;">From this window, you can </span><strong>Send </strong><span style="font-weight: 400;">your NFT to another address or </span><strong>View </strong><span style="font-weight: 400;">it on </span><a href="https://opensea.io/"><span style="font-weight: 400;">Opensea </span></a><span style="font-weight: 400;">/ </span><a href="https://rarible.com/"><span style="font-weight: 400;">Rarible </span></a><span style="font-weight: 400;">/ </span><a href="http://can.io"><span style="font-weight: 400;">Etherscan</span></a> / <a href="https://polygonscan.com/" target="_self" rel="undefined">Polygonscan</a><span style="font-weight: 400;"> (the link will redirect you to the web browser page).</span><br><img src="https://support.ledger.com/hc/article_attachments/4413768842385" alt="NFT_ACCESS_1.gif">
+</li>
+</ol>
+<h2>Send NFT in Ledger Live with Nano X / Nano S Plus</h2>
+<ol class="list-colored">
+<li>
+<span style="font-weight: 400;">Go to the </span><strong>Accounts </strong><span style="font-weight: 400;">section in Ledger Live.</span>
+</li>
+<li>Click <span style="font-weight: 400;">on the Ethereum / Polygon account that holds your NFT.</span><br><span style="font-weight: 400;">Detailed information about your account will open.</span>
+</li>
+<li>
+<span style="font-weight: 400;">Scroll down to the </span><strong>“NFT (Non-Fungible Tokens) collections”</strong><span style="font-weight: 400;"> section.</span><br><span style="font-weight: 400;">Your NFTs should be located here.</span>
+</li>
+<li>
+<span style="font-weight: 400;">Click on the NFT you want to send.</span><br><span style="font-weight: 400;">A window with your NFT in bigger resolution and with NFTs metadata will appear.</span>
+</li>
+<li>
+<span style="font-weight: 400;">Click on the </span><strong>Send </strong><span style="font-weight: 400;">button.</span><br><strong>Send NFT</strong><span style="font-weight: 400;"> window will appear.</span>
+</li>
+<li>
+<span style="font-weight: 400;">In the </span><strong>“NFT to send”</strong><span style="font-weight: 400;"> field, choose the NFT that you want to send to another address.</span>
+</li>
+<li>
+<span style="font-weight: 400;">Below, in the same window, enter the destination address of the recipient and click </span><strong>Continue.</strong>
+</li>
+<li>
+<span style="font-weight: 400;">Choose the </span><strong>fees</strong><span style="font-weight: 400;">. </span><a href="https://support.ledger.com/hc/en-us/articles/360021039173-Choose-network-fees?docs=true"><span style="font-weight: 400;">Learn more about the fees</span></a><br><span style="font-weight: 400;">Click </span><strong>Continue.</strong>
+</li>
+<li>
+<span style="font-weight: 400;">Verify the transaction details and if everything is correct, click </span><strong>Continue.</strong>
+</li>
+<li><span style="font-weight: 400;">Unlock your Ledger device and open the Ethereum or Polygon app. </span></li>
+<li>
+<span style="font-weight: 400;">Confirm your operation on the device to finalize it.</span><br><br><span style="font-weight: 400;">Once the transaction is confirmed, your NFT will reach the recipient's address.</span><br><img src="https://support.ledger.com/hc/article_attachments/4413760761617" alt="NFT_SEND_1.gif">
+</li>
+</ol>
+<h2>Receive NFTs on your account in Ledger Live</h2>
+<p><span style="font-weight: 400;">You can receive </span><span style="font-weight: 400;">Ethereum NFTs (ERC721 and <span>ERC1155)</span> on Ethereum and Polygon networks</span><span style="font-weight: 400;"> in Ledger Live. To do that, you can simply send the NFT to your Ethereum or Polygon receiving address. Learn how to receive assets </span><a href="https://support.ledger.com/hc/en-us/articles/4404389453841-Receive-crypto-assets?docs=true"><span style="font-weight: 400;">here</span></a><span style="font-weight: 400;">.</span></p>
+<p><span style="font-weight: 400;">Alternatively, you can use the </span><strong>Receive NFT</strong><span style="font-weight: 400;"> button in Ledger Live to obtain your receiving address for NFT (available if you already have </span><strong>at least 1 NFT</strong><span style="font-weight: 400;"> on your account):</span></p>
+<ol class="list-colored">
+<li>
+<span style="font-weight: 400;">Go to the </span><strong>Accounts </strong><span style="font-weight: 400;">section in Ledger Live.</span>
+</li>
+<li>Click <span style="font-weight: 400;">on the account that holds your NFT.</span><br><span style="font-weight: 400;">Detailed information about your account will open.</span>
+</li>
+<li style="font-weight: 400;" aria-level="1">
+<span style="font-weight: 400;">Scroll down to the </span><strong>“NFT (Non-Fungible Tokens) collections”</strong><span style="font-weight: 400;"> section.</span>
+</li>
+<li>
+<span style="font-weight: 400;">Click on the Receive NFT button on the top-right side of the NFT section.</span><br><span style="font-weight: 400;">The </span><strong>Receive window</strong><span style="font-weight: 400;"> appears.</span>
+</li>
+<li>
+<span style="font-weight: 400;">Choose the Ethereum account to receive NFT and click </span><strong>Continue.</strong>
+</li>
+<li>
+<span style="font-weight: 400;">Unlock your Ledger device and open the Ethereum or Polygon app and </span><strong>Continue.</strong>
+</li>
+<li><span style="font-weight: 400;">Verify that the address displayed in Ledger Live matches the one on your Ledger device.</span></li>
+<li>
+<span style="font-weight: 400;">If they match, copy the address and </span><strong>Approve </strong><span style="font-weight: 400;">on your device.</span><br><br><span style="font-weight: 400;">Now you can share this receiving address to receive your Non-Fungible Tokens on your account.</span><br><img src="https://support.ledger.com/hc/article_attachments/4413768781329" alt="RECEIVE_NFT.gif">
+</li>
+</ol>
+<h2>Next steps</h2>
+<p>Learn how to hide and unhide NFTs in Ledger Live <a href="https://support.ledger.com/hc/en-us/articles/5198957427869" target="_blank" rel="noopener">here</a>.</p>
+</div>
+<div class="tab is-hidden">
+<h2>Viewing your NFTs on account in Ledger Live</h2>
+<div class="callout callout--warning">
+<h4 class="callout__title">My NFT is not showing in Ledger Live</h4>
+<ul>
+<li>
+<p>Some NFTs might take a while to update their metadata (information) from the explorer's API, so your NFT's image may not be immediately visible. If you're experiencing this, attempt to <a href="https://support.ledger.com/hc/en-us/articles/8725591240349-How-to-refresh-metadata-with-OpenSea-and-Rarible-to-view-your-NFTs?support=true" target="_blank" rel="noopener">refresh the metadata on Rarible</a>. Note, it can take up to 24 hours for the information to update.</p>
+</li>
+<li>
+<p>If your NFT doesn't comply with the ERC721 or ERC1155 standards (like the CryptoPunks collection), it won't appear in Ledger Live. Instead, you can <a href="https://support.ledger.com/hc/en-us/articles/4408112281361-Managing-your-NFT-collection-with-OpenSea?docs=true" target="_blank" rel="noopener">use OpenSea</a> in conjunction with MetaMask to access NFTs stored on your Ledger account.</p>
+</li>
+</ul>
+</div>
+<ol>
+<li style="font-weight: 400;" aria-level="1">
+<span style="font-weight: 400;">Go to the </span><strong>Accounts</strong><span style="font-weight: 400;"> tab in Ledger Live Mobile.</span>
+</li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Click on your Ethereum account where the NFT is stored.</span></li>
+<li style="font-weight: 400;" aria-level="1">Scroll down to the <strong style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">“NFT (Non-Fungible Tokens) collections”</strong><span style="font-weight: 400;"> section.</span><br><span style="font-weight: 400;">Your NFTs should be located here.</span>
+</li>
+<li>
+<span style="font-weight: 400;">Click on the NFT you want to see.</span><br><span style="font-weight: 400;">A window with detailed information will open:</span><br>
+<ul>
+<li><span style="font-weight: 400;">You can see here the transaction history related to your NFT.</span></li>
+<li><span style="font-weight: 400;">You can click on the image to zoom in and see more details.</span></li>
+<li>
+<span style="font-weight: 400;">You can </span><strong>Send </strong><span style="font-weight: 400;">your NFT to another address.</span>
+</li>
+<li>
+<span style="font-weight: 400;">You can </span><strong>View </strong><span style="font-weight: 400;">it on</span><a href="https://opensea.io/"> <span style="font-weight: 400;">Opensea</span></a> <span style="font-weight: 400;">/</span><a href="https://rarible.com/"> <span style="font-weight: 400;">Rarible</span></a> <span style="font-weight: 400;">/</span><a href="http://can.io"> <span style="font-weight: 400;">Etherscan</span></a><span style="font-weight: 400;"> (the link will redirect you to the web browser page).</span>
+</li>
+</ul>
+<p><img src="https://support.ledger.com/hc/article_attachments/9231096593181" alt="Android.gif" width="624" height="441"></p>
+</li>
+</ol>
+<p>Additionally, you can view all of your NFTs in one click in Ledger Live. It will open the NFTs Gallery regardless of the blockchain or the accounts, you will see all of them in one place:</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.ledger.com/hc/article_attachments/9230805243293" alt="Android.jpg" width="665" height="470"></p>
+<p class="wysiwyg-text-align-center"><img src="https://support.ledger.com/hc/article_attachments/9230857184413" alt="Android__1_.jpg" width="680" height="481"></p>
+<h2><span style="font-weight: 400;">Send NFT in Ledger Live with Nano X / Nano S Plus</span></h2>
+<ol>
+<li>
+<span style="font-weight: 400;">Go to the </span><strong>Accounts</strong><span style="font-weight: 400;"> tab in Ledger Live Mobile.</span>
+</li>
+<li><span style="font-weight: 400;">Click on your Ethereum account where the NFT is stored.</span></li>
+<li>
+<span style="font-weight: 400;">Scroll down to the </span><strong>“NFT (Non-Fungible Tokens) collections”</strong><span style="font-weight: 400;"> section.</span><br><span style="font-weight: 400;">Your NFTs should be located here.</span>
+</li>
+<li>
+<span style="font-weight: 400;">Click on the NFT you want to see.</span><br><span style="font-weight: 400;">A window with detailed information will open.</span>
+</li>
+<li>
+<span style="font-weight: 400;">From this window, you can Send your NFT to another address or View it on</span><a href="https://opensea.io/"><span style="font-weight: 400;"> Opensea</span></a><span style="font-weight: 400;"> /</span><a href="https://rarible.com/"><span style="font-weight: 400;"> Rarible</span></a><span style="font-weight: 400;"> /</span><a href="http://can.io"><span style="font-weight: 400;"> Etherscan</span></a><span style="font-weight: 400;"> (the link will redirect you to the web browser page).</span>
+</li>
+<li>
+<span style="font-weight: 400;">Click on the </span><strong>Send </strong><span style="font-weight: 400;">button.</span><br><strong>The recipient address </strong><span style="font-weight: 400;">window will appear.</span>
+</li>
+<li>
+<strong>Paste</strong><span style="font-weight: 400;"> the Ethereum address of the recipient.</span>
+</li>
+<li>
+<span style="font-weight: 400;">Click </span><strong>Continue.</strong>
+</li>
+<li>
+<span style="font-weight: 400;">In step 4, choose the Network fees. They are Medium by default.</span><br><a href="https://support.ledger.com/hc/en-us/articles/360021039173-Choose-network-fees?docs=true"><span style="font-weight: 400;">Learn more about the fees</span></a><span style="font-weight: 400;">.</span>
+</li>
+<li>
+<span style="font-weight: 400;">Click </span><strong>Continue</strong><span style="font-weight: 400;">.</span>
+</li>
+<li>
+<span style="font-weight: 400;">Verify the transaction details and if everything is correct, confirm the transaction on your device</span><strong>.</strong><br>Once the transaction is confirmed, your NFT will reach the recipient's address.</li>
+</ol>
+<h2><span style="font-weight: 400;">Receive NFTs on your Ethereum account in Ledger Live </span></h2>
+<p><span style="font-weight: 400;">You can receive</span><a href="https://eips.ethereum.org/EIPS/eip-721"> <span style="font-weight: 400;">Ethereum NFTs (ERC721)</span></a><span style="font-weight: 400;"> in Ledger Live. To do that, you can simply send the NFT to your receiving Ethereum address. Learn how to receive assets</span><a href="https://support.ledger.com/hc/en-us/articles/4404389453841-Receive-crypto-assets?docs=true"> <span style="font-weight: 400;">here</span></a><span style="font-weight: 400;">.</span></p>
+<p><span style="font-weight: 400;">Alternatively, you can use the </span><strong>Receive NFT</strong><span style="font-weight: 400;"> button in Ledger Live Mobile to obtain your receiving address for NFT (available if you already have </span><strong>at least 1 NFT</strong><span style="font-weight: 400;"> on your Ethereum address):</span></p>
+<ol>
+<li>
+<span style="font-weight: 400;">Go to the </span><strong>Accounts </strong><span style="font-weight: 400;">section in Ledger Live.</span>
+</li>
+<li>
+<span style="font-weight: 400;">Click on the Ethereum account that holds your NFTs.</span><br><span style="font-weight: 400;">Detailed information about your account will open.</span>
+</li>
+<li>
+<span style="font-weight: 400;">Scroll down to the </span><strong>“NFT (Non-Fungible Tokens) collections”</strong><span style="font-weight: 400;"> section.</span>
+</li>
+<li>
+<span style="font-weight: 400;">Click on the </span><strong>Receive NFT</strong><span style="font-weight: 400;"> button on the top-right side of the NFT section.</span>
+</li>
+<li><span style="font-weight: 400;">Make sure your device is unlocked and connected to your phone.</span></li>
+<li><span style="font-weight: 400;">Verify the address on the device.</span></li>
+<li><span style="font-weight: 400;">If the address is matching, approve your address on your Ledger device.</span></li>
+<li><span style="font-weight: 400;">Copy your Ethereum address and share it with the sender.</span></li>
+<li>
+<span style="font-weight: 400;">Verify the address is the same once you’ve copied it from the clipboard.</span><br>
+<p><img src="https://support.ledger.com/hc/article_attachments/4645378967837" alt="NFT_LLM_RECEIVE_CANVA.gif"></p>
+Once you share the receiving address to receive your Non-Fungible Tokens on your Ethereum address, you should view them once the sender will make a transfer to your address.</li>
+</ol>
+</div>
+</div>
+<p>
+<script src="chrome-extension://ldinpeekobnhjjdofggfgjlcehhmanlj/inpage.js" id="stacks-wallet-provider"></script>
+</p>
+<script src="chrome-extension://ldinpeekobnhjjdofggfgjlcehhmanlj/inpage.js" id="stacks-wallet-provider"></script></body></html>

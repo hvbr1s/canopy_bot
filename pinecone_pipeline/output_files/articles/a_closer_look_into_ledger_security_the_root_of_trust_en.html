@@ -1,0 +1,485 @@
+<html>
+ <head>
+  <meta content="https://www.ledger.com/a-closer-look-into-ledger-security-the-root-of-trust" name="source"/>
+  <meta content="academy" name="source-type"/>
+  <meta content="en" name="locale"/>
+  <meta content="N/A" name="zd-article-id"/>
+  <meta content="a closer look into ledger security the root of trust" name="title"/>
+  <meta content="public" name="classification"/>
+ </head>
+ <body>
+  <article class="margin-lg" id="article-4248">
+   <header class="header margin-sm">
+    <div class="content">
+     <div class="margin-sm is-hidden-tablet is-hidden-desktop blog-category-breadcrumb">
+      <a href="https://www.ledger.com/company-updates" title="">
+       Blog
+      </a>
+      <i class="icon-chevron-right">
+      </i>
+      <a href="https://www.ledger.com/category/blog-posts" title="Blog posts">
+       Blog posts
+      </a>
+     </div>
+     <p class="datetime caption margin-xs">
+      <a class="is-primary" href="https://www.ledger.com/category/blog-posts" title="Blog posts">
+       Blog posts
+      </a>
+      |           02/25/2019
+     </p>
+     <h1 class="h2 title margin-s">
+      A Closer Look Into Ledger Security: the Root of Trust
+     </h1>
+     <a class="badge" href="https://www.ledger.com/tag/hardware-wallet" title="Hardware Wallet">
+      Hardware Wallet
+     </a>
+     <a class="badge" href="https://www.ledger.com/tag/ledger" title="Ledger">
+      Ledger
+     </a>
+     <a class="badge" href="https://www.ledger.com/tag/root-of-trust" title="Root of Trust">
+      Root of Trust
+     </a>
+     <a class="badge" href="https://www.ledger.com/tag/security" title="Security">
+      Security
+     </a>
+    </div>
+    <div class="illustration" style="background-image: url('https://www.ledger.com/wp-content/uploads/2019/02/Twitter@2x-1024x576-1.png');">
+    </div>
+   </header>
+   <div class="row no-margin-mobile margin-md is-hidden-mobile">
+    <div class="row blog-category-breadcrumb">
+     <a href="https://www.ledger.com/company-updates" title="">
+      Blog
+     </a>
+     <i class="icon-chevron-right">
+     </i>
+     <a href="https://www.ledger.com/category/blog-posts" title="Blog posts">
+      Blog posts
+     </a>
+    </div>
+   </div>
+   <div class="row margin-lg plain-text">
+    <p>
+     <img alt="" class="alignnone wp-image-4249 size-full" decoding="async" height="576" loading="lazy" src="https://www.ledger.com/wp-content/uploads/2019/03/Twitter@2x-1024x576.png?_t=1553683967" width="1024">
+      <br/>
+      <i>
+       <span style="font-weight: 400;">
+        In the previous articles, we have taken a closer look at
+       </span>
+      </i>
+      <a href="https://www.ledger.com/academy/security/the-secure-element-whistanding-security-attacks/">
+       <i>
+        <span style="font-weight: 400;">
+         Secure Elements
+        </span>
+       </i>
+      </a>
+      <i>
+       <span style="font-weight: 400;">
+        and our custom Operating System –
+       </span>
+      </i>
+      <a href="https://www.ledger.com/2018/12/10/a-closer-look-into-ledger-security-our-custom-operating-system-bolos/">
+       <i>
+        <span style="font-weight: 400;">
+         BOLOS
+        </span>
+       </i>
+      </a>
+      <i>
+       <span style="font-weight: 400;">
+        . This time, we will take a closer look at the Root of Trust.
+       </span>
+      </i>
+     </img>
+    </p>
+    <p>
+     <span style="font-weight: 400;">
+      When receiving their Ledger device, most want to immediately start using it. One will notice, however, that there is no security seal on the packaging to show that this is a legitimate Ledger device.
+     </span>
+    </p>
+    <p>
+     <b>
+      It is paramount to ensure that your device is genuine.
+     </b>
+     <span style="font-weight: 400;">
+      An attacker could otherwise have replaced a genuine device by a fake and backdoored one. In this case, he would be able to access to your crypto assets afterwards.
+     </span>
+     <span style="font-weight: 400;">
+      Anti-tampering seals (or holographic seals) can give you a false sense of security. Not only are they trivial to clone, but it is also easy to open and close a package without damaging the seal.
+     </span>
+    </p>
+    <p>
+     <span style="font-weight: 400;">
+      As cryptocurrencies are a high value target for attackers, a
+      <strong>
+       real security mechanism is required
+      </strong>
+      to make sure that your device is a genuine one.
+     </span>
+     <br/>
+     <span style="font-weight: 400;">
+      At Ledger, we use a cryptographic mechanism to check if your device is a genuine Ledger hardware wallet.
+     </span>
+    </p>
+    <p>
+     <span style="font-weight: 400;">
+      We use a validation process based on a
+     </span>
+     <i>
+      <span style="font-weight: 400;">
+       <strong>
+        Root of Trust
+       </strong>
+       .
+      </span>
+     </i>
+    </p>
+    <h3>
+     <strong>
+      What is an attestation and how does it work?
+     </strong>
+    </h3>
+    <p>
+     <span style="font-weight: 400;">
+      The attestation is a validation process that can check the genuineness of Ledger devices.
+     </span>
+    </p>
+    <p>
+     <span style="font-weight: 400;">
+      In simple words, every time you use a Ledger device to process a critical action at the firmware level (such as updating the OS, installing or removing apps), an HSM (secure server) will send a challenge to the device (a randomly generated number). This means it is requesting the device to prove its genuineness. The device can prove that it is genuine by providing a correct signature for the challenge.
+     </span>
+    </p>
+    <p>
+     <span style="font-weight: 400;">
+      If the server is able to verify the signature of the device, it validates its genuineness and allows the connection. If this is not the case, it blocks it instead.
+     </span>
+    </p>
+    <p>
+     <span style="font-weight: 400;">
+      Let’s take a closer look into it.
+     </span>
+    </p>
+    <h3>
+     <span style="font-weight: 400;">
+      Setting up an attestation for Ledger devices
+     </span>
+     <b>
+      during manufacturing
+     </b>
+     <span style="font-weight: 400;">
+      :
+     </span>
+    </h3>
+    <p>
+     <span style="font-weight: 400;">
+      To be able to make use of a Root of Trust, the following steps take place
+     </span>
+     <b>
+      during the manufacturing of a device
+     </b>
+     <span style="font-weight: 400;">
+      :
+     </span>
+     <br/>
+     <img alt="" class="wp-image-4426 alignleft" decoding="async" height="313" loading="lazy" src="https://www.ledger.com/wp-content/uploads/2019/02/18_2-1.png" width="400"/>
+    </p>
+    <ul>
+     <li>
+      <b>
+       <span style="font-weight: 400;">
+        Each Ledger device generates a unique pair of keys: a
+       </span>
+      </b>
+      <strong>
+       public key
+      </strong>
+      <b>
+       <span style="font-weight: 400;">
+        and a
+       </span>
+       private key
+       <span style="font-weight: 400;">
+        . The private key is kept secret to the device only and is not communicated. The same principle is used for your cryptocurrency accounts.
+        <br/>
+       </span>
+       <span style="font-weight: 400;">
+        <br/>
+       </span>
+      </b>
+     </li>
+     <li>
+      <b>
+       <span style="font-weight: 400;">
+        The device sends its
+       </span>
+       <span style="font-weight: 400;">
+        public key
+       </span>
+       <span style="font-weight: 400;">
+        to Ledger’s HSM (secure server).
+        <br/>
+       </span>
+       <span style="font-weight: 400;">
+        <br/>
+       </span>
+      </b>
+     </li>
+     <li>
+      <b>
+       <span style="font-weight: 400;">
+        Our HSM (secure server) signs the public key with the Ledger Root of Trust and sends it back to the device. This signed public key is the device’s attestation. It is stored inside the device and cannot be extracted.
+       </span>
+      </b>
+     </li>
+    </ul>
+    <p>
+     <span style="font-weight: 400;">
+      <br/>
+      This attestation allows Ledger’s HSM  to verify if the device is genuine afterwards.
+     </span>
+    </p>
+    <h3>
+     <span style="font-weight: 400;">
+      Using the Root of Trust
+     </span>
+     <b>
+      after manufacturing
+     </b>
+     <span style="font-weight: 400;">
+      :
+     </span>
+    </h3>
+    <p>
+     <span style="font-weight: 400;">
+      When using the Ledger device for the first time, there will be a verification of its genuineness.
+     </span>
+    </p>
+    <p>
+     <span style="font-weight: 400;">
+      Here is how it works:
+     </span>
+     <br/>
+     <b>
+      <b>
+       <span style="font-weight: 400;">
+        <img alt="" class="wp-image-4185 alignleft" decoding="async" height="351" loading="lazy" src="https://www.ledger.com/wp-content/uploads/2019/02/18_1-1024x800.png" width="449"/>
+       </span>
+      </b>
+     </b>
+    </p>
+    <ul>
+     <li>
+      <b>
+       <b>
+        <b>
+         Ledger’s HSM
+         <span style="font-weight: 400;">
+          (secure server) sends a challenge to the
+         </span>
+         Ledger device.
+         <br/>
+        </b>
+       </b>
+      </b>
+     </li>
+    </ul>
+    <ul>
+     <li>
+      <b>
+       The Ledger device
+       <span style="font-weight: 400;">
+        signs the challenge it receives using its
+       </span>
+       <span style="font-weight: 400;">
+        private key
+       </span>
+       <span style="font-weight: 400;">
+        . This signature is sent back to
+       </span>
+       Ledger’s HSM along with the attestation (signed public key)
+       <span style="font-weight: 400;">
+        .
+        <br/>
+       </span>
+       <span style="font-weight: 400;">
+        <br/>
+       </span>
+      </b>
+     </li>
+     <li>
+      <b>
+       <b>
+        <b>
+         <b>
+          <b>
+           Ledger’s server
+           <span style="font-weight: 400;">
+            will then be able to authenticate the Ledger device doing the following:
+           </span>
+          </b>
+         </b>
+        </b>
+       </b>
+      </b>
+     </li>
+     <li>
+      <b>
+       <span style="font-weight: 400;">
+        Verify the attestation of the device (that the given public key is actually signed by the HSM)
+       </span>
+      </b>
+     </li>
+     <li>
+      <span style="font-weight: 400;">
+       Verify the challenge with the attestation.
+      </span>
+     </li>
+    </ul>
+    <p>
+     <span style="font-weight: 400;">
+      <br/>
+      <img alt="Ledger genuine device" class="wp-image-4164 alignleft" decoding="async" height="87" loading="lazy" src="https://www.ledger.com/wp-content/uploads/2019/02/Genuine-device-300x125.png?_t=1551084760" width="209"/>
+      If the device’s signature is confirmed as correct by the HSM, the device will be established as genuine, and will be allowed to access the Ledger Live manager.
+      <br/>
+     </span>
+     <br/>
+     <span style="font-weight: 400;">
+      <br/>
+      <img alt="Ledger device not genuine" class="alignleft wp-image-4168" decoding="async" height="77" loading="lazy" src="https://www.ledger.com/wp-content/uploads/2019/02/Capture-d’écran-2019-02-20-à-18.41.32-300x113.png?_t=1551085009" width="205"/>
+     </span>
+     <br/>
+     <span style="font-weight: 400;">
+      Otherwise, a warning message is shown indicating the device is not genuine and the Ledger Live manager will be inaccessible.
+     </span>
+     <br/>
+     <span style="font-weight: 400;">
+      <br/>
+      This authentication procedure protects Ledger users against counterfeited Ledger devices.
+     </span>
+    </p>
+    <h4>
+     When do we use a Root of Trust to check if a device is genuine?:
+     <span style="font-weight: 400;">
+      <br/>
+     </span>
+    </h4>
+    <p>
+     <img alt="" class="alignnone wp-image-4166" decoding="async" height="421" loading="lazy" src="https://www.ledger.com/wp-content/uploads/2019/02/Genuine-Check-1024x470.png" width="917"/>
+    </p>
+    <ul>
+     <li style="list-style-type: none;">
+      <ul>
+       <li style="font-weight: 400;">
+        <span style="font-weight: 400;">
+         When you are connecting your device to Ledger Live for the first time during the genuine check (see image above)
+        </span>
+       </li>
+      </ul>
+     </li>
+    </ul>
+    <ul>
+     <li style="list-style-type: none;">
+      <ul>
+       <li style="font-weight: 400;">
+        <span style="font-weight: 400;">
+         Each time you are accessing the Ledger Live manager (Or Ledger Manager chrome application)
+        </span>
+       </li>
+      </ul>
+     </li>
+    </ul>
+    <ul>
+     <li style="list-style-type: none;">
+      <ul>
+       <li style="font-weight: 400;">
+        <span style="font-weight: 400;">
+         Every time you install an application from the Ledger Live manager  (Or Ledger Manager Chrome application)
+        </span>
+       </li>
+      </ul>
+     </li>
+    </ul>
+    <ul>
+     <li style="font-weight: 400;">
+      <span style="font-weight: 400;">
+       Each time you are updating your firmware.
+      </span>
+     </li>
+    </ul>
+    <p>
+     <span style="font-weight: 400;">
+      None of the previous mentioned can be performed with a counterfeited device.
+     </span>
+    </p>
+    <h3>
+     <span style="font-weight: 400;">
+      What if Ledger did not make use of a Root of Trust ?
+     </span>
+    </h3>
+    <p>
+     <span style="font-weight: 400;">
+      If Ledger devices did not use the attestation mechanism, anyone could tamper with a device to turn it into a tool for stealing your crypto assets. Equally, one could create a completely different device that looks completely identical to a Ledger Nano S, and load this clone with corrupt software designed to steal crypto assets from its users.
+     </span>
+     <span style="font-weight: 400;">
+      <br/>
+     </span>
+     <span style="font-weight: 400;">
+      <br/>
+     </span>
+     <span style="font-weight: 400;">
+      A “security” seal is nothing compared to a cryptographic mechanism. It’s easy to counterfeit, and gives a false sense of security. If it is possible for hackers to tamper with or mimic a device in such a way that allows them to steal crypto assets, it would be a
+     </span>
+     <b>
+      much
+     </b>
+     <span style="font-weight: 400;">
+      easier task to replicate one of these stickers, let alone removing one and sticking it back on again.
+     </span>
+    </p>
+    <h3>
+     <span style="font-weight: 400;">
+      Conclusion
+     </span>
+    </h3>
+    <p>
+     <span style="font-weight: 400;">
+      Leveraging a Root of Trust for our hardware wallets is essential for security. This genuineness mechanism allows us to block fake devices pretending to be real Ledger hardware wallets. Furthermore, you will be able to update your device without the risk of a rogue firmware or app being installed. This helps protect your crypto assets.
+     </span>
+    </p>
+    <p>
+     <span style="font-weight: 400;">
+      For our next articles, we will look into how we at Ledger keep our edge. The first of three will cover our bounty program.
+     </span>
+    </p>
+    <p>
+     The Ledger Nano X – our next generation hardware wallet, is now available for pre-order. Click on the banner underneath to learn more about it:
+     <br/>
+     <a href="https://www.ledger.com/ledger-nano-x?utm_source=Wordpress_Medium&amp;utm_medium=Social&amp;utm_campaign=Root%20of%20Trust">
+      <img alt="Pre-order Ledger Nano X" class="alignnone wp-image-4173 size-large" decoding="async" height="450" loading="lazy" src="https://www.ledger.com/wp-content/uploads/2019/02/Pre-order-1024x450.png" width="1024"/>
+     </a>
+    </p>
+   </div>
+   <footer class="row plain-text footer">
+    <div class="social-icons-footer">
+     <a class="h6 icon-facebook" href="https://www.facebook.com/Ledger/" target="_blank">
+     </a>
+     <a class="h6 icon-insta" href="https://www.instagram.com/ledger/" target="_blank">
+      <i class="fab fa-instagram">
+      </i>
+     </a>
+     <a class="h6 icon-twitter" href="https://twitter.com/Ledger" target="_blank">
+     </a>
+     <a class="h6 icon-linkedin" href="https://www.linkedin.com/company/ledgerhq/" target="_blank">
+     </a>
+     <a class="h6 icon-reddit" href="https://www.reddit.com/r/ledgerwallet/" target="_blank">
+     </a>
+     <a class="h6 icon-tiktok" href="https://www.tiktok.com/@ledger" target="_blank">
+      <i class="fab fa-tiktok">
+      </i>
+     </a>
+    </div>
+   </footer>
+  </article>
+ </body>
+</html>

@@ -1,0 +1,529 @@
+<html>
+ <head>
+  <meta content="https://www.ledger.com/academy/bitcoin-ordinals" name="source"/>
+  <meta content="academy" name="source-type"/>
+  <meta content="en" name="locale"/>
+  <meta content="N/A" name="zd-article-id"/>
+  <meta content="bitcoin ordinals" name="title"/>
+  <meta content="public" name="classification"/>
+ </head>
+ <body>
+  <article class="plain-text margin-sm article" id="article">
+   <h1 class="margin-xs">
+    Bitcoin Ordinals: Are They NFTs?
+   </h1>
+   <div class="article-author">
+    <div>
+     By
+     <b>
+      Linda Orenes-Lerma
+     </b>
+    </div>
+    <div>
+     <img alt="" height="21" src="https://www.ledger.com/wp-content/uploads/2022/09/261763672_10165608271400034_6789545536103895775_n-104x104.jpg" width="21">
+     </img>
+    </div>
+   </div>
+   <div class="color-grey-500 small-text uppercase margin-xs article-date">
+    Mar 17, 2023
+          |
+    <b>
+     Updated May 31, 2023
+    </b>
+   </div>
+   <div class="caption-for-article flexbox flex-start">
+    <div class="flex-none time-to-read">
+     <span class="badge badge-nude">
+      <i class="icon-copy">
+      </i>
+      Read
+     </span>
+     <span>
+      6 min
+     </span>
+    </div>
+    <div class="with-point level level-2">
+     <span>
+      Medium
+     </span>
+    </div>
+   </div>
+   <div class="align-center share-box" id="fixed-share-box">
+    <span>
+     SHARE
+    </span>
+    <div class="heateor_sss_sharing_container heateor_sss_horizontal_sharing" data-heateor-ss-offset="0" data-heateor-sss-href="https://www.ledger.com/academy/bitcoin-ordinals">
+     <div class="heateor_sss_sharing_ul">
+      <a aria-label="Instagram" class="heateor_sss_button_instagram" href="https://www.instagram.com/ledger" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Instagram">
+       <span class="heateor_sss_svg" style="background-color:#53beee;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg height="100%" style="display:block;border-radius:999px;" version="1.1" viewbox="-10 -10 148 148" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+         <g>
+          <g>
+           <path d="M86,112H42c-14.336,0-26-11.663-26-26V42c0-14.337,11.664-26,26-26h44c14.337,0,26,11.663,26,26v44 C112,100.337,100.337,112,86,112z M42,24c-9.925,0-18,8.074-18,18v44c0,9.925,8.075,18,18,18h44c9.926,0,18-8.075,18-18V42 c0-9.926-8.074-18-18-18H42z" fill="#fff">
+           </path>
+          </g>
+          <g>
+           <path d="M64,88c-13.234,0-24-10.767-24-24c0-13.234,10.766-24,24-24s24,10.766,24,24C88,77.233,77.234,88,64,88z M64,48c-8.822,0-16,7.178-16,16s7.178,16,16,16c8.822,0,16-7.178,16-16S72.822,48,64,48z" fill="#fff">
+           </path>
+          </g>
+          <g>
+           <circle cx="89.5" cy="38.5" fill="#fff" r="5.5">
+           </circle>
+          </g>
+         </g>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Facebook" class="heateor_sss_facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fbitcoin-ordinals" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Facebook">
+       <span class="heateor_sss_svg" style="background-color:#3c589a;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="-5 -5 42 42" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M17.78 27.5V17.008h3.522l.527-4.09h-4.05v-2.61c0-1.182.33-1.99 2.023-1.99h2.166V4.66c-.375-.05-1.66-.16-3.155-.16-3.123 0-5.26 1.905-5.26 5.405v3.016h-3.53v4.09h3.53V27.5h4.223z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Twitter" class="heateor_sss_button_twitter" href="http://twitter.com/intent/tweet?via=ledger&amp;text=Bitcoin%20Ordinals%3A%20Are%20They%20NFTs%3F&amp;url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fbitcoin-ordinals" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Twitter">
+       <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_twitter" style="background-color:#55acee;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="-4 -4 39 39" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M28 8.557a9.913 9.913 0 0 1-2.828.775 4.93 4.93 0 0 0 2.166-2.725 9.738 9.738 0 0 1-3.13 1.194 4.92 4.92 0 0 0-3.593-1.55 4.924 4.924 0 0 0-4.794 6.049c-4.09-.21-7.72-2.17-10.15-5.15a4.942 4.942 0 0 0-.665 2.477c0 1.71.87 3.214 2.19 4.1a4.968 4.968 0 0 1-2.23-.616v.06c0 2.39 1.7 4.38 3.952 4.83-.414.115-.85.174-1.297.174-.318 0-.626-.03-.928-.086a4.935 4.935 0 0 0 4.6 3.42 9.893 9.893 0 0 1-6.114 2.107c-.398 0-.79-.023-1.175-.068a13.953 13.953 0 0 0 7.55 2.213c9.056 0 14.01-7.507 14.01-14.013 0-.213-.005-.426-.015-.637.96-.695 1.795-1.56 2.455-2.55z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Linkedin" class="heateor_sss_button_linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fbitcoin-ordinals" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Linkedin">
+       <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_linkedin" style="background-color:#0077b5;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="0 0 32 32" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M6.227 12.61h4.19v13.48h-4.19V12.61zm2.095-6.7a2.43 2.43 0 0 1 0 4.86c-1.344 0-2.428-1.09-2.428-2.43s1.084-2.43 2.428-2.43m4.72 6.7h4.02v1.84h.058c.56-1.058 1.927-2.176 3.965-2.176 4.238 0 5.02 2.792 5.02 6.42v7.395h-4.183v-6.56c0-1.564-.03-3.574-2.178-3.574-2.18 0-2.514 1.7-2.514 3.46v6.668h-4.187V12.61z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Reddit" class="heateor_sss_button_reddit" href="http://reddit.com/submit?url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fbitcoin-ordinals&amp;title=Bitcoin%20Ordinals%3A%20Are%20They%20NFTs%3F" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Reddit">
+       <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_reddit" style="background-color:#ff5700;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="-3.5 -3.5 39 39" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M28.543 15.774a2.953 2.953 0 0 0-2.951-2.949 2.882 2.882 0 0 0-1.9.713 14.075 14.075 0 0 0-6.85-2.044l1.38-4.349 3.768.884a2.452 2.452 0 1 0 .24-1.176l-4.274-1a.6.6 0 0 0-.709.4l-1.659 5.224a14.314 14.314 0 0 0-7.316 2.029 2.908 2.908 0 0 0-1.872-.681 2.942 2.942 0 0 0-1.618 5.4 5.109 5.109 0 0 0-.062.765c0 4.158 5.037 7.541 11.229 7.541s11.22-3.383 11.22-7.541a5.2 5.2 0 0 0-.053-.706 2.963 2.963 0 0 0 1.427-2.51zm-18.008 1.88a1.753 1.753 0 0 1 1.73-1.74 1.73 1.73 0 0 1 1.709 1.74 1.709 1.709 0 0 1-1.709 1.711 1.733 1.733 0 0 1-1.73-1.711zm9.565 4.968a5.573 5.573 0 0 1-4.081 1.272h-.032a5.576 5.576 0 0 1-4.087-1.272.6.6 0 0 1 .844-.854 4.5 4.5 0 0 0 3.238.927h.032a4.5 4.5 0 0 0 3.237-.927.6.6 0 1 1 .844.854zm-.331-3.256a1.726 1.726 0 1 1 1.709-1.712 1.717 1.717 0 0 1-1.712 1.712z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+     </div>
+     <div class="heateorSssClear">
+     </div>
+    </div>
+   </div>
+   <figure class="wp-block-image size-large">
+    <img alt="Computer with text on screen" class="wp-image-268257" decoding="async" height="432" loading="lazy" sizes="(max-width: 1024px) 100vw, 1024px" src="https://www.ledger.com/wp-content/uploads/2023/04/07_NFT_Cover_Purple-1024x432.jpg" srcset="https://www.ledger.com/wp-content/uploads/2023/04/07_NFT_Cover_Purple-1024x432.jpg 1024w, https://www.ledger.com/wp-content/uploads/2023/04/07_NFT_Cover_Purple-300x127.jpg 300w, https://www.ledger.com/wp-content/uploads/2023/04/07_NFT_Cover_Purple-768x324.jpg 768w, https://www.ledger.com/wp-content/uploads/2023/04/07_NFT_Cover_Purple-1536x648.jpg 1536w, https://www.ledger.com/wp-content/uploads/2023/04/07_NFT_Cover_Purple-490x207.jpg 490w, https://www.ledger.com/wp-content/uploads/2023/04/07_NFT_Cover_Purple.jpg 1600w" width="1024"/>
+   </figure>
+   <figure class="wp-block-table">
+    <table>
+     <tbody>
+      <tr>
+       <td>
+        KEY TAKEAWAYS:
+       </td>
+      </tr>
+      <tr>
+       <td>
+        — Bitcoin Ordinals are not NFTs, but they have some similar qualities. For example, the value of each Ordinal is completely unique.
+        <br/>
+        <br/>
+        — The information for Ordinals is stored completely on-chain, with some calling them “Digital Artifacts”.
+        <br/>
+        <br/>
+        — Ordinals are often compared to NFTs, but there are critical differences: Ordinals do not use smart contracts, are not programmable, and don’t store any data off-chain.
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </figure>
+   <p>
+    Bitcoin Ordinals have become a major Web3 contender, spreading excitement, debate, and even some confusion across the crypto-sphere.
+   </p>
+   <p>
+    Often dubbed the NFTs of the Bitcoin blockchain, Ordinals introduce novel options and use cases for
+    <a href="https://www.ledger.com/academy/crypto/a-brief-history-on-bitcoin-cryptocurrencies" rel="noreferrer noopener" target="_blank">
+     Bitcoin
+    </a>
+    network.
+   </p>
+   <p>
+    So, from Satoshis, to inscription to Taproot: What exactly are Bitcoin Ordinals? Let’s gain some insight into these digital artifacts, learning what distinguishes them from traditional non-fungible tokens.
+   </p>
+   <h2 class="wp-block-heading">
+    What Are Bitcoin Ordinals?
+   </h2>
+   <p>
+    Bitcoin Ordinals are essentially pieces of
+    <a href="https://www.ledger.com/academy/bitcoin-ordinals	 https://www.ledger.com/academy/bitcoin-legal-tender" rel="noreferrer noopener" target="_blank">
+     Bitcoin
+    </a>
+    inscribed with rich data, such as text or an image. Much like an NFT, Bitcoin Ordinals live on the blockchain and their value is dependent on the information they include rather than as tokens themselves. To explain, an ordinal is always worth one Satoshi (which is 1/100,000,000th of a Bitcoin – the smallest denomination possible). However, an ordinal’s true value depends on its inscription.
+   </p>
+   <p>
+    Think of an artist creating a piece of art on a dollar bill. While the bill itself is only worth a dollar, the art on it could potentially be priceless. This is essentially what a Bitcoin ordinal is, a Satoshi with its own unique value.
+   </p>
+   <h2 class="wp-block-heading">
+    Bitcoin Ordinals Protocol: Explained
+   </h2>
+   <p>
+    Casey Rodarmor launched The Ordinals Protocol in January 2023. In doing so, he opened up a whole new world for Bitcoin users. The new Ordinals protocol made it much easier for Bitcoin node operators to link data with each of these pieces of Bitcoin, thus creating Ordinals.
+   </p>
+   <p>
+    You can create Ordinals with all sorts of data, including text, images, and more. Doing so makes it a “digital artifact”. This is because the act of inscription makes one Satoshi different from the next, and therefore uniquely valuable.
+   </p>
+   <h3 class="wp-block-heading">
+    <strong>
+     Enabled by Taproot
+    </strong>
+   </h3>
+   <p>
+    This protocol relies heavily on upgrades made during the 2021
+    <a href="https://www.ledger.com/academy/what-is-taproot" rel="noreferrer noopener" target="_blank">
+     Taproot
+    </a>
+    overhaul. The Taproot upgrade brought higher levels of privacy, security, and scalability to the Bitcoin network.
+   </p>
+   <p>
+    While attaching data to Bitcoin has always been possible through technical loopholes, the amount of data you could attach was limited. The taproot upgrade allows users to mine up to 4Mbs of data, opening up the possibility to attach images.
+   </p>
+   <h3 class="wp-block-heading">
+    <strong>
+     How Bitcoin Ordinals are Numbered
+    </strong>
+   </h3>
+   <p>
+    Every Satoshi has a unique sequentially ordered number, based on the time it is mined. Originally proposed in the Bitcoin forum in 2012, each Satoshi has an assigned ordinal number between 0 and 2,100,000,000,000,000. This is where Bitcoin Ordinals got their name.
+   </p>
+   <h3 class="wp-block-heading">
+    <strong>
+     Ordinal Rarity Explained
+    </strong>
+   </h3>
+   <p>
+    Since some Satoshis are rarer than others, and Bitcoin Ordinals are made from Satoshis; it’s like they have an in-built rarity system. The Bitcoin network itself also operates on a series of frequent events which opens up the opportunity for rare occurrences. It’s rather technical, but in short, coins mined and sats inscribed during these significant periods for the network have a distinction, and therefore deemed collectible. If you want to learn more about Bitcoin Ordinals’ rarity levels, make sure you check out Rodarmor’s documentation
+    <a href="https://docs.ordinals.com/overview.html">
+     here
+    </a>
+    .
+   </p>
+   <div class="wp-block-image">
+    <figure class="aligncenter is-resized">
+     <img alt="" decoding="async" height="307" loading="lazy" src="https://lh4.googleusercontent.com/eafIN5VLgheiCz4edOlWMeAXcdW6bN6h5r9PHnTwh-Ziq32oI6D6T9wUgyXA3-Vi9DLE72Vcn2nljH_yZ6I2UVF7P1YAG2P4MoHHyBvnpD2nTdI11sgZCMiH7MuYUg-lIWyIIVN4O-2Z13dOrv-J7Sc" width="454"/>
+    </figure>
+   </div>
+   <h2 class="wp-block-heading">
+    Ordinals Vs NFTs: What’s the Difference?
+   </h2>
+   <p>
+    You might be thinking that Bitcoin Ordinals sound a lot like NFTs, and you wouldn’t be the first – but there are some essential distinctions between these two things.
+   </p>
+   <h3 class="wp-block-heading">
+    <strong>
+     Bitcoin Ordinals Are Not Tokens
+    </strong>
+   </h3>
+   <p>
+    Rather, they are a piece of Bitcoin with information attached (or inscribed). By contrast, NFTs are tokens, rather than denominations of currency.
+   </p>
+   <h3 class="wp-block-heading">
+    <strong>
+     No Smart Contracts
+    </strong>
+   </h3>
+   <p>
+    Ordinals do not use
+    <a href="https://www.ledger.com/academy/blockchain/what-is-a-smart-contract" rel="noreferrer noopener" target="_blank">
+     smart contracts
+    </a>
+    or
+    <a href="https://www.ledger.com/academy/what-is-a-flash-loan" rel="noreferrer noopener" target="_blank">
+     flash loans
+    </a>
+    . Smart contracts are essentially programs on the blockchain and traditional NFTs use them to implement a wide range of future behaviors, such as; creator royalties, interactions with particular protocols, or digital memberships. While ordinals can store data, they cannot execute any actions using smart contracts.
+   </p>
+   <h3 class="wp-block-heading">
+    <strong>
+     Ordinals Store Data On-Chain
+    </strong>
+   </h3>
+   <p>
+    Ordinals store their data completely on-chain. As opposed to NFTs, bitcoin ordinals do not use distributed storage networks like IPFS to store their metadata. On-chain storage can be slow and costly, but it is also completely immutable. If you want to know more, make sure to check out the Academy guide on
+    <a href="https://www.ledger.com/academy/wheres-your-nft-image-not-on-the-blockchain" rel="noreferrer noopener" target="_blank">
+     where NFT metadata is stored
+    </a>
+    .
+   </p>
+   <h2 class="wp-block-heading">
+    Most Famous Bitcoin Ordinals So Far
+   </h2>
+   <p>
+    To understand how the Ordinals ecosystem is developing, let’s take a look at a few of the collections that have emerged so far.
+   </p>
+   <h3 class="wp-block-heading">
+    TwelveFold By Yuga Labs
+   </h3>
+   <div class="wp-block-image">
+    <figure class="aligncenter is-resized">
+     <img alt="" decoding="async" height="348" loading="lazy" src="https://lh3.googleusercontent.com/SBoN_LMOByo9CHJjFcCDlEml5VTVFDWUdsodwV-sWPsTFitMIZ0qsKjUfcWmeRNEcikBek1-aSNNjglC2Jnxrz8JBiChtNjCPqOum86OtHB7EM8To36Cn9ZIVtqpEGUo0a4XCD0SzHc-edZT-FgmarU" width="348"/>
+    </figure>
+   </div>
+   <p>
+    By far the most famous Bitcoin Ordinal collection so far has to be ‘TwelveFold’ by Yuga Labs. The limited collection features 300 pieces of generative art, combining both 3D graphics and hand-drawn features.
+   </p>
+   <p>
+    The idea behind the collection is to “Explore the relationship between time, mathematics, and the blockchain”, according to the Yuga Labs creative director.  To explain, 144 blocks of Bitcoin are mined a day, which could also be interpreted as 12×12. Each piece in the Yuga Labs collection is a 12×12 grid, naming the collection ‘TwelveFold’, referencing that fact.
+   </p>
+   <p>
+    The auction spanned for 24 hours, starting on March 6th 2023. Of the 300-strong collection, 288 ordinals were available to bid on – and they were popular indeed. In fact, this single auction racked up a total of 3,246 bids, with the successful bidders spending between $50,000 to just over $150k for a single piece.
+   </p>
+   <h3 class="wp-block-heading">
+    Ordinal Punks
+   </h3>
+   <figure class="wp-block-image is-resized">
+    <img alt="" decoding="async" height="247" loading="lazy" src="https://lh6.googleusercontent.com/kXyYzy-aoVJ0ahixcYNtOh68lciaj6kP4fd9DpA2hcxO7TDlqdGr4Bc9atY8wKvWP-sWaxTYUnaugbQFjDoOFs2Y_asO5ICzUslQlyI0SPUzmygzVMC9Azr_PvZ7Z3EWZu0C9lUmRob2ee7cOQ7s5Eg" width="800"/>
+   </figure>
+   <p>
+    <a href="https://ordinalpunks.com/" rel="noreferrer noopener" target="_blank">
+     Ordinal punks
+    </a>
+    are a collection of 100 Bitcoin Ordinals paying tribute to the popular
+    <a href="https://www.ledger.com/academy/ethereum-beginners-guide" rel="noreferrer noopener" target="_blank">
+     Ethereum
+    </a>
+    NFT collection
+    <a href="https://www.ledger.com/academy/what-are-cryptopunks-nfts" rel="noreferrer noopener" target="_blank">
+     CryptoPunks
+    </a>
+    . Ordinal Punks are using an
+    <a href="https://github.com/cryptopunksnotdead" rel="noreferrer noopener" target="_blank">
+     open-source algorithm
+    </a>
+    to generate the pfp which is 192×192 pixels.
+   </p>
+   <p>
+    Bids and asks are handled on a Google Sheet by the project’s creator, acting as an escrow manager. All transactions are monitored and tracked via Discord.
+   </p>
+   <h3 class="wp-block-heading">
+    Taproot Wizards
+   </h3>
+   <figure class="wp-block-image is-resized">
+    <img alt="" decoding="async" height="205" loading="lazy" src="https://lh4.googleusercontent.com/vf5DoV67Yd4_wpxtewh9V1o2MKd_WtT38Pc5UrnkVBrpK1XfMi2V5I4Bepr6SPiJPwwXqpAXQ27LJ6CSWht9A5-p3dgWdd0pz7-k4WW0WrMb6kMl7ksc7Xluvw3_59LVnSF2eSyKl38YCa2JPX92mrU" width="800"/>
+   </figure>
+   <p>
+    <a href="https://www.taprootwizards.com/" rel="noreferrer noopener" target="_blank">
+     Taproot Wizards
+    </a>
+    is an Ordinal collection created by independent Web3 developer Udi Wertheimer, and securely stored on the Bitcoin network. Starting from Inscription 652, each wizard in this collection is a unique NFT that has been hand-drawn by Udi himself. This special collection harnesses the immutability of the Bitcoin blockchain to securely store these one-of-a-kind digital artifacts.
+   </p>
+   <p>
+    All sales are handled through
+    <a href="https://discord.com/invite/taprootwizards" rel="noreferrer noopener" target="_blank">
+     Taproot Wizards Discord.
+    </a>
+   </p>
+   <h3 class="wp-block-heading">
+    Ordinal Loops
+   </h3>
+   <div class="wp-block-image">
+    <figure class="aligncenter is-resized">
+     <img alt="ordinal loops" decoding="async" height="286" loading="lazy" src="https://lh5.googleusercontent.com/hwDQMM7iscXzV3OeMUydxf2OD1k04Cs5rIdWXmOATyMUxnMsGBVjHCwUAJi_nH75XI8NO-xkszLFSN-T-3KCsv-X_RKeZNAlXZw0OzxOKRfK6uqHbkWp6kmjv91lxo6BIU5DY6FOgFZbPO8MmNcJz7U" width="435"/>
+    </figure>
+   </div>
+   <p>
+    <a href="https://www.ordinalloops.xyz/" rel="noreferrer noopener" target="_blank">
+     Ordinal Loops
+    </a>
+    offering comes in the form of Object 0, an NFT that rotates and has a mathematical torus design. It’s one of seven similar animations and is part of the first series from the Ordinal Loops team. The current narrative chapter, “Do Not Fiat,” features Bitcoin ASCII fighting an army consisting of five main government currencies endlessly.
+   </p>
+   <p>
+    Currently, the only way to buy an Ordinal Loop is via auction.
+   </p>
+   <h3 class="wp-block-heading">
+    TimeChain Collectibles
+   </h3>
+   <div class="wp-block-image">
+    <figure class="aligncenter is-resized">
+     <img alt="" decoding="async" height="329" loading="lazy" src="https://lh3.googleusercontent.com/Vs2ahlFwpkx8NCAHbtUY9ja0GzrABSlkQYSjYDBL93lRPU4HOE0h88Sqx9Day8noO_5wwztMZKd51jhPS1uygCIJuuVld7I5TlAlCMZTCqk04SxvaMzwtBaodHuGKRMBM4aUaFkHBo1japEP7fYbu1E" width="578"/>
+    </figure>
+   </div>
+   <p>
+    <a href="https://twitter.com/timechainord" rel="noreferrer noopener" target="_blank">
+     Timechain Collectibles
+    </a>
+    presents the Series 1 Timepieces, a highly limited collection of 21 Ordinals. They depict many different kinds of timepieces, including pocket watches, wristwatches, cyberpunk alarm clocks, and more. The collection launched on January 30th, 2023 and each piece carries its own consecutive Inscription number from 356 to 377. Inscription 364 sold for an impressive 3.08 BTC/43.59 ETH ($67000) in Jan 2023, showing how desirable these collectibles are! You can find TimeChain Collectibles auctions via the project’s
+    <a href="https://discord.com/invite/7QKWjKCKc6" rel="noreferrer noopener" target="_blank">
+     Discord
+    </a>
+    .
+   </p>
+   <h2 class="wp-block-heading">
+    How to Buy and Sell Bitcoin Ordinals
+   </h2>
+   <p>
+    Currently, the ways to purchase Bitcoin Ordinals are limited and some are riskier than others. Buying Ordinals from new platforms and individual sellers can put you at risk of scams and bad actors. Thus, it’s important to understand each step before proceeding.
+   </p>
+   <p>
+    So, how do you buy an Ordinal?
+   </p>
+   <h3 class="wp-block-heading">
+    Bitcoin Ordinals Marketplaces: Do They Exist?
+   </h3>
+   <p>
+    As of Feb 11th 2023, there is now one platform specifically for buying Bitcoin Ordinals: Generative.xyz. This platform sees itself as the “Art Blocks” of Bitcoin Ordinals, aiming to make it easier to buy these digital assets.
+   </p>
+   <p>
+    Using this platform you can easily browse the Ordinals for sale or even inscribe your own.  While
+    <a href="https://generative.xyz/" rel="noreferrer noopener" target="_blank">
+     Generative.xyz
+    </a>
+    is still growing, it offers many amazing pieces of work from many amazing artists (such as Justin Aversano).
+   </p>
+   <p>
+    However, by default, this platform temporarily stores the private keys to your ordinals in your local memory. That means even if you generate the key with a
+    <a href="https://www.ledger.com/academy/crypto-hardware-wallet" rel="noreferrer noopener" target="_blank">
+     hardware wallet
+    </a>
+    , they are not isolated from the internet. As a result, your private keys – and therefore your assets – are susceptible to hacks.
+   </p>
+   <p>
+    But that’s just one risky method to buy Ordinals. The other options are just as (if not more) risky.
+   </p>
+   <h3 class="wp-block-heading">
+    Buying Ordinals Over-the-Counter
+   </h3>
+   <p>
+    Due to a lack of platforms to buy and sell bitcoin Ordinals, many traders use Twitter or Discord to broker over-the-counter (OTC) deals instead. Since a lot of these trades can be tricky to understand, buying Bitcoin Ordinals this way is not recommended. However, if you decide to engage in an OTC trade for a Bitcoin ordinal anyway, do so with caution.
+   </p>
+   <p>
+    While it is by no means secure, many traders use the official Ordinals Discord server to find their next purchase. In the link-your-project” channel, creators post their latest artifacts for sale.
+   </p>
+   <h3 class="wp-block-heading">
+    Setting Up a Bitcoin Ordinals Wallet for Over-the-counter Trading
+   </h3>
+   <p>
+    To buy an ordinal this way, you will need a wallet that supports these types of transactions. Whichever wallet you choose, it should be an entirely different wallet from the one you would use for sending bitcoin itself. To explain, if you send bitcoin from this wallet, you risk sending your ordinal instead.
+   </p>
+   <p>
+    The bitcoin wallet you use must be taproot compatible, such as Sparrow. To set it up, download and install it. The process may differ from wallet to wallet, but for Sparrow, you’ll have to change the settings specifically for using the wallet with Ordinals.
+   </p>
+   <p>
+    Once you’re in settings, set the ‘script type’ to taproot. Under keystores, select “New or imported software wallet”. This allows you to generate a secret recovery phrase for this wallet. Press import, then apply. Now you should be able to set a password and start using your wallet.
+   </p>
+   <p>
+    Sparrow is a software wallet, meaning it is connected to the internet. While it’s convenient for buying and selling Bitcoin Ordinals, it cannot keep your keys away from the internet, meaning it is not as secure as a hardware wallet. Securing Bitcoin Ordinals is tricky, but there are now ways to protect your assets using a hardware wallet too.
+   </p>
+   <h2 class="wp-block-heading">
+    Receiving and Securing Ordinals
+   </h2>
+   <p>
+    Whichever wallet you’re using, you should always generate a new address when receiving an ordinal. You can label your separate addresses in most wallets that support them and this will stop you from sending your Ordinal accidentally.
+   </p>
+   <h3 class="wp-block-heading">
+    Receiving Ordinals Securely Via a Hardware Wallet
+   </h3>
+   <p>
+    To secure your Ordinal, you can use your Ledger
+    <a href="https://www.ledger.com/coin/wallet/bitcoin" rel="noreferrer noopener" target="_blank">
+     Bitcoin wallet
+    </a>
+    . To do so, make sure you update your Ledger device first. Next, you will have to create a new Bitcoin account dedicated to Ordinals. Using your device, you will secure your connection, open the Bitcoin app, and add a Taproot account. Once you have this account set up you can send Ordinals to it using the Ord wallet. To understand the process in full detail, make sure you check out
+    <a href="https://support.ledger.com/hc/en-us/articles/9430682875805?support=true" rel="noreferrer noopener" target="_blank">
+     this tutorial
+    </a>
+    .
+   </p>
+   <h3 class="wp-block-heading">
+    Receiving Ordinals in a Software Wallet
+   </h3>
+   <p>
+    However, if you want to send or interact with these kinds of assets in other ways, you’ll need another supporting wallet such as the aforementioned wallet, Sparrow.
+   </p>
+   <p>
+    If you receive an ordinal in Sparrow, it will arrive in your Unspent Transaction Outputs (UTXOs) area of the wallet. While the whole explanation is a little more complicated, think of your UTXOs like unspent change. Each time you spend on the Bitcoin network it’s like you receive the rest of your balance “back” through UTXOs. Accordingly, that’s also where you’ll find the data for Bitcoin Ordinals; in that pile of unspent change.
+   </p>
+   <h3 class="wp-block-heading">
+    Sending a Bitcoin Ordinal
+   </h3>
+   <p>
+    Firstly, it is not recommended to send Ordinals between wallets unless you are an experienced user with knowledge of UTXO management. If that sounds like Greek to you, make sure you check out the Ledger Academy guide on
+    <a href="https://www.ledger.com/academy/glossary/unspent-transaction-output-utxo" rel="noreferrer noopener" target="_blank">
+     UTXOs
+    </a>
+    before you even consider it. Plus, bear in mind Ledger Live does not currently support buying, selling, or transferring Ordinals. If you understand the risk it entails, follow
+    <a href="https://support.ledger.com/hc/en-us/articles/9430682875805?support=true" rel="noreferrer noopener" target="_blank">
+     this tutorial
+    </a>
+    to send Ordinals using Sparrow wallet.
+   </p>
+   <h2 class="wp-block-heading">
+    How to Inscribe an Ordinal
+   </h2>
+   <p>
+    If you’re interested in inscribing your very own ordinal, you have two options.
+   </p>
+   <h3 class="wp-block-heading">
+    1.
+    <strong>
+     Get Technical
+    </strong>
+   </h3>
+   <p>
+    Your first option will have you
+    <a href="https://www.ledger.com/academy/what-is-a-node-and-why-should-i-operate-one#:~:text=A%20node%20in%20the%20Bitcoin,new%20transactions%20as%20they%20happen." rel="noreferrer noopener" target="_blank">
+     running a Bitcoin node
+    </a>
+    and syncing it to the Bitcoin blockchain before you even think about touching an ordinal. This process can get pretty technical – but the good news is, there’s a less complicated alternative.
+   </p>
+   <h3 class="wp-block-heading">
+    2.
+    <strong>
+     Use a Service to Inscribe an Ordinal For You
+    </strong>
+   </h3>
+   <p>
+    Do you want to make your very own Ordinal without having to run a Bitcoin node?  Luckily, several Bitcoin inscription services already exist.
+   </p>
+   <p>
+    For example,
+    <a href="https://gamma.io/ordinals" rel="noreferrer noopener" target="_blank">
+     Gamma
+    </a>
+    has a no-code tool that allows users to inscribe an ordinal in minutes ‒ without having to download or run a fully synced Bitcoin node. The tool also offers affordable and customizable transaction fees, a great feature for creators.
+   </p>
+   <p>
+    Of course, using ordinal inscription services ‒ such as Gamma ‒is the best option for beginners. However, it’s important to note you will have to pay a service fee on top of the BTC transaction fee.
+   </p>
+   <h2 class="wp-block-heading">
+    The Future of Bitcoin Ordinals Inscriptions
+   </h2>
+   <p>
+    Bitcoin Ordinals gained in popularity quickly, with 100,000 inscriptions in the protocol’s first four days. Since the Bitcoin network is slower and stores all information on-chain, Ordinals could stand to become just as important to web3 as NFTs. Put simply, they are collector’s items on the world’s largest blockchain. As a result, securing them is just as important as our other digital assets.
+    <a href="https://support.ledger.com/hc/en-us/articles/9430682875805-Storing-and-managing-Bitcoin-ordinals-with-your-Ledger?support=true">
+    </a>
+   </p>
+   <h2 class="wp-block-heading">
+    Are Bitcoin Ordinals Safe?
+   </h2>
+   <p>
+    Interacting with Bitcoin Ordinals is difficult; the tools required to manage these assets are still emerging and many of them are not so user-friendly. As any enthusiast should know, it’s risky using software wallets and new and untested crypto platforms. As using these tools is the only current option for managing Bitcoin Ordinals, this is best left to the experts.
+   </p>
+   <p>
+    To ensure your crypto is safe, your only option is to keep your keys offline and understand transactions before you sign them. This is where Ledger Devices come in. While the ordinal ecosystem is still growing, engaging in it comes with its own risks. If you decide to do so, make sure to secure your
+    <a href="https://www.ledger.com/academy/whats-a-private-key" rel="noreferrer noopener" target="_blank">
+     private keys
+    </a>
+    with a hardware wallet, such as that Ledger offers. Ledger Devices offer unparalleled security of your digital assets, and when securing digital artifacts such as Bitcoin Ordinals, it’s imperative to keep your keys safe and offline.
+   </p>
+   <h2 class="wp-block-heading has-text-align-center">
+    Knowledge is Power.
+   </h2>
+   <div class="wp-block-image">
+    <figure class="aligncenter size-large">
+     <a href="https://www.ledger.com/academy/enter-the-trust-zone/even-more-security" rel="noreferrer noopener" target="_blank">
+      <img alt="" class="wp-image-260832" decoding="async" height="576" loading="lazy" sizes="(max-width: 1024px) 100vw, 1024px" src="https://www.ledger.com/wp-content/uploads/2023/02/YT_THUMBNAILS_09-1024x576.jpg" srcset="https://www.ledger.com/wp-content/uploads/2023/02/YT_THUMBNAILS_09-1024x576.jpg 1024w, https://www.ledger.com/wp-content/uploads/2023/02/YT_THUMBNAILS_09-300x169.jpg 300w, https://www.ledger.com/wp-content/uploads/2023/02/YT_THUMBNAILS_09-768x432.jpg 768w, https://www.ledger.com/wp-content/uploads/2023/02/YT_THUMBNAILS_09-1536x864.jpg 1536w, https://www.ledger.com/wp-content/uploads/2023/02/YT_THUMBNAILS_09-490x275.jpg 490w, https://www.ledger.com/wp-content/uploads/2023/02/YT_THUMBNAILS_09.jpg 1920w" width="1024"/>
+     </a>
+    </figure>
+   </div>
+  </article>
+ </body>
+</html>

@@ -1,0 +1,366 @@
+<html>
+ <head>
+  <meta content="https://www.ledger.com/academy/crypto/what-is-ethereum-2-0" name="source"/>
+  <meta content="academy" name="source-type"/>
+  <meta content="en" name="locale"/>
+  <meta content="N/A" name="zd-article-id"/>
+  <meta content="what is ethereum 2 0" name="title"/>
+  <meta content="public" name="classification"/>
+ </head>
+ <body>
+  <article class="plain-text margin-sm article" id="article">
+   <h1 class="margin-xs">
+    The Ethereum Merge Explained
+   </h1>
+   <div class="article-author">
+    <div>
+     By
+     <b>
+      Kirsty Moreland
+     </b>
+    </div>
+    <div>
+     <img alt="" height="21" src="https://www.ledger.com/wp-content/uploads/2022/09/Me3-104x104.jpg" width="21">
+     </img>
+    </div>
+   </div>
+   <div class="color-grey-500 small-text uppercase margin-xs article-date">
+    Nov 8, 2021
+          |
+    <b>
+     Updated May 12, 2023
+    </b>
+   </div>
+   <div class="caption-for-article flexbox flex-start">
+    <div class="flex-none time-to-read">
+     <span class="badge badge-nude">
+      <i class="icon-copy">
+      </i>
+      Read
+     </span>
+     <span>
+      4 min
+     </span>
+    </div>
+    <div class="with-point level level-2">
+     <span>
+      Medium
+     </span>
+    </div>
+   </div>
+   <div class="align-center share-box" id="fixed-share-box">
+    <span>
+     SHARE
+    </span>
+    <div class="heateor_sss_sharing_container heateor_sss_horizontal_sharing" data-heateor-ss-offset="0" data-heateor-sss-href="https://www.ledger.com/academy/crypto/what-is-ethereum-2-0">
+     <div class="heateor_sss_sharing_ul">
+      <a aria-label="Instagram" class="heateor_sss_button_instagram" href="https://www.instagram.com/ledger" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Instagram">
+       <span class="heateor_sss_svg" style="background-color:#53beee;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg height="100%" style="display:block;border-radius:999px;" version="1.1" viewbox="-10 -10 148 148" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+         <g>
+          <g>
+           <path d="M86,112H42c-14.336,0-26-11.663-26-26V42c0-14.337,11.664-26,26-26h44c14.337,0,26,11.663,26,26v44 C112,100.337,100.337,112,86,112z M42,24c-9.925,0-18,8.074-18,18v44c0,9.925,8.075,18,18,18h44c9.926,0,18-8.075,18-18V42 c0-9.926-8.074-18-18-18H42z" fill="#fff">
+           </path>
+          </g>
+          <g>
+           <path d="M64,88c-13.234,0-24-10.767-24-24c0-13.234,10.766-24,24-24s24,10.766,24,24C88,77.233,77.234,88,64,88z M64,48c-8.822,0-16,7.178-16,16s7.178,16,16,16c8.822,0,16-7.178,16-16S72.822,48,64,48z" fill="#fff">
+           </path>
+          </g>
+          <g>
+           <circle cx="89.5" cy="38.5" fill="#fff" r="5.5">
+           </circle>
+          </g>
+         </g>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Facebook" class="heateor_sss_facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fcrypto%2Fwhat-is-ethereum-2-0" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Facebook">
+       <span class="heateor_sss_svg" style="background-color:#3c589a;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="-5 -5 42 42" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M17.78 27.5V17.008h3.522l.527-4.09h-4.05v-2.61c0-1.182.33-1.99 2.023-1.99h2.166V4.66c-.375-.05-1.66-.16-3.155-.16-3.123 0-5.26 1.905-5.26 5.405v3.016h-3.53v4.09h3.53V27.5h4.223z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Twitter" class="heateor_sss_button_twitter" href="http://twitter.com/intent/tweet?via=ledger&amp;text=The%20Ethereum%20Merge%20Explained&amp;url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fcrypto%2Fwhat-is-ethereum-2-0" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Twitter">
+       <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_twitter" style="background-color:#55acee;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="-4 -4 39 39" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M28 8.557a9.913 9.913 0 0 1-2.828.775 4.93 4.93 0 0 0 2.166-2.725 9.738 9.738 0 0 1-3.13 1.194 4.92 4.92 0 0 0-3.593-1.55 4.924 4.924 0 0 0-4.794 6.049c-4.09-.21-7.72-2.17-10.15-5.15a4.942 4.942 0 0 0-.665 2.477c0 1.71.87 3.214 2.19 4.1a4.968 4.968 0 0 1-2.23-.616v.06c0 2.39 1.7 4.38 3.952 4.83-.414.115-.85.174-1.297.174-.318 0-.626-.03-.928-.086a4.935 4.935 0 0 0 4.6 3.42 9.893 9.893 0 0 1-6.114 2.107c-.398 0-.79-.023-1.175-.068a13.953 13.953 0 0 0 7.55 2.213c9.056 0 14.01-7.507 14.01-14.013 0-.213-.005-.426-.015-.637.96-.695 1.795-1.56 2.455-2.55z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Linkedin" class="heateor_sss_button_linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fcrypto%2Fwhat-is-ethereum-2-0" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Linkedin">
+       <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_linkedin" style="background-color:#0077b5;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="0 0 32 32" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M6.227 12.61h4.19v13.48h-4.19V12.61zm2.095-6.7a2.43 2.43 0 0 1 0 4.86c-1.344 0-2.428-1.09-2.428-2.43s1.084-2.43 2.428-2.43m4.72 6.7h4.02v1.84h.058c.56-1.058 1.927-2.176 3.965-2.176 4.238 0 5.02 2.792 5.02 6.42v7.395h-4.183v-6.56c0-1.564-.03-3.574-2.178-3.574-2.18 0-2.514 1.7-2.514 3.46v6.668h-4.187V12.61z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Reddit" class="heateor_sss_button_reddit" href="http://reddit.com/submit?url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fcrypto%2Fwhat-is-ethereum-2-0&amp;title=The%20Ethereum%20Merge%20Explained" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Reddit">
+       <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_reddit" style="background-color:#ff5700;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="-3.5 -3.5 39 39" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M28.543 15.774a2.953 2.953 0 0 0-2.951-2.949 2.882 2.882 0 0 0-1.9.713 14.075 14.075 0 0 0-6.85-2.044l1.38-4.349 3.768.884a2.452 2.452 0 1 0 .24-1.176l-4.274-1a.6.6 0 0 0-.709.4l-1.659 5.224a14.314 14.314 0 0 0-7.316 2.029 2.908 2.908 0 0 0-1.872-.681 2.942 2.942 0 0 0-1.618 5.4 5.109 5.109 0 0 0-.062.765c0 4.158 5.037 7.541 11.229 7.541s11.22-3.383 11.22-7.541a5.2 5.2 0 0 0-.053-.706 2.963 2.963 0 0 0 1.427-2.51zm-18.008 1.88a1.753 1.753 0 0 1 1.73-1.74 1.73 1.73 0 0 1 1.709 1.74 1.709 1.709 0 0 1-1.709 1.711 1.733 1.733 0 0 1-1.73-1.711zm9.565 4.968a5.573 5.573 0 0 1-4.081 1.272h-.032a5.576 5.576 0 0 1-4.087-1.272.6.6 0 0 1 .844-.854 4.5 4.5 0 0 0 3.238.927h.032a4.5 4.5 0 0 0 3.237-.927.6.6 0 1 1 .844.854zm-.331-3.256a1.726 1.726 0 1 1 1.709-1.712 1.717 1.717 0 0 1-1.712 1.712z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+     </div>
+     <div class="heateorSssClear">
+     </div>
+    </div>
+   </div>
+   <figure class="wp-block-image size-large">
+    <img alt="Black closed belt on a black background." class="wp-image-269030" decoding="async" height="432" loading="lazy" sizes="(max-width: 1024px) 100vw, 1024px" src="https://www.ledger.com/wp-content/uploads/2022/07/Security_Cover_Main-1024x432.jpg" srcset="https://www.ledger.com/wp-content/uploads/2022/07/Security_Cover_Main-1024x432.jpg 1024w, https://www.ledger.com/wp-content/uploads/2022/07/Security_Cover_Main-300x127.jpg 300w, https://www.ledger.com/wp-content/uploads/2022/07/Security_Cover_Main-768x324.jpg 768w, https://www.ledger.com/wp-content/uploads/2022/07/Security_Cover_Main-1536x648.jpg 1536w, https://www.ledger.com/wp-content/uploads/2022/07/Security_Cover_Main-490x207.jpg 490w, https://www.ledger.com/wp-content/uploads/2022/07/Security_Cover_Main.jpg 1600w" width="1024"/>
+   </figure>
+   <figure class="wp-block-table cover-text">
+    <table>
+     <tbody>
+      <tr>
+       <td class="has-text-align-left" data-align="left">
+        KEY TAKEAWAYS:
+       </td>
+      </tr>
+      <tr>
+       <td class="has-text-align-left" data-align="left">
+        — The Merge refers to Ethereum’s much-anticipated transition from a proof-of-work (POW) to a proof-of-stake (POS) consensus.
+        <br/>
+        <br/>
+        — Delayed multiple times, the Merge is finally set to take place in Q4 2022. Though the Merge is a key stepping-stone for the Ethereum scalability roadmap, it’s unlikely to have a significant impact on how most people use Ethereum in the short term.
+        <br/>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </figure>
+   <p>
+    <em>
+     A huge event is coming to the blockchain ecosystem, and it’s set to change everything. Here, we explain the upcoming Ethereum Merge – and what it means for you.
+    </em>
+   </p>
+   <p>
+    Ethereum, the world’s most widely used blockchain, is about to enact the latest stage of a major overhaul that has been years in the making, with the results likely to influence the entire crypto space. As the blockchain that introduced smart contracts to crypto,
+    <a href="https://www.ledger.com/coin/price/ethereum" rel="noreferrer noopener" target="_blank">
+     Ethereum
+    </a>
+    has already been an explosive force for  the space, giving birth to the entire ecosystem of dApps, DeFi and NFTs we see today, and carrying out millions of transactions each day.
+   </p>
+   <h2 class="wp-block-heading">
+    Limitations of Ethereum Network
+   </h2>
+   <p>
+    But success can be bittersweet; despite its incredible utility, the original Ethereum network simply was not built to scale to this degree, and such intense reliance on this one blockchain has stretched its capacity to its limits.
+   </p>
+   <p>
+    Since its inception in 2015, Ethereum has used the
+    <a href="https://www.ledger.com/academy/blockchain/what-is-proof-of-work" rel="noreferrer noopener" target="_blank">
+     Proof-of-Work
+    </a>
+    consensus mechanism to secure its network – a system that is notorious both for its extremely high energy consumption, and for being difficult to scale.
+   </p>
+   <p>
+    This has meant a decline in the efficiency of the network – with slow transaction times now a well known part of the “Ethereum experience” – not to mention round criticism of the network’s huge energy consumption.
+   </p>
+   <p>
+    Meanwhile, a raft of new
+    <a href="https://www.ledger.com/academy/layer-2-blockchains-explained" rel="noreferrer noopener" target="_blank">
+     layer 1 blockchains
+    </a>
+    have emerged, all claiming to offer a faster, more efficient ecosystem to rival Ethereum’s – and are achieving this with just a fraction of the energy.
+   </p>
+   <p>
+    In short, a network overhaul is desperately needed if Ethereum is to maintain its position as the North Star of DeFi, dApps and NFTs  – and that’s where the artist formerly known as
+    <a href="https://ethereum.org/en/eth2/" rel="noreferrer noopener" target="_blank">
+     ETH 2.0
+    </a>
+    comes in.
+   </p>
+   <h2 class="wp-block-heading">
+    The Next Chapter of Ethereum
+   </h2>
+   <p>
+    The Ethereum upgrade is a scheduled transition into a new chapter of Ethereum, that will enable the network to sustain more transactions per second (scale) while vastly reducing its power consumption. How will it do this? By implementing a series of technical upgrades to different parts of the network.
+   </p>
+   <p>
+    Despite being necessary, this is a huge undertaking and has been a long time coming – for example, the transition to POS was initially set to take place much earlier in the life of Ethereum but the ever-changing timeline for the project has become something of an insider joke for the crypto community.
+   </p>
+   <p>
+    However, that’s set to change in September as the Merge – one of the key events in the upgrade – is set to finally take place. So what does this involve?
+   </p>
+   <h3 class="wp-block-heading">
+    Goodbye Proof-of-Work
+   </h3>
+   <p>
+    At the core of the Merge is a change to the way the network comes to a consensus on the order of transactions, as well as how the network is secured. It entails a shift from energy-heavy
+    <a href="https://www.ledger.com/academy/blockchain/what-is-proof-of-work" rel="noreferrer noopener" target="_blank">
+     Proof-of-Work
+    </a>
+    (PoW) to the less energy intensive
+    <a href="https://www.ledger.com/academy/blockchain/what-is-proof-of-stake" rel="noreferrer noopener" target="_blank">
+     Proof-of-Stake
+    </a>
+    (PoS) consensus mechanism.
+   </p>
+   <p>
+    Proof-of-work uses computational power to select block miners and thus keep its network secure: although effective, this means a colossal energy consumption, particularly as miners use more advanced computing hardware to compete for the right to mine new blocks.
+   </p>
+   <h3 class="wp-block-heading">
+    Consensus by Proof-of-Stake
+   </h3>
+   <p>
+    So what’s the solution? The updated Ethereum will instead secure its network using a proof-of-stake mechanism.
+   </p>
+   <p>
+    In a proof-of-stake system, rather than being “mined”, blocks are “validated”. The validator node is selected according to how much native currency that node has staked in the network: the more economic interest (skin in the game) a validator node has, the more likely it is to be selected to validate new blocks, and receive the corresponding reward.
+   </p>
+   <p>
+    Conversely, staked crypto can also be deducted as a penalty, where the validator behaves badly or is negligent. This punishment, meant to deter validators to act maliciously, is known as
+    <a href="https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/gasper/#incentives-and-slashing" rel="noreferrer noopener" target="_blank">
+     slashing
+    </a>
+    .
+   </p>
+   <p>
+    So in effect, the security of the network is incentivized by rewards, and bad behaviour is punished by penalties – and all of this is achieved via staked coins, rather than arbitrary computational power. Pretty clever, right?
+   </p>
+   <h2 class="wp-block-heading">
+    The Ethereum Merge: A Story Still Unfolding
+   </h2>
+   <p>
+    But such a monumental transition doesn’t simply happen overnight: Ethereum has a market cap of roughly $200billion – even a small mistake during this changeover would have enormous consequences. A smooth transition is absolutely essential if the network is to benefit from this change, and this is why it needs to be phased in with great care.
+   </p>
+   <h3 class="wp-block-heading">
+    The Beacon Chain
+   </h3>
+   <p>
+    In December 2020, the Ethereum Beacon Chain was launched. The Beacon Chain is a very basic proof-of-stake based version of Ethereum, running in parallel with the regular Ethereum mainnet. Its function is to be a live testing ground for Ethereum POS, allowing updates, reconfigurations and new features to be tested out in a safe environment, without impacting Ethereum’s huge existing POW-secured ecosystem.
+   </p>
+   <p>
+    Since the Beacon Chain is secured via a proof-of -stake mechanism, ETH can be staked by holders who want to participate in securing the network, and earn rewards – something that will eventually apply to the mainnet, once the Merge is complete.
+   </p>
+   <p>
+    Until now, the Beacon chain has simply run alongside the Ethereum mainnet, offering ETH holders the chance to interact with it as a separate entity to the mainnet. But all this will change later this year.
+   </p>
+   <h2 class="wp-block-heading">
+    What will the Merge Bring?
+   </h2>
+   <p>
+    The Ethereum Merge is the next major event in the upgrade, as both of these chains are finally integrated together. Once complete, the Ethereum mainnet will adopt the proof-of-stake consensus mechanism for the entire network and its ecosystem. This will mean a number of immediate consequences for users – and few that are still in the pipeline.
+   </p>
+   <h3 class="wp-block-heading">
+    Native Staking for Users
+   </h3>
+   <p>
+    If you currently hold ETH in your
+    <a href="https://www.ledger.com/coin/wallet/ethereum" rel="noreferrer noopener" target="_blank">
+     Ethereum wallet
+    </a>
+    , you’ll soon be able to do something you’ve never done with it before – native staking.
+   </p>
+   <p>
+    In post-merge Ethereum, validator nodes will be responsible for keeping the network secure, and for you, this means two options: either become a validator node yourself (for the modest sum of 32 ETH – around $54,000 at the time of writing) or contribute to staking pool run by third-party validators like Lido, Rocket Pool, or some crypto exchanges and take home proportionate rewards.
+   </p>
+   <p>
+    In either case, you will be able to take part in the securitisation of the network – and also
+    <a href="https://www.ledger.com/staking-ethereum" rel="noreferrer noopener" target="_blank">
+     earn passive income by staking Ethereum tokens
+    </a>
+    – without needing a warehouse full of computing units to get the job done.
+   </p>
+   <h3 class="wp-block-heading">
+    <em>
+     Will I Get ETH2?
+    </em>
+   </h3>
+   <p>
+    No, the Merge doesn’t affect your existing ETH balance. Your coins won’t require conversion nor will you get an ETH2 coin airdrop into your Ethereum account. After the Merge, you’ll be able to use the same exact ETH to transact on POS Ethereum.
+   </p>
+   <h3 class="wp-block-heading">
+    <em>
+     Is there a chance that POW Ethereum continues running alongside POS Ethereum?
+    </em>
+   </h3>
+   <p>
+    Yes, a small fraction of Ethereum miners has already
+    <a href="https://twitter.com/ChandlerGuo/status/1552382597086470146">
+     expressed their intention
+    </a>
+    to keep the ETH POW (ETHW) chain alive after the Merge.
+    <br/>
+    <br/>
+    Ledger does not currently have a roadmap for supporting ETHW, should the chain actually materialize. The situation is rapidly evolving and we will keep you informed as we get closer to the Merge.
+   </p>
+   <h3 class="wp-block-heading">
+    Greater Decentralization
+   </h3>
+   <p>
+    A by-product of that system is greater decentralization, since the new Ethreum network splits the consensus process across hundreds of thousands of individual validators. With management of the network distributed across so many entities, all of whom have a personal investment in the system, the system is extremely secure – the whole purpose of decentralization.
+   </p>
+   <h3 class="wp-block-heading">
+    Reduced Energy Consumption
+   </h3>
+   <p>
+    Using proof-of-stake as a consensus mechanism for the network will also greatly reduce its energy consumption, as validators don’t need enormous amounts of computing power to participate. This is a welcome bonus, particularly considering the growing concerns about the huge energy consumption of PoW networks like Bitcoin.
+   </p>
+   <h3 class="wp-block-heading">
+    Slightly Faster Blocks
+   </h3>
+   <p>
+    Currently, the Ethereum network produces a block every 13 seconds on average. This average is due to the random nature of POW mining and when the next block is discovered.
+   </p>
+   <p>
+    After the Merge, the chain will clock new blocks at a very regular 12-second interval. This should translate into slightly faster transactions for users.
+   </p>
+   <h3 class="wp-block-heading">
+    Cheaper Transaction Fees?
+   </h3>
+   <p>
+    Unfortunately, the Merge will not make transacting on Ethereum cheaper. In fact, it could make Ethereum even more popular than it is today which could actually make fees more expensive.
+    <br/>
+    <br/>
+    Fortunately, Ethereum is already scaling today via roll-ups.
+   </p>
+   <h3 class="wp-block-heading">
+    Paving the way for Roll-up Scaling
+   </h3>
+   <p>
+    With the transition to POS complete, the Ethereum community will focus on making Ethereum the ideal home for roll-ups. Roll-ups are scalability solutions built “on top” of Ethereum. You can think of them as very fast and cheap blockchains that intermittently post batches of transactions to the Ethereum chain for record keeping and security.
+    <br/>
+    <br/>
+    A number of roll-ups like Optimism and Arbitrum are already live and posting blocks to mainnet but, with the Merge out of the way, the Ethereum community will be able to double down on its efforts to scale via roll-ups by making posting data to Ethereum cheaper and more efficient than it is today.
+   </p>
+   <h2 class="wp-block-heading">
+    Now We Wait
+   </h2>
+   <p>
+    There is great anticipation among the greater crypto community for the merge, following a series of postponements to the process. Ethereum core developers are very cautious, and rightly so – this has meant every step of the process has been subject to extensive audit. But with the final merge now imminent, we’re soon to see the fruits of this enormous undertaking.
+   </p>
+   <p>
+    With so much riding on Ethereum’s ecosystem, the merge is set to be one of the most exciting events since the inception of crypto – and we’re still to really understand its full potential. But hey, good things come to those who wait. So keep reading and make sure you stay on top of this important event –
+    <em>
+     it’s about much more than just Ethereum.
+    </em>
+   </p>
+   <figure class="wp-block-image size-large">
+    <a href="https://www.ledger.com/ledger-live" rel="noreferrer noopener" target="_blank">
+     <img alt="" class="wp-image-19821" decoding="async" height="732" loading="lazy" src="https://www.ledger.com/wp-content/uploads/2021/10/Lido-Banner-3.png" width="2190"/>
+    </a>
+    <figcaption class="wp-element-caption">
+     <a href="https://www.ledger.com/buy/ethereum" rel="noreferrer noopener" target="_blank">
+      Buy Ethereum tokens
+     </a>
+     to stake them with Lido through Ledger
+    </figcaption>
+   </figure>
+   <p>
+    <em>
+     Knowledge is power – so keep on learning! If you enjoy getting to grips with the world of crypto and blockchain, check out our School of Block video
+    </em>
+    <a aria-label=" (opens in a new tab)" href="https://youtu.be/x3HSr62ax3U" rel="noreferrer noopener" target="_blank">
+     Ethereum Layer 2
+    </a>
+   </p>
+  </article>
+ </body>
+</html>

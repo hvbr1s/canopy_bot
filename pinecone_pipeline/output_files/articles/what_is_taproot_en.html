@@ -1,0 +1,347 @@
+<html>
+ <head>
+  <meta content="https://www.ledger.com/academy/what-is-taproot" name="source"/>
+  <meta content="academy" name="source-type"/>
+  <meta content="en" name="locale"/>
+  <meta content="N/A" name="zd-article-id"/>
+  <meta content="what is taproot" name="title"/>
+  <meta content="public" name="classification"/>
+ </head>
+ <body>
+  <article class="plain-text margin-sm article" id="article">
+   <h1 class="margin-xs">
+    What Is Taproot?
+   </h1>
+   <div class="article-author">
+    <div>
+     By
+     <b>
+      Kirsty Moreland
+     </b>
+    </div>
+    <div>
+     <img alt="" height="21" src="https://www.ledger.com/wp-content/uploads/2022/09/Me3-104x104.jpg" width="21">
+     </img>
+    </div>
+   </div>
+   <div class="color-grey-500 small-text uppercase margin-xs article-date">
+    Sep 28, 2021
+          |
+    <b>
+     Updated May 31, 2023
+    </b>
+   </div>
+   <div class="caption-for-article flexbox flex-start">
+    <div class="flex-none time-to-read">
+     <span class="badge badge-nude">
+      <i class="icon-copy">
+      </i>
+      Read
+     </span>
+     <span>
+      5 min
+     </span>
+    </div>
+    <div class="with-point level level-1">
+     <span>
+      Beginner
+     </span>
+    </div>
+   </div>
+   <div class="align-center share-box" id="fixed-share-box">
+    <span>
+     SHARE
+    </span>
+    <div class="heateor_sss_sharing_container heateor_sss_horizontal_sharing" data-heateor-ss-offset="0" data-heateor-sss-href="https://www.ledger.com/academy/what-is-taproot">
+     <div class="heateor_sss_sharing_ul">
+      <a aria-label="Instagram" class="heateor_sss_button_instagram" href="https://www.instagram.com/ledger" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Instagram">
+       <span class="heateor_sss_svg" style="background-color:#53beee;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg height="100%" style="display:block;border-radius:999px;" version="1.1" viewbox="-10 -10 148 148" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+         <g>
+          <g>
+           <path d="M86,112H42c-14.336,0-26-11.663-26-26V42c0-14.337,11.664-26,26-26h44c14.337,0,26,11.663,26,26v44 C112,100.337,100.337,112,86,112z M42,24c-9.925,0-18,8.074-18,18v44c0,9.925,8.075,18,18,18h44c9.926,0,18-8.075,18-18V42 c0-9.926-8.074-18-18-18H42z" fill="#fff">
+           </path>
+          </g>
+          <g>
+           <path d="M64,88c-13.234,0-24-10.767-24-24c0-13.234,10.766-24,24-24s24,10.766,24,24C88,77.233,77.234,88,64,88z M64,48c-8.822,0-16,7.178-16,16s7.178,16,16,16c8.822,0,16-7.178,16-16S72.822,48,64,48z" fill="#fff">
+           </path>
+          </g>
+          <g>
+           <circle cx="89.5" cy="38.5" fill="#fff" r="5.5">
+           </circle>
+          </g>
+         </g>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Facebook" class="heateor_sss_facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fwhat-is-taproot" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Facebook">
+       <span class="heateor_sss_svg" style="background-color:#3c589a;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="-5 -5 42 42" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M17.78 27.5V17.008h3.522l.527-4.09h-4.05v-2.61c0-1.182.33-1.99 2.023-1.99h2.166V4.66c-.375-.05-1.66-.16-3.155-.16-3.123 0-5.26 1.905-5.26 5.405v3.016h-3.53v4.09h3.53V27.5h4.223z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Twitter" class="heateor_sss_button_twitter" href="http://twitter.com/intent/tweet?via=ledger&amp;text=What%20Is%20Taproot%3F&amp;url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fwhat-is-taproot" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Twitter">
+       <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_twitter" style="background-color:#55acee;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="-4 -4 39 39" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M28 8.557a9.913 9.913 0 0 1-2.828.775 4.93 4.93 0 0 0 2.166-2.725 9.738 9.738 0 0 1-3.13 1.194 4.92 4.92 0 0 0-3.593-1.55 4.924 4.924 0 0 0-4.794 6.049c-4.09-.21-7.72-2.17-10.15-5.15a4.942 4.942 0 0 0-.665 2.477c0 1.71.87 3.214 2.19 4.1a4.968 4.968 0 0 1-2.23-.616v.06c0 2.39 1.7 4.38 3.952 4.83-.414.115-.85.174-1.297.174-.318 0-.626-.03-.928-.086a4.935 4.935 0 0 0 4.6 3.42 9.893 9.893 0 0 1-6.114 2.107c-.398 0-.79-.023-1.175-.068a13.953 13.953 0 0 0 7.55 2.213c9.056 0 14.01-7.507 14.01-14.013 0-.213-.005-.426-.015-.637.96-.695 1.795-1.56 2.455-2.55z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Linkedin" class="heateor_sss_button_linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fwhat-is-taproot" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Linkedin">
+       <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_linkedin" style="background-color:#0077b5;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="0 0 32 32" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M6.227 12.61h4.19v13.48h-4.19V12.61zm2.095-6.7a2.43 2.43 0 0 1 0 4.86c-1.344 0-2.428-1.09-2.428-2.43s1.084-2.43 2.428-2.43m4.72 6.7h4.02v1.84h.058c.56-1.058 1.927-2.176 3.965-2.176 4.238 0 5.02 2.792 5.02 6.42v7.395h-4.183v-6.56c0-1.564-.03-3.574-2.178-3.574-2.18 0-2.514 1.7-2.514 3.46v6.668h-4.187V12.61z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Reddit" class="heateor_sss_button_reddit" href="http://reddit.com/submit?url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fwhat-is-taproot&amp;title=What%20Is%20Taproot%3F" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Reddit">
+       <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_reddit" style="background-color:#ff5700;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="-3.5 -3.5 39 39" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M28.543 15.774a2.953 2.953 0 0 0-2.951-2.949 2.882 2.882 0 0 0-1.9.713 14.075 14.075 0 0 0-6.85-2.044l1.38-4.349 3.768.884a2.452 2.452 0 1 0 .24-1.176l-4.274-1a.6.6 0 0 0-.709.4l-1.659 5.224a14.314 14.314 0 0 0-7.316 2.029 2.908 2.908 0 0 0-1.872-.681 2.942 2.942 0 0 0-1.618 5.4 5.109 5.109 0 0 0-.062.765c0 4.158 5.037 7.541 11.229 7.541s11.22-3.383 11.22-7.541a5.2 5.2 0 0 0-.053-.706 2.963 2.963 0 0 0 1.427-2.51zm-18.008 1.88a1.753 1.753 0 0 1 1.73-1.74 1.73 1.73 0 0 1 1.709 1.74 1.709 1.709 0 0 1-1.709 1.711 1.733 1.733 0 0 1-1.73-1.711zm9.565 4.968a5.573 5.573 0 0 1-4.081 1.272h-.032a5.576 5.576 0 0 1-4.087-1.272.6.6 0 0 1 .844-.854 4.5 4.5 0 0 0 3.238.927h.032a4.5 4.5 0 0 0 3.237-.927.6.6 0 1 1 .844.854zm-.331-3.256a1.726 1.726 0 1 1 1.709-1.712 1.717 1.717 0 0 1-1.712 1.712z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+     </div>
+     <div class="heateorSssClear">
+     </div>
+    </div>
+   </div>
+   <figure class="wp-block-image size-large">
+    <img alt="Coins spiraling in a circle" class="wp-image-269220" decoding="async" height="432" loading="lazy" sizes="(max-width: 1024px) 100vw, 1024px" src="https://www.ledger.com/wp-content/uploads/2023/03/06_Crypto_Cover_Orange-1024x432.jpg" srcset="https://www.ledger.com/wp-content/uploads/2023/03/06_Crypto_Cover_Orange-1024x432.jpg 1024w, https://www.ledger.com/wp-content/uploads/2023/03/06_Crypto_Cover_Orange-300x127.jpg 300w, https://www.ledger.com/wp-content/uploads/2023/03/06_Crypto_Cover_Orange-768x324.jpg 768w, https://www.ledger.com/wp-content/uploads/2023/03/06_Crypto_Cover_Orange-1536x648.jpg 1536w, https://www.ledger.com/wp-content/uploads/2023/03/06_Crypto_Cover_Orange-490x207.jpg 490w, https://www.ledger.com/wp-content/uploads/2023/03/06_Crypto_Cover_Orange.jpg 1600w" width="1024"/>
+   </figure>
+   <figure class="wp-block-table cover-text">
+    <table>
+     <tbody>
+      <tr>
+       <td class="has-text-align-left" data-align="left">
+        KEY TAKEAWAYS:
+       </td>
+      </tr>
+      <tr>
+       <td class="has-text-align-left" data-align="left">
+        — Taproot is an upgrade to the Bitcoin blockchain which improved key elements of its functionality.
+        <br/>
+        <br/>
+        — The upgrade increased transaction privacy and speed, and equipped the Bitcoin blockchain to handle more complex information.
+        <br/>
+        <br/>
+        — The upgrade – also known as a soft fork – is the result of a consensus within the Bitcoin node community.
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </figure>
+   <p>
+    <em>
+     If you’re thinking to yourself “What is taproot and why do I keep hearing about it”, then you’re in the right place.
+    </em>
+   </p>
+   <p>
+    The Bitcoin network has undergone one of the biggest upgrades in Bitcoin history. A significant move for the future of the network, which was met with broad consensus from its community.
+   </p>
+   <p>
+    While other blockchain networks like
+    <a href="https://www.ledger.com/academy/ethereum-beginners-guide" rel="noreferrer noopener" target="_blank">
+     Ethereum
+    </a>
+    and
+    <a href="https://www.ledger.com/academy/what-is-polkadot" rel="noreferrer noopener" target="_blank">
+     Polkadot
+    </a>
+    update frequently to experiment with the latest innovations in cryptography and blockchain research. Changes to the
+    <a href="https://www.ledger.com/academy/what-is-a-bitcoin-improvement-proposal-bip" rel="noreferrer noopener" target="_blank">
+     Bitcoin protoco
+    </a>
+    l require a notoriously long and difficult process to get consensus. The last upgrade to Bitcoin was
+    <a href="https://www.ledger.com/academy/difference-between-segwit-and-native-segwit" rel="noreferrer noopener" target="_blank">
+     SegWit
+    </a>
+    in 2017.
+   </p>
+   <h2 class="wp-block-heading">
+    What Was Bitcoin’s Taproot Upgrade For?
+   </h2>
+   <p>
+    Until now, Bitcoin’s principal utility was as a peer-to-peer, non-censorable payments system, and a store of value. Relatively speaking, this is actually quite limited. The more recent generation of blockchains come equipped to handle smart contracts. Something that’s becoming increasingly important due to the explosion of dApps and DeFi. With this now something of an industry standard,
+    <a href="https://www.ledger.com/academy/what-is-bitcoin" rel="noreferrer noopener" target="_blank">
+     Bitcoin
+    </a>
+    needed an upgrade in order to keep up with an evolving marketplace that constantly demands more.
+   </p>
+   <p>
+    The Bitcoin network also faced some pretty significant scalability problems. Put simply; it couldn’t handle large volumes of transactions due to how the network operated. Let’s unpack that a bit.
+   </p>
+   <p>
+    When users send or receive payments on the network, each portion of a Bitcoin comes with its own script. These scripts become public data on the Bitcoin network. Bogging it down immensely while also showing the world sensitive information about your funds. Consider that this process stands true for every single user on the Bitcoin network – it’s easy to see how scaling posed an issue.
+   </p>
+   <h2 class="wp-block-heading">
+    What Is Taproot?
+   </h2>
+   <p>
+    The Taproot update means a higher level of privacy, security, and scalability for the network, as well as opening the door to new possibilities for future developments.
+   </p>
+   <p>
+    It drastically reduces the storage of
+    <a href="https://www.ledger.com/academy/how-to-read-a-blockchains-transaction-history" rel="noreferrer noopener" target="_blank">
+     transaction data
+    </a>
+    on Bitcoin’s network; this allows it to accommodate more complex smart contracts, and also makes scaling more achievable. Moreover, it increases the privacy of transactions by showing them in a standard format on the public blockchain. Lightning Network users, and multi-signature wallets are examples of contracts that will immediately benefit from better privacy and cheaper transactions.
+   </p>
+   <h2 class="wp-block-heading">
+    Key Features of Taproot
+   </h2>
+   <p>
+    Despite its name, Taproot is not as simple as one uniform solution to all of Bitcoin’s challenges. Rather, the Taproot upgrade is made up of several components. This will all work in unison to leverage the Bitcoin network to new heights. A huge deal for the entire blockchain community.
+   </p>
+   <p>
+    Let’s examine each of the critical Taproot components to get the full picture.
+   </p>
+   <h3 class="wp-block-heading">
+    1.
+    <strong>
+     Schnorr Signatures
+    </strong>
+   </h3>
+   <p>
+    To begin, Schnorr Signatures are a new form of blockchain transaction signatures that usher in advanced security, lower fees, and flexible multi-sigs. When a block gets a transaction, the transaction is always accompanied by a signature. Signatures ensure that it is not possible to alter transactions in any way.
+   </p>
+   <p>
+    A unique property of Schnorr signatures allows multiple parties to cooperatively produce a single signature that is as good as a signature by
+    <em>
+     each
+    </em>
+    of the involved parties. Therefore, instead of 3 signatures saying “Alice signed this, Bob signed this, Charlie signed this”, a Schnorr signature might say “Alice, Bob and Charlie signed this”. This property is called
+    <em>
+     signature aggregation
+    </em>
+    . Providing a better, more private, and efficient way of allowing cooperative custody of coins (multi-signature wallets).
+   </p>
+   <p>
+    Schnorr Signatures also have a unique function that speeds up the entire Bitcoin network. Adding scalability to its list of advantages. While ECDSA signatures have to be verified one-by-one, Schnorr signatures allow a more efficient process where many signatures are validated at once. Requiring substantially less computation than would be needed to validate each one of them individually.
+   </p>
+   <p>
+    One fun fact: Schnorr signatures could (and maybe should) have been used in the Bitcoin protocol since the beginning. But when the network was built, Schnorr signatures were still patented, therefore the current signature scheme (ECDSA) was used instead.
+   </p>
+   <h3 class="wp-block-heading">
+    <strong>
+     2. MAST (Merklized Alternative Script Tree)
+    </strong>
+   </h3>
+   <p>
+    The Taproot update integrates another improvement to scripts. It was already proposed since 2013 but never made it into the Bitcoin protocol:
+    <em>
+     Merklized Alternative Script Trees
+    </em>
+    or MASTs.
+   </p>
+   <p>
+    Every spendable amount of Bitcoin comes with a
+    <em>
+     script
+    </em>
+    specifying what conditions need to be met to spend those coins. In the most simple case, the condition looks like: “Alice owns these coins”, which is the kind of statements that cryptographic signatures can prove. But more complex conditions are possible, for example: “Two of Alice, Bob and Charlie must sign” (2-of-3 multi-signature), or “Bob signs, but 2 weeks must pass first” (
+    <em>
+     timelock
+    </em>
+    ), or “a certain secret data with hash H must be revealed” (
+    <em>
+     hashlocks)
+    </em>
+    .
+   </p>
+   <p>
+    More complex contracts can be composed by combining several such simple conditions. For example, the lightning network itself uses contracts that combine 2-of-2 multi-signatures, timelocks and hashlocks!
+   </p>
+   <p>
+    The problem with using contracts with a large number of alternative spending conditions is that the size of the script keeps growing when adding such conditions! In fact, even if only one of those conditions is in use, it is necessary to reveal the
+    <em>
+     entirety of the script
+    </em>
+    . Such a waste!
+   </p>
+   <p>
+    But here come MASTs! By using a well-known cryptographic construction called
+    <em>
+     Merkle trees
+    </em>
+    , it is possible to encode all of the possible spending conditions in a single short summary (a hash, typically 32 bytes long), in such a way that it is possible to reveal
+    <em>
+     just one
+    </em>
+    of those spending conditions.
+   </p>
+   <p>
+    This brings enormous savings in terms of the amount of space used by those complex contracts. Which could now have tens or hundreds of spending conditions, with little additional cost! Moreover, only the parties involved in the contract will know about all the possible spending conditions. An external observer only knows about the single spending condition in use, which is a big win for privacy at the same time.
+    <br/>
+   </p>
+   <h3 class="wp-block-heading">
+    <strong>
+     3. Pay-2-Taproot (P2TR)
+    </strong>
+   </h3>
+   <p>
+    Finally, the Taproot upgrade brings in a new type of transaction scripts, called
+    <em>
+     Pay-2-Taproot
+    </em>
+    . This allows to combine Schnorr signature and MAST in a single transaction. Previous transaction types made it easy for an external observer to distinguish if some bitcoins were locked using a single key, or via a more complex script.
+   </p>
+   <p>
+    By exploiting the properties of Schnorr signatures, P2TR addresses allow to combine signatures and scripts together, by
+    <em>
+     hiding
+    </em>
+    the MAST of scripts inside a public key. Therefore, the same coins could be spent
+    <em>
+     either
+    </em>
+    with a plain signature corresponding to that public key (key path spend),
+    <em>
+     or
+    </em>
+    with one of the scripts in the MAST (if any).
+   </p>
+   <p>
+    Nobody will ever know that the scripts were there, if they’re not in use when spending the coins!
+   </p>
+   <h2 class="wp-block-heading">
+    The Future of Bitcoin Updates
+   </h2>
+   <p>
+    This is an exciting time for Bitcoin. Its Taproot upgrade is significant for the community and for the crypto industry as a whole. In short, Taproot is significant as it allowed blocks to contain more data. This opened up possibilities such as
+    <a href="https://www.ledger.com/academy/bitcoin-ordinals" rel="noreferrer noopener" target="_blank">
+     Bitcoin Ordinals
+    </a>
+    and BRC-20 tokens.
+    <br/>
+    <br/>
+    Some early discussions on extending Bitcoin’s script capabilities are taking place. This could in-turn bring more standard DeFi use cases to Bitcoin holders.
+   </p>
+   <p>
+    This will add to its overall appeal for thousands of developers. Paving the way towards continued innovation, top-notch security, and faster processing times.
+   </p>
+   <h3 class="wp-block-heading has-text-align-center">
+    Knowledge is Power.
+   </h3>
+   <figure class="wp-block-image size-large">
+    <a href="https://www.ledger.com/academy/school-of-block/episode-13-decentralized-finance-what-is-defi" rel="noopener" target="_blank">
+     <img alt="" class="wp-image-220146" decoding="async" height="576" loading="lazy" sizes="(max-width: 1024px) 100vw, 1024px" src="https://www.ledger.com/wp-content/uploads/2022/07/12-min-1-1024x576.png" srcset="https://www.ledger.com/wp-content/uploads/2022/07/12-min-1-1024x576.png 1024w, https://www.ledger.com/wp-content/uploads/2022/07/12-min-1-300x169.png 300w, https://www.ledger.com/wp-content/uploads/2022/07/12-min-1-768x432.png 768w, https://www.ledger.com/wp-content/uploads/2022/07/12-min-1-1536x864.png 1536w, https://www.ledger.com/wp-content/uploads/2022/07/12-min-1-490x275.png 490w, https://www.ledger.com/wp-content/uploads/2022/07/12-min-1.png 1920w" width="1024"/>
+    </a>
+   </figure>
+   <p class="has-text-align-center">
+    <em>
+     Fancy yourself as a blockchain pro? Trust yourself and keep learning with our clear – and highly entertaining –
+     <strong>
+      School of Block
+     </strong>
+     episode.
+    </em>
+   </p>
+  </article>
+ </body>
+</html>

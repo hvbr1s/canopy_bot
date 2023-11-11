@@ -1,0 +1,298 @@
+<html>
+ <head>
+  <meta content="https://www.ledger.com/academy/blockchain/what-is-proof-of-work" name="source"/>
+  <meta content="academy" name="source-type"/>
+  <meta content="en" name="locale"/>
+  <meta content="N/A" name="zd-article-id"/>
+  <meta content="what is proof of work" name="title"/>
+  <meta content="public" name="classification"/>
+ </head>
+ <body>
+  <article class="plain-text margin-sm article" id="article">
+   <h1 class="margin-xs">
+    What is Proof-of-Work (PoW)?
+   </h1>
+   <div class="article-author">
+    <div>
+     By
+     <b>
+      Kirsty Moreland
+     </b>
+    </div>
+    <div>
+     <img alt="" height="21" src="https://www.ledger.com/wp-content/uploads/2022/09/Me3-104x104.jpg" width="21">
+     </img>
+    </div>
+   </div>
+   <div class="color-grey-500 small-text uppercase margin-xs article-date">
+    Oct 23, 2019
+          |
+    <b>
+     Updated Jul 24, 2023
+    </b>
+   </div>
+   <div class="caption-for-article flexbox flex-start">
+    <div class="flex-none time-to-read">
+     <span class="badge badge-nude">
+      <i class="icon-copy">
+      </i>
+      Read
+     </span>
+     <span>
+      4 min
+     </span>
+    </div>
+    <div class="with-point level level-2">
+     <span>
+      Medium
+     </span>
+    </div>
+   </div>
+   <div class="align-center share-box" id="fixed-share-box">
+    <span>
+     SHARE
+    </span>
+    <div class="heateor_sss_sharing_container heateor_sss_horizontal_sharing" data-heateor-ss-offset="0" data-heateor-sss-href="https://www.ledger.com/academy/blockchain/what-is-proof-of-work">
+     <div class="heateor_sss_sharing_ul">
+      <a aria-label="Instagram" class="heateor_sss_button_instagram" href="https://www.instagram.com/ledger" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Instagram">
+       <span class="heateor_sss_svg" style="background-color:#53beee;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg height="100%" style="display:block;border-radius:999px;" version="1.1" viewbox="-10 -10 148 148" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+         <g>
+          <g>
+           <path d="M86,112H42c-14.336,0-26-11.663-26-26V42c0-14.337,11.664-26,26-26h44c14.337,0,26,11.663,26,26v44 C112,100.337,100.337,112,86,112z M42,24c-9.925,0-18,8.074-18,18v44c0,9.925,8.075,18,18,18h44c9.926,0,18-8.075,18-18V42 c0-9.926-8.074-18-18-18H42z" fill="#fff">
+           </path>
+          </g>
+          <g>
+           <path d="M64,88c-13.234,0-24-10.767-24-24c0-13.234,10.766-24,24-24s24,10.766,24,24C88,77.233,77.234,88,64,88z M64,48c-8.822,0-16,7.178-16,16s7.178,16,16,16c8.822,0,16-7.178,16-16S72.822,48,64,48z" fill="#fff">
+           </path>
+          </g>
+          <g>
+           <circle cx="89.5" cy="38.5" fill="#fff" r="5.5">
+           </circle>
+          </g>
+         </g>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Facebook" class="heateor_sss_facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fblockchain%2Fwhat-is-proof-of-work" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Facebook">
+       <span class="heateor_sss_svg" style="background-color:#3c589a;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="-5 -5 42 42" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M17.78 27.5V17.008h3.522l.527-4.09h-4.05v-2.61c0-1.182.33-1.99 2.023-1.99h2.166V4.66c-.375-.05-1.66-.16-3.155-.16-3.123 0-5.26 1.905-5.26 5.405v3.016h-3.53v4.09h3.53V27.5h4.223z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Twitter" class="heateor_sss_button_twitter" href="http://twitter.com/intent/tweet?via=ledger&amp;text=What%20is%20Proof-of-Work%20%28PoW%29%3F&amp;url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fblockchain%2Fwhat-is-proof-of-work" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Twitter">
+       <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_twitter" style="background-color:#55acee;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="-4 -4 39 39" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M28 8.557a9.913 9.913 0 0 1-2.828.775 4.93 4.93 0 0 0 2.166-2.725 9.738 9.738 0 0 1-3.13 1.194 4.92 4.92 0 0 0-3.593-1.55 4.924 4.924 0 0 0-4.794 6.049c-4.09-.21-7.72-2.17-10.15-5.15a4.942 4.942 0 0 0-.665 2.477c0 1.71.87 3.214 2.19 4.1a4.968 4.968 0 0 1-2.23-.616v.06c0 2.39 1.7 4.38 3.952 4.83-.414.115-.85.174-1.297.174-.318 0-.626-.03-.928-.086a4.935 4.935 0 0 0 4.6 3.42 9.893 9.893 0 0 1-6.114 2.107c-.398 0-.79-.023-1.175-.068a13.953 13.953 0 0 0 7.55 2.213c9.056 0 14.01-7.507 14.01-14.013 0-.213-.005-.426-.015-.637.96-.695 1.795-1.56 2.455-2.55z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Linkedin" class="heateor_sss_button_linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fblockchain%2Fwhat-is-proof-of-work" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Linkedin">
+       <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_linkedin" style="background-color:#0077b5;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="0 0 32 32" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M6.227 12.61h4.19v13.48h-4.19V12.61zm2.095-6.7a2.43 2.43 0 0 1 0 4.86c-1.344 0-2.428-1.09-2.428-2.43s1.084-2.43 2.428-2.43m4.72 6.7h4.02v1.84h.058c.56-1.058 1.927-2.176 3.965-2.176 4.238 0 5.02 2.792 5.02 6.42v7.395h-4.183v-6.56c0-1.564-.03-3.574-2.178-3.574-2.18 0-2.514 1.7-2.514 3.46v6.668h-4.187V12.61z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Reddit" class="heateor_sss_button_reddit" href="http://reddit.com/submit?url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fblockchain%2Fwhat-is-proof-of-work&amp;title=What%20is%20Proof-of-Work%20%28PoW%29%3F" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Reddit">
+       <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_reddit" style="background-color:#ff5700;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="-3.5 -3.5 39 39" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M28.543 15.774a2.953 2.953 0 0 0-2.951-2.949 2.882 2.882 0 0 0-1.9.713 14.075 14.075 0 0 0-6.85-2.044l1.38-4.349 3.768.884a2.452 2.452 0 1 0 .24-1.176l-4.274-1a.6.6 0 0 0-.709.4l-1.659 5.224a14.314 14.314 0 0 0-7.316 2.029 2.908 2.908 0 0 0-1.872-.681 2.942 2.942 0 0 0-1.618 5.4 5.109 5.109 0 0 0-.062.765c0 4.158 5.037 7.541 11.229 7.541s11.22-3.383 11.22-7.541a5.2 5.2 0 0 0-.053-.706 2.963 2.963 0 0 0 1.427-2.51zm-18.008 1.88a1.753 1.753 0 0 1 1.73-1.74 1.73 1.73 0 0 1 1.709 1.74 1.709 1.709 0 0 1-1.709 1.711 1.733 1.733 0 0 1-1.73-1.711zm9.565 4.968a5.573 5.573 0 0 1-4.081 1.272h-.032a5.576 5.576 0 0 1-4.087-1.272.6.6 0 0 1 .844-.854 4.5 4.5 0 0 0 3.238.927h.032a4.5 4.5 0 0 0 3.237-.927.6.6 0 1 1 .844.854zm-.331-3.256a1.726 1.726 0 1 1 1.709-1.712 1.717 1.717 0 0 1-1.712 1.712z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+     </div>
+     <div class="heateorSssClear">
+     </div>
+    </div>
+   </div>
+   <figure class="wp-block-image size-large">
+    <img alt="Blockchain on an orange background" class="wp-image-268390" decoding="async" height="432" loading="lazy" sizes="(max-width: 1024px) 100vw, 1024px" src="https://www.ledger.com/wp-content/uploads/2023/04/02_Blockchain_Cover_Orange-1-1024x432.jpg" srcset="https://www.ledger.com/wp-content/uploads/2023/04/02_Blockchain_Cover_Orange-1-1024x432.jpg 1024w, https://www.ledger.com/wp-content/uploads/2023/04/02_Blockchain_Cover_Orange-1-300x127.jpg 300w, https://www.ledger.com/wp-content/uploads/2023/04/02_Blockchain_Cover_Orange-1-768x324.jpg 768w, https://www.ledger.com/wp-content/uploads/2023/04/02_Blockchain_Cover_Orange-1-1536x648.jpg 1536w, https://www.ledger.com/wp-content/uploads/2023/04/02_Blockchain_Cover_Orange-1-490x207.jpg 490w, https://www.ledger.com/wp-content/uploads/2023/04/02_Blockchain_Cover_Orange-1.jpg 1600w" width="1024"/>
+   </figure>
+   <figure class="wp-block-table cover-text">
+    <table>
+     <tbody>
+      <tr>
+       <td class="has-text-align-left" data-align="left">
+        KEY TAKEAWAYS:
+       </td>
+      </tr>
+      <tr>
+       <td class="has-text-align-left" data-align="left">
+        — Proof-of-work (abbreviated to PoW) is one of the consensus mechanisms for achieving agreement on the blockchain network to confirm transactions and produce new blocks to the chain.
+        <br/>
+        <br/>
+        — With Proof of work, miners compete against each other to validate transactions and get rewarded.
+        <br/>
+        <br/>
+        — The probability of being selected to build the next block is linked to computation power.
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </figure>
+   <p>
+    <em>
+     You keep hearing the phrase, but you still have no idea what it means – don’t worry, you’re not alone! Consensus mechanisms are a complex subject, and most don’t understand them when they buy their first cryptocurrency.
+    </em>
+   </p>
+   <p>
+    However, consensus mechanisms provide the building blocks of the public blockchains we know and love. Basically, the way a blockchain processes your transactions relies entirely on its consensus mechanism.
+   </p>
+   <p>
+    Proof-of-Work was the first ever consensus mechanism, created for the
+    <a href="https://www.ledger.com/academy/what-is-bitcoin" rel="noreferrer noopener" target="_blank">
+     Bitcoin network
+    </a>
+    by anonymous founder, Satoshi Nakamoto. Since then, it has inspired the creation of plenty more blockchains than just Bitcoin. In fact, the second biggest crypto,
+    <a href="https://www.ledger.com/academy/what-is-ethereum" rel="noreferrer noopener" target="_blank">
+     Ethereum
+    </a>
+    , also once used this consensus mechanism too.
+   </p>
+   <p>
+    Besides being the base of many blockchains, Proof-of-work actually created the building blocks for more recent consensus innovations, such as Proof-of-stake.
+   </p>
+   <p>
+    But before we get there, let’s go back to the beginning. In fact, what is a proof-of-work blockchain exactly?
+   </p>
+   <h2 class="wp-block-heading">
+    What is Proof-of-Work?
+   </h2>
+   <p>
+    Proof-of-work (PoW) is a
+    <a href="https://www.ledger.com/academy/consensus-protocols-how-are-blockchains-secure" rel="noreferrer noopener" target="_blank">
+     consensus mechanism
+    </a>
+    for blockchain networks that is the underlying consensus model of Bitcoin.
+   </p>
+   <p>
+    In the words of its anonymous founder, Satoshi Nakamoto,
+    <br/>
+    <em>
+     “Proof-of-work also solves the problem of determining representation in majority decision making. If the majority were based on one-IP-address-one-vote, it could be subverted by anyone able to allocate many IPs. Proof-of-work is essentially one-CPU-one-vote. The majority decision is represented by the longest chain, which has the greatest proof-of-work effort invested in it. If a majority of CPU power is controlled by honest nodes, the honest chain will grow the fastest and outpace any competing chains.”
+    </em>
+   </p>
+   <p>
+    If that sounds a bit wordy, let’s break it down. The fundamentals aren’t as complicated as you might think.
+   </p>
+   <h2 class="wp-block-heading">
+    How Does Proof-of-Work (PoW) Work?
+   </h2>
+   <p>
+    PoW relies on the conversion of electrical energy into digital blockchain “weight,” affording unforgeable costliness to PoW blockchains like Bitcoin in the process. Driving an incentive structure that produces a byzantine fault-tolerant (BFT) distributed network.  Put simply, PoW relies on a mathematical puzzle to solve for a value below a specific threshold (nonce) that produces the next block broadcast to the network.
+   </p>
+   <p>
+    Block leaders, those who produce the next block, are chosen in a lottery-like format corresponding directly to their computing contribution (i.e., hash) power. Put simply, the longest chain has the most work, and therefore, the most power.
+   </p>
+   <p>
+    There are two primary participants in the PoW consensus model: miners and full node operators.
+   </p>
+   <h3 class="wp-block-heading">
+    Miners in a PoW Consensus
+   </h3>
+   <p>
+    Miners in a proof-of-work network compete to produce a block and broadcast it to the network. The winning miner then recieves both the block reward and any transaction fees as a reward. This incentivized miners to remain honest in their propagation of blocks.
+   </p>
+   <p>
+    On the bitcoin network, these miners produce a block every 10 minutes, and the current reward is at about 12.5BTC per block. While that may seem like a lot, mining crypto is actually quite costly.
+   </p>
+   <figure class="wp-block-image">
+    <img alt="miners" class="wp-image-11353" decoding="async" height="938" loading="lazy" src="https://www.ledger.com/wp-content/uploads/2019/10/What-is-proof-of-work-1.jpg" width="1554"/>
+   </figure>
+   <p>
+    In short, crypto mining requires expensive hardware equipment.  Plus, there’s no way of getting around the complex computations that creating a block involves. The only way to solve the equation is through brute force and continual computation. This means it takes a large amount of power, which also has its own costs.
+   </p>
+   <p>
+    Now you know miners recieve rewards, but what about bad actors who might try to subvert the mining process?
+   </p>
+   <p>
+    Well, firstly, this would disturb the whole integrity of the network, making BTC less valuable. This means their investment in hardware would become more costly since the ROI in BTC awarded from the block reward would be worth less than before. Plus, miners earn their block rewards directly in BTC, not cash. This means bad actors would only harm themselves by organizing attacks on the network.
+   </p>
+   <p>
+    This system means that, put very simply, miners convert a real-world resource (electricity) into the production of BTC. Further, these costly consequences simply protects it against bad actors,
+   </p>
+   <p>
+    Then, since proof-of-work chains rely on hashes, transactions are nearly impossible to change. To learn more about mining, check out the full article on
+    <a href="https://www.ledger.com/academy/bitcoin-mining-what-is-it" rel="noreferrer noopener" target="_blank">
+     Bitcoin mining
+    </a>
+    .
+   </p>
+   <h3 class="wp-block-heading">
+    Full Node Operators
+   </h3>
+   <p>
+    But it’s not just miners participating in a proof-of-work consensus. Bitcoin, like all blockchain networks, rely on
+    <a href="https://www.ledger.com/academy/what-is-a-node-and-why-should-i-operate-one" rel="noreferrer noopener" target="_blank">
+     crypto nodes
+    </a>
+    to validate transactions. On the bitcoin network, full nodes are software clients running the Bitcoin software that automatically validate and propagate transactions and blocks in the network.
+   </p>
+   <p>
+    Using cryptographic proofs and Bitcoin’s consensus rules, full node operators are the heartbeat of the network and the ultimate validators of the network’s state. Full node clients can also be mining clients, and clients reject invalid blocks and transactions on the network. To explain, it’s down to the full node operators to decide which transactions they will (or won’t) add to a block.
+   </p>
+   <figure class="wp-block-image is-resized">
+    <img alt="Proof of Work" class="wp-image-11417" decoding="async" height="500" loading="lazy" src="https://www.ledger.com/wp-content/uploads/2019/10/What-is-proof-of-work.jpg" width="600"/>
+   </figure>
+   <h2 class="wp-block-heading">
+    Disadvantages of Proof-of-Work
+   </h2>
+   <p>
+    While Proof-of-work is known for its impressive security, it also has its downsides.  Its energy-intensive design and low-performance capacity for on-chain transaction execution has attracted criticism. While proof-of-work itself is indeed consumptive of power, in practice it works out quite differently. That’s because the vast majority of Bitcoin’s mining is
+    <a href="https://www.ccn.com/bitcoin-shockingly-renewable-energy/" rel="noreferrer noopener" target="_blank">
+     executed using renewable energy
+    </a>
+    . Balancing the costs of energy expenditure with Bitcoin’s overall value and wealth generation is a convoluted task. Regardless, PoW is a significant innovation.
+   </p>
+   <h2 class="wp-block-heading">
+    Proof of Work (PoW) Vs Proof of Stake (PoS): What’s The Difference?
+   </h2>
+   <p>
+    So now you know what proof-of work is, you might be wondering how it compares to other consensus mechanisms like proof-of-stake.
+   </p>
+   <p>
+    Well, PoW consensus mechanisms rely on miners to solve very complex equations with very powerful computing equipment. As mentioned, this also consumes power which can be costly, even when it’s environmentally conscious. As an answer to this,
+    <a href="https://www.ledger.com/academy/blockchain/what-is-proof-of-stake" rel="noreferrer noopener" target="_blank">
+     proof-of-stake
+    </a>
+    was created. Instead of miners, proof-of-stake uses
+    <a href="https://www.ledger.com/academy/what-is-a-blockchain-validator" rel="noreferrer noopener" target="_blank">
+     validators
+    </a>
+    . Instead of expending computing energy to solve a puzzle, validators put up a certain amount of funds as collateral. This is called
+    <a href="https://www.ledger.com/academy/basic-basics/keep-growing-it/stake-your-crypto" rel="noreferrer noopener" target="_blank">
+     crypto staking
+    </a>
+    .  While these methods differ in security and execution, they aim to achieve the same thing:
+   </p>
+   <p>
+    To explain, bad actors on a proof-of-work network would need an impossible amount of computing power to overrule 51% of the network, and tampering with their own transactions would be against their interests of making rewards. On a proof-of-stake network, a bad actor would need to own more than 51% of the coins staked at that time. Controlling 51% of all staked coins on the network is so difficult that it makes such an attack extremely unlikely. Plus, the punishment of losing your stake via
+    <a href="https://www.ledger.com/academy/topics/blockchain/what-is-slashing" rel="noreferrer noopener" target="_blank">
+     slashing
+    </a>
+    incentivizes validating transactions honestly. Using either method, there’s a reward for behaving honestly and a punishment for acting maliciously. However, proof-of-work is still the most secure option, as it’s almost impossible to hack.
+   </p>
+   <h2 class="wp-block-heading">
+    Proof-of-Work in Bitcoin and Beyond
+   </h2>
+   <p>
+    Whether knowingly or unknowingly, every blockchain transaction you make requires a consensus mechanism of some kind. While the security focused usually side with proof-of-work chains like Bitcoin, some are looking for other options that can build upon its success. While proof-of-work was the first consensus mechanism, it seems to be far from the last. And it’s thanks to this mechanism, that we even have a history of cryptocurrencies. That said, while many networks move away from this consensus, others move towards it; With more than a decade-long existence, Bitcoin is proving the inherent value of a system that is both secure and fair; while providing the framework for many other networks in crypto past and future.
+   </p>
+   <p>
+    <em>
+     Knowledge is power – so keep on learning! If you enjoy getting to grips with crypto and blockchain, check out our School of Block video
+    </em>
+    <a aria-label=" (opens in a new tab)" href="https://youtu.be/x3HSr62ax3U" rel="noreferrer noopener" target="_blank">
+     Ethereum Layer 2
+    </a>
+    .
+   </p>
+  </article>
+ </body>
+</html>

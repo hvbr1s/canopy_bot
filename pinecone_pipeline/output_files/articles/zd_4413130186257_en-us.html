@@ -1,0 +1,136 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/4413130186257-Set-up-a-Polygon-MATIC-account-in-Ledger-Live"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="4413130186257"/><meta name="title" content="Set up a Polygon (MATIC) account in Ledger Live"/><meta name="classification" content="public"/></head>                            <body><h1>Set up a Polygon (MATIC) account in Ledger Live</h1>
+<p><span style="font-weight: 400;">This article describes how to create a Ledger Polygon (MATIC) account in Ledger Live and explains the difference between Polygon and Ethereum. Check the <a href="https://www.ledger.com/coin/wallet/matic-network" target="_blank" rel="noopener">Polygon wallet page</a> to learn more. </span></p>
+<div class="callout callout--primary">
+<h4 class="callout__title"><strong>Polygon Hardfork</strong></h4>
+<span>As of July 11, 2023, the Polygon community has successfully implemented an upgrade through a hard fork at <a href="https://polygonscan.com/block/44934656" target="_blank" rel="noopener">block #44934656</a>. This upgrade <strong>does not impact Ledger users in any way</strong>. No actions are necessary, and you may continue to use your Polygon account as usual</span>
+</div>
+<h2>Create a Polygon (MATIC) account</h2>
+<ol class="list-colored">
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Open Ledger Live.</span></li>
+<li style="font-weight: 400;" aria-level="1">
+<span style="font-weight: 400;">Connect and unlock your Ledger device</span><span style="font-weight: 400;">.</span>
+</li>
+<li style="font-weight: 400;" aria-level="1">
+<span style="font-weight: 400;">Navigate to the </span><strong>Accounts </strong><span style="font-weight: 400;">tab, click the </span><strong>Add account</strong><span style="font-weight: 400;"> button, select </span><strong>Polygon (MATIC),</strong><span style="font-weight: 400;"> and click </span><strong>Continue</strong><span style="font-weight: 400;">. <br><br><img src="https://support.ledger.com/hc/article_attachments/12733878434205"><br><br></span>
+</li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">When prompted open the <strong>Polygon</strong> app on your Ledger device using the buttons.<br><br><img src="https://support.ledger.com/hc/article_attachments/12733871431837"><br> </span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Name your Polygon account then click <strong>Add account</strong><br><br><img src="https://support.ledger.com/hc/article_attachments/12733871434909"><br><br></span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Click <strong>Done</strong> to finalize adding your account to Ledger Live.<br><br><img src="https://support.ledger.com/hc/article_attachments/12733871436189"><br></span></li>
+</ol>
+<h2>Why does my Polygon account address look like my Ethereum account address?</h2>
+<p>You might have noticed that your Ledger Ethereum address and Ledger Polygon address look the same.</p>
+<p>This is because the Ledger Ethereum and Polygon apps use the same cryptographic techniques to generate addresses. This is possible because Polygon is <a href="https://polygon.technology/technology/" target="_blank" rel="noopener">EVM-compatible</a> and thus shares a lot of “digital DNA” with Ethereum .</p>
+<div class="callout callout--warning">
+<h4 class="callout__title">A word of caution</h4>
+<ul>
+<li>Though your Polygon and Ethereum addresses <em>look</em> identical, it’s important to note that <strong>they actually exist on two different networks</strong>.</li>
+</ul>
+</div>
+<h2>Are all ERC20 tokens supported by the Ledger Live app?</h2>
+<p><span style="font-weight: 400;">While it's possible to withdraw most crypto assets to your Ledger Polygon account in the form of ERC20 tokens, <strong>only a subset of all existing ERC20 tokens is currently supported by Ledger Live </strong>.</span></p>
+<p><span style="font-weight: 400;">From the perspective of Ledger Live there are three types of ERC20 tokens:</span></p>
+<ul>
+<li><span style="font-weight: 400;"><strong>Fully supported ERC20 tokens</strong> will show in Ledger Live and display a balance <em>amount</em> (the number of tokens in that balance) and a balance <em>value</em> (how much the balance is worth) denominated in fiat currency (EUR, USD, RMB, etc).</span></li>
+<li><span style="font-weight: 400;"><strong>Partially supported ERC20 tokens</strong> will display a balance amount but not a balance value.</span></li>
+<li><span style="font-weight: 400;"><strong>Non-supported ERC20 tokens</strong> will not show in Ledger Live at all. They will not be reflected in your total portfolio value and will not create a transaction history in Ledger Live. You can submit non-supported token details <a href="https://developers.ledger.com/docs/token/erc20-bep20/#2-how-to-get-my-token-listed" target="_blank" rel="noopener">here</a>, our team will review the token and add it for listing in the future releases of Ledger Live.</span></li>
+</ul>
+<div class="callout callout--primary">
+<h4 class="callout__title"><strong>I think I have sent unsupported ERC20 tokens to my Ledger Polygon address!</strong></h4>
+<ul>
+<li>Don't worry, your tokens are safe.</li>
+<li>You should be able to see your tokens by pasting your Ledger Polygon address into <a href="https://polygonscan.com/" target="_blank" rel="noopener">Polygonscan </a>then searching the drop-down menu located next to the <strong>Token</strong> field.</li>
+<li>To access your non-supported ERC20 balance, however, you’ll need to use your Ledger device with a third-party app called Metamask.</li>
+<li>A detailed tutorial is available in the next section.</li>
+</ul>
+</div>
+<h2>Withdraw crypto to my Ledger Polygon account from exchange (on Binance for example)</h2>
+<ol class="list-colored">
+<li>In your <a href="https://www.binance.com/en" target="_blank" rel="noopener">Binance</a> exchange account, go to the <strong>Withdraw Crypto</strong> section and select the coin you wish to withdraw.</li>
+<li>In the address field, paste your <strong>Ledger Polygon address</strong>, make sure that the <strong>Polygon (MATIC) network</strong> is selected, and complete the <strong>withdrawal</strong>.</li>
+</ol>
+<p><img src="https://support.ledger.com/hc/article_attachments/4413249014801" alt="WITHDRAW_POLYGON_BINANCE.gif"></p>
+<div class="callout callout--warning">
+<h4 class="callout__title">ERC20 or Polygon (MATIC)?</h4>
+<ul>
+<li>There is a difference between the ERC20 and the Polygon network. </li>
+<li>The ERC20 network refers to the Ethereum blockchain, which is a slightly <strong>different</strong> network from Polygon (MATIC). You can learn more about these differences in <a href="https://polygon.technology/lightpaper-polygon.pdf" target="_blank" rel="noopener">this document</a>.</li>
+<li>When withdrawing assets from an exchange to your Ledger Polygon address, <strong>make sure to select the Polygon (MATIC) network</strong> in order to see the assets on Polygon account.</li>
+</ul>
+</div>
+<h2>Access my non-supported ERC20 token balance</h2>
+<p>This tutorial will show you how to use Metamask to access your Ledger Polygon account and manually add your ERC20 tokens.</p>
+<ol class="list-colored">
+<li>Close Ledger Live.</li>
+<li>Download and install the <a href="https://metamask.io/" target="_blank" rel="noopener">Metamask extension</a> on your web browser.</li>
+<li>Once installed in your browser, create a new Metamask wallet by following <a href="https://metamask.zendesk.com/hc/en-us/articles/360015489531-Getting-Started-With-MetaMask" target="_blank" rel="noopener">these instructions</a>.</li>
+<li>
+<p><span style="font-weight: 400;">Connect your Metamask wallet to the Polygon network</span><span style="font-weight: 400;"> using </span><a href="https://docs.polygon.technology/docs/develop/metamask/config-polygon-on-metamask/" target="_blank" rel="noopener">this tutorial.</a><span style="font-weight: 400;"></span></p>
+<p class="wysiwyg-text-align-center"><img src="https://support.ledger.com/hc/article_attachments/4413119418385" alt="ADD_POLYGON_METAMASK.gif"></p>
+</li>
+<li>
+<span style="font-weight: 400;">Connect your Ledger device and open the</span> <span style="font-weight: 400;"><strong>Polygon app</strong> on your Ledger device.</span>
+</li>
+<li>
+<p><span style="font-weight: 400;">Connect your Ledger device to Metamask using</span><a href="https://metamask.zendesk.com/hc/en-us/articles/360020394612-How-to-connect-a-Trezor-or-Ledger-Hardware-Wallet"> <span style="font-weight: 400;">this tutorial</span></a><span style="font-weight: 400;"> in order to find your Ledger Polygon account in Metamask.</span></p>
+<p class="wysiwyg-text-align-center"><img src="https://support.ledger.com/hc/article_attachments/4413119670673" alt="ADD_POLYGON_METAMASK_LEDGER.gif"></p>
+</li>
+<li>
+<p><span>Add your ERC20 token to Metamask as a custom token by following </span><a style="background-color: #ffffff;" href="https://metamask.zendesk.com/hc/en-us/articles/360015489031-How-to-view-see-your-tokens-custom-tokens-in-Metamask" target="_self" rel="undefined">this tutorial</a><span>.</span></p>
+</li>
+</ol>
+<h2>I can't see my Polygon (MATIC) account in Ledger Live</h2>
+<p>The Polygon (MATIC) account you created using Metamask and your Ledger Ethereum app or Polygon app might not appear in Ledger Live.<br>Check <a href="https://support.ledger.com/hc/en-us/articles/4413416158737-I-can-t-see-my-Polygon-MATIC-account-in-Ledger-Live?support=true" target="_blank" rel="noopener">this article</a> to learn more and solve this problem.</p>
+<h2><span style="font-weight: 400;">What are the main differences between Polygon and Ethereum?</span></h2>
+<p><span style="font-weight: 400;">Although Polygon and Ethereum share a lot of similarities, there are also important differences between the two projects. </span></p>
+<table class="table table--color-header" style="height: 377px;">
+<thead>
+<tr style="height: 22px;">
+<th style="height: 22px; width: 242.672px;"> </th>
+<th style="height: 22px; width: 248.234px;">Polygon</th>
+<th style="height: 22px; width: 199.094px;">Ethereum</th>
+</tr>
+</thead>
+<tfoot>
+<tr style="height: 44px;">
+<td style="height: 44px; width: 234.672px;"><strong>What Ledger app should I use?</strong></td>
+<td style="height: 44px; width: 240.234px;">Ledger Polygon app</td>
+<td style="height: 44px; width: 191.094px;">Ledger Ethereum app</td>
+</tr>
+</tfoot>
+<tbody>
+<tr style="height: 22px;">
+<td style="height: 22px; width: 234.672px;"><strong>Native coin</strong></td>
+<td style="height: 22px; width: 240.234px;"><a href="https://coinmarketcap.com/currencies/polygon/" target="_blank" rel="noopener">MATIC</a></td>
+<td style="height: 22px; width: 191.094px;"><a href="https://coinmarketcap.com/currencies/ethereum/" target="_blank" rel="noopener">ETH</a></td>
+</tr>
+<tr style="height: 44px;">
+<td style="height: 44px; width: 234.672px;"><strong>How are transaction fees paid?</strong></td>
+<td style="height: 44px; width: 240.234px;">Always in MATIC</td>
+<td style="height: 44px; width: 191.094px;">Always in ETH</td>
+</tr>
+<tr style="height: 67px;">
+<td style="height: 67px; width: 234.672px;"><strong>Are tokens supported?</strong></td>
+<td style="height: 67px; width: 240.234px;">Yes, Polygon supports <a href="https://www.ledger.com/academy/crypto/what-are-erc20-tokens" target="_blank" rel="noopener">ERC20 tokens</a><span> and </span><a href="https://ethereum.org/en/developers/docs/standards/tokens/erc-721/" target="_blank" rel="noopener">ERC721 (NFT) tokens</a><span>.</span>
+</td>
+<td style="height: 67px; width: 191.094px;">Yes, Ethereum supports <a href="https://www.ledger.com/academy/crypto/what-are-erc20-tokens" target="_blank" rel="noopener">ERC20 tokens</a> and <a href="https://ethereum.org/en/developers/docs/standards/tokens/erc-721/" target="_blank" rel="noopener">ERC721 (NFT) tokens</a>.</td>
+</tr>
+<tr style="height: 44px;">
+<td style="height: 44px; width: 234.672px;"><strong>What tool can I use to track my transactions?</strong></td>
+<td style="height: 44px; width: 240.234px;"><a href="https://polygonscan.com/" target="_blank" rel="noopener">Polygonscan</a></td>
+<td style="height: 44px; width: 191.094px;"><a href="https://etherscan.io/" target="_blank" rel="noopener">Etherscan</a></td>
+</tr>
+<tr style="height: 67px;">
+<td style="height: 67px; width: 234.672px;"><strong>What coins and tokens can I keep in my Ledger account?</strong></td>
+<td style="height: 67px; width: 240.234px;">You can keep MATIC and ERC20 tokens in a Ledger Polygon account</td>
+<td style="height: 67px; width: 191.094px;">You can keep ETH and ERC20 tokens in a Ledger Ethereum account</td>
+</tr>
+<tr style="height: 67px;">
+<td style="height: 67px; width: 234.672px;"><strong>Consensus mechanism</strong></td>
+<td style="height: 67px; width: 240.234px;">Proof-of-stake</td>
+<td style="height: 67px; width: 191.094px;">Proof-of-work</td>
+</tr>
+</tbody>
+</table>
+<p>
+<script src="chrome-extension://ldinpeekobnhjjdofggfgjlcehhmanlj/inpage.js" id="hiro-wallet-provider"></script>
+</p></body></html>

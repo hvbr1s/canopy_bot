@@ -1,0 +1,811 @@
+<html>
+ <head>
+  <meta content="https://www.ledger.com/blog/part-2-genesis-of-ledger-recover-securely-distributing-the-shares" name="source"/>
+  <meta content="academy" name="source-type"/>
+  <meta content="en" name="locale"/>
+  <meta content="N/A" name="zd-article-id"/>
+  <meta content="part 2 genesis of ledger recover securely distributing the shares" name="title"/>
+  <meta content="public" name="classification"/>
+ </head>
+ <body>
+  <article class="margin-lg" id="article-278740">
+   <header class="header margin-sm">
+    <div class="content">
+     <div class="margin-sm is-hidden-tablet is-hidden-desktop blog-category-breadcrumb">
+      <a href="https://www.ledger.com/company-updates" title="">
+       Blog
+      </a>
+      <i class="icon-chevron-right">
+      </i>
+      <a href="https://www.ledger.com/category/blog-posts" title="Blog posts">
+       Blog posts
+      </a>
+     </div>
+     <p class="datetime caption margin-xs">
+      <a class="is-primary" href="https://www.ledger.com/category/blog-posts" title="Blog posts">
+       Blog posts
+      </a>
+      ,
+      <a class="is-primary" href="https://www.ledger.com/category/tech" title="Tech">
+       Tech
+      </a>
+      |           07/25/2023
+     </p>
+     <h1 class="h2 title margin-s">
+      Part 2: Genesis of Ledger Recover – Securely distributing the shares
+     </h1>
+     <p class="font-size-l margin-s">
+      How can you securely distribute your seed shares to your backup providers? We will introduce several cryptographic tools and mathematical concepts that Ledger Recover leverages to securely distribute your seed shares to backup providers.
+     </p>
+    </div>
+    <div class="illustration" style="background-image: url('https://www.ledger.com/wp-content/uploads/2023/07/BLOG_POST_RECOVER-1.webp');">
+    </div>
+   </header>
+   <div class="row no-margin-mobile margin-md is-hidden-mobile">
+    <div class="row blog-category-breadcrumb">
+     <a href="https://www.ledger.com/company-updates" title="">
+      Blog
+     </a>
+     <i class="icon-chevron-right">
+     </i>
+     <a href="https://www.ledger.com/category/blog-posts" title="Blog posts">
+      Blog posts
+     </a>
+    </div>
+   </div>
+   <div class="row margin-lg plain-text">
+    <p>
+     Part 3 of our Genesis of Ledger Recover blog series
+     <a href="https://www.ledger.com/blog/part-3-genesis-of-ledger-recover-avoiding-collusion-and-leaks">
+      is available here.
+     </a>
+    </p>
+    <p>
+     Welcome back to the second part of our blog series on
+     <a href="https://www.ledger.com/recover" rel="noreferrer noopener" target="_blank">
+      Ledger Recover
+     </a>
+     ’s genesis! Our goal is to explore the many technical hurdles encountered when building a seed recovery service, and how Ledger Recover solves them with a secure design and infrastructure.
+    </p>
+    <p>
+     In the previous
+     <a href="https://www.ledger.com/blog/part-1-genesis-of-ledger-recover-self-custody-without-compromise">
+      Genesis of Ledger Recover Part 1 – “Self-custody without compromise,”
+     </a>
+     we examined how to backup a Secret Recovery Phrase by splitting it, and how Ledger Recover does it for you using
+     <a href="https://link.springer.com/chapter/10.1007%2F3-540-46766-1_9" rel="noreferrer noopener" target="_blank">
+      Pedersen Verifiable Secret Sharing
+     </a>
+     .
+    </p>
+    <p>
+     Now that you have three shares, the next question is:
+     <strong>
+      how can you securely distribute them to your backup providers?
+     </strong>
+     Indeed, if a malicious party intercepts all the shares while you are transmitting them, it defeats the purpose of splitting the seed in the first place. In cybersecurity, this is called a
+     <a href="https://en.wikipedia.org/wiki/Man-in-the-middle_attack" rel="noreferrer noopener" target="_blank">
+      Man-in-the-Middle attack
+     </a>
+     , where an attacker stands between you and your recipient, and tampers with the communication to try and uncover secrets.
+    </p>
+    <p>
+     When using Ledger Recover, the transmission of your seed is performed through a secure distribution mechanism. It relies on several cryptographic tools and mathematical concepts that we will explain thoroughly.
+    </p>
+    <p>
+     We will start by describing the problem at hand in more detail. Then we will introduce several cryptographic tools and mathematical concepts that Ledger Recover leverages to securely distribute your seed shares to backup providers.
+    </p>
+    <h5 class="wp-block-heading">
+     Courier-In-The-Middle: A real world example
+    </h5>
+    <p>
+     The most obvious way to protect yourself from an ill-intentioned intermediary is to have none at all. You could walk to your friends’ houses yourself or gather them in the same, closed-off location to deliver the shares. But this becomes much harder if you are not collocated and want to send the shares to a long-distance acquaintance.
+    </p>
+    <p>
+     Assuming that the network we communicate over (e.g. the postal service) is inherently untrustworthy, how can we guarantee that eavesdroppers never get a glimpse of our secret shares?
+    </p>
+    <p>
+     It’s time to introduce Alice and Bob, and the infamous Eve, three well-known cryptography personas. Alice has a secret she wants to share with Bob, and has no choice but to send it through Eve, their untrustworthy courier. In cryptographic words,
+     <strong>
+      Alice and Bob want to establish a secure communication channel with each other to exchange their secret safely.
+     </strong>
+    </p>
+    <figure class="wp-block-image size-full">
+     <img alt="" class="wp-image-278777" decoding="async" height="1071" loading="lazy" src="https://www.ledger.com/wp-content/uploads/2023/07/alice-eve-bob-1.gif" width="1200"/>
+    </figure>
+    <p>
+     Here is what Alice and Bob could do:
+    </p>
+    <ul>
+     <li>
+      Alice puts her secret in a box, locks it with her personal padlock, before sending it to Bob.
+     </li>
+     <li>
+      When Bob receives the box, he adds
+      <em>
+      </em>
+      his own padlock, and sends it back.
+     </li>
+     <li>
+      Alice can now use her key to remove her padlock from the box before sending it one last time.
+     </li>
+     <li>
+      To finish the process, Bob simply uses his key to remove his padlock and retrieve – at last – the secret from Alice.
+     </li>
+    </ul>
+    <p>
+     All through the exchange, whenever Eve has had the box in her hands, it was always protected, either by Alice’s lock, or Bob’s, or both.
+    </p>
+    <div class="wp-block-image">
+     <figure class="aligncenter size-full is-resized">
+      <img alt="" class="wp-image-278788" decoding="async" height="165" loading="lazy" src="https://www.ledger.com/wp-content/uploads/2023/07/seven-brad-pitt.gif" style="width:394px;height:296px" width="220"/>
+     </figure>
+    </div>
+    <p>
+     While this is an excellent start, there are several issues left to be solved in this scenario:
+    </p>
+    <ul>
+     <li>
+      <strong>
+       Mutual authentication:
+      </strong>
+      Alice and Bob need foolproof ways to check that each padlock genuinely comes from the other party. Otherwise, Eve could swap it with her own box and padlock and fool Alice or Bob into believing she is the other party.
+     </li>
+     <li>
+      <strong>
+       Forward secrecy:
+      </strong>
+      If Eve stole the locked box, and later stole Alice or Bob’s key, she could recover the original secret. Instead we want to ensure that future leaks of long-term keys cannot compromise older stolen packets.
+     </li>
+     <li>
+      <strong>
+       Preserving privacy:
+      </strong>
+      In this scenario, Alice and Bob’s addresses get disclosed to the courier. In the digital equivalent of this process, we want a protocol that does not disclose anything about the recipients.
+     </li>
+    </ul>
+    <h5 class="wp-block-heading">
+     Securing digital messages
+    </h5>
+    <p>
+     In digital security, a
+     <strong>
+      secure channel
+     </strong>
+     is a way of transferring data between two
+     <strong>
+      authenticated
+     </strong>
+     parties such that data
+     <strong>
+      confidentiality
+     </strong>
+     and
+     <strong>
+      integrity
+     </strong>
+     are guaranteed. When you use a secure channel, attackers cannot eavesdrop or tamper with your communication.
+    </p>
+    <p>
+     Ledger Recover’s protocol for both backup and restore is based on a
+     <a href="https://www.cardlogix.com/glossary/secure-channel-protocol-scp01-scp02-scp03/#:~:text=In%20cryptography%2C%20a%20Secure%20Channel,not%20necessarily%20resistant%20to%20tampering." rel="noreferrer noopener" target="_blank">
+      <strong>
+       Secure Channel Protocol
+      </strong>
+     </a>
+     , or SCP. It uses multiple tools of the modern cryptography toolbox, such as symmetric and asymmetric encryption, certificates, and digital signatures.
+     <br/>
+     The next sections will give you a quick primer on all these concepts, which will allow you to understand the whole security scheme used in Ledger Recover.
+    </p>
+    <h5 class="wp-block-heading">
+     Symmetric cryptography: A powerful, but limited tool
+    </h5>
+    <p>
+     To guarantee the confidentiality of the data exchanged between two parties, the data is usually encrypted and decrypted with the same secret key.
+     <br/>
+     This process is referred to as
+     <strong>
+      symmetric cryptography,
+     </strong>
+     which is the study of primitives that involve a single secret key to guarantee one or more of the properties of a secure channel.
+    </p>
+    <p>
+     While being a powerful tool to protect your communications, symmetric cryptography has some obvious limitations: Assume that Alice wants to exchange several encrypted messages with Bob. She first chooses a secret key, then shares it with Bob, before starting to send messages.
+     <br/>
+     Of course the problem now becomes: How does Alice share the secret key securely with Bob? If anyone gets hold of the key, Alice and Bob’s communication will no longer be confidential.
+     <br/>
+     Alice could meet Bob in person to give him the key, but in this case why not have their discussion then, away from prying ears?
+    </p>
+    <p>
+     For digital communications, we need a secure method to share the symmetric key and initiate the protected data exchange. It’s time to introduce the work of two titans of modern cryptography,
+     <a href="https://en.wikipedia.org/wiki/Whitfield_Diffie" rel="noreferrer noopener" target="_blank">
+      Whitfield Diffie
+     </a>
+     and
+     <a href="https://en.wikipedia.org/wiki/Martin_Hellman" rel="noreferrer noopener" target="_blank">
+      Martin Hellman
+     </a>
+     .
+    </p>
+    <h5 class="wp-block-heading">
+     Asymmetric cryptography: Hiding your private parts
+    </h5>
+    <h6 class="wp-block-heading">
+     Diffie-Hellman key agreement
+    </h6>
+    <p>
+     With Public Key Cryptography, Diffie and Hellman came up with a novel approach to securing communications. They defined a protocol with two distinct keys for encryption and decryption. The two keys are commonly called
+     <strong>
+      public and private keys
+     </strong>
+     , forming a pair which can be used to encrypt/decrypt and sign/verify data.
+    </p>
+    <div style="border-radius:10px; border: 2px solid #D4A0FF; padding:30px; margin-bottom:20px;">
+     <b>
+      Public and Private keys
+     </b>
+     <br/>
+     Public key cryptography is the basis of most of our digital security. It is used to protect you on the web, and is also how you prove ownership of coins and tokens on all public blockchains.
+     <br/>
+     <img decoding="async" src="https://www.ledger.com/wp-content/uploads/2023/07/private-public-key-1024x366.png"/>
+     <a href="https://www.ledger.com/academy/blockchain/what-are-public-keys-and-private-keys">
+      Learn more about this topic on Ledger Academy
+     </a>
+     !
+    </div>
+    <p>
+     What is really compelling for us is how Diffie and Hellman suggested using public key cryptography to distribute symmetric keys. Their method, known as
+     <strong>
+      Diffie-Hellman key exchange,
+     </strong>
+     consists of back and forth exchanges between two parties to ultimately agree on a shared secret. If performed properly, eavesdroppers are not able to compute the same shared secret from the information they overhear.
+    </p>
+    <figure class="wp-block-image size-large">
+     <img alt="" class="wp-image-278843" decoding="async" height="504" loading="lazy" sizes="(max-width: 1024px) 100vw, 1024px" src="https://www.ledger.com/wp-content/uploads/2023/07/generating-shared-secret-1024x504.png" srcset="https://www.ledger.com/wp-content/uploads/2023/07/generating-shared-secret-1024x504.png 1024w, https://www.ledger.com/wp-content/uploads/2023/07/generating-shared-secret-300x148.png 300w, https://www.ledger.com/wp-content/uploads/2023/07/generating-shared-secret-768x378.png 768w, https://www.ledger.com/wp-content/uploads/2023/07/generating-shared-secret-1536x755.png 1536w, https://www.ledger.com/wp-content/uploads/2023/07/generating-shared-secret-2048x1007.png 2048w, https://www.ledger.com/wp-content/uploads/2023/07/generating-shared-secret-490x241.png 490w" width="1024">
+      <figcaption class="wp-element-caption">
+       Generating a shared secret
+       <em>
+        k
+       </em>
+      </figcaption>
+     </img>
+    </figure>
+    <p>
+     The TL;DR is that in the above diagram Eve is mathematically unable to figure out the secret
+     <em>
+     </em>
+     k even though she has access to all of Alice and Bob’s communications. To understand why this shared secret is safe from any eavesdropper, we need to dig into a bit of group theory.
+    </p>
+    <p>
+     The security of the Diffie-Hellman key exchange relies on the complexity of the discrete logarithm problem over a cyclic group. A cyclic group is a group generated by a single element.
+     <br/>
+     In a nutshell, Alice and Bob execute the following steps to agree on a shared secret
+     <strong>
+      <em>
+       k
+      </em>
+     </strong>
+     :
+    </p>
+    <ol>
+     <li>
+      Alice and Bob agree on a cyclic group
+      <em>
+       <strong>
+        G
+       </strong>
+      </em>
+      of order
+      <em>
+       <strong>
+        n
+       </strong>
+      </em>
+      generated by an element
+      <em>
+       <strong>
+        g
+       </strong>
+      </em>
+     </li>
+     <li>
+      Alice draws at random a number
+      <b>
+       0
+      </b>
+      &lt;
+      <b>
+       <i>
+        a
+       </i>
+      </b>
+      &lt;
+      <b>
+       <i>
+        n
+       </i>
+      </b>
+      and sends
+      <b>
+       <i>
+        g
+        <span style="vertical-align:super;">
+         a
+        </span>
+        ∈ G
+       </i>
+      </b>
+      to Bob
+     </li>
+     <li>
+      Bob draws at random a number
+      <b>
+       0
+      </b>
+      &lt;
+      <b>
+       <i>
+        b
+       </i>
+      </b>
+      &lt;
+      <b>
+       <i>
+        n
+       </i>
+      </b>
+      and sends
+      <b>
+       <i>
+        g
+        <span style="vertical-align:super;">
+         b
+        </span>
+        ∈ G
+       </i>
+      </b>
+      to Alice
+     </li>
+     <li>
+      Alice computes the shared secret
+      <b>
+       <i>
+        k =(
+        <b>
+         <i>
+          g
+          <span style="vertical-align:super;">
+           b
+          </span>
+         </i>
+        </b>
+        )
+        <span style="vertical-align:super;">
+         a
+        </span>
+        ∈ G
+       </i>
+      </b>
+     </li>
+     <li>
+      Bob computes the shared secret
+      <b>
+       <i>
+        k =(
+        <b>
+         <i>
+          g
+          <span style="vertical-align:super;">
+           a
+          </span>
+         </i>
+        </b>
+        )
+        <span style="vertical-align:super;">
+         b
+        </span>
+        ∈ G
+       </i>
+      </b>
+     </li>
+    </ol>
+    <p>
+     The security of the protocol depends on the hardness of finding
+     <strong>
+      <em>
+       k =g
+       <span style="vertical-align:super;">
+        a.b
+       </span>
+      </em>
+     </strong>
+     given
+     <strong>
+      <em>
+       g
+      </em>
+     </strong>
+     ,
+     <strong>
+      <em>
+       g
+       <span style="vertical-align:super;">
+        a
+       </span>
+      </em>
+     </strong>
+     ,
+     <em>
+      <strong>
+       g
+       <span style="vertical-align:super;">
+        b
+       </span>
+      </strong>
+     </em>
+     . This is called the
+     <a href="https://en.wikipedia.org/wiki/Computational_Diffie%E2%80%93Hellman_assumption" rel="noreferrer noopener" target="_blank">
+      Computation Diffie-Hellman assumption
+     </a>
+     (CDH). The hypothesis that CDH is hard to solve supposes that the
+     <a href="https://en.wikipedia.org/wiki/Discrete_logarithm" rel="noreferrer noopener" target="_blank">
+      discrete logarithm problem
+     </a>
+     is hard to solve.
+    </p>
+    <p>
+     In this scheme, while the shared secret is safe from eavesdropping, there is no guarantee on the origin of the data that is exchanged. For the interaction to be secure, Alice and Bob need to somehow prove their identity to each other.
+    </p>
+    <h5 class="wp-block-heading">
+     Mutual Authentication and Digital Signature
+    </h5>
+    <p>
+     A handwritten signature is usually used to acknowledge and accept the content of a document. Only the signer is able to produce the signature but anyone who “knows” what the signature looks like can verify that the document has been signed by the right person.
+    </p>
+    <p>
+     While having similar properties, a digital signature provides additional strong guarantees by leveraging asymmetric cryptography:
+    </p>
+    <ul>
+     <li>
+      <strong>
+       Authenticity
+      </strong>
+      : anyone can verify that the message was signed with the private key corresponding to the specified public key.
+     </li>
+     <li>
+      <strong>
+       Non-repudiation
+      </strong>
+      : the signer cannot deny having signed and sent the message.
+     </li>
+     <li>
+      <strong>
+       Integrity
+      </strong>
+      : the message was not altered during transmission.
+     </li>
+    </ul>
+    <p>
+     Now, as long as
+     <strong>
+      we know and trust the public key
+     </strong>
+     of our correspondent, we can check the authenticity of all messages by verifying their digital signature.
+     <br/>
+     In most real-world cases however, we either do not know our correspondent intimately, or they may need to regularly change their private/public key pair for security reasons. This calls for an extra layer of verification and trust in the form of
+     <a href="https://en.wikipedia.org/wiki/Public_key_certificate" rel="noreferrer noopener" target="_blank">
+      Certificates
+     </a>
+     , which contain the description of an entity and their public key.
+    </p>
+    <div class="wp-block-image">
+     <figure class="aligncenter size-large is-resized">
+      <img alt="" class="wp-image-278869" decoding="async" height="1007" loading="lazy" sizes="(max-width: 1024px) 100vw, 1024px" src="https://www.ledger.com/wp-content/uploads/2023/07/certificate-1024x1007.png" srcset="https://www.ledger.com/wp-content/uploads/2023/07/certificate-1024x1007.png 1024w, https://www.ledger.com/wp-content/uploads/2023/07/certificate-300x295.png 300w, https://www.ledger.com/wp-content/uploads/2023/07/certificate-768x756.png 768w, https://www.ledger.com/wp-content/uploads/2023/07/certificate-280x275.png 280w, https://www.ledger.com/wp-content/uploads/2023/07/certificate.png 1170w" style="width:439px;height:432px" width="1024"/>
+     </figure>
+    </div>
+    <p>
+     Each certificate is signed by a parent public key. By having a Root Certificate Authority (or Root CA) that we always trust, we can create a chain of trust using successive digital signatures.
+    </p>
+    <h5 class="wp-block-heading">
+     Elliptic Curves: Next level public key cryptography
+    </h5>
+    <p>
+     Elliptic curve cryptography (ECC) is a subarea of Public Key Cryptography which consists in using elliptic curves for cryptographic applications, e.g. for encryption or signature schemes.
+     <br/>
+     Based on currently understood mathematics, ECC provides a significantly more secure foundation than earlier public key cryptography systems like
+     <a href="https://en.wikipedia.org/wiki/RSA_(cryptosystem)" rel="noreferrer noopener" target="_blank">
+      RSA
+     </a>
+     .
+    </p>
+    <p>
+     With the same security level, ECC involves smaller key lengths compared to other asymmetric cryptosystems, which makes it a good choice for embedded systems with limited resources.
+     <br/>
+     If you would like to know more,
+     <a href="https://arstechnica.com/information-technology/2013/10/a-relatively-easy-to-understand-primer-on-elliptic-curve-cryptography/" rel="noreferrer noopener" target="_blank">
+      this article
+     </a>
+     can help better understand Elliptic Curves.
+    </p>
+    <div style="border-radius:10px; border: 2px solid #D4A0FF; padding:30px; margin-bottom:20px;">
+     <b>
+      Order of an Elliptic Curve
+     </b>
+     <br/>
+     The order of an element
+     <b>
+      <i>
+       g
+      </i>
+     </b>
+     of a group is an important parameter of the Diffie-Hellman key exchange. When the group is an Elliptic Curve, that element is a point, and its order is the number of times it can be added to itself before looping around on its initial value.
+Note that this addition has nothing to do with your usual sum over real numbers, but has similar properties of additivity.
+     <br/>
+     Let’s take the Elliptic Curve
+     <b>
+      <i>
+       E: y
+       <span style="vertical-align:super;">
+        2
+       </span>
+       = x
+       <span style="vertical-align:super;">
+        3
+       </span>
+       + 2x + 3
+      </i>
+     </b>
+     over the field
+     <b>
+      <i>
+       𝔽
+       <span style="vertical-align:sub;">
+        97
+       </span>
+      </i>
+     </b>
+     as an example. As a discrete function, it is represented by the points in the figure below. We will focus on the point
+     <b>
+      <i>
+       P =(3, 6)
+      </i>
+     </b>
+     and all its multiples.
+     <div style="text-align: center;">
+      <figure class="wp-block-image size-full is-resized">
+       <img alt="" class="wp-image-278883" decoding="async" height="365" loading="lazy" src="https://www.ledger.com/wp-content/uploads/2023/07/p-q-ec.gif" width="313"/>
+      </figure>
+     </div>
+     We see that after 5.
+     <b>
+      <i>
+       P
+      </i>
+     </b>
+     , we are back at the beginning and we hit the same points as before. No matter what the value of the scalar
+     <b>
+      <i>
+       P
+      </i>
+     </b>
+     is multiplied by, we will always hit one of our 5 initial points.
+Thus the order of
+     <b>
+      <i>
+       P
+      </i>
+     </b>
+     is 5, and the subgroup it generates contains exactly 5 points. For cryptographic applications however, the order is way bigger than 5, increasing the randomness.
+    </div>
+    <h5 class="wp-block-heading">
+     Mash it all up: ECDH with authentication
+    </h5>
+    <p>
+     We now have all the tools we need to create a great key exchange protocol:
+     <strong>
+      Elliptic Curve Diffie-Hellman (ECDH)
+     </strong>
+     .
+    </p>
+    <p>
+     ECDH is a standardized cryptographic scheme that implements the Diffie-Hellman key exchange we described above, by using Elliptic Curve cryptography to generate the key pairs and the shared secret.
+    </p>
+    <figure class="wp-block-image size-large">
+     <img alt="" class="wp-image-278932" decoding="async" height="819" loading="lazy" sizes="(max-width: 1024px) 100vw, 1024px" src="https://www.ledger.com/wp-content/uploads/2023/07/authenticated-ecdh-exchange-1024x819.png" srcset="https://www.ledger.com/wp-content/uploads/2023/07/authenticated-ecdh-exchange-1024x819.png 1024w, https://www.ledger.com/wp-content/uploads/2023/07/authenticated-ecdh-exchange-300x240.png 300w, https://www.ledger.com/wp-content/uploads/2023/07/authenticated-ecdh-exchange-768x614.png 768w, https://www.ledger.com/wp-content/uploads/2023/07/authenticated-ecdh-exchange-1536x1228.png 1536w, https://www.ledger.com/wp-content/uploads/2023/07/authenticated-ecdh-exchange-2048x1638.png 2048w, https://www.ledger.com/wp-content/uploads/2023/07/authenticated-ecdh-exchange-344x275.png 344w" width="1024">
+      <figcaption class="wp-element-caption">
+       Authenticated ECDH key exchange
+      </figcaption>
+     </img>
+    </figure>
+    <p>
+     It starts by selecting an Elliptic Curve and its generating point. The two parties then exchange trusted certificates, which allows them to verify the authenticity of their respective public keys. Once authenticated, they can generate a shared secret k which is computed as:
+    </p>
+    <p class="has-text-align-center">
+     <em>
+      <strong>
+       k = d
+       <span style="vertical-align:sub;">
+        A
+       </span>
+       . d
+       <span style="vertical-align:sub;">
+        B
+       </span>
+       . G
+      </strong>
+     </em>
+     <br/>
+     <em>
+      d
+      <span style="vertical-align:sub;">
+       A
+      </span>
+      : Alice’s Private Key
+     </em>
+     <br/>
+     <em>
+      d
+      <span style="vertical-align:sub;">
+       B
+      </span>
+      : Bob’s Private Key
+     </em>
+     <br/>
+     <em>
+      G: EC point
+     </em>
+    </p>
+    <p>
+     To achieve the
+     <strong>
+      forward secrecy
+     </strong>
+     property, the pair of keys of both Alice and Bob should be ephemeral, i.e. they are generated on the spot and used for a single execution of the protocol. We talk about an Elliptic Curve Diffie-Hellman Ephemeral (ECDHE). In this scenario, the ephemeral keys signed by both the static keys on the device and the HSMs, enabling a strong authentication of the keys. Even if unauthorized access to the static keys were to occur in the future, it would not grant decryption capabilities for the exchanges protected by the ephemeral keys.
+    </p>
+    <p>
+     Furthermore, we have implemented a notable enhancement to the protocol by concealing the static keys of the devices within the secure channel. This precautionary measure prevents attackers from obtaining visibility on the static certificate of the devices, which, in turn, could lead to the leakage of unique identifiers used during backup/restore operations.
+    </p>
+    <h5 class="wp-block-heading">
+     Back to Ledger Recover: A seed’s journey
+    </h5>
+    <p>
+     Alright, time to pause for a minute.
+    </p>
+    <p>
+     We have covered a lot of topics, pertaining to both security and mathematics, and the result is a protocol to safely communicate over any insecure network. Let’s summarize what we have seen so far:
+    </p>
+    <p>
+     Two entities can have secure communication over an insecure channel by agreeing on a
+     <strong>
+      unique secret
+     </strong>
+     thanks to the
+     <strong>
+      ECDHE
+     </strong>
+     , which is an implementation of the Diffie-Hellman key agreement protocol that uses
+     <strong>
+      ephemeral keys
+     </strong>
+     to protect forward secrecy. Each entity is able to
+     <strong>
+      verify the authenticity
+     </strong>
+     of their correspondent
+     <strong>
+     </strong>
+     thanks to an initial
+     <strong>
+      Certificate verification
+     </strong>
+     .
+    </p>
+    <p>
+     In the case of Ledger Recover, we have established four secure channels utilizing the Secure Channel Protocol. These channels connect the device to each of the backup providers and the orchestrator, all of which are equipped with Hardware Security Modules (HSMs).
+    </p>
+    <p>
+     Each actor holds onto its personal certificate, signed by a Ledger Certificate which acts as the root of the trust chain. When the user’s device first transmits its intention of performing a backup to the Orchestrator, it initiates an authenticated ECDHE. Under these
+     <strong>
+      <em>
+       mTLS
+      </em>
+     </strong>
+     sessions, the Orchestrator transmits information that will tie future secure channels to the user’s particular backup request, along with the user’s identity that will be requested for validation when performing a later restore of the seed.
+    </p>
+    <div style="border-radius:10px; border: 2px solid #D4A0FF; padding:30px; margin-bottom:20px;">
+     <b>
+      Safeguarding secrets with HSMs
+     </b>
+     <br/>
+     As much as we try to avoid it, it is at times required to store and process secrets on servers. This can be risky as protecting servers and their access is a non-trivial task. To mitigate this risk, companies and industries that value security use
+     <a href="https://en.wikipedia.org/wiki/Hardware_security_module">
+      Hardware Security Modules
+     </a>
+     . They are specialized hardware that protect cryptographic keys and provide cryptographic processing. We will talk more about HSMs in later parts of this blog series.
+    </div>
+    <p>
+     Everything is ready to finally perform the most critical part of the whole operation:
+     <strong>
+      transmitting the three shares of the user’s seed.
+     </strong>
+    </p>
+    <p>
+     Once again, we create new secure channels, but this time between the user’s Ledger device and the Backup Providers’ HSMs
+     <strong>
+      directly
+     </strong>
+     . The seed shares are transmitted in an end-to-end encrypted channel to their final place of storage, while guaranteeing that they are reaching the correct destination (this is where the verifiability of Pedersen Secret Sharing introduced in
+     <a href="https://www.ledger.com/blog/part-1-genesis-of-ledger-recover-self-custody-without-compromise" rel="noreferrer noopener" target="_blank">
+      part 1
+     </a>
+     is useful).
+     <br/>
+     The user’s device authenticates the Backup Providers’ HSMs one by one, and the Backup Providers know they are exchanging with the unique official Ledger device that initiated this specific backup request.
+     <br/>
+     No one besides the user’s device and the Backup Providers’ HSMs ever see the seed shares encrypted by these mutually-authenticated secure channels’ symmetric keys, not even the Orchestrator.
+    </p>
+    <h5 class="wp-block-heading">
+     Securely received… and stored?
+    </h5>
+    <p>
+     In this part, we have introduced several new concepts, some of which are quite technical. Each one of these concepts is required to establish a secure transmission that guarantees the confidentiality and integrity of the exchange. Regardless of the network’s safety,
+     <strong>
+      we can now send our secret shares without fear that they may be tampered with or intercepted
+     </strong>
+     . That’s quite the upgrade!
+    </p>
+    <figure class="wp-block-image size-large">
+     <img alt="" class="wp-image-278945" decoding="async" height="636" loading="lazy" sizes="(max-width: 1024px) 100vw, 1024px" src="https://www.ledger.com/wp-content/uploads/2023/07/recover-diag-backup-sm-1024x636.png" srcset="https://www.ledger.com/wp-content/uploads/2023/07/recover-diag-backup-sm-1024x636.png 1024w, https://www.ledger.com/wp-content/uploads/2023/07/recover-diag-backup-sm-300x186.png 300w, https://www.ledger.com/wp-content/uploads/2023/07/recover-diag-backup-sm-768x477.png 768w, https://www.ledger.com/wp-content/uploads/2023/07/recover-diag-backup-sm-1536x954.png 1536w, https://www.ledger.com/wp-content/uploads/2023/07/recover-diag-backup-sm-2048x1272.png 2048w, https://www.ledger.com/wp-content/uploads/2023/07/recover-diag-backup-sm-443x275.png 443w" width="1024"/>
+    </figure>
+    <p>
+     The whole process is backed by sound cryptography and secure hardware, in the form of your Ledger hardware device and HSMs owned by each backup provider.
+    </p>
+    <p>
+     It is now time to move on to recovering the seed shares! All we have to do is ask the backup providers to send us back the shares that they are storing on their infrastructure…
+    </p>
+    <p>
+     But wait: How exactly are they storing this very sensitive data? It wouldn’t do us any good if we had the most secure communication channels, but our backup providers were just keeping the shares in plaintext, begging to be stolen.
+    </p>
+    <p>
+     So before we talk about recovery – we will get there, I promise! –, we have to take a quick detour in
+     <a href="https://www.ledger.com/blog/part-3-genesis-of-ledger-recover-avoiding-collusion-and-leaks" rel="noreferrer noopener" target="_blank">
+      Part 3
+     </a>
+     to discuss the security of our seed shares at rest. Stay tuned!
+    </p>
+    <p>
+    </p>
+    <blockquote class="wp-block-quote">
+     <p>
+      <a href="https://fr.linkedin.com/in/sandra-rasoamiaramanana" rel="noreferrer noopener" target="_blank">
+       Sandra RASOAMIARAMANANA
+      </a>
+     </p>
+     <cite>
+      Firmware engineer – Cryptography
+     </cite>
+    </blockquote>
+   </div>
+   <footer class="row plain-text footer">
+    <div class="social-icons-footer">
+     <a class="h6 icon-facebook" href="https://www.facebook.com/Ledger/" target="_blank">
+     </a>
+     <a class="h6 icon-insta" href="https://www.instagram.com/ledger/" target="_blank">
+      <i class="fab fa-instagram">
+      </i>
+     </a>
+     <a class="h6 icon-twitter" href="https://twitter.com/Ledger" target="_blank">
+     </a>
+     <a class="h6 icon-linkedin" href="https://www.linkedin.com/company/ledgerhq/" target="_blank">
+     </a>
+     <a class="h6 icon-reddit" href="https://www.reddit.com/r/ledgerwallet/" target="_blank">
+     </a>
+     <a class="h6 icon-tiktok" href="https://www.tiktok.com/@ledger" target="_blank">
+      <i class="fab fa-tiktok">
+      </i>
+     </a>
+    </div>
+   </footer>
+  </article>
+ </body>
+</html>

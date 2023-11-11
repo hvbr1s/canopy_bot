@@ -1,0 +1,649 @@
+<html>
+ <head>
+  <meta content="https://www.ledger.com/academy/topics/blockchain/etherscan-what-is-it-and-how-to-use-it" name="source"/>
+  <meta content="academy" name="source-type"/>
+  <meta content="en" name="locale"/>
+  <meta content="N/A" name="zd-article-id"/>
+  <meta content="etherscan what is it and how to use it" name="title"/>
+  <meta content="public" name="classification"/>
+ </head>
+ <body>
+  <article class="plain-text margin-sm article" id="article">
+   <h1 class="margin-xs">
+    Etherscan: What Is It and How To Use It?
+   </h1>
+   <div class="article-author">
+    <div>
+     By
+     <b>
+      Mohammad Musharraf
+     </b>
+    </div>
+    <div>
+     <img alt="" height="21" src="https://www.ledger.com/wp-content/uploads/2022/09/Mohammad-104x104.jpeg" width="21">
+     </img>
+    </div>
+   </div>
+   <div class="color-grey-500 small-text uppercase margin-xs article-date">
+    Apr 26, 2023
+          |
+    <b>
+     Updated Sep 4, 2023
+    </b>
+   </div>
+   <div class="caption-for-article flexbox flex-start">
+    <div class="flex-none time-to-read">
+     <span class="badge badge-nude">
+      <i class="icon-copy">
+      </i>
+      Read
+     </span>
+     <span>
+      9 min
+     </span>
+    </div>
+    <div class="with-point level level-2">
+     <span>
+      Medium
+     </span>
+    </div>
+   </div>
+   <div class="align-center share-box" id="fixed-share-box">
+    <span>
+     SHARE
+    </span>
+    <div class="heateor_sss_sharing_container heateor_sss_horizontal_sharing" data-heateor-ss-offset="0" data-heateor-sss-href="https://www.ledger.com/academy/topics/blockchain/etherscan-what-is-it-and-how-to-use-it">
+     <div class="heateor_sss_sharing_ul">
+      <a aria-label="Instagram" class="heateor_sss_button_instagram" href="https://www.instagram.com/ledger" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Instagram">
+       <span class="heateor_sss_svg" style="background-color:#53beee;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg height="100%" style="display:block;border-radius:999px;" version="1.1" viewbox="-10 -10 148 148" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+         <g>
+          <g>
+           <path d="M86,112H42c-14.336,0-26-11.663-26-26V42c0-14.337,11.664-26,26-26h44c14.337,0,26,11.663,26,26v44 C112,100.337,100.337,112,86,112z M42,24c-9.925,0-18,8.074-18,18v44c0,9.925,8.075,18,18,18h44c9.926,0,18-8.075,18-18V42 c0-9.926-8.074-18-18-18H42z" fill="#fff">
+           </path>
+          </g>
+          <g>
+           <path d="M64,88c-13.234,0-24-10.767-24-24c0-13.234,10.766-24,24-24s24,10.766,24,24C88,77.233,77.234,88,64,88z M64,48c-8.822,0-16,7.178-16,16s7.178,16,16,16c8.822,0,16-7.178,16-16S72.822,48,64,48z" fill="#fff">
+           </path>
+          </g>
+          <g>
+           <circle cx="89.5" cy="38.5" fill="#fff" r="5.5">
+           </circle>
+          </g>
+         </g>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Facebook" class="heateor_sss_facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.ledger.com%2Facademy%2Ftopics%2Fblockchain%2Fetherscan-what-is-it-and-how-to-use-it" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Facebook">
+       <span class="heateor_sss_svg" style="background-color:#3c589a;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="-5 -5 42 42" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M17.78 27.5V17.008h3.522l.527-4.09h-4.05v-2.61c0-1.182.33-1.99 2.023-1.99h2.166V4.66c-.375-.05-1.66-.16-3.155-.16-3.123 0-5.26 1.905-5.26 5.405v3.016h-3.53v4.09h3.53V27.5h4.223z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Twitter" class="heateor_sss_button_twitter" href="http://twitter.com/intent/tweet?via=ledger&amp;text=Etherscan%3A%20What%20Is%20It%20and%20How%20To%20Use%20It%3F&amp;url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Ftopics%2Fblockchain%2Fetherscan-what-is-it-and-how-to-use-it" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Twitter">
+       <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_twitter" style="background-color:#55acee;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="-4 -4 39 39" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M28 8.557a9.913 9.913 0 0 1-2.828.775 4.93 4.93 0 0 0 2.166-2.725 9.738 9.738 0 0 1-3.13 1.194 4.92 4.92 0 0 0-3.593-1.55 4.924 4.924 0 0 0-4.794 6.049c-4.09-.21-7.72-2.17-10.15-5.15a4.942 4.942 0 0 0-.665 2.477c0 1.71.87 3.214 2.19 4.1a4.968 4.968 0 0 1-2.23-.616v.06c0 2.39 1.7 4.38 3.952 4.83-.414.115-.85.174-1.297.174-.318 0-.626-.03-.928-.086a4.935 4.935 0 0 0 4.6 3.42 9.893 9.893 0 0 1-6.114 2.107c-.398 0-.79-.023-1.175-.068a13.953 13.953 0 0 0 7.55 2.213c9.056 0 14.01-7.507 14.01-14.013 0-.213-.005-.426-.015-.637.96-.695 1.795-1.56 2.455-2.55z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Linkedin" class="heateor_sss_button_linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Ftopics%2Fblockchain%2Fetherscan-what-is-it-and-how-to-use-it" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Linkedin">
+       <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_linkedin" style="background-color:#0077b5;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="0 0 32 32" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M6.227 12.61h4.19v13.48h-4.19V12.61zm2.095-6.7a2.43 2.43 0 0 1 0 4.86c-1.344 0-2.428-1.09-2.428-2.43s1.084-2.43 2.428-2.43m4.72 6.7h4.02v1.84h.058c.56-1.058 1.927-2.176 3.965-2.176 4.238 0 5.02 2.792 5.02 6.42v7.395h-4.183v-6.56c0-1.564-.03-3.574-2.178-3.574-2.18 0-2.514 1.7-2.514 3.46v6.668h-4.187V12.61z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Reddit" class="heateor_sss_button_reddit" href="http://reddit.com/submit?url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Ftopics%2Fblockchain%2Fetherscan-what-is-it-and-how-to-use-it&amp;title=Etherscan%3A%20What%20Is%20It%20and%20How%20To%20Use%20It%3F" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Reddit">
+       <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_reddit" style="background-color:#ff5700;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="-3.5 -3.5 39 39" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M28.543 15.774a2.953 2.953 0 0 0-2.951-2.949 2.882 2.882 0 0 0-1.9.713 14.075 14.075 0 0 0-6.85-2.044l1.38-4.349 3.768.884a2.452 2.452 0 1 0 .24-1.176l-4.274-1a.6.6 0 0 0-.709.4l-1.659 5.224a14.314 14.314 0 0 0-7.316 2.029 2.908 2.908 0 0 0-1.872-.681 2.942 2.942 0 0 0-1.618 5.4 5.109 5.109 0 0 0-.062.765c0 4.158 5.037 7.541 11.229 7.541s11.22-3.383 11.22-7.541a5.2 5.2 0 0 0-.053-.706 2.963 2.963 0 0 0 1.427-2.51zm-18.008 1.88a1.753 1.753 0 0 1 1.73-1.74 1.73 1.73 0 0 1 1.709 1.74 1.709 1.709 0 0 1-1.709 1.711 1.733 1.733 0 0 1-1.73-1.711zm9.565 4.968a5.573 5.573 0 0 1-4.081 1.272h-.032a5.576 5.576 0 0 1-4.087-1.272.6.6 0 0 1 .844-.854 4.5 4.5 0 0 0 3.238.927h.032a4.5 4.5 0 0 0 3.237-.927.6.6 0 1 1 .844.854zm-.331-3.256a1.726 1.726 0 1 1 1.709-1.712 1.717 1.717 0 0 1-1.712 1.712z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+     </div>
+     <div class="heateorSssClear">
+     </div>
+    </div>
+   </div>
+   <div class="wp-block-image">
+    <figure class="aligncenter size-large">
+     <img alt="" class="wp-image-268390" decoding="async" height="432" loading="lazy" sizes="(max-width: 1024px) 100vw, 1024px" src="https://www.ledger.com/wp-content/uploads/2023/04/02_Blockchain_Cover_Orange-1-1024x432.jpg" srcset="https://www.ledger.com/wp-content/uploads/2023/04/02_Blockchain_Cover_Orange-1-1024x432.jpg 1024w, https://www.ledger.com/wp-content/uploads/2023/04/02_Blockchain_Cover_Orange-1-300x127.jpg 300w, https://www.ledger.com/wp-content/uploads/2023/04/02_Blockchain_Cover_Orange-1-768x324.jpg 768w, https://www.ledger.com/wp-content/uploads/2023/04/02_Blockchain_Cover_Orange-1-1536x648.jpg 1536w, https://www.ledger.com/wp-content/uploads/2023/04/02_Blockchain_Cover_Orange-1-490x207.jpg 490w, https://www.ledger.com/wp-content/uploads/2023/04/02_Blockchain_Cover_Orange-1.jpg 1600w" width="1024"/>
+    </figure>
+   </div>
+   <figure class="wp-block-table">
+    <table>
+     <tbody>
+      <tr>
+       <td>
+        KEY TAKEAWAYS:
+       </td>
+      </tr>
+      <tr>
+       <td>
+        — Block explorers allow users to visualize blockchain data and find information like transaction history and wallet balances, much like a search engine allows you to explore internet data.
+        <br/>
+        <br/>
+        — Etherscan is the most popular block explorer on the Ethereum network and is free to use.
+        <br/>
+        <br/>
+        — Using Etherscan, you can find anything from basic information such as token balances and average gas fees to more technical details like smart contract creation and transactions.
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </figure>
+   <p>
+    The skill to
+    <a href="https://www.ledger.com/academy/how-to-read-a-blockchains-transaction-history" rel="noreferrer noopener" target="_blank">
+     read blockchain transactions
+    </a>
+    and data are essential for anyone to go from a beginner to a pro blockchain user. It can help you gain crucial insights into cryptocurrencies, NFTs, and
+    <a href="https://www.ledger.com/academy/what-is-a-dapp" rel="noreferrer noopener" target="_blank">
+     decentralized applications (dApps)
+    </a>
+    .
+   </p>
+   <p>
+    Thankfully, blockchains store all transaction data in a transparent public ledger. However, while all data is readily available, you may find it challenging to access and understand accurate information without the right tools.
+   </p>
+   <p>
+    To help you with that, there exist block explorers. And the most popular block explorer for
+    <a href="https://www.ledger.com/academy/what-is-ethereum" rel="noreferrer noopener" target="_blank">
+     Ethereum
+    </a>
+    — the largest dApp blockchain — is Etherscan. If you understand how Etherscan works, you can navigate the explorers for almost any blockchain.
+   </p>
+   <p>
+    In fact, many on-chain sleuths and blockchain detectives on the Ethereum network use this tool. But what is Etherscan? How does it work? In this article, Ledger Academy explains how you can use it to navigate the Ethereum ecosystem better.
+   </p>
+   <p>
+    Let’s get started.
+   </p>
+   <h2 class="wp-block-heading">
+    What Is Etherscan?
+   </h2>
+   <p>
+    Etherscan is a block explorer and analytics platform that tracks and sorts the Ethereum blockchain’s data into easily navigable information. You can use Etherscan to assess information on a wide range of Ethereum activities such as
+    <a href="https://www.ledger.com/academy/glossary/what-are-erc-20-tokens" rel="noreferrer noopener" target="_blank">
+     ERC-20 token
+    </a>
+    transactions, NFT mints,
+    <a href="https://www.ledger.com/academy/blockchain/what-is-a-smart-contract" rel="noreferrer noopener" target="_blank">
+     smart contract
+    </a>
+    details, wallet balances, and more.
+   </p>
+   <p>
+    And that is still only scratching the surface of what’s possible with Etherscan. Before we go into more detail about what you can do with Etherscan, let’s understand what a block explorer actually means.
+   </p>
+   <h3 class="wp-block-heading">
+    What Is a Block Explorer?
+   </h3>
+   <p>
+    Block explorers help visualize the data related to a blockchain, and we can imagine them as blockchain search engines. Search engines like Google, Bing, or DuckDuckGo keep track of internet data stored across servers worldwide. And they offer a user-friendly interface to help you find any data you need without knowing the technicalities.
+   </p>
+   <p>
+    Similarly, block explorers present blockchain data. They translate technical blockchain data and present it to users via a friendly interface. This makes it easy to sort and filter the data you need. This ability to look into a blockchain’s data is helpful for users and developers in many ways.
+   </p>
+   <p>
+    So how does it achieve this?
+   </p>
+   <h2 class="wp-block-heading">
+    How Does Etherscan Work?
+   </h2>
+   <p>
+    Etherscan block explorer works in three principal parts:
+   </p>
+   <p>
+    1. Retrieving Ethereum data in real-time.
+   </p>
+   <p>
+    2. Maintaining an organized data record.
+   </p>
+   <p>
+    3. Presenting near real-time data to users.
+   </p>
+   <p>
+    Let’s see how these three parts work.
+   </p>
+   <h3 class="wp-block-heading">
+    Retrieving Ethereum data
+   </h3>
+   <p>
+    Retrieving data from Ethereum is the most important part of the equation. And to clarify how Etherscan does this, we must first understand three different things: RPC, nodes, and RPC endpoints.
+   </p>
+   <p>
+    <strong>
+     RPC:
+    </strong>
+    Remote Procedure Call or RPC is a software communication protocol. It allows one software program (the client) to query and retrieve data or send other requests to another software program stored on a different computer.
+   </p>
+   <p>
+    Ethereum uses a specific type of RPC for querying blockchain data called JSON-RPC. Software programs like Etherscan can use JSON-RPC through an application programming interface or API. To explain, using this API Etherscan can receive information from the Ethereum network.
+   </p>
+   <p>
+    <strong>
+     Blockchain nodes:
+    </strong>
+    Blockchains like Ethereum rely on a decentralized network of specialized computers called nodes to store all its data. They act as the blockchain’s server. But it’s not possible for a software program to directly access this data from
+    <a href="https://www.ledger.com/academy/what-is-a-node-and-why-should-i-operate-one" rel="noreferrer noopener" target="_blank">
+     blockchain nodes
+    </a>
+    .
+   </p>
+   <p>
+    <strong>
+     RPC endpoints:
+    </strong>
+    . Put simply, they are blockchain nodes that receive RPC requests. But to explain a little further, RPC endpoints are virtual addresses. When a software client sends a request to access data, or asks it to perform a certain action, it’s this RPC endpoint that will receive the request.
+   </p>
+   <p>
+    <strong>
+     <em>
+      Now, let’s put it back together.
+     </em>
+    </strong>
+   </p>
+   <p>
+    Etherscan, the client, uses
+    <a href="https://ethereum.org/en/developers/docs/apis/json-rpc/" rel="noreferrer noopener" target="_blank">
+     JSON-RPC API
+    </a>
+    to send different queries and requests to this RPC endpoint — an Ethereum node. Then, the node returns the latest data to Etherscan.
+   </p>
+   <p>
+    Given the demand and scale at which Etherscan operates, it uses a range of RPC endpoints to ensure near real-time updates.
+   </p>
+   <h3 class="wp-block-heading">
+    Maintaining an Organized Data Record
+   </h3>
+   <p>
+    Etherscan works in real-time and
+    <s>
+    </s>
+    constantly retrieves data and adds it to its existing record in an organized way. The organization of historical data helps Etherscan respond accurately and almost instantly to users’ requests about almost any Ethereum-related activity.
+   </p>
+   <h3 class="wp-block-heading">
+    Presenting Near Real-Time Data
+   </h3>
+   <p>
+    With a friendly interface, Etherscan lets users search for any desired Ethereum data. Users can use the search bar or navigate to different sections of the website to find what they’re looking for.
+   </p>
+   <h2 class="wp-block-heading">
+    What Is Etherscan Used For?
+   </h2>
+   <p>
+    Etherscan is one of the most comprehensive block explorers across all blockchain networks. We can divide all the insights that the platform shares into three broad categories.
+   </p>
+   <h3 class="wp-block-heading">
+    Exploring Wallet Addresses
+   </h3>
+   <p>
+    You can use Etherscan to explore any and all Ethereum-based wallet addresses. You can look up a wallet address to check the amount of ETH it holds alongside other
+    <a href="https://www.ledger.com/academy/what-are-erc-tokens-and-why-do-we-use-them" rel="noreferrer noopener" target="_blank">
+     ERC-20 tokens
+    </a>
+    and NFTs (
+    <a href="https://www.ledger.com/academy/glossary/erc-721" rel="noreferrer noopener" target="_blank">
+     ERC-721
+    </a>
+    tokens).
+   </p>
+   <p>
+    If you want to dig deeper, you can also click on any transaction ID in the transaction history section. On the individual transaction page, you can see the transaction’s details. This includes ETH spent on gas, the smart contract used, the recipient wallet address, and the transaction time, date, and amount.
+   </p>
+   <p>
+    Etherscan also shows the overall wallet analytics and charts to help you objectively assess a wallet’s activity over time.
+   </p>
+   <h3 class="wp-block-heading">
+    Reading Transaction and Block Details
+   </h3>
+   <p>
+    Beyond exploring personal wallets, you can also analyze the overall network statistics using Etherscan. This includes stats such as
+    <a href="https://www.ledger.com/coin/wallet/ethereum" rel="noreferrer noopener" target="_blank">
+     Ether (ETH)
+    </a>
+    price and market capitalization, average gas price, transaction speed, and network upgrades. Etherscan also presents a comprehensive record of all Ethereum blocks and transactions, network analytics,
+    <a href="https://etherscan.io/charts" rel="noreferrer noopener" target="_blank">
+     charts
+    </a>
+    , stats, and node-related data.
+   </p>
+   <h3 class="wp-block-heading">
+    Reading and Interacting With Smart Contracts
+   </h3>
+   <p>
+    Smart contracts have huge sets of data attached to them. And you can view all of it on Etherscan. For instance, you could search for a smart contract and find the crypto wallet used to publish it on Ethereum. You can also look up the contract code, date, time, and block height of contract deployment, and its total token supply. Furthermore, Etherscan also lists the token holders and their respective shares besides the contract’s transaction history and related wallet details.
+   </p>
+   <p>
+    Besides that, Etherscan has many other tools that allow you to read smart contract data with ease. If you’re considering interacting with Web3, make sure you check out
+    <em>
+     the full Ledger Academy article on
+    </em>
+    <a href="https://www.ledger.com/academy/how-to-read-smart-contract-data" rel="noreferrer noopener" target="_blank">
+     <em>
+      How to Read Smart Contract Data
+     </em>
+    </a>
+    to learn more. But Etherscan doesn’t just allow you to read contracts, it allows you to interact with them without going to the contract’s website too.
+   </p>
+   <p>
+    So before we dive into the details of interacting with smart contracts, let’s explore how people use Etherscan.
+   </p>
+   <h2 class="wp-block-heading">
+    What Are Etherscan’s Use Cases?
+   </h2>
+   <p>
+    With so much data available for users, it’s obvious to wonder, what can you do with it all?
+   </p>
+   <p>
+    Well, the list of Etherscan use cases can be endless, given the immense amount of data. But to give you the gist of what’s possible, let’s check out four basic ways you can put Etherscan to use:
+   </p>
+   <h3 class="wp-block-heading">
+    Mimicking Trades of Expert Traders
+   </h3>
+   <p>
+    Using Etherscan, you can trade based on what crypto experts or “crypto whales”  are doing. To do this, you can track their wallets, create alerts and notifications, and mimic their activities.
+   </p>
+   <h3 class="wp-block-heading">
+    Checking Real-Time Data and Blockchain Events
+   </h3>
+   <p>
+    You can use Etherscan to track token prices, transaction costs, blockchain upgrades, smart contract deployments and even NFT mints.
+   </p>
+   <h3 class="wp-block-heading">
+    Avoiding Scam Contracts and Tokens
+   </h3>
+   <p>
+    Etherscan shows the historical
+    <a href="https://www.ledger.com/academy/how-does-a-blockchain-transaction-work" rel="noreferrer noopener" target="_blank">
+     blockchain transactions
+    </a>
+    related to a smart contract or token. You can analyze the transaction history to identify whether the contract or token has any genuine activity. If not, it’s better not to interact with the contract.
+   </p>
+   <h3 class="wp-block-heading">
+    Tracking Down Crypto Thieves and Criminals
+   </h3>
+   <p>
+    You can use Etherscan to track Ethereum wallets and their transactions. Using this, someone can trace transactions from a hacker’s wallet to identify where they’re sending the stolen assets.
+   </p>
+   <h2 class="wp-block-heading">
+    How To Use Etherscan
+   </h2>
+   <p>
+    There are many ways you can use Etherscan. But to help you get started, let’s check out three detailed step-by-step guides.
+   </p>
+   <h3 class="wp-block-heading">
+    How To Check Wallet Balances and History
+   </h3>
+   <p>
+    Etherscan allows you to check anyone’s wallet balance and transaction history as long as you have their public wallet address. Let’s see how you can do this.
+   </p>
+   <p>
+    <strong>
+     Step 1.
+    </strong>
+    Go to Etherscan.io.
+   </p>
+   <p>
+    <strong>
+     Step 2.
+    </strong>
+    Navigate to the search bar on the homepage, paste the wallet address or ENS domain, and press
+    <em>
+     Enter
+    </em>
+    .
+   </p>
+   <figure class="wp-block-image size-full">
+    <img alt="" class="wp-image-268490" decoding="async" height="104" loading="lazy" sizes="(max-width: 600px) 100vw, 600px" src="https://www.ledger.com/wp-content/uploads/2023/04/Screenshot-2023-04-26-at-10.13.06-2.png" srcset="https://www.ledger.com/wp-content/uploads/2023/04/Screenshot-2023-04-26-at-10.13.06-2.png 600w, https://www.ledger.com/wp-content/uploads/2023/04/Screenshot-2023-04-26-at-10.13.06-2-300x52.png 300w, https://www.ledger.com/wp-content/uploads/2023/04/Screenshot-2023-04-26-at-10.13.06-2-490x85.png 490w" width="600"/>
+   </figure>
+   <p>
+    <strong>
+     Step 3.
+    </strong>
+    On the next page, you will be able to see the ETH balance in the wallet, the total value of all tokens held in it, and a record of all transactions made through the wallet.
+   </p>
+   <figure class="wp-block-image size-full">
+    <img alt="" class="wp-image-268502" decoding="async" height="312" loading="lazy" sizes="(max-width: 602px) 100vw, 602px" src="https://www.ledger.com/wp-content/uploads/2023/04/Screenshot-2023-04-26-at-10.13.11-2.png" srcset="https://www.ledger.com/wp-content/uploads/2023/04/Screenshot-2023-04-26-at-10.13.11-2.png 602w, https://www.ledger.com/wp-content/uploads/2023/04/Screenshot-2023-04-26-at-10.13.11-2-300x155.png 300w, https://www.ledger.com/wp-content/uploads/2023/04/Screenshot-2023-04-26-at-10.13.11-2-490x254.png 490w" width="602"/>
+   </figure>
+   <p>
+    <strong>
+     Step 4.
+    </strong>
+    Click on any of the transaction hash of any of the listed transactions to see the specific details, such as the date and time, gas paid, value transferred, and so on.
+   </p>
+   <figure class="wp-block-image size-full">
+    <img alt="" class="wp-image-268513" decoding="async" height="309" loading="lazy" sizes="(max-width: 601px) 100vw, 601px" src="https://www.ledger.com/wp-content/uploads/2023/04/Screenshot-2023-04-26-at-10.13.13-2.png" srcset="https://www.ledger.com/wp-content/uploads/2023/04/Screenshot-2023-04-26-at-10.13.13-2.png 601w, https://www.ledger.com/wp-content/uploads/2023/04/Screenshot-2023-04-26-at-10.13.13-2-300x154.png 300w, https://www.ledger.com/wp-content/uploads/2023/04/Screenshot-2023-04-26-at-10.13.13-2-490x252.png 490w" width="601"/>
+   </figure>
+   <p>
+    <strong>
+     Step 5.
+    </strong>
+    To get a wallet’s balance on a certain date or block height, you can use
+    <a href="https://etherscan.io/balancecheck-tool" rel="noreferrer noopener" target="_blank">
+     Etherscan’s Balance Checker
+    </a>
+    .
+   </p>
+   <h3 class="wp-block-heading">
+    How To Check Ethereum Gas Prices on Etherscan
+   </h3>
+   <p>
+    Each time you execute a transaction on Ethereum, it will cost you a fee, known as a crypto gas fee. It can fluctuate heavily depending on the number of transactions Ethereum users are sending at any given time.
+   </p>
+   <p>
+    Etherscan lets you check the real-time gas fees to make sure you’re not over or underpaying. Here’s how you can check gas fees on Ethereum:
+   </p>
+   <p>
+    <strong>
+     Step 1.
+    </strong>
+    Go to
+    <a href="https://etherscan.io/gastracker" rel="noreferrer noopener" target="_blank">
+     Gas Tracker
+    </a>
+    .
+   </p>
+   <p>
+    <strong>
+     Step 2.
+    </strong>
+    On this page, find the kind of transaction you’re making and check the corresponding gas price, estimated time for transaction completion, and the total gas fees.
+   </p>
+   <figure class="wp-block-image size-full">
+    <img alt="" class="wp-image-268524" decoding="async" height="464" loading="lazy" sizes="(max-width: 600px) 100vw, 600px" src="https://www.ledger.com/wp-content/uploads/2023/04/Screenshot-2023-04-26-at-10.13.21-2.png" srcset="https://www.ledger.com/wp-content/uploads/2023/04/Screenshot-2023-04-26-at-10.13.21-2.png 600w, https://www.ledger.com/wp-content/uploads/2023/04/Screenshot-2023-04-26-at-10.13.21-2-300x232.png 300w, https://www.ledger.com/wp-content/uploads/2023/04/Screenshot-2023-04-26-at-10.13.21-2-356x275.png 356w" width="600"/>
+   </figure>
+   <p>
+    In this image, you can see the gas fees for
+    <a href="https://support.ledger.com/hc/en-us/articles/4408112281361-Managing-your-NFT-collection-with-OpenSea?docs=true" rel="noreferrer noopener" target="_blank">
+     OpenSea NFT
+    </a>
+    sales,
+    <a href="https://www.ledger.com/academy/series/ledger-how-tos/how-to-swap-crypto-with-ledger" rel="noreferrer noopener" target="_blank">
+     token swaps
+    </a>
+    on
+    <a href="https://www.ledger.com/coin/wallet/uniswap" rel="noreferrer noopener" target="_blank">
+     Uniswap
+    </a>
+    , and
+    <a href="https://www.ledger.com/coin/wallet/tether" rel="noreferrer noopener" target="_blank">
+     USDT
+    </a>
+    transfers.
+   </p>
+   <h3 class="wp-block-heading">
+    How To Interact With a Smart Contract Using Etherscan
+   </h3>
+   <p>
+    The ability to interact with an Ethereum-based smart contract through Etherscan is one of its most interesting features. This means, even if the web front-end of a contract is down, you can conduct transactions with a smart contract through Etherscan, say,
+    <a href="https://www.ledger.com/academy/topics/nfts/mint-nft" rel="noreferrer noopener" target="_blank">
+     minting an NFT
+    </a>
+    or adding liquidity.
+   </p>
+   <p>
+    However, this is not very user-friendly and does require some in-depth knowledge. If you want to learn more, make sure you check out our article on how to read smart contract data.
+   </p>
+   <p>
+    However, if you think you’re ready, here’s how to do it:
+   </p>
+   <p>
+    <strong>
+     Step 1.
+    </strong>
+    Find the contract address that you want to interact with and paste it into the Etherscan search bar. You can also type the name of the dApp to see a dropdown menu with the relevant contracts.
+    <br/>
+    In this example, we’re using a decentralized exchange called
+    <a href="https://etherscan.io/address/0x111111111117dc0aa78b770fa6a738034120c302" rel="noreferrer noopener" target="_blank">
+     1Inch
+    </a>
+    .
+   </p>
+   <figure class="wp-block-image size-full">
+    <img alt="" class="wp-image-268535" decoding="async" height="225" loading="lazy" sizes="(max-width: 600px) 100vw, 600px" src="https://www.ledger.com/wp-content/uploads/2023/04/Screenshot-2023-04-26-at-10.14.10-2.png" srcset="https://www.ledger.com/wp-content/uploads/2023/04/Screenshot-2023-04-26-at-10.14.10-2.png 600w, https://www.ledger.com/wp-content/uploads/2023/04/Screenshot-2023-04-26-at-10.14.10-2-300x113.png 300w, https://www.ledger.com/wp-content/uploads/2023/04/Screenshot-2023-04-26-at-10.14.10-2-490x184.png 490w" width="600"/>
+   </figure>
+   <p>
+    <strong>
+     Step 2.
+    </strong>
+    Open the contract page and go to
+    <em>
+     Write Contract
+    </em>
+    under the
+    <em>
+     Contract
+    </em>
+    section, as shown below.
+   </p>
+   <figure class="wp-block-image size-full">
+    <img alt="" class="wp-image-268546" decoding="async" height="275" loading="lazy" sizes="(max-width: 599px) 100vw, 599px" src="https://www.ledger.com/wp-content/uploads/2023/04/Screenshot-2023-04-26-at-10.14.12-2.png" srcset="https://www.ledger.com/wp-content/uploads/2023/04/Screenshot-2023-04-26-at-10.14.12-2.png 599w, https://www.ledger.com/wp-content/uploads/2023/04/Screenshot-2023-04-26-at-10.14.12-2-300x138.png 300w, https://www.ledger.com/wp-content/uploads/2023/04/Screenshot-2023-04-26-at-10.14.12-2-490x225.png 490w" width="599"/>
+   </figure>
+   <p>
+    <strong>
+     Step 3.
+    </strong>
+    Click on
+    <em>
+     Connect to Web3
+    </em>
+    right below the highlighted section to connect to your web3 wallet. You will be prompted from your wallet to confirm the request.
+   </p>
+   <figure class="wp-block-image size-full">
+    <img alt="" class="wp-image-268557" decoding="async" height="298" loading="lazy" sizes="(max-width: 600px) 100vw, 600px" src="https://www.ledger.com/wp-content/uploads/2023/04/Screenshot-2023-04-26-at-10.14.14-2.png" srcset="https://www.ledger.com/wp-content/uploads/2023/04/Screenshot-2023-04-26-at-10.14.14-2.png 600w, https://www.ledger.com/wp-content/uploads/2023/04/Screenshot-2023-04-26-at-10.14.14-2-300x149.png 300w, https://www.ledger.com/wp-content/uploads/2023/04/Screenshot-2023-04-26-at-10.14.14-2-490x243.png 490w" width="600"/>
+   </figure>
+   <p>
+    Once connected, the red icon will turn green, and you can call any of the range of functions listed below and interact with it.
+   </p>
+   <p>
+    Here, let’s use the first function
+    <em>
+     approve (),
+    </em>
+    which 1Inch essentially uses to request permission from your wallet to spend tokens.
+   </p>
+   <p>
+    <strong>
+     Step 5.
+    </strong>
+    Click on
+    <em>
+     approve ()
+    </em>
+    and enter the
+    <em>
+     spender
+    </em>
+    address and the amount you want the contract to be able to spend on your behalf. Click
+    <em>
+     Write
+    </em>
+    to execute.
+   </p>
+   <figure class="wp-block-image size-full">
+    <img alt="" class="wp-image-268568" decoding="async" height="189" loading="lazy" sizes="(max-width: 602px) 100vw, 602px" src="https://www.ledger.com/wp-content/uploads/2023/04/Screenshot-2023-04-26-at-10.14.16-2.png" srcset="https://www.ledger.com/wp-content/uploads/2023/04/Screenshot-2023-04-26-at-10.14.16-2.png 602w, https://www.ledger.com/wp-content/uploads/2023/04/Screenshot-2023-04-26-at-10.14.16-2-300x94.png 300w, https://www.ledger.com/wp-content/uploads/2023/04/Screenshot-2023-04-26-at-10.14.16-2-490x154.png 490w" width="602"/>
+   </figure>
+   <p>
+    <strong>
+     Step 6.
+    </strong>
+    Your wallet pop-up will once again ask you to approve the transaction. Check the details and confirm to complete the transaction.
+   </p>
+   <h2 class="wp-block-heading">
+    Etherscan FAQ
+   </h2>
+   <h3 class="wp-block-heading">
+    Do Users Need an Account To Use Etherscan?
+   </h3>
+   <p>
+    No, Etherscan is an open and free-to-use platform, and you can access most of its features without creating an account. However, creating a free account on Etherscan gives you four major benefits:
+   </p>
+   <ul>
+    <li>
+     Private notes: Add
+     <a href="https://info.etherscan.com/transaction-private-note/" rel="noreferrer noopener" target="_blank">
+      private notes
+     </a>
+     to anyone’s transactions for easier tracking.
+    </li>
+    <li>
+     API access: Access APIs from Etherscan to build dApps
+    </li>
+    <li>
+     Personalized address watchlist: Create a list of wallets and contracts to track.
+    </li>
+    <li>
+     Alerts and notifications: Set alerts for different on-chain activities and parameters.
+    </li>
+   </ul>
+   <h3 class="wp-block-heading">
+    Can Etherscan Track Bitcoin?
+   </h3>
+   <p>
+    No, Etherscan does not track the Bitcoin network and its transactions. Etherscan is a blockchain explorer that only queries the data of the Ethereum network.
+   </p>
+   <p>
+    To explore the Bitcoin network, you can use a Bitcoin explorer such as
+    <a href="https://www.blockchain.com/explorer/blocks/btc" rel="noreferrer noopener" target="_blank">
+     Blockchain.com
+    </a>
+    ,
+    <a href="https://blockstream.info/" rel="noreferrer noopener" target="_blank">
+     Blockstream.info
+    </a>
+    , or
+    <a href="https://bitcoinexplorer.org/" rel="noreferrer noopener" target="_blank">
+     Bitcoinexplorer.org
+    </a>
+    .
+   </p>
+   <h3 class="wp-block-heading">
+    Is It Free To Use?
+   </h3>
+   <p>
+    Yes, Etherscan is a free-to-use platform. However, when you interact with a smart contract on Ethereum through Etherscan, you will still have to pay a gas fee.
+   </p>
+   <h2 class="wp-block-heading">
+    Etherscan: Using Transparency for Better Security
+   </h2>
+   <p>
+    Etherscan is now one of the most important tools in the Ethereum ecosystem. It allows you to do your own research (
+    <a href="https://www.ledger.com/academy/do-your-own-research-how-to-investigate-crypto-projects" rel="noreferrer noopener" target="_blank">
+     DYOR
+    </a>
+    ) and also helps you stay safe by offering transparency into different contracts and tokens.
+   </p>
+   <p>
+    While Etherscan helps with research and security, there’s nothing as safe as storing your crypto assets in a hardware wallet like any Ledger device.
+   </p>
+  </article>
+ </body>
+</html>

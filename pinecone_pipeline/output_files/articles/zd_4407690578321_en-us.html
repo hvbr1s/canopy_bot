@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/4407690578321-Solving-Error-0x6a83-or-0x6811-"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="4407690578321"/><meta name="title" content="Solving Error 0x6a83 or 0x6811 "/><meta name="classification" content="public"/></head>                            <body><h1>Solving Error 0x6a83 or 0x6811 </h1>
+<p>This article describes how to solve errors <span>0x6a83 or 0x6811 affecting Ethereum-related EVM and Bitcoin applications. <br></span></p>
+<h2>What is error 0x6a83 and <span>0x6811</span>?</h2>
+<p><span>These errors are displayed when the app you’re trying to install has a prerequisite. <strong>Bitcoin and Ethereum are prerequisite apps for many other apps in Ledger Live</strong>. Removing your Bitcoin or Ethereum app will remove any apps that depend on them. Please keep in mind, apps have no effect on your funds.</span></p>
+<p><span>The root cause is a <strong>dependency</strong> error. A dependency error happens when one app (the dependent app) will not install or update unless another app (the <em>parent</em> app) is already installed and updated to the latest version.<br></span></p>
+<p>For example, error 0x6a83/0x6811 has recently been affecting Songbird (SBG) and Ethereum (ETH) users. You can see an example here where <strong>a user ran into the 0x6a83 error while attempting to update the Ethereum (ETH) app to the latest version.</strong></p>
+<p><span><img src="https://support.ledger.com/hc/article_attachments/4407703864337/Schermafbeelding_2021-08-01_om_00.03.07.png" alt="Schermafbeelding_2021-08-01_om_00.03.07.png"></span></p>
+<h2>How to solve errors 0x6a83 and <span>0x6811</span>
+</h2>
+<ol class="list-colored">
+<li>Open Ledger Live.</li>
+<li>Go to <strong>Settings</strong>, select the <strong>Experimental features</strong> tab and <strong>activate Developer mode </strong>by using the toggle button.</li>
+<li>Navigate to the <strong>My Ledger</strong> tab and connect your Ledger device.</li>
+<li>Find the app in the <strong>App installed</strong> menu and click the <strong>bin icon</strong> to uninstall the app.</li>
+<li>Reconnect your Ledger device to <strong>My Ledger</strong>, find the <strong>Ethereum app</strong> in the App installed section, and update the app to the latest version.<br>The Ethereum app updates.</li>
+<li>Go back to <strong>Settings</strong>, select the <strong>Experimental features</strong> tab and <strong>turn off Developer mode </strong>by using the toggle button.</li>
+<li>Navigate back to the <strong>My Ledger</strong> tab and connect your Ledger device.</li>
+<li>Find the app you originally uninstalled and <strong>reinstall</strong> it.</li>
+</ol></body></html>

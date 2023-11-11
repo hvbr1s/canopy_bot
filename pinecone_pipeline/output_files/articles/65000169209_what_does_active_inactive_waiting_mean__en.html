@@ -1,0 +1,329 @@
+<html>
+ <head>
+  <meta content="https://support.polkadot.network/support/solutions/articles/65000169209-what-does-active-inactive-waiting-mean-" name="source"/>
+  <meta content="academy" name="source-type"/>
+  <meta content="en" name="locale"/>
+  <meta content="N/A" name="zd-article-id"/>
+  <meta content="65000169209 what does active inactive waiting mean " name="title"/>
+  <meta content="public" name="classification"/>
+ </head>
+ <body>
+  <article class="article-body" id="article-body" rel="image-enlarge">
+   <p data-identifyelement="498">
+    <span data-identifyelement="499" dir="ltr" style="font-size: 16px;">
+     <em data-identifyelement="496" dir="ltr">
+      <span data-identifyelement="487" style="font-family: Helvetica Neue;">
+       A validator's status can be divided into three categories: active, inactive, and waiting. This article describes each of these statuses and what a nominator can do to improve the chances of getting staking rewards. It uses the Polkadot-JS UI and the
+       <a data-identifyelement="497" dir="ltr" href="https://staking.polkadot.network/#/overview" rel="noreferrer" style='font-family: "Helvetica Neue";' target="_blank">
+        Staking Dashboard
+       </a>
+      </span>
+     </em>
+    </span>
+    <span data-identifyelement="488" style="font-family: Helvetica Neue;">
+     <span data-identifyelement="511" style='font-size: 16px; font-family: "Helvetica Neue";'>
+      <em data-identifyelement="496" dir="ltr" style='font-family: "Helvetica Neue";'>
+       . You can check our
+       <a data-identifyelement="498" dir="ltr" href="https://support.polkadot.network/en/support/solutions/articles/65000182104" rel="noreferrer" style='font-family: "Helvetica Neue";' target="_blank">
+        extensive article list
+       </a>
+       to help you get started with the dashboard.
+      </em>
+     </span>
+    </span>
+   </p>
+   <p data-identifyelement="498" style='font-size: 16px; font-family: "Helvetica Neue";'>
+    <span data-identifyelement="489" style="font-family: Helvetica Neue;">
+     <span data-identifyelement="512" style='font-size: 16px; font-family: "Helvetica Neue";'>
+      <a data-identifyelement="499" href="https://polkadot.network/staking/" rel="noreferrer" style='font-family: "Helvetica Neue";' target="_blank">
+      </a>
+     </span>
+    </span>
+   </p>
+   <hr data-identifyelement="500" style='font-size: 16px; font-family: "Helvetica Neue";'/>
+   <h4 class="fd-toc" data-identifyelement="513" style='font-family: "Helvetica Neue";'>
+    <span data-identifyelement="490" style="font-family: Helvetica Neue;">
+     <strong data-identifyelement="514" style='font-family: "Helvetica Neue";'>
+      <span data-identifyelement="515" dir="ltr" style='font-size: 16px; font-family: "Helvetica Neue";'>
+       TABLE OF CONTENTS
+      </span>
+     </strong>
+    </span>
+   </h4>
+   <ul data-identifyelement="516" style='font-family: "Helvetica Neue";'>
+    <li data-identifyelement="517" style='font-size: 16px; font-family: "Helvetica Neue";'>
+     <span data-identifyelement="491" style="font-family: Helvetica Neue;">
+      <span data-identifyelement="518" style='font-size: 16px; font-family: "Helvetica Neue";'>
+       <a data-identifyelement="519" href="#%E2%80%8B%E2%80%8BValidator-Status" style='font-family: "Helvetica Neue";'>
+        Validator Status
+       </a>
+      </span>
+     </span>
+    </li>
+    <li data-identifyelement="520" style='font-size: 16px; font-family: "Helvetica Neue";'>
+     <span data-identifyelement="492" style="font-family: Helvetica Neue;">
+      <span data-identifyelement="521" style='font-size: 16px; font-family: "Helvetica Neue";'>
+       <a data-identifyelement="522" href="#Active" style='font-family: "Helvetica Neue";'>
+        Active
+       </a>
+      </span>
+     </span>
+    </li>
+    <li data-identifyelement="523" style='font-size: 16px; font-family: "Helvetica Neue";'>
+     <span data-identifyelement="493" style="font-family: Helvetica Neue;">
+      <span data-identifyelement="524" style='font-size: 16px; font-family: "Helvetica Neue";'>
+       <a data-identifyelement="525" dir="ltr" href="#Inactive%C2%A0" style='font-family: "Helvetica Neue";'>
+        Inactive
+       </a>
+      </span>
+     </span>
+    </li>
+    <li data-identifyelement="526" dir="ltr" style='font-size: 16px; font-family: "Helvetica Neue";'>
+     <span data-identifyelement="494" style="font-family: Helvetica Neue;">
+      <a data-identifyelement="527" dir="ltr" href="#Waiting" style='font-family: "Helvetica Neue";'>
+       Waiting
+      </a>
+      <a data-identifyelement="528" dir="ltr" href="#Waiting" style='font-family: "Helvetica Neue";'>
+      </a>
+     </span>
+    </li>
+   </ul>
+   <hr data-identifyelement="495"/>
+   <h3 data-identifyelement="498" dir="ltr" id="​​Validator-Status" style='font-family: "Helvetica Neue";'>
+    <span data-identifyelement="496" style="font-family: Helvetica Neue;">
+     <span data-identifyelement="497" dir="ltr" style='font-size: 24px; font-family: "Helvetica Neue";'>
+      Validator Status
+     </span>
+    </span>
+   </h3>
+   <p data-identifyelement="498">
+    <br data-identifyelement="499"/>
+   </p>
+   <p data-identifyelement="477" style='font-family: "Helvetica Neue"; font-size: 16px;'>
+    <span data-identifyelement="500" style="font-family: Helvetica Neue;">
+     <span data-identifyelement="532" style='font-size: 16px; font-family: "Helvetica Neue";'>
+      When you nominate a set of validators (up to 16 on Polkadot or 24 on Kusama), the validator election algorithm will rotate your stake among validators on a per-era basis. In other words, you may have a different
+      <em data-identifyelement="479" style='font-family: "Helvetica Neue";'>
+       active validator
+      </em>
+      amongst your selected validators for each
+      <a data-identifyelement="480" href="https://support.polkadot.network/support/solutions/articles/65000168050-what-is-an-era-" rel="noreferrer" style='font-family: "Helvetica Neue";' target="_blank">
+       era
+      </a>
+      .
+     </span>
+    </span>
+   </p>
+   <p data-identifyelement="477" style='font-family: "Helvetica Neue"; font-size: 16px;'>
+    <span data-identifyelement="501" style="font-family: Helvetica Neue;">
+     <br data-identifyelement="533" style='font-family: "Helvetica Neue";'/>
+    </span>
+   </p>
+   <pre class="fd-callout fd-callout--info" data-identifyelement="534" dir="ltr" style='font-family: "Helvetica Neue";'><span data-identifyelement="502" style="font-family: Terminal, monospace;"><span data-identifyelement="535" dir="ltr" style="font-size: 12pt; color: rgb(0, 0, 0); font-weight: 700; font-family: Terminal, monospace;">ℹ️</span><span data-identifyelement="536" dir="ltr" style="font-size: 16px; color: rgb(0, 0, 0); font-weight: 700; font-family: Terminal, monospace;"> </span><span data-identifyelement="537" dir="ltr" style="font-size: 16px;"><strong data-identifyelement="538" style="font-family: Terminal, monospace;">INFO</strong></span></span><br data-identifyelement="503"/><br data-identifyelement="504"/><span data-identifyelement="505" style="font-family: Terminal, monospace;"><span data-identifyelement="537" dir="ltr" style="font-size: 16px;">You cannot choose which specific validator you will be actively nominating in a given era unless you are nominating just one validator.</span></span></pre>
+   <p data-identifyelement="539" style='font-family: "Helvetica Neue";'>
+    <span data-identifyelement="506" style="font-family: Helvetica Neue;">
+     <br data-identifyelement="540" style='font-family: "Helvetica Neue";'/>
+    </span>
+   </p>
+   <hr data-identifyelement="513" style='font-family: "Helvetica Neue"; font-size: 16px;'/>
+   <h3 data-identifyelement="504" id="Active" style='font-family: "Helvetica Neue";'>
+    <span data-identifyelement="507" dir="ltr" style='font-family: "Helvetica Neue"; font-size: 24px;'>
+     Active
+    </span>
+   </h3>
+   <p data-identifyelement="490" style='font-family: "Helvetica Neue"; font-size: 16px;'>
+    <span data-identifyelement="508" style="font-family: Helvetica Neue;">
+     <span data-identifyelement="541" style='font-size: 16px; font-family: "Helvetica Neue";'>
+      <br data-identifyelement="491" style='font-family: "Helvetica Neue";'/>
+     </span>
+    </span>
+   </p>
+   <p data-identifyelement="492" style='font-family: "Helvetica Neue"; font-size: 16px;'>
+    <span data-identifyelement="509" style="font-family: Helvetica Neue;">
+     <span data-identifyelement="542" style='font-size: 16px; font-family: "Helvetica Neue";'>
+      This is the validator you are actively nominating for the current era. Unless you are staking with a considerable amount, you will be nominating a
+      <strong data-identifyelement="517" dir="ltr" style='font-family: "Helvetica Neue";'>
+       single
+      </strong>
+      validator in each era with your
+      <strong data-identifyelement="518" dir="ltr" style='font-family: "Helvetica Neue";'>
+       full stake
+      </strong>
+      . This validator will pay rewards to you once the payout has been activated at the end of that era.
+     </span>
+    </span>
+   </p>
+   <hr data-identifyelement="519" style='font-family: "Helvetica Neue"; font-size: 16px;'/>
+   <h3 data-identifyelement="504" id="Inactive " style='font-family: "Helvetica Neue";'>
+    <span data-identifyelement="510" style='font-family: "Helvetica Neue"; font-size: 24px;'>
+     Inactive
+     <span data-identifyelement="543" style='font-family: "Helvetica Neue";'>
+     </span>
+    </span>
+   </h3>
+   <p data-identifyelement="498" style='font-family: "Helvetica Neue"; font-size: 16px;'>
+    <span data-identifyelement="511" style="font-family: Helvetica Neue;">
+     <span data-identifyelement="544" style='font-size: 16px; font-family: "Helvetica Neue";'>
+      <br data-identifyelement="499" style='font-family: "Helvetica Neue";'/>
+     </span>
+    </span>
+   </p>
+   <p data-identifyelement="500" style='font-family: "Helvetica Neue"; font-size: 16px;'>
+    <span data-identifyelement="512" style="font-family: Helvetica Neue;">
+     <span data-identifyelement="545" style='font-size: 16px; font-family: "Helvetica Neue";'>
+      These validators are in the active validator set and your list of nominations. However, you are not actively nominating them for this era (they are not active for you), and they will not give rewards to you for this era.
+     </span>
+    </span>
+   </p>
+   <p data-identifyelement="500" style='font-family: "Helvetica Neue"; font-size: 16px;'>
+    <span data-identifyelement="513" style="font-family: Helvetica Neue;">
+     <span data-identifyelement="546" style='font-size: 16px; font-family: "Helvetica Neue";'>
+      <br data-identifyelement="524" style='font-family: "Helvetica Neue";'/>
+     </span>
+    </span>
+   </p>
+   <ul data-identifyelement="525" style='font-family: "Helvetica Neue"; font-size: 16px;'>
+    <li data-identifyelement="500" style='font-family: "Helvetica Neue"; font-size: 16px;'>
+     <span data-identifyelement="514" style="font-family: Helvetica Neue;">
+      <span data-identifyelement="547" style='font-size: 16px; font-family: "Helvetica Neue";'>
+       When you first nominate validators, all of them will be "waiting" in the current era. That's normal. Your nominations will take effect in the next era. You will only see active validators (and begin earning staking rewards)
+       <strong data-identifyelement="527" style='font-family: "Helvetica Neue";'>
+        after two eras
+       </strong>
+       , so on the third day earliest.
+      </span>
+     </span>
+    </li>
+    <li data-identifyelement="500" style='font-family: "Helvetica Neue"; font-size: 16px;'>
+     <span data-identifyelement="515" style="font-size: 16px;">
+      <span data-identifyelement="516" style="font-family: Helvetica Neue;">
+       <span data-identifyelement="548" style='font-family: "Helvetica Neue";'>
+        <strong data-identifyelement="480" dir="ltr" style='font-family: "Helvetica Neue";'>
+         If you see only inactive validators for days
+        </strong>
+        and never an active one, you may have nominated too few validators (you can nominate up to 16 on Polkadot).
+       </span>
+      </span>
+     </span>
+    </li>
+    <li data-identifyelement="500" style='font-family: "Helvetica Neue"; font-size: 16px;'>
+     <span data-identifyelement="517" style="font-size: 16px;">
+      <span data-identifyelement="518" style="font-family: Helvetica Neue;">
+       <span data-identifyelement="549" dir="ltr" style='font-family: "Helvetica Neue";'>
+        You won't see any "active" validators if you're nominating with any less than the minimum. Instead, you will only see "inactive" and "waiting" and won't receive any rewards. The minimum nomination amount needed to receive rewards is dynamic and can be found on the
+        <a data-identifyelement="519" href="https://staking.polkadot.network/#/nominate">
+         Nominate
+        </a>
+        tab of the
+        <a data-identifyelement="531" href="https://staking.polkadot.network/#/nominate" rel="noreferrer" style='font-family: "Helvetica Neue";' target="_blank">
+         Staking Dashboard
+        </a>
+        .
+       </span>
+      </span>
+     </span>
+    </li>
+   </ul>
+   <p data-identifyelement="550" style='font-family: "Helvetica Neue";'>
+    <span data-identifyelement="520" style="font-family: Helvetica Neue;">
+     <br data-identifyelement="551" style='font-family: "Helvetica Neue";'/>
+    </span>
+   </p>
+   <p data-identifyelement="532" style='font-size: 16px; font-family: "Helvetica Neue";'>
+    <span data-identifyelement="521" style="font-family: Helvetica Neue;">
+     <span data-identifyelement="552" style='font-size: 16px; font-family: "Helvetica Neue";'>
+      <img class="fr-fil fr-dib" data-attachment="[object Object]" data-id="65016537240" data-identifyelement="522" src="https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/65016537240/original/jPwPhf6sC9x9R_6KDVsULAigR3e8TZ_dog.png?1678800464" style="width: auto;"/>
+     </span>
+    </span>
+   </p>
+   <p data-identifyelement="532" style='font-size: 16px; font-family: "Helvetica Neue";'>
+    <span data-identifyelement="523" style="font-family: Helvetica Neue;">
+     <br data-identifyelement="555" style='font-family: "Helvetica Neue";'/>
+    </span>
+   </p>
+   <p data-identifyelement="532" dir="ltr" style='font-size: 16px; font-family: "Helvetica Neue";'>
+    <span data-identifyelement="524" style="font-family: Helvetica Neue;">
+     If you are not receiving staking rewards, you can check the possible causes in the article "
+     <a data-identifyelement="557" href="https://support.polkadot.network/support/solutions/articles/65000170805" style='font-family: "Helvetica Neue";'>
+      Why am I not Getting Staking Rewards?
+     </a>
+     ".
+    </span>
+   </p>
+   <hr data-identifyelement="535" style='font-family: "Helvetica Neue"; font-size: 16px;'/>
+   <h3 data-identifyelement="504" dir="ltr" id="Waiting" style='font-family: "Helvetica Neue";'>
+    <span data-identifyelement="525" dir="ltr" style='font-family: "Helvetica Neue"; font-size: 24px;'>
+     Waiting
+    </span>
+   </h3>
+   <p data-identifyelement="504" dir="ltr" style='font-family: "Helvetica Neue";'>
+    <span data-identifyelement="527" style="font-family: Helvetica Neue;">
+     <span data-identifyelement="559" dir="ltr" style='font-size: 16px; font-family: "Helvetica Neue";'>
+      These validators did not get into the active validator set in this era. They may get into the active validator set in the future.
+     </span>
+    </span>
+   </p>
+   <p data-identifyelement="504" dir="ltr" style='font-family: "Helvetica Neue";'>
+    <span data-identifyelement="529" style="font-family: Helvetica Neue;">
+     <span data-identifyelement="561" dir="ltr" style='font-size: 16px; font-family: "Helvetica Neue";'>
+      Note that it does not hurt your rewards to nominate waiting validators as long as you have nominated at least one validator in the active set. Your stake will support one of the validators in the active validator set.
+     </span>
+    </span>
+   </p>
+   <hr data-identifyelement="530" style='font-family: "Helvetica Neue";'/>
+   <p data-identifyelement="518" style='font-family: "Helvetica Neue"; font-size: 16px;'>
+    <span data-identifyelement="531" style="font-family: Helvetica Neue;">
+     <span data-identifyelement="566" dir="ltr" style='font-size: 16px; font-family: "Helvetica Neue";'>
+      If you are more of a visual learner, we have the video for you! Go to the mark
+      <a data-identifyelement="567" href="https://www.youtube.com/watch?v=58pIe8tt2o4&amp;t=619s" style='font-family: "Helvetica Neue";'>
+       10:19
+      </a>
+      on the video below to let Filippo explain what Active / Inactive / Waiting nominations are:
+     </span>
+    </span>
+   </p>
+   <p data-identifyelement="518" style='font-family: "Helvetica Neue"; font-size: 16px;'>
+    <span data-identifyelement="532" style="font-family: Helvetica Neue;">
+     <br data-identifyelement="533" style='font-family: "Helvetica Neue";'/>
+    </span>
+   </p>
+   <p data-identifyelement="518" style='font-family: "Helvetica Neue"; font-size: 16px;'>
+    <span data-identifyelement="534" style="font-family: Helvetica Neue;">
+     <span data-identifyelement="568" dir="ltr" style='font-size: 16px; font-family: "Helvetica Neue";'>
+      <span class="fr-video fr-deletable fr-fvc fr-dvb fr-draggable" data-identifyelement="569" style='font-family: "Helvetica Neue";'>
+       <iframe allowfullscreen="" class="fr-draggable" data-identifyelement="570" frameborder="0" height="360" sandbox="allow-scripts allow-forms allow-same-origin allow-presentation" src="https://www.youtube.com/embed/58pIe8tt2o4?&amp;wmode=opaque" style='font-family: "Helvetica Neue";' width="640">
+       </iframe>
+      </span>
+     </span>
+     <br data-identifyelement="571" style='font-family: "Helvetica Neue";'/>
+    </span>
+   </p>
+   <hr data-identifyelement="572" style='font-family: "Helvetica Neue";'/>
+   <p data-identifyelement="573" style='font-family: "Helvetica Neue";'>
+    <span data-identifyelement="535" style="font-family: Helvetica Neue;">
+     <br data-identifyelement="574" style='font-family: "Helvetica Neue";'/>
+    </span>
+   </p>
+   <p data-identifyelement="575" style='font-family: "Helvetica Neue";'>
+    <span data-identifyelement="536" style="font-family: Helvetica Neue;">
+     <br data-identifyelement="576" style='font-family: "Helvetica Neue";'/>
+    </span>
+   </p>
+   <p data-identifyelement="577" style='font-family: "Helvetica Neue";'>
+    <span data-identifyelement="537" style="font-family: Helvetica Neue;">
+     <br data-identifyelement="578" style='font-family: "Helvetica Neue";'/>
+    </span>
+   </p>
+   <p data-identifyelement="523">
+    <span data-identifyelement="538" style="font-family: Helvetica Neue;">
+     <span data-identifyelement="579" style="font-size: 16px;">
+      <br data-identifyelement="524"/>
+     </span>
+    </span>
+   </p>
+   <p data-identifyelement="539">
+    <br data-identifyelement="540"/>
+   </p>
+  </article>
+ </body>
+</html>

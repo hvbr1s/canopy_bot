@@ -1,0 +1,157 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/360006352934-Monero-XMR-"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="360006352934"/><meta name="title" content="Monero (XMR)"/><meta name="classification" content="public"/></head>                            <body><h1>Monero (XMR)</h1>
+<p>This article describes how to create your<strong> first Monero (XMR) account</strong> with your <strong>Ledger device</strong> and the <a href="https://web.getmonero.org/downloads/" target="_blank" rel="noopener">Monero GUI</a>. <br><em class="fa fa-info-circle"> </em>The Ledger Monero app is developed in collaboration with the Monero community. The Monero GUI is developed and supported by the <a href="https://getmonero.org">Monero community</a>.</p>
+<div class="callout callout--primary">
+<h4 class="callout__title"><strong>Can I create a Monero account with Ledger Live?</strong></h4>
+<ul>
+<li>
+<strong>No</strong>, unfortunately, Ledger Live does not support creating Monero accounts for the moment.</li>
+<li>Instead, you can<strong> safely</strong> create a Ledger Monero account with your <strong>Ledger device</strong> and the <strong>Monero GUI</strong>. More on this <strong>below</strong>.</li>
+</ul>
+</div>
+<h2>Before you start</h2>
+<ul class="list-bullet">
+<li>
+<a href="https://support.ledger.com/hc/en-us/articles/4404389503889" target="_blank" rel="noopener">Set up Ledger Live</a> with your device.</li>
+<li>Update the firmware<span> </span>of your Ledger <a href="https://support.ledger.com/hc/en-us/articles/360002731113" target="_blank" rel="noopener">Nano S</a> / <a href="https://support.ledger.com/hc/en-us/articles/4445777839901?docs=true" target="_blank" rel="noopener">Nano S Plus</a> /<span> </span><a href="https://support.ledger.com/hc/en-us/articles/360013349800" target="_blank" rel="noopener">Nano X</a>.</li>
+</ul>
+<div class="callout callout--primary">
+<h4 class="callout__title">
+<em class="fa fa-info-circle"> </em>Monero privacy</h4>
+<p>Monero shields transaction addresses and amounts using a pair of private keys:</p>
+<ul>
+<li>The private<strong> view key</strong> can only be used to <strong>view the transactions</strong> of the account it belongs to.</li>
+<li>The private<strong> spend key</strong> is required to <strong>spend the XMR</strong> in the account it belongs to. This key remains on your Ledger device.</li>
+</ul>
+</div>
+<h2>Step by step</h2>
+<div class="accordion accordion--default">
+<div class="accordion__item">
+<div class="accordion__item-title">Install the Monero app</div>
+<div class="accordion__item-content">
+<ol>
+<li>Open <strong>My Ledger </strong>in Ledger Live.</li>
+<li>Connect and unlock your Ledger device.</li>
+<li>If asked, allow My Ledger on your device.</li>
+<li>Find <strong>Monero</strong> in the app catalog.</li>
+<li>Click the <strong>Install</strong> button of the app.
+<ul>
+<li>An installation window appears.</li>
+<li>Your device will display <strong>Processing...</strong>
+</li>
+<li>The app installation is confirmed.</li>
+</ul>
+</li>
+</ol>
+<p>Make sure you close Ledger Live once the app is successfully installed on your device.</p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title">Download and install the Monero GUI</div>
+<div class="accordion__item-content">
+<ol class="list-numbered">
+<li>Download the <a href="https://getmonero.org/downloads">Monero GUI for your platform</a>.</li>
+<li>Extract the package you've just downloaded.</li>
+<li>Open the <strong>monero-gui-v0.xx</strong> folder.</li>
+<li>(optional) Move the <strong>monero-wallet-gui</strong> file to your applications folder.</li>
+<li>Launch the Monero wallet by opening <strong>monero-wallet-gui</strong>.<br>
+<p><em class="fa fa-info-circle">  </em> On Windows: Click <strong>Allow access</strong> so the firewall does not block the Monero wallet.</p>
+</li>
+<li>Choose your language.</li>
+</ol>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title">Set up with Ledger device</div>
+<div class="accordion__item-content">
+<ol class="list-numbered">
+<li>Unlock your Ledger device and open the Monero app.</li>
+<li>
+<strong>Select a mode:</strong>
+<ul>
+<li><span><strong>Simple mode: </strong>The GUI wallet will automatically connect to a remote node and have a simple interface. This mode excludes the need for the blockchain sync so you can immediately use the wallet. However, it weakens your privacy as the remote node will be able to see your IP address and associate your transactions with your IP address. Using a remote node does not contribute to the strength and decentralization of the network.</span></li>
+<li>
+<strong>Simple mode</strong><span><strong> (bootstrap):</strong> The wallet automatically connects to a remote node whilst syncing your own local node in the background. The wallet will switch to your own node once it is fully synced. This allows you to immediately use the wallet while still eventually using your own node.  (which is optimal for privacy and contributes to the strength and decentralization of the network). Additionally, this mode has a simple interface as well. </span><strong>This mode is the default and is thus recommended by the developers for new users.</strong>
+</li>
+<li>
+<strong>Advanced</strong> <strong>mode: </strong>Download and validate the full blockchain. This offers the optimal level of privacy and contributes to the strength of the Monero network. This requires at least 90 GB of disk space, and initial synchronization may take several days. You won't be able to properly use your wallet until the initial blockchain sync has been completed. </li>
+</ul>
+</li>
+<li>Click <strong>Create a new wallet from hardware</strong> in the Monero wallet.</li>
+<li>Enter a wallet name, make sure <strong>Create a new wallet from device</strong> is selected and choose <strong>Ledger</strong> in the <strong>Choose your hardware device</strong> dropdown </li>
+<li>
+<strong>On your Ledger device, choose whether to export the private view key to your computer:</strong>
+<ul>
+<li>
+<strong>Approving view key export</strong> enables your computer to identify your transactions. However, if your computer is compromised, your transaction privacy might be at risk.</li>
+<li>
+<strong>Rejecting view key export</strong> optimizes privacy protection since the view key remains secure on your Ledger device. However, identifying your transactions will be slower.</li>
+</ul>
+<p><em class="fa fa-info-circle">  </em>You may have to press the device button twice, then wait for your addresses to be generated.</p>
+</li>
+<li>Enter and confirm an optional password. This password is not needed to recover the Ledger Monero wallet. Continue to the next page.</li>
+<li>If you've selected Advanced mode, you can now configure your (remote) node settings. On the last page, you can review your configuration summary before you open your wallet.</li>
+</ol>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title">Receive Monero</div>
+<div class="accordion__item-content">
+<p>Unlock your Ledger device and open the Monero app before starting the Monero wallet.</p>
+<ol>
+<li>Open the <strong>Receive</strong> tab. Here you'll find your primary address and generated subaddresses.</li>
+<li>Select your primary address for an optimal level of security.</li>
+<li>
+<strong>Choose how to receive:</strong>
+<ul>
+<li>
+<strong>Share your address</strong>: Click the clipboard icon to copy the address. Then share it with the sender, while verifying that the pasted address matches the one that's scrolling on your device.</li>
+<li>
+<strong>Provide a payment request:</strong> In the <strong>Advanced options</strong>, enter an amount and optionally <strong>enable tracking</strong> of the payment request. Right-click the payment request QR code to save and share it.</li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title">Send Monero</div>
+<div class="accordion__item-content">
+<p>Unlock your Ledger device and open the Monero app before starting the Monero wallet.</p>
+<ol>
+<li>Open the <strong>Send</strong> tab.</li>
+<li>Enter the amount to send and choose a transaction priority. A higher priority costs a higher network fee.</li>
+<li>Enter the address to send to. The optional payment ID may be required if sending to an exchange.</li>
+<li>Enter an optional description, only visible to you.</li>
+<li>Click <strong>Send</strong>. Wait while the transaction is created and sent to your Ledger device for confirmation.</li>
+<li>Verify all transaction details shown on your device:
+<ul>
+<li>Approve the fee displayed on your device by validating <strong>Accept fee</strong>.<strong> </strong>
+</li>
+<li>Verify the <strong>Amount</strong> and <strong>Destination</strong> address by pressing the right button multiple times. If everything is correct, confirm the transaction by validating <strong>Accept TX</strong>. Validate <strong>Reject TX </strong>to cancel.</li>
+</ul>
+</li>
+<li>Finally, review the transaction summary on the Monero wallet and click <strong>OK</strong> to send it.</li>
+</ol>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title">Seed recovery (advanced users)</div>
+<div class="accordion__item-content">
+<p>The 24-word recovery phrase of your Ledger device is a backup of your private keys, including those for Monero. You can restore your 24-word recovery phrase on any Ledger hardware wallet, install the Monero app and manage your coins.</p>
+<p>In case you need emergency access to your Monero without having access to a hardware wallet, you can restore your wallet as a Monero software wallet with 25 recovery words following the Electrum seed format. <span>Please find instructions to </span><span>convert your 24-word recovery seed to a 25-word Electrum</span><span> recovery seed</span><strong><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"> </span><a style="background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;" href="https://github.com/LedgerHQ/ledger-app-monero/tree/master/tools/python">here</a><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">.</span></strong></p>
+<h2>Next steps</h2>
+<ul>
+<li>
+<strong>Buy</strong> XMR through exchange services. Learn more <a href="https://www.ledger.com/buy/monero" target="_blank" rel="noopener">here</a>.</li>
+<li>
+<strong>Learn</strong> more about XMR and the Monero network <a href="https://www.ledger.com/coin/wallet/monero" target="_blank" rel="noopener">here</a>.</li>
+</ul>
+</div>
+</div>
+</div>
+<h2>Need help?</h2>
+<ul class="list-bullet">
+<li>Read the <strong>Monero-GUI-guide</strong> provided with the wallet and check the <a href="https://getmonero.org/">Monero website</a>.</li>
+<li>Connect with the <strong><a href="https://www.reddit.com/r/Monero/">Monero Reddit community</a></strong> for troubleshooting and more.</li>
+<li>Please report bugs and suggestions to the <a href="https://github.com/monero-project/monero-gui/issues">Monero developers on GitHub</a>.</li>
+</ul>
+<p><em class="fa fa-info-circle">  </em>Monero accounts cannot be added to Ledger Live.</p></body></html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/8171070953373-I-sent-assets-via-KuCoin-and-can-t-see-them"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="8171070953373"/><meta name="title" content="I sent assets via KuCoin and can't see them"/><meta name="classification" content="public"/></head>                            <body><h1>I sent assets via KuCoin and can't see them</h1>
+<p data-pm-slice="1 1 []">Ledger Live does not support the KuCoin network so your assets transferred via this network won't be visible in Ledger Live. To access them you need to use a third-party wallet and Ledger device.</p>
+<p>You can check your transaction ID provided by KuCoin Network <a href="https://explorer.kcc.io/" target="_self">here</a>.  If you can see your transaction there, then it's likely you didn't use the right network for withdrawal.</p>
+<h2 data-pm-slice="1 1 []">Before you start</h2>
+<ul class="ak-ul">
+<li>
+<p>Make sure to <strong>update Ledger Live</strong> to the latest version via <a href="https://www.ledger.com/ledger-live/download"><u>this link</u></a>.</p>
+</li>
+<li>
+<p>Open Ledger Live and connect your Ledger device to My Ledger to ensure that your device is running the <strong>latest firmware version</strong>.</p>
+</li>
+<li>
+<p>Ensure that the latest version of the <a href="https://support.ledger.com/hc/en-us/articles/360009576554-Ethereum-ETH-?docs=true"><u>Ethereum (ETH) app</u></a> is installed on your Ledger device.</p>
+</li>
+<li>
+<p>Once you're all done, <strong>close Ledger Live</strong> as it can conflict with MetaMask.</p>
+</li>
+</ul>
+<h2 data-pm-slice="1 3 []">Connecting to a third-party wallet to access Ledger KCC address</h2>
+<h3>Installing MetaMask and adding the KCC network</h3>
+<ol class="ak-ol">
+<li>
+<p>Download and install the <a href="https://metamask.io/download/"><u>MetaMask extension</u></a> in your browser.</p>
+</li>
+<li>
+<p>Plug your Ledger device into your computer and <strong>open the Ethereum (ETH) app</strong> on your device by navigating to the <strong>Ethereum </strong>icon and pressing both buttons simultaneously.<br>Your Ledger device displays <strong>Application is ready</strong>.</p>
+</li>
+<li>
+<p>Connect via the “hardware wallet” option by following <a href="https://www.ledger.com/academy/security/the-safest-way-to-use-metamask"><u>these steps</u></a>.</p>
+</li>
+<li>Then, <strong>click the network selector</strong> located at the top of the MetaMask window.<br><br>
+</li>
+<li>Select <strong>Add Network.<br><br><img src="https://support.ledger.com/hc/article_attachments/8171869352349" alt="DD991E07-184C-41C4-876B-C1412DB697F1.jpeg" width="333" height="473"><br><br></strong>
+</li>
+<li>Click<strong> Add a network manually.<br><br><img src="https://support.ledger.com/hc/article_attachments/8171934130333" alt="2D903E3C-28E6-42DE-A860-48607ABC2AF2.jpeg" width="525" height="364"><br><br></strong>
+</li>
+<li>
+<p>Add the KuCoin<strong> network</strong> by using the <strong>RPC data</strong> below to connect:</p>
+</li>
+</ol>
+<pre class="p1">Network Name: KCC-Mainnet <br>New RPC URL: <a href="https://rpc-mainnet.kcc.network">https://rpc-mainnet.kcc.network </a><br>Chain ID: 321 <br>Currency Symbol: KCS <br>Block Explorer URL: https://explorer.kcc.io/en</pre>
+<p>     8. Click <strong>save</strong>.</p>
+<p>Thats it! You've successfully added the KuCoin network to MetaMask.</p>
+<h3 data-pm-slice="1 1 []">Add your token as a custom token</h3>
+<p>Before adding your custom token, make sure you have the <strong>contract address</strong> of the token you want to add. For a full rundown of how to add a token, click <a href="https://support.ledger.com/hc/en-us/articles/6375103346077-Add-custom-tokens-to-MetaMask?docs=true" target="_blank" rel="noopener">here</a> to learn more.</p>
+<h4>Add token to MetaMask</h4>
+<ol>
+<li>Open the MetaMask extension in your web browser.</li>
+<li>Select the <strong>Assets </strong>tab.</li>
+<li>Scroll down and click <strong>Import tokens<strong>.</strong></strong>
+<p class="wysiwyg-text-align-center"><img src="https://support.ledger.com/hc/article_attachments/14298859142941" alt="MM_IMPORT.png" width="300" height="503"></p>
+</li>
+<li>Select the <strong>Custom Token</strong> tab.
+<p class="wysiwyg-text-align-center"><img src="https://support.ledger.com/hc/article_attachments/14298842609437" alt="MM_IMPORT_3.png" width="300" height="503"></p>
+</li>
+<li>Insert the contract address of the token into the field <strong>Token Contract Address. </strong>
+</li>
+<li class="wysiwyg-text-align-left">The token symbol and token decimal will get filled automatically. You can edit it if needed.</li>
+<li>Click <strong>Add Custom Token.</strong><br>You will see the token information and the balance (if you have these tokens at your address).</li>
+<li>Click <strong>Import Tokens. </strong><br>Congratulations, you added the custom token to MetaMask and it will become visible in the <strong>Assets</strong> tab in MetaMask.<span></span>
+</li>
+</ol>
+<h2>Send assets back to the exchange</h2>
+<p><span class="fabric-editor-annotation" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="098ecbcb-ce7d-4267-84e3-37b8de052612">Once you locate assets, you can send them back to KuCoin</span> (using the KuCoin network) and then withdraw again with the right network.</p>
+<p>You need to have some amount of native asset (KCS) of the KuCoin network in order to send tokens back to the exchange.</p>
+<h2>Send your coins back to your Ledger account via the right network</h2>
+<ol class="ak-ol">
+<li>
+<p><strong>Sign in</strong>, and go to the main dashboard on KuCoin<a href="https://www.kucoin.com/">. </a></p>
+</li>
+<li>
+<p>Select <strong>Withdraw</strong>.</p>
+</li>
+<li>
+<p>Select <strong>the coin</strong> you’d like to withdraw.</p>
+</li>
+<li>
+<p>Enter the <strong>deposit address</strong> you retrieved from Ledger Live.</p>
+</li>
+<li>
+<p>Choose <strong>the network</strong> you’d like to send funds from. This is the important step, here. Be sure to not select the KCC network this time, but rather, ETH or whichever native network needs to be selected.</p>
+</li>
+<li>
+<p><strong>Confirm</strong> the selection.</p>
+</li>
+</ol>
+<p>Thats it! Pretty easy right?</p></body></html>

@@ -1,0 +1,12 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/360013383899-Antivirus-warning-for-Trojan"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="360013383899"/><meta name="title" content="Antivirus warning for Trojan"/><meta name="classification" content="public"/></head>                            <body><h1>Antivirus warning for Trojan</h1>
+<p>If you get an antivirus warning for a Trojan when installing Ledger Live 2.2.3 on Windows please rest assured: <strong>this is a false alert. </strong>You can safely ignore the warning <em>win32/ bulta!rfn</em>.</p>
+<p>The antivirus warning may remove the Ledger Live Uninstaller executable. This prevents you from uninstalling or updating Ledger Live in the future. Please follow the steps below to fix this.</p>
+<ol class="list-colored">
+<li>Please download and run the uninstaller available on the <a href="https://www.ledger.com/ledger-live/download/" target="_blank" rel="noopener">Ledger Live download page</a>. This uninstaller<span> is </span>not detected as a virus/trojan by Windows. Its signed hash is available <a href="https://github.com/LedgerHQ/ledger-live-desktop/issues/2822#issuecomment-616520568" target="_self">here</a>.<br>
+<p class="wysiwyg-text-align-center"><img src="https://support.ledger.com/hc/article_attachments/360011256280/uninstaller_download.png" alt="uninstaller_download.png" width="257" height="200"><br><em>Uninstaller on the <a href="https://www.ledger.com/ledger-live/download/" target="_self">Ledger Live download page</a></em></p>
+</li>
+<li>Download and install <a href="https://www.ledger.com/ledger-live/download/" target="_blank" rel="noopener">the latest version of Ledger Live</a>.<span> </span>Then go through the initial setup process<strong data-stringify-type="bold">. </strong><a href="https://support.ledger.com/hc/en-us/articles/4404389503889" target="_blank" rel="noopener">Learn more</a>
+</li>
+</ol>
+<h2>What caused this warning?</h2>
+<p class="wysiwyg-text-align-left">Ledger Live is built with electron-builder 22.4.1, of which a recent <em>NSIS</em> version is <a href="https://github.com/electron-userland/electron-builder/issues/4793" target="_blank" rel="noopener">falsely detected</a> by antivirus scanners. After discovering this issue, we have immediately worked to release a patch in Ledger Live 2.2.4.</p></body></html>

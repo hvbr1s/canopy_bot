@@ -1,0 +1,149 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/4404382029329-Check-hardware-integrity"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="4404382029329"/><meta name="title" content="Check hardware integrity"/><meta name="classification" content="public"/></head>                            <body><h1>Check hardware integrity</h1>
+<p>All Ledger devices pass the<strong> genuine check </strong>during the onboarding process and then each time when they connect to My Ledger in Ledger Live. Genuine Ledger devices hold a secret key that is set during manufacture. Only a genuine Ledger device can use its key to provide the cryptographic proof required to connect with Ledger’s secure server.</p>
+<p><span><strong>Advanced users</strong> additionally can </span>check the hardware integrity of the Ledger device to check that it has not been tampered with. This article contains detailed technical information about the security of your device.<span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"> </span></p>
+<div class="callout callout--warning">
+<h4 class="callout__title">Important notice</h4>
+<ul>
+<li>Please note that <strong>opening your Ledger device will void the warranty</strong>.</li>
+<li>Once opened, your Ledger device will <strong>no longer </strong>be refundable or exchangeable.</li>
+</ul>
+</div>
+<div class="tabs tabs--colored-2">
+<div class="tabs-menu">
+<span class="tabs-link is-active">Ledger Nano X</span> <span class="tabs-link">Ledger Nano S</span> <span class="tabs-link">Ledger Nano S Plus</span>
+</div>
+<div class="tab">
+<h2>Microcontroller (MCU)</h2>
+<p>The Secure Element checks the full microcontroller flash at boot, as described in <a href="https://www.ledger.com/how-to-protect-hardware-wallets-against-tampering" target="_blank" rel="noopener">this blog post</a>. If it has been modified, you'll get a warning at boot. As an additional check, you can open the device to verify that no additional chip has been added, compared with the images below, and that the MCU is an STM32WB55 (on revisions 1, 2, 3) and <span>STM32WB35 (on revision 4)</span>.</p>
+<h2>Hardware revisions</h2>
+<h3>Revision 4</h3>
+<ul>
+<li>Green PCB</li>
+</ul>
+<p class="wysiwyg-text-align-center"><em><img src="https://support.ledger.com/hc/article_attachments/4410972052497" alt="revision_4_front.jpg" width="686" height="213"></em></p>
+<p class="wysiwyg-text-align-center"><em>Front of the PCB</em></p>
+<p class="wysiwyg-text-align-center"><em><img src="https://support.ledger.com/hc/article_attachments/4410972107281" alt="revision_4_back.jpg" width="686" height="249"></em></p>
+<p class="wysiwyg-text-align-center"><em>Back of the PCB</em></p>
+<h3>Revision 3</h3>
+<ul>
+<li>Black PCB</li>
+</ul>
+<p class="wysiwyg-text-align-center"><em><img src="https://support.ledger.com/hc/article_attachments/4410975918481" alt="revision_3_front.jpg" width="686" height="213"></em></p>
+<p class="wysiwyg-text-align-center"><em>Front of the PCB</em></p>
+<p class="wysiwyg-text-align-center"><em><img src="https://support.ledger.com/hc/article_attachments/4410975984913" alt="revision_3_back.jpg" width="686" height="249"></em></p>
+<p class="wysiwyg-text-align-center"><em>Back of the PCB</em></p>
+<h3>Revision 2</h3>
+<ul>
+<li>Black PCB</li>
+</ul>
+<p class="wysiwyg-text-align-center"><em><img src="https://support.ledger.com/hc/article_attachments/4404778576401" alt="LedgerNanoX_PCB_rev1.jpg" width="686" height="213"></em></p>
+<p class="wysiwyg-text-align-center"><em>Front of the PCB</em></p>
+<p class="wysiwyg-text-align-center"><em><img src="https://support.ledger.com/hc/article_attachments/4404783346961" alt="LedgerNanoX_PCBrev1_2.jpg" width="686" height="249"></em></p>
+<p class="wysiwyg-text-align-center"><em>Back of the PCB</em></p>
+<h3>Revision 1</h3>
+<ul>
+<li>Black PCB</li>
+</ul>
+<p class="wysiwyg-text-align-center"><em><img src="https://support.ledger.com/hc/article_attachments/4406450402961" alt="LedgerNanoX_PCB_rev1.jpg" width="686" height="213"></em></p>
+<p class="wysiwyg-text-align-center"><em>Front of the PCB</em></p>
+<p class="wysiwyg-text-align-center"><em><img src="https://support.ledger.com/hc/article_attachments/4406460908945" alt="LedgerNanoX_PCBrev1_2.jpg" width="686" height="249"></em></p>
+<p class="wysiwyg-text-align-center"><em>Back of the PCB</em></p>
+<h2>Secure Element attestation</h2>
+<p>The Secure Element itself is personalized at factory with an attestation proving that it has been manufactured by Ledger. You can verify it by running</p>
+<pre><code>pip install --no-cache-dir ledgerblue</code></pre>
+<pre><code>python -m ledgerblue.checkGenuineRemote --targetId 0x33000004</code></pre>
+<p>The source code <a href="https://github.com/LedgerHQ/blue-loader-python/blob/master/ledgerblue/checkGenuine.py">is available here.</a></p>
+<h2>Application verification</h2>
+<p>When opening an application, a <strong>Non Genuine</strong> warning is displayed if the app has not been signed by Ledger. A modified User Interface (as found in https://github.com/LedgerHQ/nanos-ui) will also display a warning message on boot.</p>
+<h2>Root of trust</h2>
+<p>The root of trust for the current batch is the following secp256k1 public key:</p>
+<pre><code>0490f5c9d15a0134bb019d2afd0bf2971497384597<br>06e7ac5be4abc350a1f818057224fce12ec9a65de18ec34<br>d6e8c24db927835ea1692b14c32e9836a75dad609</code></pre>
+<p>- as checked here <a href="https://github.com/LedgerHQ/blue-loader-python/blob/master/ledgerblue/checkGenuine.py#L72">Genuine.py</a></p>
+</div>
+<div class="tab is-hidden">
+<h2>Microcontroller (MCU)</h2>
+<p>The Secure Element checks the full microcontroller flash at boot, as described in <a href="https://www.ledger.com/how-to-protect-hardware-wallets-against-tampering" target="_blank" rel="noopener">this blog post</a>. If it has been modified, you'll get a warning at boot. As an additional check, you can open the device to verify that no additional chip has been added (referring to the attached picture) and that the MCU is an stm2f042k6 (with 32 Kb flash, as a bigger flash could contain code fooling the Secure Element validation). Markings on the chip can vary but you should see the string "042K6".</p>
+<h2>Hardware revisions</h2>
+<h3>Revision 1</h3>
+<ul>
+<li>Blue PCB</li>
+<li>Black glue</li>
+</ul>
+<p class="wysiwyg-text-align-center"><img src="https://s3.amazonaws.com/groovehq/uploaded/a3dgd1hsdb33x6aqj7bl6vz2iomj2wq64gq5vv7nz1ppqkhk0q?1477910226" alt="" width="593" height="445"></p>
+<h3>Revision 2</h3>
+<ul>
+<li>Green PCB</li>
+<li>Black or transparent glue [not pictured].</li>
+</ul>
+<p class="wysiwyg-text-align-center"><img src="https://s3.amazonaws.com/groovehq/uploaded/3xxco0u63y7gghxl07771w1e6gbonc488n7ehz32l280jtbk1f?1483610601" alt="" width="585" height="354"></p>
+<h3>Revision 3</h3>
+<ul>
+<li>Blue PCB</li>
+<li>Black glue</li>
+</ul>
+<p class="wysiwyg-text-align-center"><img src="https://s3.amazonaws.com/groovehq/uploaded/4luntxtdwvd42mbditvvarezt410z7w3i5d93xos9pql7xw5ry?1500280925" alt="" width="582" height="285"></p>
+<h3>Revision 4 </h3>
+<ul>
+<li>Blue PCB</li>
+<li>Hole in the PCB</li>
+</ul>
+<p class="wysiwyg-text-align-center"><img src="https://s3.amazonaws.com/groovehq/uploaded/1rt7g6b2gedw0oleu2qmu6ydbf9vl3amh2g1bs7zjnuscgh3k3?1500280751" alt="" width="582" height="285"></p>
+<h3>Revision 5</h3>
+<ul>
+<li>Blue PCB</li>
+</ul>
+<p class="wysiwyg-text-align-center"><img src="https://support.ledger.com/hc/article_attachments/4406460949649" alt="PCB_5.png" width="582" height="213"></p>
+<h3>Revision 5 bis</h3>
+<ul>
+<li>Blue PCB</li>
+</ul>
+<p class="wysiwyg-text-align-center"><img src="https://support.ledger.com/hc/article_attachments/4406460965521" width="581" height="327"></p>
+<h3>Revision 6</h3>
+<ul>
+<li>Blue PCB</li>
+</ul>
+<p class="wysiwyg-text-align-center"><img src="https://support.ledger.com/hc/article_attachments/4406450511249" alt="nano_S_revision_6.jpg" width="581" height="387"></p>
+<h3>Revision 7</h3>
+<ul>
+<li>Blue PCB <span class="wysiwyg-underline">or</span> Green PCB</li>
+<li>Thin display cable</li>
+</ul>
+<p class="wysiwyg-text-align-center"><img src="https://support.ledger.com/hc/article_attachments/4406450534033" alt="nano_S_revision_7.jpg" width="581" height="346"></p>
+<p> </p>
+<p class="wysiwyg-text-align-center"><img src="https://support.ledger.com/hc/article_attachments/4412925791633" alt="20211206_102118.jpg" width="591" height="207"></p>
+<h2>Secure Element attestation</h2>
+<p>The Secure Element itself is personalized at factory with an attestation proving that it has been created by us. You can verify it by running</p>
+<pre><code>pip install --no-cache-dir ledgerblue</code></pre>
+Then on firmware 1.3.1 or below
+<pre><span>python -m ledgerblue.checkGenuineRemote --targetId 0x33000004</span></pre>
+Or on firmware 1.4.1 and above
+<pre><span>python -m ledgerblue.checkGenuineRemote --targetId 0x33000004</span></pre>
+<p>The source code <a href="https://github.com/LedgerHQ/blue-loader-python/blob/master/ledgerblue/checkGenuine.py">is available here.</a></p>
+<h2>Application verification</h2>
+<p>When opening an application, a <strong>Non Genuine</strong> warning is displayed if it is not signed by Ledger. A modified User Interface (as found in https://github.com/LedgerHQ/nanos-ui) will also display a warning message on boot.</p>
+<h2>Root of trust</h2>
+<p>The root of trust for the current batch is the following secp256k1 public key :</p>
+<pre><code>0490f5c9d15a0134bb019d2afd0bf297<br>149738459706e7ac5be4abc350a1f818057224fce12ec9a65de18ec34d<br>6e8c24db927835ea1692b14c32e9836a75dad609</code></pre>
+<p>- as checked here<a href="https://github.com/LedgerHQ/blue-loader-python/blob/master/ledgerblue/checkGenuine.py#L72"> Genuine.py</a> </p>
+</div>
+<div class="tab is-hidden">
+<h2>Microcontroller (MCU)</h2>
+<p><span style="font-weight: 400;">The Secure Element checks the full microcontroller flash at boot, as described in </span><a href="https://www.ledger.com/how-to-protect-hardware-wallets-against-tampering"><strong>this blog post</strong></a><span style="font-weight: 400;">. If it has been modified, you'll get a warning at boot. As an additional check, you can open the device to verify that no additional chip has been added, compared with the images below, and that the MCU is an STM32F042K6U6.</span></p>
+<h2>Hardware revisions</h2>
+<p class="wysiwyg-text-align-center"><em><img src="https://support.ledger.com/hc/article_attachments/4423178026141" alt="LNS_PLUS_Back_PCB.jpg" width="604" height="163"></em></p>
+<p class="wysiwyg-text-align-center"><em>(Front of the PCB)</em></p>
+<p class="wysiwyg-text-align-center"><img src="https://support.ledger.com/hc/article_attachments/4423184027421" alt="LNS_PLUS_Front_PCB.jpg" width="599" height="208"></p>
+<p class="wysiwyg-text-align-center"><em>(Back of the PCB)</em></p>
+<h2>Secure Element attestation</h2>
+<p>The Secure Element itself is personalized at factory with an attestation proving that it has been created by us. You can verify it by running:</p>
+<pre><code>pip install --no-cache-dir ledgerblue</code></pre>
+<pre><span>python -m ledgerblue.checkGenuineRemote --targetId 0x33000004</span></pre>
+<p>The source code <a href="https://github.com/LedgerHQ/blue-loader-python/blob/master/ledgerblue/checkGenuine.py">is available here.</a></p>
+<h2>Application verification</h2>
+<p>When opening an application, a <strong>Non Genuine</strong> warning is displayed if it is not signed by Ledger. A modified User Interface (as found in https://github.com/LedgerHQ/nanos-ui) will also display a warning message on boot.</p>
+<h2>Root of trust</h2>
+<p>The root of trust for the current batch is the following secp256k1 public key :</p>
+<pre><code>0490f5c9d15a0134bb019d2afd0bf297<br>149738459706e7ac5be4abc350a1f818057224fce12ec9a65de18ec34d<br>6e8c24db927835ea1692b14c32e9836a75dad609</code></pre>
+<p>- as checked here<a href="https://github.com/LedgerHQ/blue-loader-python/blob/master/ledgerblue/checkGenuine.py#L72"> Genuine.py</a> </p>
+</div>
+</div></body></html>

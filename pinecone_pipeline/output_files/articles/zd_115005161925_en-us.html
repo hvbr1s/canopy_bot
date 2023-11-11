@@ -1,0 +1,128 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/115005161925-Set-up-and-use-Electrum"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="115005161925"/><meta name="title" content="Set up and use Electrum"/><meta name="classification" content="public"/></head>                            <body><h1>Set up and use Electrum</h1>
+<p>This article describes how to set up and use the <a href="https://electrum.org/#download" target="_self">Electrum</a> desktop application to access your<strong> Ledger Bitcoin (BTC) accounts</strong> with your Ledger device.</p>
+<h2>Before you start</h2>
+<ul class="list-bullet">
+<ul class="list-bullet">
+<li>Ledger Live is <a href="https://support.ledger.com/hc/en-us/articles/4404389503889" target="_blank" rel="noopener">ready to use</a>.</li>
+<li>
+<a href="https://support.ledger.com/hc/en-us/articles/4404382258961" target="_blank" rel="noopener">Install the latest version</a> of the <strong>Bitcoin (BTC)</strong> app on your device.</li>
+</ul>
+</ul>
+<h2>Step by step</h2>
+<div class="accordion accordion--default">
+<div class="accordion__item">
+<div class="accordion__item-title">Install Electrum</div>
+<div class="accordion__item-content">
+<ol>
+<li>Go to <a href="https://electrum.org/#download" target="_self">Electrum.org</a>.</li>
+<li>Download Electrum for your operating system.</li>
+<li>Select your operating system:</li>
+</ol>
+<ul>
+<li>
+<strong>Windows:</strong> move the downloaded .exe file to your applications folder.</li>
+<li>
+<strong>Mac:</strong> open the downloaded .dmg file and move it to your applications folder.</li>
+<li>
+<strong>Linux:</strong> follow <a href="https://electrum.org/#download" target="_blank" rel="noopener">these instructions.</a>
+</li>
+</ul>
+
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title">Connect to Ledger device</div>
+<div class="accordion__item-content">
+<ol>
+<li>Connect and unlock your Ledger device.</li>
+<li>Open the Bitcoin app.</li>
+<li>Launch Electrum from your applications folder. The install wizard opens.</li>
+<li>Leave the default wallet name and click <strong>Next</strong>.</li>
+<li>Select <strong>Standard wallet</strong> and click <strong>Next</strong>.</li>
+<li>At the keystore screen, select <strong>Use a hardware device </strong>and click <strong>Next</strong>.</li>
+<li>Select your Ledger device and click <strong>next</strong>.</li>
+<li>Choose the right derivation path for your account and click <strong>Next</strong>:
+<ul>
+<li>
+<strong>Legacy</strong> for an account that has addresses starting with a <strong>1</strong>
+</li>
+<li>
+<strong>p2sh-segwit </strong>for an account that has addresses starting with a <strong>3 </strong>
+</li>
+<li>
+<strong>Native segwit </strong>for an account with addresses starting with a <strong>bc1<img src="https://support.ledger.com/hc/article_attachments/6698993455773" alt="real_final_setup_electrum.gif"></strong>
+</li>
+</ul>
+</li>
+</ol>
+<p>Your addresses are generated and voilà! Your account balances are shown in the <strong>History</strong> tab. You can now manage your BTC from your Ledger device using Electrum.</p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title">Receive BTC</div>
+<div class="accordion__item-content">
+<p><em class="fa fa-info-circle">  </em>Always start by sending a small test amount. Proceed only with larger transactions if the test transaction has been successful.</p>
+<h3>Instructions</h3>
+<ol>
+<li>Open the <strong>Receive</strong> tab.</li>
+<li>Copy and share the <strong>Receiving address</strong> with the person or service that will transfer to your account. Make sure you <a href="https://support.ledger.com/hc/en-us/articles/360020838914" target="_blank" rel="noopener">double-check</a> the address if you copy and paste it.</li>
+</ol>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title">Send BTC</div>
+<div class="accordion__item-content">
+<p><em class="fa fa-info-circle">  </em>Always start by sending a small test amount. Proceed only with larger transactions if the test transaction was successful.</p>
+<h3>Instructions</h3>
+<ol>
+<li>Open the <strong>Send</strong> tab.</li>
+<li>Enter the recipient address in the <strong>Pay to </strong>field<strong>. </strong>Please <a href="https://support.ledger.com/hc/en-us/articles/360020838914" target="_blank" rel="noopener">verify the address</a> when you copy and paste.</li>
+<li>Enter the <strong>Amount </strong>to send and select the network fees.</li>
+<li>Click <strong>Send</strong>. Check the amount and fees, then confirm by clicking <strong>Yes</strong>.</li>
+<li>Verify the amount, receiving address, and fees all displayed on your device.</li>
+<li>If everything is correct, confirm the transaction by pressing the right button to sign it.</li>
+</ol>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title">Connect to Ledger device with old firmware version</div>
+<div class="accordion__item-content">In rare edge cases, you may have not the possibility to update the firmware and connect to the latest version of Electrum. In that case, you may try to connect to the older version of Electrum with your Ledger device with outdated firmware. This part of the instructions is experimental and there is no guarantee that the connection between the older Ledger device and older Electrum will be stable.<br><br><strong>Depending on the Electrum version, steps may be slightly different but the general flow should be the same:</strong>
+<ol>
+<li>Download <a href="https://download.electrum.org/" target="_blank" rel="noopener">Electrum</a>
+<ol>
+<li>
+<a href="https://download.electrum.org/3.0.2/" target="_blank" rel="noopener">Version 3.0.2</a> for older Ledger Nano S firmware releases.</li>
+<li>
+<a href="https://download.electrum.org/3.2.4/" target="_blank" rel="noopener">Version 3.2.4</a> for older Ledger Nano S firmware release if you encounter a problem with signing a segwit transaction.</li>
+<li>
+<a href="https://download.electrum.org/3.3.5/" target="_blank" rel="noopener">Version 3.3.5</a> for older Nano X firmware releases.</li>
+</ol>
+</li>
+<li>Connect and unlock your Ledger device.</li>
+<li>Open the Bitcoin app.</li>
+<li>Launch Electrum from your applications folder. The install wizard opens.</li>
+<li>Leave the default wallet name and click <strong>Next</strong>.</li>
+<li>Select <strong>Standard wallet</strong> and click <strong>Next</strong>.</li>
+<li>At the keystore screen, select <strong>Use a hardware device </strong>and click <strong>Next</strong>.</li>
+<li>Select your Ledger device and click <strong>next</strong>.</li>
+<li>Choose the right derivation path for your account and click <strong>Next</strong>:
+<ul>
+<li>
+<strong>Legacy</strong> for an account that has addresses starting with a <strong>1</strong>
+</li>
+<li>
+<strong>p2sh-segwit </strong>for an account that has addresses starting with a <strong>3 </strong>
+</li>
+<li>
+<strong>Native segwit </strong>for an account with addresses starting with a <strong>bc1</strong>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout--primary">
+<h4 class="callout__title"><strong>Having issues connecting?</strong></h4>
+<p>Make sure you have the <strong>latest version of Electrum</strong>. If your version of Electrum is outdated, your Ledger device <strong>may not get detected.</strong></p>
+</div></body></html>

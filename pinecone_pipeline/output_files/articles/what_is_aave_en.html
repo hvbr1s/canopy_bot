@@ -1,0 +1,417 @@
+<html>
+ <head>
+  <meta content="https://www.ledger.com/academy/topics/defi/what-is-aave" name="source"/>
+  <meta content="academy" name="source-type"/>
+  <meta content="en" name="locale"/>
+  <meta content="N/A" name="zd-article-id"/>
+  <meta content="what is aave" name="title"/>
+  <meta content="public" name="classification"/>
+ </head>
+ <body>
+  <article class="plain-text margin-sm article" id="article">
+   <h1 class="margin-xs">
+    What Is Aave? The Popular DeFi Protocol Explained
+   </h1>
+   <div class="article-author">
+    <div>
+     By
+     <b>
+      Mohammad Musharraf
+     </b>
+    </div>
+    <div>
+     <img alt="" height="21" src="https://www.ledger.com/wp-content/uploads/2022/09/Mohammad-104x104.jpeg" width="21">
+     </img>
+    </div>
+   </div>
+   <div class="color-grey-500 small-text uppercase margin-xs article-date">
+    May 15, 2023
+          |
+    <b>
+     Updated May 30, 2023
+    </b>
+   </div>
+   <div class="caption-for-article flexbox flex-start">
+    <div class="flex-none time-to-read">
+     <span class="badge badge-nude">
+      <i class="icon-copy">
+      </i>
+      Read
+     </span>
+     <span>
+      6 min
+     </span>
+    </div>
+    <div class="with-point level level-1">
+     <span>
+      Beginner
+     </span>
+    </div>
+   </div>
+   <div class="align-center share-box" id="fixed-share-box">
+    <span>
+     SHARE
+    </span>
+    <div class="heateor_sss_sharing_container heateor_sss_horizontal_sharing" data-heateor-ss-offset="0" data-heateor-sss-href="https://www.ledger.com/academy/topics/defi/what-is-aave">
+     <div class="heateor_sss_sharing_ul">
+      <a aria-label="Instagram" class="heateor_sss_button_instagram" href="https://www.instagram.com/ledger" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Instagram">
+       <span class="heateor_sss_svg" style="background-color:#53beee;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg height="100%" style="display:block;border-radius:999px;" version="1.1" viewbox="-10 -10 148 148" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+         <g>
+          <g>
+           <path d="M86,112H42c-14.336,0-26-11.663-26-26V42c0-14.337,11.664-26,26-26h44c14.337,0,26,11.663,26,26v44 C112,100.337,100.337,112,86,112z M42,24c-9.925,0-18,8.074-18,18v44c0,9.925,8.075,18,18,18h44c9.926,0,18-8.075,18-18V42 c0-9.926-8.074-18-18-18H42z" fill="#fff">
+           </path>
+          </g>
+          <g>
+           <path d="M64,88c-13.234,0-24-10.767-24-24c0-13.234,10.766-24,24-24s24,10.766,24,24C88,77.233,77.234,88,64,88z M64,48c-8.822,0-16,7.178-16,16s7.178,16,16,16c8.822,0,16-7.178,16-16S72.822,48,64,48z" fill="#fff">
+           </path>
+          </g>
+          <g>
+           <circle cx="89.5" cy="38.5" fill="#fff" r="5.5">
+           </circle>
+          </g>
+         </g>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Facebook" class="heateor_sss_facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.ledger.com%2Facademy%2Ftopics%2Fdefi%2Fwhat-is-aave" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Facebook">
+       <span class="heateor_sss_svg" style="background-color:#3c589a;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="-5 -5 42 42" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M17.78 27.5V17.008h3.522l.527-4.09h-4.05v-2.61c0-1.182.33-1.99 2.023-1.99h2.166V4.66c-.375-.05-1.66-.16-3.155-.16-3.123 0-5.26 1.905-5.26 5.405v3.016h-3.53v4.09h3.53V27.5h4.223z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Twitter" class="heateor_sss_button_twitter" href="http://twitter.com/intent/tweet?via=ledger&amp;text=What%20Is%20Aave%3F%20The%20Popular%20DeFi%20Protocol%20Explained&amp;url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Ftopics%2Fdefi%2Fwhat-is-aave" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Twitter">
+       <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_twitter" style="background-color:#55acee;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="-4 -4 39 39" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M28 8.557a9.913 9.913 0 0 1-2.828.775 4.93 4.93 0 0 0 2.166-2.725 9.738 9.738 0 0 1-3.13 1.194 4.92 4.92 0 0 0-3.593-1.55 4.924 4.924 0 0 0-4.794 6.049c-4.09-.21-7.72-2.17-10.15-5.15a4.942 4.942 0 0 0-.665 2.477c0 1.71.87 3.214 2.19 4.1a4.968 4.968 0 0 1-2.23-.616v.06c0 2.39 1.7 4.38 3.952 4.83-.414.115-.85.174-1.297.174-.318 0-.626-.03-.928-.086a4.935 4.935 0 0 0 4.6 3.42 9.893 9.893 0 0 1-6.114 2.107c-.398 0-.79-.023-1.175-.068a13.953 13.953 0 0 0 7.55 2.213c9.056 0 14.01-7.507 14.01-14.013 0-.213-.005-.426-.015-.637.96-.695 1.795-1.56 2.455-2.55z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Linkedin" class="heateor_sss_button_linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Ftopics%2Fdefi%2Fwhat-is-aave" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Linkedin">
+       <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_linkedin" style="background-color:#0077b5;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="0 0 32 32" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M6.227 12.61h4.19v13.48h-4.19V12.61zm2.095-6.7a2.43 2.43 0 0 1 0 4.86c-1.344 0-2.428-1.09-2.428-2.43s1.084-2.43 2.428-2.43m4.72 6.7h4.02v1.84h.058c.56-1.058 1.927-2.176 3.965-2.176 4.238 0 5.02 2.792 5.02 6.42v7.395h-4.183v-6.56c0-1.564-.03-3.574-2.178-3.574-2.18 0-2.514 1.7-2.514 3.46v6.668h-4.187V12.61z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+      <a aria-label="Reddit" class="heateor_sss_button_reddit" href="http://reddit.com/submit?url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Ftopics%2Fdefi%2Fwhat-is-aave&amp;title=What%20Is%20Aave%3F%20The%20Popular%20DeFi%20Protocol%20Explained" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle" target="_blank" title="Reddit">
+       <span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_reddit" style="background-color:#ff5700;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box">
+        <svg aria-hidden="true" focusable="false" height="100%" style="display:block;border-radius:999px;" viewbox="-3.5 -3.5 39 39" width="100%" xmlns="http://www.w3.org/2000/svg">
+         <path d="M28.543 15.774a2.953 2.953 0 0 0-2.951-2.949 2.882 2.882 0 0 0-1.9.713 14.075 14.075 0 0 0-6.85-2.044l1.38-4.349 3.768.884a2.452 2.452 0 1 0 .24-1.176l-4.274-1a.6.6 0 0 0-.709.4l-1.659 5.224a14.314 14.314 0 0 0-7.316 2.029 2.908 2.908 0 0 0-1.872-.681 2.942 2.942 0 0 0-1.618 5.4 5.109 5.109 0 0 0-.062.765c0 4.158 5.037 7.541 11.229 7.541s11.22-3.383 11.22-7.541a5.2 5.2 0 0 0-.053-.706 2.963 2.963 0 0 0 1.427-2.51zm-18.008 1.88a1.753 1.753 0 0 1 1.73-1.74 1.73 1.73 0 0 1 1.709 1.74 1.709 1.709 0 0 1-1.709 1.711 1.733 1.733 0 0 1-1.73-1.711zm9.565 4.968a5.573 5.573 0 0 1-4.081 1.272h-.032a5.576 5.576 0 0 1-4.087-1.272.6.6 0 0 1 .844-.854 4.5 4.5 0 0 0 3.238.927h.032a4.5 4.5 0 0 0 3.237-.927.6.6 0 1 1 .844.854zm-.331-3.256a1.726 1.726 0 1 1 1.709-1.712 1.717 1.717 0 0 1-1.712 1.712z" fill="#fff">
+         </path>
+        </svg>
+       </span>
+      </a>
+     </div>
+     <div class="heateorSssClear">
+     </div>
+    </div>
+   </div>
+   <figure class="wp-block-image size-large">
+    <img alt="Floating boxes in an open space" class="wp-image-269162" decoding="async" height="432" loading="lazy" sizes="(max-width: 1024px) 100vw, 1024px" src="https://www.ledger.com/wp-content/uploads/2023/04/05_DeFi_Cover_Dark-1024x432.jpg" srcset="https://www.ledger.com/wp-content/uploads/2023/04/05_DeFi_Cover_Dark-1024x432.jpg 1024w, https://www.ledger.com/wp-content/uploads/2023/04/05_DeFi_Cover_Dark-300x127.jpg 300w, https://www.ledger.com/wp-content/uploads/2023/04/05_DeFi_Cover_Dark-768x324.jpg 768w, https://www.ledger.com/wp-content/uploads/2023/04/05_DeFi_Cover_Dark-1536x648.jpg 1536w, https://www.ledger.com/wp-content/uploads/2023/04/05_DeFi_Cover_Dark-490x207.jpg 490w, https://www.ledger.com/wp-content/uploads/2023/04/05_DeFi_Cover_Dark.jpg 1600w" width="1024"/>
+   </figure>
+   <figure class="wp-block-table">
+    <table>
+     <tbody>
+      <tr>
+       <td>
+        KEY TAKEAWAYS:
+       </td>
+      </tr>
+      <tr>
+       <td>
+        — Aave is a decentralized and permissionless lending and borrowing protocol where users can offer and access instant crypto loans.
+        <br/>
+        <br/>
+        — Initially named ETHLend, Aave launched as a peer-to-peer platform. In 2018, it transitioned to the liquidity pool model for better efficiency.
+        <br/>
+        <br/>
+        — Aave is the native token of the protocol and functions as a utility and governance token.
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </figure>
+   <p>
+    One of the most prevalent uses of blockchain technology so far is
+    <a href="https://www.ledger.com/academy/what-is-defi">
+     decentralized finance (DeFi)
+    </a>
+    . DeFi is an alternative to traditional finance where users needn’t rely on centralized intermediaries like banks for financial transactions.
+   </p>
+   <p>
+    One of DeFi’s most widely used solutions is Aave — a decentralized
+    <a href="https://www.ledger.com/academy/what-is-crypto-lending">
+     crypto lending
+    </a>
+    and borrowing platform.
+   </p>
+   <p>
+    But what is Aave and how does it work?
+   </p>
+   <h2 class="wp-block-heading">
+    What Is Aave?
+   </h2>
+   <p>
+    Aave is a decentralized and permissionless DeFi platform where users can instantly lend and borrow cryptocurrencies. It uses pools of crypto assets called liquidity pools to replace central parties. Lenders can supply liquidity to its pools to earn interest while borrowers can withdraw overcollateralized loans.
+   </p>
+   <p>
+    In this context, overcollaterization simply means borrowers have to deposit crypto assets into Aave that are worth more than the amount they want to borrow. This ensures lenders’ funds remain safe from loan defaults.
+   </p>
+   <p>
+    Initially, Aave followed a peer-to-peer model of matching lenders and borrowers. However, now, it uses liquidity pools instead.
+   </p>
+   <p>
+    But before we explore how it functions, let’s go back to the origins of the protocol.
+   </p>
+   <h2 class="wp-block-heading">
+    History of Aave Protocol
+   </h2>
+   <p>
+    Stani Kulechov, a law student in Helsinki, founded a for-profit company named ETHLend in 2017. In the same year, ETHLend conducted an initial coin offering (ICO) of its native LEND tokens and raised
+    <a href="https://medium.com/aave/ethlend-token-sale-event-successfully-closes-with-16-2-million-usd-raised-d0e0a1206141">
+     $16.2 million
+    </a>
+    .
+   </p>
+   <p>
+    Kulechov renamed ETHLend to Aave in 2018, shifting from peer-to-peer lending and borrowing to smart contract-powered liquidity pools. Consequently, LEND token holders migrated to LEND’s updated counterpart Aave.
+   </p>
+   <p>
+    The migration ratio was 100 LEND to 1 Aave, dropping the maximum token supply to 16 million Aave.
+   </p>
+   <p>
+    Aave, which means ‘ghost’ in Finnish, was originally launched on the Ethereum blockchain. But with
+    <a href="https://www.ledger.com/academy/glossary/blockchain-interoperability" rel="noreferrer noopener" target="_blank">
+     interoperability
+    </a>
+    becoming a critical need for web3, it has expanded to other chains like
+    <a href="https://support.ledger.com/hc/en-us/articles/360020765779-Avalanche-AVAX-?support=true" rel="noreferrer noopener" target="_blank">
+     Avalanche
+    </a>
+    ,
+    <a href="https://support.ledger.com/hc/en-us/articles/4403964358801-Fantom-FTM-" rel="noreferrer noopener" target="_blank">
+     Fantom
+    </a>
+    ,
+    <a href="https://support.ledger.com/hc/en-us/articles/4413130186257-Set-up-a-Polygon-MATIC-account-in-Ledger-Live?support=true" rel="noreferrer noopener" target="_blank">
+     Polygon
+    </a>
+    ,
+    <a href="https://support.ledger.com/hc/en-us/articles/4982838288669-How-to-access-your-Ledger-Optimism-account-via-Metamask?docs=true" rel="noreferrer noopener" target="_blank">
+     Optimism
+    </a>
+    , and
+    <a href="https://www.ledger.com/coin/wallet/harmony" rel="noreferrer noopener" target="_blank">
+     Harmony
+    </a>
+    .
+   </p>
+   <p>
+    But how does the Aave protocol function? Let’s take a look.
+   </p>
+   <h2 class="wp-block-heading">
+    How Does Aave Work?
+   </h2>
+   <p>
+    Aave runs on software programs called
+    <a href="https://www.ledger.com/academy/blockchain/what-is-a-smart-contract" rel="noreferrer noopener" target="_blank">
+     smart contracts
+    </a>
+    that remove the need for any middlemen, thereby automating lending-borrowing.
+   </p>
+   <p>
+    It relies on user-funded liquidity pools to enable the lending and borrowing process. However, unlike banks, users of this protocol have complete control over their assets. They can see a transparent record of all transactions going in and out of the pools.
+   </p>
+   <p>
+    Lenders can connect their
+    <a href="https://www.ledger.com/academy/basic-basics/2-how-to-own-crypto/what-is-a-crypto-wallet" rel="noreferrer noopener" target="_blank">
+     crypto wallets
+    </a>
+    to Aave and select an asset they wish to deposit. There is no minimum or maximum limit on the amount they can supply to the liquidity pools.
+   </p>
+   <p>
+    In return, lenders earn interest that the borrowers earn when withdrawing loans. Depending on the supply-demand ratio of an asset, Aave offers an annual percentage yield (APY) that varies with time. Assets offer greater yields for lenders the more they are in use.
+   </p>
+   <p>
+    On the other hand, borrowers have to deposit collateral to access loan facilities. Aave has a specific Loan-to-Value (LTV) ratio that limits the borrowing amount to a certain percentage of the pledged collateral.
+   </p>
+   <p>
+    Additionally, each borrower has a health factor that represents the safety of their collateral against the borrowed assets. A higher health factor signifies an improved borrowing position with lesser chances of collateral liquidation.
+   </p>
+   <p>
+    Borrowers can choose between two kinds of interest rates:
+   </p>
+   <ul>
+    <li>
+     <strong>
+      Stable rate
+     </strong>
+     : It offers a fixed short-term rate with predictable interest but is open to re-balancing in the long term due to changing market conditions.
+    </li>
+    <li>
+     <strong>
+      Variable rate
+     </strong>
+     : It depends on the demand and available liquidity of an asset which keeps changing in response to market scenarios.
+    </li>
+   </ul>
+   <p>
+    Apart from overcollateralized loans, Aave users can also avail of a different kind of loan called flash loans.
+   </p>
+   <p>
+    Let’s see what flash loans are and how they work on this protocol.
+   </p>
+   <h2 class="wp-block-heading">
+    Aave’s Additional Use-case: Flash Loans and Crypto Arbitrage Trading
+   </h2>
+   <p>
+    Aave was the first DeFi protocol to introduce flash loans in 2020.
+    <a href="https://www.ledger.com/academy/what-is-a-flash-loan" rel="noreferrer noopener" target="_blank">
+     Flash loans
+    </a>
+    are uncollateralized loans where users borrow funds and pay them back with interest and fees in a
+    <em>
+     flash.
+    </em>
+    That is, loan withdrawal and repayment happen in a single, instantaneous block transaction.
+   </p>
+   <p>
+    Traders often use flash loans to take advantage of crypto price differences across multiple exchanges. When they spot a price discrepancy, traders buy assets at a lower price on one exchange and sell them at higher prices on a different exchange. This is called
+    <a href="https://www.ledger.com/academy/what-is-crypto-arbitrage-trading" rel="noreferrer noopener" target="_blank">
+     crypto arbitrage trading
+    </a>
+    .
+   </p>
+   <p>
+    For example, if
+    <a href="https://www.ledger.com/coin/wallet/ethereum" rel="noreferrer noopener" target="_blank">
+     ETH
+    </a>
+    is selling for $1000 in one exchange and $1001 on another, a trader can earn a profit of $1 from crypto arbitrage trading. However, they need significant amounts of working capital to take advantage of an arbitrage opportunity to make it profitable.
+   </p>
+   <p>
+    When a borrower requests a flash loan from Aave, the user’s smart contract must pay back the loan plus interest and a 0.09% fee. If the contract conditions remain unfulfilled, the transaction stands canceled with no fund transfers, thereby averting any risks.
+   </p>
+   <p>
+    The protocol’s native Aave token is useful for paying flash loan fees besides its other use cases.
+   </p>
+   <h2 class="wp-block-heading">
+    The AAVE token: Explained
+   </h2>
+   <p>
+    Aave token holders use their coins for three primary purposes: governance, collateral, and staking.
+   </p>
+   <h3 class="wp-block-heading">
+    Governance
+   </h3>
+   <p>
+    Aave tokens provide governance rights to token holders so that they can vote for or against the network’s Improvement Proposals (AIPs). These AIPs determine the future trajectory of the blockchain and introduce advanced features through community voting.
+   </p>
+   <h3 class="wp-block-heading">
+    Collateral for Loans
+   </h3>
+   <p>
+    Aave holders can use their tokens as collateral for borrowing from the protocol. Additionally, if borrowers use their tokens over other assets as collateral, they get discounts on platform fees.
+   </p>
+   <h3 class="wp-block-heading">
+    Staking
+   </h3>
+   <p>
+    Users can deposit (
+    <a href="https://www.ledger.com/academy/basic-basics/keep-growing-it/stake-your-crypto" rel="noreferrer noopener" target="_blank">
+     stake
+    </a>
+    ) their AAVE in the Safety Module, which secures the protocol in case of a shortfall event. In return, stakers earn incentives from the protocol.
+   </p>
+   <p>
+    It is important to note that the Aave token is different from aTokens.
+   </p>
+   <p>
+    When lenders supply tokens to liquidity pools, they receive aTokens. For example, if you deposit ETH, you’ll get aETH in return.
+   </p>
+   <p>
+    aToken holders get a share of the platform’s fees and the interest paid by borrowers. The aTokens also serve as additional liquidity which you can use on other platforms.
+   </p>
+   <p>
+    Before using a DeFi protocol such as this one, you must be aware of the its inherent risks.
+   </p>
+   <h2 class="wp-block-heading">
+    Risks of Using Aave
+   </h2>
+   <p>
+    DeFi is a great way to start to take custody of your own assets while investing. However, each protocol has its advantages and disadvantages. Thus, it’s important to
+    <a href="https://www.ledger.com/academy/do-your-own-research-how-to-investigate-crypto-projects">
+     D.Y.O.R.
+    </a>
+    before you trade.
+   </p>
+   <p>
+    If you’re planning to use Aave, you could become susceptible to the following risks:
+   </p>
+   <p>
+    <strong>
+     1. Collateral liquidation
+    </strong>
+    : If a borrower deposits a volatile crypto asset that drops in value, Aave will liquidate the collateral to recover lenders’ funds. Users can lose money due to crypto volatility since their assets will remain locked in the protocol’s smart contracts.
+   </p>
+   <p>
+    <strong>
+     2. Risk of liquidity shortfall
+    </strong>
+    : Sometimes borrowers can’t withdraw assets if the available liquidity of a cryptocurrency falls below a certain threshold. In case of a liquidity shortfall, borrowers have to wait until lenders deposit more funds.
+   </p>
+   <p>
+    <strong>
+     3. Lack of insurance coverage
+    </strong>
+    : As Aave is a decentralized protocol, no government institute protects Aave’s funds. Thus, if a user loses money or sends crypto to the wrong wallet address, the protocol won’t offer insurance or reimburse them.
+   </p>
+   <p>
+    Every user must clearly understand these risks before using Aave. However, they can mitigate the risks by taking well-researched decisions about the assets they lend or borrow.
+   </p>
+   <p>
+    Speaking of risks and security, one of the most important things you must do before interacting with any DeFi protocol is choosing the right wallet.
+   </p>
+   <h2 class="wp-block-heading">
+    How to Use Aave Protocol Safely
+   </h2>
+   <p>
+    Aave is one of the most widely used decentralized lending and borrowing protocols. You can easily lend your assets to earn interest or borrow any asset from the pools almost instantly and without any paperwork. If you’re profiting from crypto trading, you might want a secure way to store your precious assets.
+   </p>
+   <p>
+    Of course, the most secure way to store your assets is using a
+    <a href="https://www.ledger.com/academy/crypto-hardware-wallet" rel="noreferrer noopener" target="_blank">
+     hardware wallet
+    </a>
+    . Luckily, Ledger offers an
+    <a href="https://www.ledger.com/coin/wallet/aave" rel="noreferrer noopener" target="_blank">
+     Aave Wallet
+    </a>
+    which is available on all Ledger devices.
+   </p>
+   <p>
+    Ledger Hardware wallets store your private keys and sign transactions offline, securing your Aave tokens from malicious online attacks.
+   </p>
+   <p>
+    The
+    <a href="https://www.ledger.com/ledger-live" rel="noreferrer noopener" target="_blank">
+     Ledger Live App
+    </a>
+    offers a gateway to manage your assets, check real-time balances, and track transaction histories. You can also buy Aave and other crypto assets directly on Ledger Live through its partners
+    <a href="https://www.coinify.com/" rel="noreferrer noopener" target="_blank">
+     Coinify
+    </a>
+    and
+    <a href="https://www.sendwyre.com/" rel="noreferrer noopener" target="_blank">
+     Wyre
+    </a>
+    .
+   </p>
+  </article>
+ </body>
+</html>

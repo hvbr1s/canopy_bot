@@ -1,0 +1,92 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/115005172945-Litecoin-LTC-"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="115005172945"/><meta name="title" content="Litecoin (LTC)"/><meta name="classification" content="public"/></head>                            <body><h1>Litecoin (LTC)</h1>
+<p>This article will help you <strong>set up your first Ledger Litecoin (LTC) account</strong>.</p>
+<p><em class="fa fa-info-circle"> </em>The Litecoin (LTC) app is developed and supported by Ledger. <span>Check the </span><a href="https://www.ledger.com/coin/wallet/litecoin" target="_blank" rel="noopener">Litecoin wallet</a><span> page to learn more.</span></p>
+<h2>Before you start</h2>
+<ul class="list-bullet">
+<li>
+<strong><a href="https://www.ledger.com/ledger-live/download" target="_blank" rel="noopener">Download and install Ledger Live</a></strong> on your <strong>computer</strong>. You can learn more about how to get started with Ledger Live <strong><a href="https://support.ledger.com/hc/en-us/articles/4404389503889?docs=true" target="_blank" rel="noopener">here</a>.</strong>
+</li>
+<li>Open Ledger Live, connect your Ledger device to My Ledger<strong> </strong>and make sure your Ledger device is running the <strong>latest firmware version</strong>.</li>
+<li>Update the firmware<span> </span>of your Ledger <a href="https://support.ledger.com/hc/en-us/articles/360002731113" target="_blank" rel="noopener">Nano S</a> / <a href="https://support.ledger.com/hc/en-us/articles/4445777839901?docs=true" target="_blank" rel="noopener">Nano S Plus</a> /<span> </span><a href="https://support.ledger.com/hc/en-us/articles/360013349800" target="_blank" rel="noopener">Nano X</a>.</li>
+</ul>
+<h2>Install the Litecoin (LTC) app on your Ledger device</h2>
+<ol class="list-colored">
+<li>Open<span> </span><strong>Ledger Live</strong><span> </span>and navigate to the<span> </span><strong>My Ledger<span> </span></strong>tab.</li>
+<li>Connect and unlock your Ledger <strong>device</strong>.</li>
+<li>If asked, allow My Ledger to access your device.</li>
+<li>Search for the <strong>Litecoin (LTC) </strong>app in the app catalog.</li>
+<li>
+<span style="font-weight: 400;">Click the </span><strong>Install </strong><span style="font-weight: 400;">button to install the app on your Ledger device.</span><br>
+<ul>
+<li>
+<span style="font-weight: 400;">Your Ledger device displays </span><strong>Processing.</strong>
+</li>
+<li>Ledger Live displays <strong>Installed.</strong>
+</li>
+</ul>
+</li>
+</ol>
+<h2>Advanced features</h2>
+<div class="accordion accordion--default">
+<div class="accordion__item">
+<div class="accordion__item-title">Configure public key exports</div>
+<div class="accordion__item-content">
+<p>The Litecoin app can export your extended public key (xpub) to web apps in a U2F compatible web browser (Chrome, Opera or Firefox). The xpub is privacy-sensitive information, as all public addresses can be generated from it.</p>
+<p>Public key exports by default require manual approval on the device to prevent inadvertent sharing of your public addresses. This setting can be configured as follows:</p>
+<ol>
+<li>Open the Litecoin app.</li>
+<li>Navigate to <strong>Settings &gt; Public key export approval</strong>.</li>
+<li>Choose one of two options:
+<ul>
+<li>
+<strong>Manual approval (default):</strong> public key exports require a confirmation on the device.</li>
+<li>
+<strong>Auto approval:</strong> public key exports are automatically approved.</li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title">Litecoin address formats</div>
+<div class="accordion__item-content">
+<p>When you add Litecoin accounts in Ledger Live, the address format is set to Native SegWit by default. If you need to receive LTC on older address formats such as SegWit and Legacy, you can change the default address format.</p>
+<p>To change the default address format:</p>
+<ol class="list-colored">
+<li>In the <strong>Add new account</strong> section of the <strong>Accounts</strong> step, click on the <strong>Show all address types</strong> toggle.<br><img src="https://support.ledger.com/hc/article_attachments/360019730637" alt="addressformat.png" width="338" height="364">
+</li>
+<li>Select one of the following address formats:
+<ul>
+<li>
+<strong>Native Segwit</strong> (by default): <strong>Native SegWit</strong> addresses start with <strong>ltc1</strong>. These are bech32 addresses that offer better protection against typos and are cheaper to spend from on top of the advantages of SegWit addresses.
+<p><em class="fa fa-info-circle">  </em>If your exchange does not support sending to a native segwit address, you may add a regular segwit account to temporarily send to and request your exchange to support sending to native segwit addresses.</p>
+</li>
+<li>
+<strong>Segwit: </strong> <strong>SegWit </strong>addresses start with a <strong>M</strong>. The SegWit upgrade reduces <a href="https://medium.com/@jimmysong/understanding-segwit-block-size-fd901b87c9d4">network fees</a>, speeds up <a href="https://segwit.org/segregated-witness-and-hardware-wallets-cc88ba532fb3">transaction signing</a> on hardware wallets, and enables second-layer solutions like <a href="https://lightning.network/">Lightning Network</a>. By default, new accounts added in Ledger Live are SegWit accounts.<br><strong>Tip: </strong>If your exchange does not yet support the SegWit address format, you can use <a href="https://litecoin-project.github.io/p2sh-convert//">this address converter</a> to send LTC to your Ledger device.</li>
+<li>
+<strong>Legacy: </strong> <strong>Legacy </strong>addresses start with a <strong>L</strong>. This is Litecoin's original address format. <span style="font-weight: 400;">New Legacy accounts can now be added directly in Ledger Live. You no longer need to use a third-party wallet to add Legacy accounts in Ledger Live.</span>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout--primary">
+<h4 class="callout__title">
+<em class="fa fa-info-circle"> </em> Address privacy</h4>
+<p>Litecoin transactions are public information. Do not re-use your addresses for optimal privacy. Ledger Live automatically generates new addresses and keeps track of your previous ones. Previous addresses do remain valid, but they don't offer an optimal level of privacy.</p>
+</div>
+<h2>Final steps</h2>
+<ul class="list-bullet">
+<li>
+<strong>Create your first Litecoin (LTC) account</strong> in Ledger Live. <a href="https://support.ledger.com/hc/en-us/articles/4404389482641?docs=true" target="_blank" rel="noopener">Learn more</a>.</li>
+<li>
+<strong>Receive</strong> LTC into your Litecoin account. <a href="https://support.ledger.com/hc/en-us/articles/4404389453841-Receive-crypto-assets?docs=true" target="_blank" rel="noopener">Learn more</a>.</li>
+<li>
+<strong>Send</strong> LTC from your Litecoin account. <a href="https://support.ledger.com/hc/en-us/articles/4404382228753-Send-crypto-assets-?docs=true" target="_blank" rel="noopener">Learn more</a>.</li>
+<li>
+<strong>Buy</strong> LTC directly into your Ledger Litecoin account through Ledger Live. Learn more <a href="https://www.ledger.com/buy/litecoin" target="_blank" rel="noopener">here</a>.</li>
+<li>
+<strong>Learn</strong> more about LTC and the Litecoin network <a href="https://www.ledger.com/litecoin-wallet" target="_blank" rel="noopener">here</a>.</li>
+</ul></body></html>

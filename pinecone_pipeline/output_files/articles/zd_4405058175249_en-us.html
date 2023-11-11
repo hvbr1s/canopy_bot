@@ -1,0 +1,39 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/4405058175249-I-can-t-see-my-Binance-Smart-Chain-BNB-account-in-Ledger-Live"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="4405058175249"/><meta name="title" content="I can't see my Binance Smart Chain (BNB) account in Ledger Live"/><meta name="classification" content="public"/></head>                            <body><h1>I can't see my Binance Smart Chain (BNB) account in Ledger Live</h1>
+<p><span style="font-weight: 400;">The Binance Smart Chain (BNB) account <strong>you created using MetaMask</strong> and your Ledger Ethereum app might not appear in Ledger Live.<br><br></span></p>
+<h2 id="h_01HEWCP2AYS4HPR532JDY1T9C6">What happened?</h2>
+<p><span style="font-weight: 400;">When adding your Ledger Binance Smart Chain account to MetaMask, you were prompted to <strong>choose from a list of accounts</strong> similar to the one shown below.</span></p>
+<p><span style="font-weight: 400;">Each account on this list had an <strong>index number</strong> starting from number 1.</span></p>
+<p><span style="font-weight: 400;"> </span></p>
+<p class="wysiwyg-text-align-center"><a class="image-with-lightbox" href="https://support.ledger.com/hc/article_attachments/4405085156497"> <img src="https://support.ledger.com/hc/article_attachments/4405085156497" width="315" height="469"> </a></p>
+<p><span style="font-weight: 400;">Unlike MetaMask, Ledger Live detects accounts sequentially and <strong>always starts from index number 1</strong>. More on this <a href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki" target="_blank" rel="noopener"><strong>here</strong></a>.</span></p>
+<p>Once an unused account has been detected,<strong> Ledger Live will stop detecting additional accounts</strong> and <strong>display the unused account</strong>.</p>
+<p><span style="font-weight: 400;">As a result, any account that is indexed <strong>after</strong> an unused account will not show in Ledger Live.</span></p>
+<p><span style="font-weight: 400;"> </span></p>
+<p class="wysiwyg-text-align-center"><a class="image-with-lightbox" href="https://support.ledger.com/hc/article_attachments/4405087291153"> <img src="https://support.ledger.com/hc/article_attachments/4405087291153" width="491" height="234"> </a></p>
+<h2 id="h_01HEWCP2AYHWFHFZ5TS6VQE7RW">How to restore the hidden account in Ledger Live?</h2>
+<p><span style="font-weight: 400;">This issue can be solved by sending a very small amount of BNB to every account whose index number is <strong>lower</strong> than the index of the hidden BNB account.<br><br>In the example below, the <strong>hidden BNB account is highlighted in red</strong>. In order to make this account appear in Ledger Live, <strong>this user would need to send BNB to the account highlighted in blue</strong>.</span></p>
+<p class="wysiwyg-text-align-center"><a class="image-with-lightbox" href="https://support.ledger.com/hc/article_attachments/4405076874641"> <img src="https://support.ledger.com/hc/article_attachments/4405076874641" width="371" height="286"> </a></p>
+<ol class="list-colored">
+<li>
+<span style="font-weight: 400;">Plug your Ledger device into your computer and open the</span> <span style="font-weight: 400;">BNB app on your Ledger device by navigating to the BNB icon and pressing both buttons simultaneously.</span>
+</li>
+<li>
+<p><span style="font-weight: 400;">Open Metamask, connect MetaMask to the Smart Chain network using <a href="https://academy.binance.com/en/articles/connecting-metamask-to-binance-smart-chain" target="_blank" rel="noopener">this tutorial</a> and connect your Ledger device to MetaMask using</span><a href="https://metamask.zendesk.com/hc/en-us/articles/360020394612-How-to-connect-a-Trezor-or-Ledger-Hardware-Wallet" target="_blank" rel="noopener"> this tutorial</a><br>A list of Ledger BNB accounts appears.</p>
+</li>
+<li><span>Select and unlock the top (empty) account on the list.</span></li>
+<li>
+<span>Send a small balance of BNB to that account.</span><span></span>
+</li>
+<li><span>Repeat for every account with a lower index number than the BNB account you're looking for.</span></li>
+<li><span>Close MetaMask, open Ledger Live.</span></li>
+<li>
+<span>Add your BNB account as described in <a href="https://support.ledger.com/hc/en-us/articles/4404324652177-Set-up-a-Binance-Smart-Chain-BSC-account-in-Ledger-Live-?docs=true" target="_blank" rel="noopener">this article</a></span><br>All BNB accounts containing a BNB balance appear</li>
+<li>Select the account you wish to add to Ledger Live and click Continue to finalize the process of adding the account.</li>
+</ol>
+<div class="callout callout--primary">
+<h4 id="h_01HEWCP2AYAQNF7VXAQAEJYTY9" class="callout__title">How much BNB should I send?</h4>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">We recommend sending the minimum possible amount of BNB.</span></li>
+<li><span style="font-weight: 400;">A single transaction is sufficient.</span></li>
+</ul>
+</div></body></html>

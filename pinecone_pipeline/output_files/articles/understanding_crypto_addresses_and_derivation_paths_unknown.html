@@ -1,0 +1,793 @@
+<html>
+ <head>
+  <meta content="https://blog.ledger.com/understanding-crypto-addresses-and-derivation-paths" name="source"/>
+  <meta content="academy" name="source-type"/>
+  <meta content="unknown" name="locale"/>
+  <meta content="N/A" name="zd-article-id"/>
+  <meta content="understanding crypto addresses and derivation paths" name="title"/>
+  <meta content="public" name="classification"/>
+ </head>
+ <body>
+  <article class="post-full tag-tech post">
+   <header class="post-full-header">
+    <section class="post-full-meta">
+     <time class="post-full-meta-date" datetime="28 December 2022">
+      28 December 2022
+     </time>
+     <span class="date-divider">
+      /
+     </span>
+     <a href="/tag/tech/">
+      TECH
+     </a>
+    </section>
+    <h1 class="post-full-title">
+     Understanding Crypto Addresses and Derivation Paths in Ledger Live
+    </h1>
+   </header>
+   <figure class="post-full-image" style="background-image: url(/assets/images/understanding-crypto-addresses.png)">
+   </figure>
+   <section class="post-full-content">
+    <div class="kg-card-markdown">
+     <p>
+      When you buy a Ledger Nano and use it for the first time, you are required either to import an existing seed or to create a new one randomly. In this blog post, I will explain how Ledger generates addresses from the seed for your crypto assets.
+     </p>
+     <h2 id="key-takeaways">
+      Key takeaways:
+     </h2>
+     <ul>
+      <li>
+       Seed, addresses and keys
+      </li>
+      <li>
+       BIP32, BIP39 and BIP44
+      </li>
+      <li>
+       UTXO Model vs Account Model
+      </li>
+      <li>
+       LedgerJS
+      </li>
+     </ul>
+     <h2 id="hd-wallets---using-a-single-seed-to-generate-a-tree-of-keys">
+      HD Wallets - Using a single seed to generate a tree of keys
+     </h2>
+     <p>
+      An address of a crypto asset maps to a script, which specifies a set of spending conditions. In order to spend crypto from an account, we need to broadcast a transaction that satisfies those spending conditions. This process requires the signature from the Ledger Nano.
+     </p>
+     <p>
+      The
+      <strong>
+       HD Wallets
+      </strong>
+      (Hierarchical Deterministic wallet) proposal appeared in the bitcoin community around 2013, as
+      <a href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki">
+       BIP32
+      </a>
+      (Bitcoin Improvement Protocol). It suggests an algorithm to create a master pair of private/public keys, and then use this private key to generate an unlimited number of “children’s addresses”. Each child is also a pair of private/public keys able to generate the next level grandchildren in the same way as its parent.
+     </p>
+     <center>
+      <figure class="image">
+       <img src="../assets/understanding-crypto-addresses/tree-of-keys.png"/>
+      </figure>
+     </center>
+     <center>
+      <i>
+       <small>
+        Tree of keys
+       </small>
+      </i>
+     </center>
+     <p>
+      <br/>
+     </p>
+     <p>
+      In the above tree, the “children’s addresses” can be calculated from their direct ancestor but not vice versa which is guaranteed by cryptography. 
+That’s how the HD Wallets proposal greatly facilitates key management, since a wallet user has only one seed to maintain.
+     </p>
+     <h2 id="bip39--bip44---mnemonic-and-derivation-path">
+      BIP39 &amp; BIP44 - Mnemonic and derivation path
+     </h2>
+     <p>
+      Besides
+      <a href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki">
+       BIP32
+      </a>
+      , Ledger Live complies with
+      <a href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki">
+       BIP39
+      </a>
+      and
+      <a href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">
+       BIP44
+      </a>
+      .
+     </p>
+     <h3 id="bip39">
+      BIP39
+     </h3>
+     <p>
+      <strong>
+       <a href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki">
+        BIP39
+       </a>
+      </strong>
+      is a proposal that provides an algorithm to represent a 128/256 bits master private key + a checksum with a 12/24 word list. This word list is called
+      <strong>
+       mnemonic
+      </strong>
+      or
+      <strong>
+       seed
+      </strong>
+      . A Ledger user is asked to import or generate this mnemonic before using its Ledger Nano.
+     </p>
+     <center>
+      <figure class="image">
+       <img src="../assets/understanding-crypto-addresses/seed-nano.png"/>
+      </figure>
+     </center>
+     <center>
+      <i>
+       <small>
+        Seed generation on a Ledger Nano
+       </small>
+      </i>
+     </center>
+     <p>
+      <br/>
+     </p>
+     <p>
+      All your Ledger addresses and keys are generated with this seed and organized in a “tree of keys” structure.
+      <a href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">
+       BIP44
+      </a>
+      proposal defines a standard for this tree of keys/addresses management structure. This standard is used by Ledger live.
+     </p>
+     <p>
+      A derivation path looks like the following:
+     </p>
+     <p>
+      <code>
+       m / purpose' / coin_type' / account' / change / address_index
+      </code>
+     </p>
+     <p>
+      It is a special case of a HD wallet tree with 5 levels in
+      <a href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki">
+       BIP32
+      </a>
+      path. A derivation path like this one determines the location of a node in the tree of keys.
+     </p>
+     <p>
+      The apostrophe in the path indicates that
+      <a href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki">
+       BIP32
+      </a>
+      hardened derivation is used. For more details about derivation and hardened derivation algorithm, please refer to
+      <a href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki">
+       BIP32
+      </a>
+      .
+     </p>
+     <h3 id="bip44">
+      BIP44
+     </h3>
+     <p>
+      <a href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">
+       BIP44
+      </a>
+      proposal originates from the Bitcoin community but is also used in many other blockchain ecosystems.
+     </p>
+     <p>
+      Each level of this derivation path has a special meaning:
+     </p>
+     <p>
+      <code>
+       m / purpose' / coin_type' / account' / change / address_index
+      </code>
+     </p>
+     <ul>
+      <li>
+       <code>
+        purpose
+       </code>
+       : legacy bitcoin accounts and other blockchain ecosystems that comply with
+       <a href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">
+        BIP44
+       </a>
+       (44), segwit (49), Native segwit (84), Bitcoin taproot (86)
+      </li>
+      <li>
+       <code>
+        coin_type
+       </code>
+       : Refer to
+       <a href="https://github.com/satoshilabs/slips/blob/master/slip-0044.md">
+        SLIP44
+       </a>
+       - Registered coin types for
+       <a href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">
+        BIP44
+       </a>
+       . Every crypto currency has its own value. This field allows accounts from different blockchains to use completely different and independent trees of keys. It guarantees isolation and avoids key reuse, which would be a privacy leak.
+      </li>
+      <li>
+       <code>
+        account
+       </code>
+       : the account index of the same crypto currency in Ledger Live.
+       <ul>
+        <li>
+         1st bitcoin account:
+         <code>
+          account
+         </code>
+         = 0
+        </li>
+        <li>
+         2nd bitcoin account:
+         <code>
+          account
+         </code>
+         = 1
+        </li>
+        <li>
+         3rd bitcoin account:
+         <code>
+          account
+         </code>
+         = 2
+        </li>
+        <li>
+         …
+        </li>
+       </ul>
+      </li>
+      <li>
+       <code>
+        change
+       </code>
+       : 0 for receiving address and 1 for change address
+      </li>
+      <li>
+       <code>
+        address_index
+       </code>
+       : an incremental address index for the account. It is used to number different addresses in an account of UTXO model crypto assets. More details in the next section.
+      </li>
+     </ul>
+     <p>
+      In Ledger live, in the
+      <strong>
+       Account
+      </strong>
+      page, we can see this kind of derivation path by clicking
+      <strong>
+       Edit account
+      </strong>
+      -&gt;
+      <strong>
+       ADVANCED
+      </strong>
+      -&gt;
+      <strong>
+       freshAddressPath
+      </strong>
+      .
+     </p>
+     <center>
+      <figure class="image">
+       <img src="../assets/understanding-crypto-addresses/derivation-path-btc.png"/>
+      </figure>
+     </center>
+     <center>
+      <i>
+       <small>
+        Bitcoin - Derivation path in Ledger Live
+       </small>
+      </i>
+     </center>
+     <p>
+      <br/>
+     </p>
+     <p>
+      This
+      <code>
+       freshAddressPath
+      </code>
+      is a
+      <a href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">
+       BIP44
+      </a>
+      path.
+Since a HD wallet complies with
+      <a href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki">
+       BIP32
+      </a>
+      in our Ledger ecosystem, a seed along with a
+      <a href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">
+       BIP44
+      </a>
+      path can determine a public key. A crypto asset address is just a differently formatted public key.
+This
+      <a href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">
+       BIP44
+      </a>
+      fresh address path corresponds to the address in the receive flow of the same account in Ledger Live:
+     </p>
+     <center>
+      <figure class="image">
+       <img src="../assets/understanding-crypto-addresses/receive-flow.png"/>
+      </figure>
+     </center>
+     <center>
+      <i>
+       <small>
+        Receive flow in Ledger Live
+       </small>
+      </i>
+     </center>
+     <p>
+      <br/>
+     </p>
+     <h2 id="utxo-model-vs-account-model">
+      UTXO model vs. Account model
+     </h2>
+     <h3 id="utxo-model">
+      UTXO model
+     </h3>
+     <p>
+      A set of crypto currencies supported by Ledger live (bitcoin, bitcoinCash, bitcoinGold, dash, digibyte, dogecoin, komodo, litecoin, peercoin, pivx, qtum, vertcoin, viacoin, zcash, zencash, decred) uses
+      <strong>
+       UTXO
+      </strong>
+      (Unspent Transaction Output) model.
+     </p>
+     <p>
+      An
+      <strong>
+       UTXO
+      </strong>
+      is a discrete piece of crypto assets. It represents some amount of digital currency that is associated with an address. In order to protect privacy, when a bitcoin account receives a transaction, it always gives a
+      <strong>
+       fresh address
+      </strong>
+      to the sender. A
+      <strong>
+       fresh address
+      </strong>
+      is a new empty address without any transaction history, which makes it impossible to track all the historical transactions of an account using one given transaction or address (found on a crypto explorer).
+     </p>
+     <p>
+      <a href="https://support.blockchain.com/hc/en-us/articles/4417082392724-What-are-change-addresses-and-how-do-they-work-#:~:text=Change%20addresses%20are%20an%20aspect,when%20people%20transact%20with%20cash.">
+       Change addresses
+      </a>
+      have the similar fresh address mechanism: as it is impossible to spend portions of a
+      <strong>
+       UTXO
+      </strong>
+      , the wallet of the sender selects a set of
+      <strong>
+       UTXOs
+      </strong>
+      that has at least as much total value as we want to send (plus the required network fees), and sends the excess money back to the sender as a new
+      <strong>
+       UTXO
+      </strong>
+      . This
+      <strong>
+       UTXO
+      </strong>
+      is sent back to the sender at a new change address every time.
+     </p>
+     <center>
+      <figure class="image">
+       <img src="../assets/understanding-crypto-addresses/change-address.png"/>
+      </figure>
+     </center>
+     <center>
+      <i>
+       <small>
+        Change address in a Bitcoin transaction
+       </small>
+      </i>
+     </center>
+     <p>
+      <br/>
+     </p>
+     <p>
+      E.g. With the first bitcoin taproot account in Ledger live, user receives:
+     </p>
+     <ul>
+      <li>
+       1st transaction with the fresh address of derivation path
+       <code>
+        m/86’/0’/0’/0/0
+       </code>
+       .
+      </li>
+      <li>
+       2nd transaction with the fresh address of derivation path
+       <code>
+        m/86’/0’/0’/0/1
+       </code>
+       .
+      </li>
+      <li>
+       3rd transaction with the fresh address of derivation path
+       <code>
+        m/86’/0’/0’/0/2
+       </code>
+       .
+      </li>
+     </ul>
+     <p>
+      When the account owner sends bitcoin from this account, it receives change at the address of derivation path
+      <code>
+       m/86’/0’/0’/1/0
+      </code>
+      and then
+      <code>
+       m/86’/0’/0’/1/1
+      </code>
+      , and then
+      <code>
+       m/86’/0’/0’/1/2
+      </code>
+      , etc…
+     </p>
+     <h3 id="account-model">
+      Account model
+     </h3>
+     <p>
+      Most other crypto currencies supported by Ledger Live (ethereum, solana, cosmos, polkadot, tron…) use the
+      <strong>
+       Account model
+      </strong>
+      .
+     </p>
+     <p>
+      Unlike the
+      <strong>
+       UTXO model
+      </strong>
+      , the crypto assets using the
+      <strong>
+       Account model
+      </strong>
+      have only one address for each account. Everyone can track full historical transactions of an account by using the address in a blockchain explorer. So, to protect the privacy, users should be extra careful to segregate their public accounts from private accounts that are not linked to their identity. There is no “change address” for this kind of crypto assets.
+     </p>
+     <p>
+      So, in the
+      <a href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">
+       BIP44
+      </a>
+      derivation path, the last two level are usually equal to “0”:
+     </p>
+     <ul>
+      <li>
+       <code>
+        m / purpose' / coin_type' / account' / 0 / 0
+       </code>
+      </li>
+     </ul>
+     <p>
+      The derivation path of an Ethereum account in Ledger live looks like:
+     </p>
+     <center>
+      <figure class="image">
+       <img src="../assets/understanding-crypto-addresses/derivation-path-eth.png"/>
+      </figure>
+     </center>
+     <center>
+      <i>
+       <small>
+        Ethereum - Derivation Path in Ledger Live transaction
+       </small>
+      </i>
+     </center>
+     <p>
+      <br/>
+     </p>
+     <h2 id="ledgerjs---get-address-from-ledger-device">
+      LedgerJS - Get address from Ledger device
+     </h2>
+     <p>
+      LedgerJS is a set of JavaScript libraries that provides high-level APIs to communicate with Ledger devices. It is used by Ledger live and other external applications that want to connect to Ledger devices. With the help of these libs, developers can communicate with Ledger devices without handling low-level communication protocol.
+     </p>
+     <p>
+      One of the APIs provided by LedgerJS is
+      <code>
+       getAddress
+      </code>
+      .
+     </p>
+     <p>
+      For
+      <strong>
+       Account model
+      </strong>
+      crypto assets such as Ethereum, how easy is it to get the address from a Ledger device with the derivation path
+      <code>
+       44'/60'/0'/0/0
+      </code>
+      ? Here is the Javascript code:
+     </p>
+     <div class="language-js highlighter-rouge">
+      <div class="highlight">
+       <pre class="highlight"><code><span class="k">import</span> <span class="nx">Eth</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@ledgerhq/hw-app-eth</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">eip55</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">eip55</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">eth</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Eth</span><span class="p">(</span><span class="nx">transport</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">r</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">eth</span><span class="p">.</span><span class="nx">getAddress</span><span class="p">(</span><span class="dl">"</span><span class="s2">44'/60'/0'/0/0</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">address</span> <span class="o">=</span> <span class="nx">eip55</span><span class="p">.</span><span class="nx">encode</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">address</span><span class="p">);</span>
+</code></pre>
+      </div>
+     </div>
+     <p>
+      For
+      <strong>
+       UTXO model
+      </strong>
+      crypto assets such as bitcoin, it is a little bit more complicated:
+     </p>
+     <div class="language-js highlighter-rouge">
+      <div class="highlight">
+       <pre class="highlight"><code><span class="k">import</span> <span class="nx">Btc</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@ledgerhq/hw-app-btc</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">btc</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Btc</span><span class="p">(</span><span class="nx">transport</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">xpub</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">btc</span><span class="p">.</span><span class="nx">getWalletXpub</span><span class="p">({</span> <span class="na">path</span><span class="p">:</span> <span class="dl">"</span><span class="s2">84'/0'/0'</span><span class="dl">"</span><span class="p">,</span> <span class="nx">xpubVersion</span> <span class="p">});</span>
+</code></pre>
+      </div>
+     </div>
+     <p>
+      We introduce two notions here,
+      <code>
+       xpubVersion
+      </code>
+      and
+      <code>
+       xpub
+      </code>
+      :
+     </p>
+     <ul>
+      <li>
+       <code>
+        xpub
+       </code>
+       is short for “Extended public key” and it is a kind of conversion from the public key of a node from the derivation tree. It gives access to the public key and addresses of its children nodes in the
+       <a href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki">
+        BIP32
+       </a>
+       tree. In the above snippet of code,
+       <code>
+        84’/0’/0’
+       </code>
+       are the first three levels of the
+       <a href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">
+        BIP44
+       </a>
+       derivation path (purpose=84, coin_type=0, account=0).
+The
+       <code>
+        xpub
+       </code>
+       corresponds to this node. So we fetch the
+       <code>
+        xpub
+       </code>
+       from the LedgerJS API.
+      </li>
+      <li>
+       <code>
+        xpubVersion
+       </code>
+       is a
+       <a href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki">
+        BIP32
+       </a>
+       parameter of 4 bytes, it varies according to different crypto assets and networks.
+      </li>
+     </ul>
+     <p>
+      E.g. For bitcoin mainnet,
+      <code>
+       xpubVersion
+      </code>
+      = 0x0488b21e.
+      <br/>
+      For bitcoin testnet,
+      <code>
+       xpubVersion
+      </code>
+      = 0x043587cf.
+      <br/>
+      For dogecoin,
+      <code>
+       xpubVersion
+      </code>
+      = 0x02facafd.
+     </p>
+     <p>
+      In Leger Live, every account has a unique
+      <code>
+       xpub
+      </code>
+      that can be found in the
+      <strong>
+       Edit account
+      </strong>
+      page.
+     </p>
+     <center>
+      <figure class="image">
+       <img src="../assets/understanding-crypto-addresses/xpub-ledger-live.png"/>
+      </figure>
+     </center>
+     <center>
+      <i>
+       <small>
+        xpub in Ledger Live
+       </small>
+      </i>
+     </center>
+     <p>
+      <br/>
+     </p>
+     <p>
+      Ledger Live generates all addresses of an account from its
+      <code>
+       xpub
+      </code>
+      .
+     </p>
+     <div class="language-js highlighter-rouge">
+      <div class="highlight">
+       <pre class="highlight"><code><span class="nx">customGetAddress</span><span class="p">(</span>
+   <span class="nx">derivationMode</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span>
+   <span class="nx">xpub</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span>
+   <span class="nx">account</span><span class="p">:</span> <span class="nx">number</span><span class="p">,</span>
+   <span class="nx">index</span><span class="p">:</span> <span class="nx">number</span>
+ <span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">string</span><span class="o">&gt;</span><span class="p">;</span>
+</code></pre>
+      </div>
+     </div>
+     <p>
+      For
+      <strong>
+       UTXO model
+      </strong>
+      crypto assets, such as Bitcoin, every crypto asset implements this method interface.
+     </p>
+     <ul>
+      <li>
+       The
+       <code>
+        derivationMode
+       </code>
+       parameter is one of the four supported values: “legacy”, “segwit”, “native segwit” or “taproot”.
+      </li>
+      <li>
+       The
+       <code>
+        account
+       </code>
+       parameter corresponds to the 4th derivation path level from
+       <a href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">
+        BIP44
+       </a>
+       .
+      </li>
+      <li>
+       The
+       <code>
+        index
+       </code>
+       parameter corresponds to the 5th level.
+      </li>
+     </ul>
+     <p>
+      E.g. for the
+      <a href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">
+       BIP44
+      </a>
+      path
+      <code>
+       84'/0'/1'/3/9
+      </code>
+      ,
+      <code>
+       account
+      </code>
+      =3 and
+      <code>
+       index
+      </code>
+      = 9
+It returns as a string the crypto address used by Ledger live and the blockchain.
+     </p>
+     <p>
+      To protect their privacy, Ledger always asks users not to leak the
+      <code>
+       xpub
+      </code>
+      . As with the
+      <code>
+       xpub
+      </code>
+      of an account, anyone can track all past and future transactions of the account.
+     </p>
+     <h2 id="conclusion">
+      Conclusion
+     </h2>
+     <p>
+      Ledger is not only a software editor but also an
+      <strong>
+       ecosystem builder
+      </strong>
+      . As developers at Ledger, we always improve
+      <a href="https://www.ledger.com/ledger-live">
+       Ledger Live
+      </a>
+      to adapt to the newest standards from blockchain developer communities. Moreover, we provide libraries such as
+      <a href="https://github.com/ledgerhq/ledger-live">
+       LedgerJS
+      </a>
+      , allowing developers all over the world to integrate Ledger products to their website, mobile app or Dapp in an easy way. 
+More documentation can be found in
+      <a href="https://developers.ledger.com/">
+       https://developers.ledger.com/
+      </a>
+     </p>
+     <p>
+      Welcome to our ecosystem!
+     </p>
+     <h2 id="reference">
+      Reference
+     </h2>
+     <ul>
+      <li>
+       <a href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki">
+        BIP32
+       </a>
+      </li>
+      <li>
+       <a href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki">
+        BIP39
+       </a>
+      </li>
+      <li>
+       <a href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">
+        BIP44
+       </a>
+      </li>
+     </ul>
+    </div>
+   </section>
+   <!-- Email subscribe form at the bottom of the page -->
+   <footer class="post-full-footer">
+    <!-- Everything inside the #author tags pulls data from the author -->
+    <!-- #author-->
+    <div style="padding-top: 10px;">
+     <section class="author-card">
+      <img alt="Huiqi Zheng" class="author-profile-image" src="/assets/images/authors/huiqi.jpg"/>
+      <section class="author-card-content">
+       <h4 class="author-card-name">
+        <a href="/author/huiqi">
+         Huiqi Zheng
+        </a>
+       </h4>
+       <p>
+        Software Engineer in Ledger Live
+       </p>
+      </section>
+     </section>
+    </div>
+    <!-- /author  -->
+   </footer>
+   <!-- If you use Disqus comments, just uncomment this block.
+            The only thing you need to change is "test-apkdzgmqhj" - which
+            should be replaced with your own Disqus site-id. -->
+  </article>
+ </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/360015996580-Using-Coin-control"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="360015996580"/><meta name="title" content="Using Coin control"/><meta name="classification" content="public"/></head>                            <body><h1>Using Coin control</h1>
+<p><span style="font-weight: 400;"><span>Coin Control is an advanced feature granting you more control over your account's coins by allowing you to select specific UTXOs for spending.</span></span></p>
+<div class="callout callout--primary">
+<p>Coin control is <strong>only</strong> available for Bitcoin (BTC) and Bitcoin-like crypto assets such as Litecoin (LTC), Bitcoin Cash (BCH) or Zcash (ZEC). Coin control is not available for crypto assets such as Ethereum (ETH), XRP, Cardano (ADA) and many others.</p>
+</div>
+<h2 id="howto">Using Coin control </h2>
+<p><span style="font-weight: 400;">Before you can use the coin control feature, make sure you have updated Ledger Live through the notification banner or downloaded </span><a href="https://www.ledger.com/ledger-live/download" target="_blank" rel="noopener">the latest version of Ledger Live</a><span style="font-weight: 400;">.</span></p>
+<h3>How to use coin control</h3>
+<p>To use the coin control tool:</p>
+<ol class="list-colored">
+<ol class="list-colored">
+<li>In <strong>Ledger Live</strong>, navigate to the <strong>Send</strong> tab.</li>
+<li>
+<span style="font-weight: 400;">Select your <strong>Bitcoin (BTC) account</strong> (or another account that supports Coin Control)</span> and type in the recipient address. Then click <strong>Continue</strong>. </li>
+<li>Enter the <strong>Amount</strong> you want to send.</li>
+<li>Select <strong>Fees</strong> &gt; <strong>Advanced</strong> and type in your desired <strong>Fee amount</strong>.<br><a href="https://mempool.space/" target="_blank" rel="noopener">This website</a> can help you choose the <strong>most optimal fee</strong> for your transaction.<br><img src="https://support.ledger.com/hc/article_attachments/5795943378077" alt="mceclip1.png">
+</li>
+<li class="wysiwyg-text-align-left">Select <strong>Coin control </strong>then <strong>Continue.<br></strong><img src="https://support.ledger.com/hc/article_attachments/5795877351581" alt="rbf_screen.png"><br>The <strong>Coin control</strong> menu appears. <br><img src="https://support.ledger.com/hc/article_attachments/360016270320" alt="Screenshot_2020-09-08_at_17.14.56.png" width="421" height="310">
+</li>
+<li class="wysiwyg-text-align-left">In the <strong>Coin selection strategy</strong> drop-down list, select one of the following strategies: 
+<ul>
+<li class="wysiwyg-text-align-left">
+<strong>Oldest coins first (FIFO): </strong>the default strategy spends the oldest coins first. </li>
+<li class="wysiwyg-text-align-left">
+<strong>Minimize fees (optimize size): </strong>the strategy spends the lowest number of coins to reduce the byte size of the transaction. This strategy results in a low network fee. </li>
+<li class="wysiwyg-text-align-left">
+<strong>Minimize future fees (merge coins): </strong>the strategy spends the maximum number of inputs so that a potential price rise does not make smaller coins economically unspendable. Indeed, if the price of a crypto asset increases too much, smaller coins may be worth less than the cost of the network fees to spend them. </li>
+</ul>
+</li>
+<li>
+<em>(optional)</em> Untick the checkboxes of the coins you don't want to include in the selection. <br>
+<p><em class="fa fa-info-circle">  </em>Note that the <strong>Coins to spend</strong> and<strong> Change to return</strong> indicators display <span>how much is spent from and returned to the account. </span></p>
+</li>
+<li>Click <strong>Done</strong> to return to the <strong>Send</strong> flow to verify and send the transaction.  <br><img src="https://support.ledger.com/hc/article_attachments/5796283411741" alt="rbf_gif.gif">
+</li>
+</ol>
+</ol>
+<h3>Understanding coin statuses</h3>
+<p>The following table describes the different coin statuses: </p>
+<table class="table table--bordered" style="width: 601px;" border="1px">
+<thead>
+<tr>
+<th style="width: 208px;">Coin status</th>
+<th style="width: 370px;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="width: 208px;">Pending</td>
+<td style="width: 370px;">Coins received in a transaction with 0 confirmation <strong>with </strong>Replace-By-Fee (RBF) enabled by default.</td>
+</tr>
+<tr>
+<td style="width: 208px;">153 confirmations</td>
+<td style="width: 370px;">
+<span><span>Coins received in a transaction with </span></span><span>153 confirmations.</span>
+</td>
+</tr>
+</tbody>
+</table></body></html>

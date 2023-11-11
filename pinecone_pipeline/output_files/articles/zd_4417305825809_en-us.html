@@ -1,0 +1,54 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/4417305825809-Bridging-assets-across-Ethereum-L2s-with-Hop-Exchange"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="4417305825809"/><meta name="title" content="Bridging assets across Ethereum L2s with Hop Exchange"/><meta name="classification" content="public"/></head>                            <body><h1>Bridging assets across Ethereum L2s with Hop Exchange</h1>
+<p>This article describes how to use <a href="https://hop.exchange/" target="_blank" rel="noopener">Hop Exchange</a> to quickly transfer crypto assets between the following networks:</p>
+<ul>
+<li><a href="https://ethereum.org/en/" target="_blank" rel="noopener">Ethereum</a></li>
+<li><a href="https://polygon.technology/" target="_blank" rel="noopener">Polygon</a></li>
+<li><a href="https://arbitrum.io/" target="_blank" rel="noopener">Arbitrum</a></li>
+<li><a href="https://www.optimism.io/" target="_blank" rel="noopener">Optimism</a></li>
+<li><a href="https://gnosis.io/" target="_blank" rel="noopener">Gnosis</a></li>
+</ul>
+<div class="callout callout--primary">
+<h4 class="callout__title">
+<em class="fa fa-question-circle"> </em>What are these networks?</h4>
+<ul>
+<li>
+<strong>Ethereum</strong> is a decentralized digital economy powered by blockchain and smart contracts. You can learn more about Ethereum <strong><a href="https://ethereum.org/en/" target="_blank" rel="noopener">here</a></strong>.</li>
+<li>
+<strong>Polygon</strong> is an Ethereum side-chain and a framework for building and connecting Ethereum-compatible networks. You can learn more about Polygon <strong><a href="https://polygon.technology/" target="_blank" rel="noopener">here</a></strong>.</li>
+<li>
+<strong><a href="https://arbitrum.io/" target="_blank" rel="noopener">Arbitrum</a></strong> and <strong><a href="https://www.optimism.io/" target="_blank" rel="noopener">Optimism</a></strong> are Ethereum "layer 2" networks built to help Ethereum scale via optimistic rollups. You can learn more about optimistic rollup technology <strong><a href="https://blog.infura.io/what-is-optimistic-ethereum/#:~:text=Optimistic%20Ethereum%20is%20a%20rollup,a%20much%20lower%20gas%20cost." target="_blank" rel="noopener">here</a></strong>.</li>
+<li>
+<strong>Gnosis</strong> (formerly xDai Chain) is an Ethereum-compatible payment network <span data-slate-fragment="JTdCJTIyb2JqZWN0JTIyJTNBJTIyZG9jdW1lbnQlMjIlMkMlMjJkYXRhJTIyJTNBJTdCJTdEJTJDJTIybm9kZXMlMjIlM0ElNUIlN0IlMjJvYmplY3QlMjIlM0ElMjJibG9jayUyMiUyQyUyMnR5cGUlMjIlM0ElMjJwYXJhZ3JhcGglMjIlMkMlMjJpc1ZvaWQlMjIlM0FmYWxzZSUyQyUyMmRhdGElMjIlM0ElN0IlN0QlMkMlMjJub2RlcyUyMiUzQSU1QiU3QiUyMm9iamVjdCUyMiUzQSUyMnRleHQlMjIlMkMlMjJsZWF2ZXMlMjIlM0ElNUIlN0IlMjJvYmplY3QlMjIlM0ElMjJsZWFmJTIyJTJDJTIydGV4dCUyMiUzQSUyMmRlc2lnbmVkJTIwZm9yJTIwZmFzdCUyMGFuZCUyMGluZXhwZW5zaXZlJTIwdHJhbnNhY3Rpb25zLiUyMiUyQyUyMm1hcmtzJTIyJTNBJTVCJTVEJTJDJTIyc2VsZWN0aW9ucyUyMiUzQSU1QiU1RCU3RCU1RCUyQyUyMmtleSUyMiUzQSUyMmRiMWQzZjlkMGRiNTQwZThiOTdjMTQzZjE0ZTU3ODM0JTIyJTdEJTVEJTJDJTIya2V5JTIyJTNBJTIyMDQ4NTQ3YWVlYTY1NDIwOWFkMGY2ZDdhZTMxZTU4ZGMlMjIlN0QlNUQlMkMlMjJrZXklMjIlM0ElMjI5MTlhMmY5Yzk1ZmU0ZmY5OTUxMzY5ZTU2NTVkOWYzZiUyMiU3RA==">designed for fast and inexpensive transactions. You can learn more about Gnosis <strong><a href="https://www.xdaichain.com/" target="_blank" rel="noopener">here</a></strong>.</span>
+</li>
+</ul>
+</div>
+<h2>Before you start</h2>
+<ul class="list-bullet">
+<li>Make sure to update to the <strong>latest version of Ledger Live</strong> via <a href="https://www.ledger.com/ledger-live/download" target="_self">this link</a>.</li>
+<li>Open My Ledger in Ledger Live and ensure your Ledger device is running the <strong>latest firmware version</strong>. </li>
+<li>Install the <strong>latest version of the <a href="https://support.ledger.com/hc/en-us/articles/360009576554-Ethereum-ETH-?docs=true" target="_blank" rel="noopener">Ethereum (ETH)</a> app</strong> <span style="font-weight: 400;">on your Ledger device.</span><span style="font-weight: 400;"></span>
+</li>
+<li>Install the <strong><a href="https://metamask.io/" target="_blank" rel="noopener">Metamask extension</a></strong> in your browser (we strongly recommend <a href="https://www.google.com/chrome/" target="_blank" rel="noopener">Chrome</a>) and create a regular Metamask account.</li>
+<li>Connect your Ledger Ethereum account to Metamask as explained <a href="https://support.ledger.com/hc/en-us/articles/4404366864657-Set-up-and-use-MetaMask-to-access-your-Ledger-Ethereum-ETH-account?docs=true" target="_blank" rel="noopener">here</a>.</li>
+</ul>
+<h2>Bridging assets across networks with Hop Exchange</h2>
+<ol class="list-colored">
+<li>Open your browser and <strong>unlock Metamask</strong>.</li>
+<li>In Metamask select your <strong>Ledger account. </strong>
+</li>
+<li>In your browser, open the<a href="https://app.hop.exchange/" target="_blank" rel="noopener"><strong> Hop Exchange app</strong>.</a>
+</li>
+<li>Select <strong>Connect a Wallet</strong> then <strong>Metamask.</strong><br>Metamask connects to Hop Exchange, your Ledger account address appears in the app.</li>
+<li>Navigate to the <strong>Send</strong> menu and <strong>select the asset</strong> to send.</li>
+<li>Use the <strong>From</strong> and <strong>To</strong> menus to select the <strong>source</strong> and <strong>destination</strong> networks.<br>For example: To bridge MATIC from your Polygon account to your Ethereum account, select (Send) MATIC, (From) Polygon, (To) Ethereum.</li>
+<li>On your <strong>Ledger device</strong>, open the<span> </span><strong>Ethereum (ETH) app</strong>, go to<span> </span><strong>Settings</strong><span> </span>and<span> </span><strong>enable Bling Signing</strong><span> </span>by following<span> </span><a href="https://support.ledger.com/hc/en-us/articles/4405481324433-Enable-blind-signing-in-the-Ethereum-ETH-app?docs=true" target="_self">these steps</a>.<br>Once blind signing is enabled, please <strong>leave the ETH app open on your Ledger device.</strong>
+</li>
+<li>Select the <strong>number of coins</strong> or tokens you wish to transfer, <strong>review the fees</strong> then click <strong>Send.</strong><br>By default, your crypto will be sent to your account on the destination network but you can select a custom recipient by selecting <strong>Options</strong> and pasting their address.</li>
+<li>Review transaction again then click <strong>Send. </strong>To learn more about the fees charged by Hop Exchange, please review<strong><a href="https://help.hop.exchange/hc/en-us/articles/4409459146253-What-are-the-fees-for-transfering-tokens-with-Hop-" target="_blank" rel="noopener"> this article</a></strong>.<br>Metamask opens in your browser.</li>
+<li>On Metamask, <strong>review the transaction</strong> then click <strong>Confirm</strong>.<br>Your Ledger device displays <strong>Review transaction</strong>, your device is waiting for your confirmation.</li>
+<li>
+<strong>Review the transaction</strong> on your Ledger device then scroll to the <strong>Accept and send</strong> screen and <strong>press both buttons</strong> to confirm.<br>Your transaction receipt appears in the app. The receipt includes your funds' <strong>estimated time of arrival</strong> to the destination account.</li>
+<li>Click <strong>Close.</strong>
+</li>
+</ol>
+<p class="wysiwyg-text-align-center"><img src="https://support.ledger.com/hc/article_attachments/4417327709585/hop_exchange_polygon_ethereum.gif" alt="hop_exchange_polygon_ethereum.gif"></p></body></html>

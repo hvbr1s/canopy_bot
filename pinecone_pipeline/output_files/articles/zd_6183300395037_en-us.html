@@ -1,0 +1,44 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/6183300395037-Speeding-up-slow-Bitcoin-BTC-transactions-using-Electrum"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="6183300395037"/><meta name="title" content="Speeding up slow Bitcoin (BTC) transactions using Electrum"/><meta name="classification" content="public"/></head>                            <body><h1>Speeding up slow Bitcoin (BTC) transactions using Electrum</h1>
+<p><span>A slow Bitcoin (BTC) transaction may occur when the fee attached is low during peak network activity. This results in other transactions with higher fees taking priority, causing your transaction to take longer to process. Rest assured, your funds are completely secure, and it's possible to resolve this issue by using a wallet such as Electrum, which allows you to increase the fee and expedite the process.</span></p>
+<div class="callout callout--primary">
+<h4 id="h_01HC3J81PY7K67YC13CMN78M6E" class="callout__title"><strong><em class="fa-solid fa-circle-exclamation"> </em><em class="fas fa-exclamation-triangle"> </em>Have a Taproot BTC account and need to speed up your BTC transaction?</strong></h4>
+<p><span>If you have a Taproot account and want to accelerate your Bitcoin (BTC) transaction, consider using Sparrow Wallet instead of Electrum. Learn how to connect your Ledger to Sparrow Wallet <a href="https://support.ledger.com/hc/articles/10615436599837?support=true" target="_blank" rel="noopener noreferrer">in this article</a>.</span></p>
+</div>
+<p>This article describes how to <strong>speed up</strong> a <strong>stuck or slow Bitcoin (BTC) transaction</strong> with <strong>Electrum</strong>.</p>
+<p><em class="fa fa-info-circle"> </em>You can learn more about Electrum <a href="https://electrum.readthedocs.io/en/latest/" target="_blank" rel="noopener">here</a>.</p>
+<h2 id="h_01HC3J4YC52GY7J0GGDWE8N8NY">Before you start</h2>
+<ul class="list-bullet">
+<li>Make sure to <strong>update Ledger Live</strong> to the <strong>latest version</strong> via <a href="https://www.ledger.com/ledger-live/download" target="_blank" rel="noopener">this link</a>.</li>
+<li>Open Ledger Live and connect your Ledger device to <strong>My Ledger</strong> to ensure that your Ledger device is running the <strong>latest firmware version</strong>.</li>
+<li>Make sure you're running the <strong>latest version</strong> of the <span class="wysiwyg-underline"><a href="https://support.ledger.com/hc/en-us/articles/115005195945-Bitcoin-BTC-?docs=true" target="_blank" rel="noopener">Bitcoin (BTC) app</a></span>.</li>
+<li>
+<span class="wysiwyg-underline"><a href="https://electrum.org/#download" target="_self">Download and install Electrum</a></span> on your computer.</li>
+</ul>
+<h2 id="h_01HC3J4YC5DA05X84J5KRPGF27">Video instructions</h2>
+<p class="wysiwyg-text-align-center"><iframe src="//www.youtube-nocookie.com/embed/nNcvN68XAX0" width="560" height="315" frameborder="0" allowfullscreen=""></iframe></p>
+<h2 id="h_01HC3J4YC5CPHQYZTPQSM1WTZD">Step-by-step</h2>
+<ol class="list-colored">
+<li>Connect your Ledger to your computer, unlock it then open the <strong>Bitcoin app</strong>.<br>Your Ledger displays:<strong> Bitcoin is ready</strong>.</li>
+<li>Open <strong>Electrum</strong>.</li>
+<li>Select <strong>Next</strong>.<br><em class="fa fa-info-circle"> </em>The "<strong>Wallet: </strong>field at the top does <strong>not</strong> need to be changed.</li>
+<li>Select <strong>Standard Wallet </strong>then click <strong>Next</strong>.<br><img src="https://support.ledger.com/hc/article_attachments/6184876558621" alt="mceclip2.png">
+</li>
+<li>Select <strong>Use a hardware device</strong> then click <strong>Next</strong>.<br><em class="fa fa-info-circle"> </em><span style="font-weight: 400;">Before clicking <strong>Next</strong>, make sure that </span><span style="font-weight: 400;">your Ledger device is <strong>unlocked</strong> and the </span><strong>Bitcoin (BTC) app</strong> is<strong> opened</strong><span style="font-weight: 400;"> on your Ledger device.</span><br><img src="https://support.ledger.com/hc/article_attachments/6184913014301" alt="mceclip4.png">
+</li>
+<li id="try_again">Select your Ledger device then click <strong>Next</strong>.<br><img src="https://support.ledger.com/hc/article_attachments/6184835425693" alt="mceclip1.png">
+</li>
+<li>Select the <strong>derivation path.</strong><br><em class="fa fa-info-circle"> </em><span style="font-weight: 400;">If your Bitcoin account was created via <strong>Ledger Live</strong>, the <strong>default</strong> derivation path is <strong>native segwit (p2wpkh).</strong></span><br><img src="https://support.ledger.com/hc/article_attachments/6184916380317" alt="mceclip5.png">
+</li>
+<li><span style="font-weight: 400;">Tick <strong>Encrypt wallet file </strong>and click <strong>Next.<br><img src="https://support.ledger.com/hc/article_attachments/6185120179101" alt="mceclip6.png"><br></strong>Electrum displays your account <strong>transaction history</strong>.<br>If not, <a href="#try_again">please go back to step 7</a> and <strong>try a different derivation path/address type.</strong><br></span></li>
+<li>
+<span style="font-weight: 400;"><strong>Right-click</strong> the <strong>stuck (unconfirmed)</strong> transaction and s</span><span style="font-weight: 400;">elect <strong>Increase fee</strong>.<br><img src="https://support.ledger.com/hc/article_attachments/6185215210141" alt="mceclip7.png"><br></span>
+</li>
+<li><span style="font-weight: 400;">Navigate to the <strong>New Fee rate</strong> field, type in a higher fee rate (sat/byte) then click <strong>Ok</strong>.<br><em class="fa fa-info-circle"> </em>You can use <a href="https://mempool.space/" target="_blank" rel="noopener">this website</a> to find the <strong>optimal</strong> fee rate.<br><img src="https://support.ledger.com/hc/article_attachments/6185222799901" alt="mceclip8.png"><br></span></li>
+<li><span style="font-weight: 400;">Click <strong>Sign</strong>.<br><img src="https://support.ledger.com/hc/article_attachments/6185257084061" alt="mceclip9.png"><br>Electrum displays:  <strong>Confirm Transaction on your Ledger device...<br></strong>Your Ledger displays: <strong>Review output #</strong></span></li>
+<li><span style="font-weight: 400;">Using the buttons, carefully review the <strong>Amount</strong>, <strong>Address</strong> then select <strong>Accept</strong>.<br>Your Ledger displays: <strong>Confirm transaction</strong>.</span></li>
+<li>
+<span style="font-weight: 400;">Using the buttons again, review the new <strong>Fees</strong> and, if all looks good, <strong>Confirm and send.</strong></span><span style="font-weight: 400;"><strong><br></strong>Your Ledger displays: <strong>Application is ready.<br><img src="https://support.ledger.com/hc/article_attachments/6185357452829" alt="confirm_ledger.gif"><br></strong></span>
+</li>
+<li><span style="font-weight: 400;">Back to Electrum click <strong>Broadcast</strong>.<br><img src="https://support.ledger.com/hc/article_attachments/6185362348829" alt="mceclip10.png"><br>Electrum displays: <strong>Payment sent </strong>and the <strong>destination address</strong>.<br></span></li>
+<li><span style="font-weight: 400;">Click <strong>Ok</strong>.<br>You're done!<br><img src="https://support.ledger.com/hc/article_attachments/6185415890205" alt="mceclip11.png"><br></span></li>
+</ol></body></html>

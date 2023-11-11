@@ -1,0 +1,583 @@
+<html>
+ <head>
+  <meta content="https://blog.ledger.com/should-crypto-fear-quantum-computing" name="source"/>
+  <meta content="academy" name="source-type"/>
+  <meta content="unknown" name="locale"/>
+  <meta content="N/A" name="zd-article-id"/>
+  <meta content="should crypto fear quantum computing" name="title"/>
+  <meta content="public" name="classification"/>
+ </head>
+ <body>
+  <article class="post-full tag-tech post">
+   <header class="post-full-header">
+    <section class="post-full-meta">
+     <time class="post-full-meta-date" datetime="13 February 2023">
+      13 February 2023
+     </time>
+     <span class="date-divider">
+      /
+     </span>
+     <a href="/tag/tech/">
+      TECH
+     </a>
+    </section>
+    <h1 class="post-full-title">
+     Should Crypto Fear Quantum Computing?
+    </h1>
+   </header>
+   <figure class="post-full-image" style="background-image: url(/assets/images/should-crypto-fear-quantum-computing.png)">
+   </figure>
+   <section class="post-full-content">
+    <div class="kg-card-markdown">
+     <p>
+      In this article, Charles Guillemet, the CTO at Ledger, explores the potential implications of quantum computing on the cryptocurrency industry, and how post-quantum solutions may eventually emerge to address the challenge.
+     </p>
+     <h2 id="key-takeaways">
+      Key takeaways:
+     </h2>
+     <ul>
+      <li>
+       Quantum computing, a cutting-edge technology, holds immense potential for revolutionizing computation with its unmatched computational power.
+      </li>
+      <li>
+       Quantum computing, despite being at least several years from a major breakthrough, is perceived as a significant threat to cryptography due to its immense data processing capabilities.
+      </li>
+      <li>
+       The potential impact of quantum computing on cryptography and secure systems such as Bitcoin’s proof-of-work must be carefully considered. As the world’s most secure gateway to crypto, such fundamental questions merit Ledger’s full attention.
+      </li>
+     </ul>
+     <h2 id="quantum-computing-the-next-big-tech-leap">
+      Quantum Computing: The Next Big Tech Leap
+     </h2>
+     <p>
+      Let’s first understand how current computers work.
+     </p>
+     <p>
+      The computers we use daily process information based on “bits”. A bit can only hold one of the following values: 0 or 1, and can be strung together to create a piece of binary code.
+      <strong>
+       Today, everything we do with a computer, from sending emails and watching videos to sharing music, is possible due to such strings of binary digits.
+      </strong>
+     </p>
+     <p>
+      The binary nature of traditional computers imposes limitations on their computing power. These computers only perform operations one step at a time and struggle to accurately simulate real-world problems. In contrast, the physical world operates based on amplitudes rather than binary digits, making it much more complex. This is where quantum computers come into play.
+     </p>
+     <p>
+      In 1981, Richard Feynman said that “nature isn’t classical, and if you want to make a simulation of nature, you’d better make it quantum mechanical.”
+      <strong>
+       Instead of manipulating bits, quantum computing uses “quantum bits”, or qubits, allowing it to process data in a vastly more efficient way.
+      </strong>
+      Qubits can be zero, one, and, most importantly, a combination of zero and one.
+     </p>
+     <center>
+      <figure class="image">
+       <img src="../assets/should-crypto-fear-quantum-computing/bit-qubit.png"/>
+      </figure>
+     </center>
+     <center>
+      <i>
+       <small>
+        Difference between Bit and Qubit
+       </small>
+      </i>
+     </center>
+     <p>
+      <br/>
+     </p>
+     <p>
+      Quantum computing stands at the crossroads of physics and computer science. To put things into perspective, a 500-qubit quantum computer would require more classical bits than… the number of atoms in the entire universe.
+     </p>
+     <h2 id="is-quantum-a-threat-to-cryptography">
+      Is Quantum A Threat To Cryptography?
+     </h2>
+     <p>
+      Public-key cryptography, also referred to as asymmetric cryptography, forms the foundation of cryptocurrency security. It involves a combination of a public key (accessible to all) and a private key. The rapid calculation capabilities of qubits raise the potential for breaking encryption and disrupting the security of the cryptocurrency industry if quantum computing continues to advance.
+     </p>
+     <p>
+      <strong>
+       Two algorithms need to be closely considered: Shor’s and Grover’s.
+      </strong>
+      Both algorithms are theoretical because there currently isn’t any machine to implement them, but as you will see, the potential implementation of these algorithms could be harmful to cryptography.
+     </p>
+     <p>
+      <strong>
+       On the one hand, Shor’s (1994) quantum algorithm, named after Peter Shor, enables factoring large integers or solving the discrete logarithm problem in polynomial time.
+      </strong>
+      This algorithm could break public key cryptography with a sufficiently powerful quantum computer. Shor’s algorithm would break the vast majority of asymmetric cryptography used today since it is based on RSA (relying on the integer factorization problem) and Elliptic Curve Cryptography (depending on the discrete logarithm problem in an elliptic curve group).
+     </p>
+     <p>
+      <strong>
+       On the other hand, Grover’s (1996) algorithm is a quantum search algorithm devised by Lov Grover in 1996, which can be used to solve unstructured search problems.
+      </strong>
+      The Grover algorithm puts a significant dent in symmetric primitives’ security but is not insurmountable. It is generally advised to double the key length to compensate for this break’s square-root complexity. Using AES256 instead of AES128 is considered enough, but it should be noted that this rule of thumb
+      <a href="https://eprint.iacr.org/2021/1348">
+       might only sometimes be valid for all ciphers
+      </a>
+      <sup>
+       [5]
+      </sup>
+      . As for hash functions, which are part of the symmetric primitive’s landscape, it is thought that it has no impact on collision resistance. However, researchers found instances of the problem where
+      <a href="https://link.springer.com/content/pdf/10.1007%2F978-3-319-70697-9_8.pdf">
+       this is untrue
+      </a>
+      <sup>
+       [6]
+      </sup>
+      (multi-target preimage search, for example).
+     </p>
+     <p>
+      In essence, both algorithms pose potential dangers to cryptography. Shor’s algorithm simplifies the process of factoring large numbers, making it easier to uncover a private key connected to a public key, and Grover’s algorithm is capable of compromising cryptographic hashing more efficiently than current computers.
+     </p>
+     <h3 id="when-will-encryption-breaking-quantum-computers-come-to-life">
+      When Will Encryption Breaking Quantum Computers Come To Life?
+     </h3>
+     <p>
+      <strong>
+       Let’s walk through some of the latest experiments and see how fast research is going.
+      </strong>
+      The first real quantum computer remains far off, but that doesn’t prevent a global race from reaching “quantum supremacy.” For Ayal Itzkovitz, managing partner in a quantum-focused VC fund, “if three years ago we didn’t know if it was altogether possible to build such a computer, now we already know that there will be quantum computers that will be able to do something different from classic computers.”
+     </p>
+     <p>
+      One event that everyone has probably heard about was Google’s “quantum supremacy experiment” in 2019 using a device with 54 qubits. In 2021, the
+      <em>
+       University of Science and Technology of China
+      </em>
+      solved a more complex calculation using 56 qubits, reaching 60 qubits later. Its goal was to perform a computation not involving Shor’s algorithm that would equally demonstrate a quantum speedup over classical computing.
+     </p>
+     <p>
+      By definition, these experiments do not show progress toward breaking cryptography because they were designed to avoid the size and complexity of performing quantum integer factorization.
+      <strong>
+       However, they show that building more qubits into a quantum computer is no longer difficult, with different hardware solutions available
+      </strong>
+      , Google’s ‘Sycamore’ chip qubits being fundamentally different from the USTC’s photons.
+     </p>
+     <p>
+      <strong>
+       The next vital step to getting to an encryption-breaking computer is generally considered to be building fault-tolerant computation and error-correcting qubits.
+      </strong>
+     </p>
+     <p>
+      <a href="https://www.bsi.bund.de/EN/Themen/Unternehmen-und-Organisationen/Informationen-und-Empfehlungen/Quantentechnologien-und-Post-Quanten-Kryptografie/Entwicklungsstand-Quantencomputer/entwicklungsstand-quantencomputer.html">
+       BSI’s Status of quantum computer development
+      </a>
+      <sup>
+       [1]
+      </sup>
+      shows how far from breaking a 160 bits discrete logarithm (lowest blue line in the following image) current quantum computers are. The abscissa shows how reducing the error rate through pure hardware improvements, or fault-tolerant computing helps reach such computing levels without dramatically scaling the number of available qubits (y-axis).
+     </p>
+     <center>
+      <figure class="image">
+       <img src="../assets/should-crypto-fear-quantum-computing/error-rate-curve.png"/>
+      </figure>
+     </center>
+     <p>
+      <br/>
+     </p>
+     <p>
+      <strong>
+       Implementing Shor’s algorithm in practice in a scalable way requires fault-tolerant computation on a few thousands logical qubits: 2124 qubits at a minimum in order to break a 256 bit elliptic curve like bitcoin’s secp256k1
+      </strong>
+      , from
+      <a href="https://eprint.iacr.org/2020/077">
+       Improved quantum circuits for elliptic curve discrete logarithms
+      </a>
+      <sup>
+       [7]
+      </sup>
+      . A ‘logical’ qubit in such a system is composed of several qubits designed to work as an error-corrected version of a single qubit.
+     </p>
+     <p>
+      A thousand logical qubits roughly translate into several million qubits, covering the size of a soccer field. A practical demonstration of such a fault-tolerant computation was recently made in
+      <a href="https://www.nature.com/articles/s41586-021-03928-y/">
+       Fault-tolerant control of an error-corrected qubit
+      </a>
+      <sup>
+       [2]
+      </sup>
+      , where a single logical qubit whose error probability is lower than that of the qubits it is made of. This area’s improvement is expected to follow quickly as it will become the focus.
+     </p>
+     <p>
+      <strong>
+       Progress in this direction will directly translate into a concrete threat to public key cryptography
+      </strong>
+      . Lastly, another possibility for rapid progress can come from purely algorithmic improvements or hardware-only discoveries.
+      <a href="https://www.bsi.bund.de/EN/Themen/Unternehmen-und-Organisationen/Informationen-und-Empfehlungen/Quantentechnologien-und-Post-Quanten-Kryptografie/Entwicklungsstand-Quantencomputer/entwicklungsstand-quantencomputer.html">
+       BSI’s Status of quantum computer development
+      </a>
+      <sup>
+       [1]
+      </sup>
+      explains: “There can be disruptive discoveries that would dramatically change [the current state of knowledge], the main ones being cryptographic algorithms that can be run on near-term non-error-corrected machines or dramatic breakthroughs in the error rate of some platforms.”
+      <strong>
+       In other words, it’s not just a problem of being able to build large computers with a lot of qubits (actually building more qubits reliably is not the main focus, fault-tolerant computing is), but also an algorithmic one and possibly a material research one.
+      </strong>
+     </p>
+     <p>
+      As we were writing this article, IBM published its results on a 127-qubit chip with a 0.001 error rate, and plans on issuing a 433-qubit chip next year, and 1121-qubit chip in 2023.
+     </p>
+     <p>
+      All in all, it remains hard to predict how fast a quantum computer will come to life. Still, we can rely on expert opinion on the matter:
+      <a href="https://globalriskinstitute.org/download/quantum-risk-assessment-report-executive-summary-2/">
+       A Resource Estimation Framework for Quantum Attacks Against Cryptographic Functions - Recent Developments
+      </a>
+      <sup>
+       [3]
+      </sup>
+      and
+      <a href="https://globalriskinstitute.org/publications/quantum-threat-timeline-report-2020/">
+       Expert poll on quantum risk
+      </a>
+      <sup>
+       [4]
+      </sup>
+      show that many experts agree that in 15 to 20 years, we should have a quantum computer available.
+     </p>
+     <center>
+      <figure class="image">
+       <img src="../assets/should-crypto-fear-quantum-computing/risk-over-time.png"/>
+      </figure>
+     </center>
+     <p>
+      <br/>
+     </p>
+     <p>
+      Quoting
+      <a href="https://globalriskinstitute.org/download/quantum-risk-assessment-report-executive-summary-2/">
+       A Resource Estimation Framework for Quantum Attacks Against Cryptographic Functions - Recent Developments
+      </a>
+      <sup>
+       [3]
+      </sup>
+      as a summary:
+     </p>
+     <blockquote>
+      <p>
+       “The currently deployed public key schemes, such as RSA and ECC, are completely broken by Shor’s algorithm. In contrast, the security parameters of symmetric methods and hash functions are reduced by, at most, a factor of two by the known attacks - by “brute force” searches using Grover’s searching algorithm. All those algorithms require large-scale, fault-tolerant quantum machines, which are not yet available. Most of the expert community agree that they will likely become a reality within 10 to 20 years.”
+      </p>
+     </blockquote>
+     <p>
+      Now that we’ve examined why quantum algorithms could harm cryptography, let’s analyze the substantial risks implied for the crypto and Web3 fields.
+     </p>
+     <h3 id="quantum-what-risks-for-cryptocurrencies">
+      Quantum: What Risks for cryptocurrencies
+     </h3>
+     <h4 id="the-bitcoin-case">
+      The Bitcoin case:
+     </h4>
+     <p>
+      Let’s start with Pieter Wuille’s analysis of the problem for Bitcoin, sometimes considered “quantum-safe’’ due to addresses being hashes of public keys and thus not exposing them.
+     </p>
+     <blockquote class="twitter-tweet">
+      <p dir="ltr" lang="en">
+       Hashing public keys doesn't add any security. The widely repeated claim that it protects against quantum computers is nonsense. Anyone who ever reused an address, or shared an xpub (or used Electrum) has their pubkeys already public.
+      </p>
+      — Pieter Wuille (@pwuille)
+      <a href="https://twitter.com/pwuille/status/1133531085852168193?ref_src=twsrc%5Etfw">
+       May 29, 2019
+      </a>
+     </blockquote>
+     <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js">
+     </script>
+     <p>
+      Not being able to break a Bitcoin private key based on the assumption that hashes make it impossible also relies on never disclosing one’s public key, whatever the means, which is already wrong for many accounts.
+     </p>
+     <p>
+      Referring to another thread, Pieter Wuille gives an idea of the impact of having the ~37% of exposed funds (at the time) stolen. Bitcoin would probably tank, and even unexposed, everyone else loses as well.
+     </p>
+     <blockquote class="twitter-tweet">
+      <p dir="ltr" lang="en">
+       1) This question was clearly a bit underspecified, as some of the more creative responses showed. Despite that, my answer is (c) 5M-10M BTC. This includes all outputs with P2PK/raw multisig outputs, plus P2PKH outputs with known pubkeys, and P2SH/P2WSH with known scripts.
+       <a href="https://t.co/y3Ha3Fa4tm">
+        https://t.co/y3Ha3Fa4tm
+       </a>
+      </p>
+      — Pieter Wuille (@pwuille)
+      <a href="https://twitter.com/pwuille/status/1108085284862713856?ref_src=twsrc%5Etfw">
+       March 19, 2019
+      </a>
+     </blockquote>
+     <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js">
+     </script>
+     <p>
+      The crucial point here is the mention that the progress towards building a quantum computer will be
+      <strong>
+       incremental
+      </strong>
+      : billions of dollars are publicly invested in this field and any improvement resonates worldwide, as Google’s quantum supremacy experiment showed.
+     </p>
+     <p>
+      This means that ending up with funds at risk will take time, and alternative solutions can be laid out correctly. One can imagine setting up a fork of the chain using post-quantum cryptographic algorithms for signing and allowing people to transfer their funds to that new chain from the old once news of a reasonably beefy quantum computer seems imminent.
+     </p>
+     <h4 id="the-ethereum-case">
+      The Ethereum case:
+     </h4>
+     <p>
+      The case of Ethereum is interesting as ETH 2.0 includes a backup plan for such a catastrophic failure in
+      <a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-2333.md#a-post-quantum-backup">
+       EIP-2333
+      </a>
+      .
+     </p>
+     <p>
+      In case ETH2’s BLS signatures break, which would happen at the same time as ECDSA since they are both equally vulnerable in the face of Shor’s algorithm, a hard fork of the blockchain will be executed before the algorithm is suspected to be compromised. Then, users reveal a preimage of their key that only legitimate owners can possess. This excludes keys retrieved by breaking a BLS signature. With that preimage, they sign a specific transaction allowing them to move to the hard fork and use new post-quantum algorithms.
+     </p>
+     <p>
+      This is not a switch to a post-quantum chain yet but it provides an escape hatch. Some more information
+      <a href="https://blog.ricmoo.com/ethereum-post-quantum-recovery-dffc9ab0ca3e">
+       here
+      </a>
+      .
+     </p>
+     <h4 id="post-quantum-signatures">
+      Post-quantum signatures
+     </h4>
+     <p>
+      A few things could be improved regarding switching to a post-quantum signature scheme for use in a cryptocurrency. The current NIST finalists have rather large memory requirements. When the signature size is not unreasonably larger than that of an ECDSA, the public key size increases block sizes and the associated fees.
+     </p>
+     <table>
+      <thead>
+       <tr>
+        <th style="text-align: center">
+         Candidate name
+        </th>
+        <th style="text-align: center">
+         Size
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td style="text-align: center">
+         Rainbow
+        </td>
+        <td style="text-align: center">
+         58.3 kB
+        </td>
+       </tr>
+       <tr>
+        <td style="text-align: center">
+         Dilithium
+        </td>
+        <td style="text-align: center">
+         3.5 kB
+        </td>
+       </tr>
+       <tr>
+        <td style="text-align: center">
+         Falcon
+        </td>
+        <td style="text-align: center">
+         1.5 kB
+        </td>
+       </tr>
+       <tr>
+        <td style="text-align: center">
+         GeMSS
+        </td>
+        <td style="text-align: center">
+         352 kB
+        </td>
+       </tr>
+       <tr>
+        <td style="text-align: center">
+         Picnic
+        </td>
+        <td style="text-align: center">
+         12 kB
+        </td>
+       </tr>
+       <tr>
+        <td style="text-align: center">
+         SPHINCS+
+        </td>
+        <td style="text-align: center">
+         7 kB
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <p>
+      The Falcon algorithm was designed to minimize the size of the public key and signature. However, its 1563 bytes are still far from the 65 bytes ECDSA currently reaches.
+     </p>
+     <p>
+      Cryptographic techniques can reduce block sizes, like aggregating several signatures together. This
+      <a href="https://eprint.iacr.org/2020/520">
+       multisignature scheme
+      </a>
+      for the GeMSS signature does just that and reduces the cost of storage per signature to something acceptable, despite the vast one-time fee of a GeMSS signature.
+     </p>
+     <h4 id="cryptographic-hardware">
+      Cryptographic hardware
+     </h4>
+     <p>
+      Signature sizes also impact hardware wallets where memory is highly constrained: a Ledger Nano S has 320 KB of Flash memory available and only 10 Kilobytes of RAM. If suddenly we needed to use Rainbow signatures, generating the public key in a native way would not be feasible.
+     </p>
+     <p>
+      Since, however, the whole cryptographic community is affected by the problem, including the banking, telecommunication, and identity industry, which make up most of the market for secure chips, we expect hardware to adapt quickly to the need for post-quantum algorithm-friendly hardware and remove that memory (or sometimes performance) all together in time.
+     </p>
+     <p>
+      The consequences of those breaks are the downfall of the current banking system, telecommunications, and identity systems such as passports. What to do in the face of such an apocalyptic future? Fear not, or a little, as cryptographers have got it covered.
+     </p>
+     <h2 id="is-there-a-cure-doctor">
+      Is There A Cure, Doctor?
+     </h2>
+     <p>
+      While our current computers would need thousands of years to break public key cryptography, fully developed quantum computers would do this in minutes or hours. “Quantum security” standards will inevitably be needed to counter this threat and ensure the security of our future financial transactions and online communications.
+     </p>
+     <p>
+      <strong>
+       Work is already underway regarding what is commonly called “Post-quantum cryptography”
+      </strong>
+      that would
+      <a href="https://www.inria.fr/en/closer-look-post-quantum-cryptography">
+       possibly be
+      </a>
+      “compatible with today’s computers but which will also be capable of withstanding attackers from quantum computers in the future.” Post-quantum cryptography brings algorithms and mathematical standards to the next level while allowing compatibility with current computers.
+     </p>
+     <p>
+      The
+      <a href="https://csrc.nist.gov/projects/post-quantum-cryptography">
+       NIST competition
+      </a>
+      created just for the occasion has already reached its third round and produced a list of potential candidates for standardization. The
+      <a href="http://pqcrypto.org/conferences.html">
+       Post-Quantum security Conference
+      </a>
+      was launched as far back as 2006 to study cryptographic primitives that would resist known quantum attacks.
+     </p>
+     <p>
+      The foundations of this research stem from expert warnings that encrypted data is already at risk of being compromised, as the first practical quantum computers are expected to emerge within the next 15 years.
+     </p>
+     <p>
+      This kind of attack is known as “hoard data now, attack later,” where a large organization stores encrypted information from other parties it wishes to break and waits until a powerful enough quantum computer allows it to do so. This is the same worry of this article for example,
+      <a href="https://www.technologyreview.com/2021/11/03/1039171/hackers-quantum-computers-us-homeland-security-cryptography/">
+       The US is worried that hackers are stealing data today so quantum computers can crack it in a decade
+      </a>
+      , but it does not say what state-level actors might be doing in the same vein. They have a lot more resources and storage available.
+     </p>
+     <h2 id="closing-thoughts">
+      Closing Thoughts
+     </h2>
+     <p>
+      The exact speed at which encrypted communications will become vulnerable to quantum research remains hard to determine.
+     </p>
+     <p>
+      One thing is sure: although significant progress is being made in quantum computing, we are still far from possessing the capability to crack cryptography with these machines. The likelihood of a sudden breakthrough resulting in the design of such a computer is minimal, giving us time to prepare for its arrival. If it were to occur overnight, the ramifications would be disastrous, affecting not only cryptocurrencies, but a wide range of sectors.
+     </p>
+     <p>
+      Fortunately, solutions, including post-quantum cryptography, are available to address the threat, but the crypto industry has yet to see the urgency in investing in these measures.
+     </p>
+     <p>
+      The cryptocurrency market must closely monitor quantum developments. With regards to hardware, there is little cause for concern as we anticipate the development of new secure elements to meet the demand. It is crucial to stay abreast of the latest advancements in side-channel and fault-resistant versions of these algorithms, in order to provide a reliable implementation for our users.
+     </p>
+     <h4 id="references">
+      References
+     </h4>
+     <ul>
+      <li>
+       <sup>
+        [1]
+       </sup>
+       :
+       <a href="https://www.bsi.bund.de/EN/Themen/Unternehmen-und-Organisationen/Informationen-und-Empfehlungen/Quantentechnologien-und-Post-Quanten-Kryptografie/Entwicklungsstand-Quantencomputer/entwicklungsstand-quantencomputer.html">
+        BSI’s Status of quantum computer development
+       </a>
+      </li>
+      <li>
+       <sup>
+        [2]
+       </sup>
+       :
+       <a href="https://www.nature.com/articles/s41586-021-03928-y/">
+        Fault-tolerant control of an error-corrected qubit
+       </a>
+      </li>
+      <li>
+       <sup>
+        [3]
+       </sup>
+       :
+       <a href="https://globalriskinstitute.org/download/quantum-risk-assessment-report-executive-summary-2/">
+        A Resource Estimation Framework for Quantum Attacks Against Cryptographic Functions - Recent Developments
+       </a>
+      </li>
+      <li>
+       <sup>
+        [4]
+       </sup>
+       :
+       <a href="https://globalriskinstitute.org/publications/quantum-threat-timeline-report-2020/">
+        Expert poll on quantum risk
+       </a>
+      </li>
+      <li>
+       <sup>
+        [5]
+       </sup>
+       :
+       <a href="https://eprint.iacr.org/2021/1348">
+        Beyond quadratic speedups in quantum attacks on symmetric schemes
+       </a>
+      </li>
+      <li>
+       <sup>
+        [6]
+       </sup>
+       :
+       <a href="https://link.springer.com/content/pdf/10.1007%2F978-3-319-70697-9_8.pdf">
+        An Efficient Quantum Collision Search Algorithm and Implications on Symmetric Cryptography
+       </a>
+      </li>
+      <li>
+       <sup>
+        [7]
+       </sup>
+       :
+       <a href="https://eprint.iacr.org/2020/077">
+        Improved quantum circuits for elliptic curve discrete logarithms
+       </a>
+      </li>
+     </ul>
+    </div>
+   </section>
+   <!-- Email subscribe form at the bottom of the page -->
+   <footer class="post-full-footer">
+    <!-- Everything inside the #author tags pulls data from the author -->
+    <!-- #author-->
+    <div style="padding-top: 10px;">
+     <section class="author-card">
+      <img alt="Charles Guillemet" class="author-profile-image" src="/assets/images/authors/charles.jpg"/>
+      <section class="author-card-content">
+       <h4 class="author-card-name">
+        <a href="/author/charles">
+         Charles Guillemet
+        </a>
+       </h4>
+       <p>
+        Chief Technology Officer
+       </p>
+      </section>
+     </section>
+    </div>
+    <div style="padding-top: 10px;">
+     <section class="author-card">
+      <img alt="Victor Servant" class="author-profile-image" src="/assets/images/authors/victor.jpg"/>
+      <section class="author-card-content">
+       <h4 class="author-card-name">
+        <a href="/author/victor">
+         Victor Servant
+        </a>
+       </h4>
+       <p>
+        Security Engineer
+       </p>
+      </section>
+     </section>
+    </div>
+    <!-- /author  -->
+   </footer>
+   <!-- If you use Disqus comments, just uncomment this block.
+            The only thing you need to change is "test-apkdzgmqhj" - which
+            should be replaced with your own Disqus site-id. -->
+  </article>
+ </body>
+</html>

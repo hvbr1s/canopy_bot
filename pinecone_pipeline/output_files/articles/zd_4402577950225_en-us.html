@@ -1,0 +1,149 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/4402577950225-Wrong-portfolio-or-asset-value-in-Ledger-Live"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="4402577950225"/><meta name="title" content="Wrong portfolio or asset value in Ledger Live"/><meta name="classification" content="public"/></head>                            <body><h1>Wrong portfolio or asset value in Ledger Live</h1>
+<p><span>This article outlines the steps to resolve issues with the display of portfolio or crypto asset values, also known as countervalues, in Ledger Live.</span></p>
+<h2>Basic information about countervalues in Ledger Live</h2>
+<p>Countervalues in Ledger Live refer to the value of your cryptocurrency portfolio or individual coin/token expressed in traditional currencies such as USD or EUR. It's the monetary equivalent of your digital assets, often referred to as "fiat value."</p>
+<p>Temporary interruptions in pricing data can result in discrepancies in the countervalues displayed in Ledger Live. However, it's important to note that <strong>these interruptions don't affect the actual value of your assets. </strong></p>
+<h2><span>Missing Countervalues for Certain Tokens?</span></h2>
+<p>For some crypto-assets like ERC20/TRC10/TRC20/BEP20 tokens, the countervalue in fiat currency may be missing:</p>
+<p class="wysiwyg-text-align-center"><img style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;" src="https://support.ledger.com/hc/article_attachments/4410019374353" alt="missing_CV_LL.png" width="464" height="106"></p>
+<p>This can occur for several reasons:</p>
+<ol>
+<li style="list-style-type: none;">
+<ul>
+<li>
+<p>If the available rate providers do not have a trading pair with ETH/TRX/BNB, then the countervalue cannot be displayed.</p>
+</li>
+<li>
+<p>If the countervalue for a given pair is not reliable, it will not be displayed. This usually occurs when the trading volume is too low.</p>
+</li>
+<li>
+<p>If the countervalue is too low, it will be displayed as zero.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2>How do I solve a countervalue issue?</h2>
+<div class="accordion accordion--default">
+<div class="accordion__item">
+<div class="accordion__item-title">Check the health of our APIs</div>
+<div class="accordion__item-content">
+<p>Bugs, network updates or sudden peaks in user traffic might cause disruptions that prevent Ledger Live from returning accurate countervalues.</p>
+<p>You can monitor the health of our countervalue APIs on the <a href="https://status.ledger.com/" target="_blank" rel="noopener">Ledger Status page</a>.</p>
+<p>API issues might cause <strong>temporary display issues</strong> like incorrect contervalues or extreme volatility of the values displayed in Ledger Live.</p>
+<p class="wysiwyg-text-align-center"><a class="image-with-lightbox" href="https://support.ledger.com/hc/article_attachments/4402641973009/countervalue.gif"> <img src="https://support.ledger.com/hc/article_attachments/4402641973009/countervalue.gif" width="463" height="283"> </a></p>
+<p> </p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title">Is the issue related to an ERC20 or BEP20 token?</div>
+<div class="accordion__item-content">
+<p>You can use the <strong>Zerion app</strong> in the Discover tab in Ledger Live to check the value of your tokens.</p>
+<ol class="list-colored">
+<li>In Ledger Live, navigate to the <strong>Discover tab </strong>and select the <strong>Zerion app.</strong>
+</li>
+<li>In the app, make sure to select the desired <strong>Account</strong> and <strong>Wallet</strong> then select the <strong>Overview tab.</strong>
+</li>
+<li>In the tab, scroll down to the <strong>Assets</strong> section.<br>Your ERC20 and BEP20 tokens balance and value are displayed here.<img src="https://support.ledger.com/hc/article_attachments/4413259471121/zerion_portfolio.gif" alt="zerion_portfolio.gif">
+</li>
+</ol>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title">Clear cache</div>
+<div class="accordion__item-content">
+<p><span style="font-weight: 400;"><br></span><span style="font-weight: 400;">Clear cache to force Ledger Live to resynchronize your Ledger accounts.</span></p>
+<ol class="list-colored">
+<li>In Ledger Live, click on <strong>Settings</strong>.</li>
+<li>Click the <strong>Help</strong> tab.</li>
+<li>Click the <strong>Clear</strong> button to clear cache.</li>
+<li>Click <strong>Confirm</strong> after reading the instructions. You'll be redirected to the dashboard and Ledger Live will start the synchronization process.</li>
+</ol>
+<p>Once Ledger Live is synchronized, your balance should be correct.</p>
+<p class="wysiwyg-text-align-center"><a class="image-with-lightbox" href="https://support.ledger.com/hc/article_attachments/4402647651473/clear-cache-two.gif"> <img src="https://support.ledger.com/hc/article_attachments/4402647651473/clear-cache-two.gif" width="443" height="224"> </a></p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title">Update Ledger Live</div>
+<div class="accordion__item-content">
+<p>Each new Ledger Live update brings <strong>new features</strong> and <strong>new supported assets</strong>. If your token or coin does not show in Ledger Live mobile or desktop, it's possible that<strong> your current version does not support the asset</strong>.</p>
+<p>Please <strong>update Ledger Live</strong> by downloading and installing the latest version via <strong><a href="https://www.ledger.com/ledger-live/download" target="_blank" rel="noopener">this link</a></strong>.</p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title">Re-add the account in Ledger Live</div>
+<div class="accordion__item-content">
+<p>Removing then re-adding an account in Ledger Live can help restore the correct countervalue. Please check this <a href="https://support.ledger.com/hc/en-us/articles/4404389482641-Add-your-accounts?docs=true" target="_blank" rel="noopener">article</a> to learn how remove and then add back an account.</p>
+<p>Please note that <strong>removing an account from Ledger Live is completely safe. </strong>Removed accounts can always be re-added later.</p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title">Disable all experimental features in Ledger Live</div>
+<div class="accordion__item-content">
+<p>Ledger Live has an <strong>Experimental features</strong> tab in the Settings of the application. In rare cases, enabled settings of this section can disrupt the connection with blockchain explorers that can result in wrong or missing balances of your accounts.</p>
+<p>In order to disable all <strong>Experimental features</strong> follow the steps:</p>
+<ol class="list-colored">
+<li>In Ledger Live, go to the <strong>Settings.</strong>
+</li>
+<li>Select <strong>Experimental features</strong> tab.</li>
+<li>Disable everything.</li>
+</ol>
+<p class="wysiwyg-text-align-center"><a class="image-with-lightbox" href="https://support.ledger.com/hc/article_attachments/4410028150673/EXP_FEATURES.png"> <img src="https://support.ledger.com/hc/article_attachments/4410028150673/EXP_FEATURES.png"></a></p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title">Is the countervalue still incorrect?</div>
+<div class="accordion__item-content">
+<ul>
+<li>
+<a href="https://support.ledger.com/hc/en-us/articles/4423020306705-Contact-Us?support=true" target="_blank" rel="noopener">Request assistance</a><span> from our Support team, we'll be happy to assist!</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<h2>
+<span>The following currencies appear as fiat options in Ledger Live, however, they do not display any countervalues</span>:</h2>
+<ul>
+<li style="list-style-type: none;">
+<ul>
+<li style="list-style-type: none;">
+<ul>
+<li style="list-style-type: none;">
+<ul>
+<li style="list-style-type: none;">
+<ul>
+<li>Bulgarian Lev (BGN)</li>
+<li>Cambodian Riel (KHR)</li>
+<li>Costa Rican Colon (CRC)</li>
+<li>Ghana Cedi (GHS)</li>
+<li>Iranian Rial (IRR)</li>
+<li>Kenyan Shilling (KES)</li>
+<li>Mauritian Rupee (MUR)</li>
+<li>Vanuatu Vatu (VUV)</li>
+<li>Romanian Leu (RON)</li>
+<li>Tanzanian Shilling (TZS)</li>
+<li>Ugandan Shilling (UGX)</li>
+<li>
+<span>Venezuelan bolívar</span> (VES)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="w-full border-b border-black/10 dark:border-gray-900/50 text-gray-800 dark:text-gray-100 group bg-gray-50 dark:bg-[#444654]">
+<div class="text-base gap-4 md:gap-6 m-auto md:max-w-2xl lg:max-w-2xl xl:max-w-3xl p-4 md:py-6 flex lg:px-0">
+<div class="relative flex w-[calc(100%-50px)] md:flex-col lg:w-[calc(100%-115px)]">
+<div class="flex flex-grow flex-col gap-3">
+<div class="min-h-[20px] flex flex-col items-start gap-4 whitespace-pre-wrap">
+<div class="markdown prose w-full break-words dark:prose-invert light">
+<p><span>We are working to improve the way Ledger Live displays supported fiat currencies, and we appreciate your patience as we work on resolving this matter.</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></body></html>

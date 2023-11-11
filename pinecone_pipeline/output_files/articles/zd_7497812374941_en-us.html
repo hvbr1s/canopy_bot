@@ -1,0 +1,48 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/7497812374941-Zcash-transaction-issues-in-Ledger-Live"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="7497812374941"/><meta name="title" content="Zcash transaction issues in Ledger Live"/><meta name="classification" content="public"/></head>                            <body><h1>Zcash transaction issues in Ledger Live</h1>
+<p>This article describes a number of <strong>transaction issues</strong> currently affecting Zcash users. <span>Check the </span><a href="https://www.ledger.com/coin/wallet/zcash" target="_blank" rel="noopener">Zcash wallet</a><span> page to learn more.</span></p>
+<h2 id="h_01H9P5P7HAV69ZE629PQVEYVKR">Error types</h2>
+<div class="accordion accordion--default">
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>"This is not a valid Zcash address" error</strong></div>
+<div class="accordion__item-content">
+<p>This error happens when attempting to send ZEC coins to a shielded z-address. Please send to a <strong>transparent</strong> address instead.<br><img src="https://support.ledger.com/hc/article_attachments/7498084837789" alt="mceclip1.png"></p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>"Internal error 0x6f01"</strong></div>
+<div class="accordion__item-content">This error happens when trying to send a <strong>deshielded ZEC balance</strong> to a transparent address.<br><img src="https://support.ledger.com/hc/article_attachments/9183896255645" alt="zcash_tx_types.png"><br>You can solve this issue by using the <strong>Coin Control</strong> feature to select and send any <strong>transparent</strong> UTXOs stored in your account. Spending a <strong>shielded</strong> UTXO, however, will still return an error. You can learn more  about Coin Control <a href="https://support.ledger.com/hc/en-us/articles/360015996580-Using-Coin-control?docs=true" target="_blank" rel="noopener">here</a>.<br><img src="https://support.ledger.com/hc/article_attachments/13406295676573" alt="Screen Recording 2023-08-31 at 4.29.05 PM.gif">
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong data-stringify-type="bold">"bad-txns-coinbase-spend-has-transparent-outputs" error</strong></div>
+<div class="accordion__item-content">This error affects <strong>Zcash miners</strong> trying to <strong>spend coinbase (mining) rewards</strong> to a <strong>transparent</strong> address. Since the <a href="https://z.cash/upgrade/heartwood/" target="_blank" rel="noopener">Heartwood upgrade</a>, mining rewards received on a <strong>transparent</strong> address <strong>must be shielded</strong> when they are <strong>moved for the first time</strong>.<br><img src="https://support.ledger.com/hc/article_attachments/7498309913885" alt="heartwood.png">
+</div>
+</div>
+</div>
+<h2 id="h_01H9P5P7HA7PN268E6S65TQJHZ">A bit of background</h2>
+<p>There are <strong>2 types</strong> of <strong>addresses</strong> on the Zcash network:</p>
+<ul>
+<li>
+<strong>Transparent</strong> addresses, also known as <strong>t-addresses</strong> are <strong>public</strong>.</li>
+<li>
+<strong>Shielded</strong> addresses, also known as <strong>z-addresses</strong> are <strong>private</strong>.</li>
+</ul>
+<p><em class="fa fa-info-circle"> </em><strong>Ledger Live</strong> can <strong>only</strong> create <strong>transparent</strong> addresses.<br><img src="https://support.ledger.com/hc/article_attachments/7498000933405" alt="mceclip0.png"></p>
+<p>This dual-address system means that <strong>4 different types</strong> <strong>of</strong> <strong>transactions</strong> can happen on the Zcash network:</p>
+<ul>
+<li>
+<strong>Public</strong>: transparent to transparent </li>
+<li>
+<strong>Shielding</strong>: transparent to shielded</li>
+<li>
+<strong>Deshielding</strong>: shielded to transparent</li>
+<li>
+<strong>Private</strong>: shielded to shielded</li>
+</ul>
+<p><img src="https://support.ledger.com/hc/article_attachments/7498040991517" alt="zcash_tx_types.png"></p>
+<h2 id="h_01H9P5P7HAQZ0G2QJCF9DNX3RR">Transactions issues in Ledger Live</h2>
+<p>At the moment, Ledger Live <strong>only supports public transactions</strong> (transparent to transparent) .<br><br><img src="https://support.ledger.com/hc/article_attachments/7498046695837" alt="zcash_tx_types_LL_supported_tx.png"></p>
+<p>Attempting to conduct <strong>shielding</strong>, <strong>deshielding</strong> or <strong>private</strong> transactions will <strong>return errors</strong>.</p>
+<h2 id="h_01H9P5P7HADNPMMET3WY47V4JF">Troubleshooting</h2>
+<p>Our team is working as fast as possible to <strong>integrate z-addresses</strong> and allow Ledger Zcash users to <strong>send </strong>and <strong>receive to shielded addresses</strong> and <strong>create transactions</strong> containing <strong>shielded</strong> balances.<br><br>If you're affected by one of the issues above, please <a href="https://support.ledger.com/hc/en-us/articles/4423020306705-Contact-Us?support=true" target="_blank" rel="noopener">get in touch with Ledger Support</a> so we can help you access and move your coins.</p>
+<p>This article describes a number of <strong>transaction issues</strong> currently affecting Zcash users. <span>Check the </span><a href="https://www.ledger.com/coin/wallet/zcash" target="_blank" rel="noopener">Zcash wallet</a><span> page to learn more.</span></p></body></html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/360017551659-Setting-up-your-Bitcoin-full-node"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="360017551659"/><meta name="title" content="Setting up your Bitcoin full node"/><meta name="classification" content="public"/></head>                            <body><h1>Setting up your Bitcoin full node</h1>
+<p>Setting up Ledger Live with your own Bitcoin full node provides optimal privacy and stronger guarantees on your balances. This advanced feature allows you to synchronize and send transactions without using Ledger’s explorers. Check the <a href="https://www.ledger.com/coin/wallet/bitcoin">Bitcoin wallet page</a> to learn more. </p>
+<h2>
+<span style="font-weight: 400;">How does the Bitcoin full node connection work? </span><span style="font-weight: 400;"></span>
+</h2>
+<p><span style="font-weight: 400;">Ledger Live connects to Ledger’s Bitcoin explorers by default, which offers fast account synchronization without needing to set up and maintain a node. However, this ease of use comes at the expense of trusting Ledger’s node to provide accurate account balances and not to store user addresses.</span></p>
+<p><span style="font-weight: 400;">Thanks to Ledger SatStack, advanced users can connect Ledger Live to their Bitcoin full node. Ledger SatStack is a small, open-source application that acts as a bridge between Ledger Live and the full node. With SatStack running, Ledger Live can instruct the node to scan for accounts, retrieve balances, and broadcast transactions.</span></p>
+<p><span style="font-weight: 400;">A Bitcoin full node validates all transactions and blocks, and stores the entire Bitcoin transaction history. A full node therefore can tell a Bitcoin address balance at any moment in a fully autonomous way.</span></p>
+<h2><span style="font-weight: 400;">Before you start</span></h2>
+<ul>
+<li data-stringify-indent="0" data-stringify-border="0">Download and install Ledger Live Desktop version 2.52 on your computer.
+<ul>
+<li data-stringify-indent="0" data-stringify-border="0"><a href="https://download.live.ledger.com/ledger-live-desktop-2.52.0-win-x64.exe" target="_blank" rel="noopener">Ledger Live Desktop 2.52 for Windows</a></li>
+<li><a href="https://download.live.ledger.com/ledger-live-desktop-2.52.0-mac.dmg" target="_blank" rel="noopener">Ledger Live Desktop 2.52 for macOS</a></li>
+<li><a href="https://download.live.ledger.com/ledger-live-desktop-2.52.0-linux-x86_64.AppImage" target="_blank" rel="noopener">Ledger Live Desktop 2.52 for Linux</a></li>
+</ul>
+</li>
+<li>Download <strong>Bitcoin Core</strong> and synchronize a full node. <a href="https://bitcoin.org/en/full-node#linux-instructions" target="_blank" rel="noopener">Learn more</a>.<br><em class="fa fa-info-circle">  </em> We recommend running your node with<strong> txindex=1</strong> in the <strong>bitcoin.conf</strong> configuration file. </li>
+</ul>
+<h2><span style="font-weight: 400;">Connecting your Bitcoin full node to Ledger Live </span></h2>
+<p><span style="font-weight: 400;">To connect your Bitcoin full node to Ledger Live:</span></p>
+<ol class="list-colored">
+<li><span style="font-weight: 400;">Once Bitcoin Core is <strong>fully synchronized</strong>, open Ledger Live, go to <strong>Settings &gt; Experimental features</strong> tab.</span></li>
+<li><span style="font-weight: 400;"><span>Scroll down to </span><span>find the </span><strong data-renderer-mark="true">Connect Bitcoin full node </strong><span>option and click on </span><strong data-renderer-mark="true">Connect</strong><span>.</span></span></li>
+<li><span style="font-weight: 400;"><span>Click on <strong data-renderer-mark="true">Continue </strong>once your full node is set up and fully synchronized.</span></span></li>
+<li>
+<span>According to your situation,</span><span> enter the node parameters (</span><span class="code" data-renderer-mark="true">&lt;IP address&gt;:&lt;port&gt;</span><span>) in the <strong>Host</strong> field:</span>
+<ul>
+<li><span>If Bitcoin Core runs on the same computer as Ledger Live, use the default value <strong><span class="code" data-renderer-mark="true">127.0.0.1 : 8333</span></strong></span></li>
+<li><span>If you’ve configured a static IP address for your node, replace the default IP address <strong><span class="code" data-renderer-mark="true">127.0.0.1</span> </strong>with the IP address of your full node.</span></li>
+<li><span>If you're using a hosted node solution, enter the URL.</span></li>
+</ul>
+</li>
+<li>
+<span>Enter the RPC credentials for your node, configured in the <strong><span class="code" data-renderer-mark="true">bitcoin.conf</span> </strong>file, which you can find in your node administration panel (e.g. myNode, etc.) or in the following directory:</span>
+<ul>
+<li>
+<p data-renderer-start-pos="2909">Windows: <strong><span class="code" data-renderer-mark="true">%APPDATA%\Bitcoin\</span></strong></p>
+</li>
+<li>
+<p data-renderer-start-pos="2940">OSX: <strong><span class="code" data-renderer-mark="true">$HOME/Library/Application Support/Bitcoin/</span></strong></p>
+</li>
+<li>
+<p data-renderer-start-pos="2991">Linux: <strong>~<span class="code" data-renderer-mark="true">/.bitcoin/</span></strong><span></span></p>
+</li>
+</ul>
+</li>
+<li><span class="code" data-renderer-mark="true">Enable <strong>Transport Layer Security</strong> if needed.</span></li>
+<li><span class="code" data-renderer-mark="true"><span>Click on </span><strong data-renderer-mark="true">Continue </strong><span>once the connection to your node is successful. Otherwise, review the parameters you provided and retry. </span></span></li>
+</ol>
+<h2><span style="font-weight: 400;">Configuring your accounts</span></h2>
+<p><span>Your full node needs to know which addresses on the blockchain belong to your accounts. Ledger Live will therefore configure your full node using your Ledger device, so it can then scan for your accounts. <a href="https://github.com/LedgerHQ/satstack" target="_blank" rel="noopener">Ledger SatStack</a> allows you to connect Ledger Live to your full node. Since Ledger SatStack must run when using Ledger Live, you should consider letting it launch automatically at system startup. </span></p>
+<ol class="list-colored">
+<li>
+<span>Configure the number of accounts of each address type to scan for. <br></span><span></span><span>The default value is 10 accounts of each address type: Legacy, SegWit, and Native SegWit. You’ll only need to increase this number if you have more than 10 accounts of either type.</span>
+</li>
+<li><span>Click on <strong data-renderer-mark="true">Continue</strong>.</span></li>
+<li>
+<p data-renderer-start-pos="3729">Connect and unlock your device. Then open the <strong data-renderer-mark="true">Bitcoin</strong> app.<br>Please wait while Ledger Live is getting the accounts from your device.</p>
+</li>
+<li>
+<p data-renderer-start-pos="3863">Click on <strong data-renderer-mark="true">Continue</strong> once the account information is added to the node configuration file. This file is saved in the user data folder as <strong><span class="code" data-renderer-mark="true">lss.json</span></strong>.</p>
+</li>
+<li>
+<p data-renderer-start-pos="4010">Click on the <strong data-renderer-mark="true">Download SatStack </strong>button to get the latest version of SatStack for your operating system.</p>
+</li>
+<li>
+<p data-renderer-start-pos="4120">Open the <strong data-renderer-mark="true">SatStack</strong> executable after unpacking the downloaded file. You may have to confirm when opening <strong>SatStack</strong> if the application developer is not recognized.<br>Your full node should now be scanning for your accounts.</p>
+</li>
+<li>
+<p data-renderer-start-pos="4354"> Wait for the progress loader to reach 100% or click on <strong data-renderer-mark="true">Continue </strong>and follow the progress in the <strong>Experimental Settings</strong> tab.<span></span></p>
+</li>
+</ol>
+<p><span>All Bitcoin accounts will be removed from your Portfolio. You can add them back with your full node once it has completed the account scan.</span></p>
+<h2><span style="font-weight: 400;">Adding your accounts</span></h2>
+<p><span>Once the full node is connected and has completed the account scan, you can add your accounts normally. For more information on how to add your accounts, refer to the following article: <a href="https://support.ledger.com/hc/en-us/articles/4404389482641" target="_blank" rel="noopener">Add your accounts</a>. </span></p>
+<div class="callout callout--primary callout--dashed">
+<h4 class="callout__title">
+<em class="fa fa-info-circle">  </em>Accounts from multiple recovery phrases or a passphrase?</h4>
+<p>If you are using accounts from multiple recovery phrases, a passphrase, or if you have more than 10 accounts of one address type, your full node must scan the blockchain for all of the associated accounts. To do so, please go to the full node setup in the settings and make sure you configure your node with all your accounts. This process will be improved.</p>
+</div>
+<h2><span style="font-weight: 400;">Understanding full node statuses</span></h2>
+<p><span style="font-weight: 400;"><span>The following status messages can be displayed for your full node in </span><strong data-renderer-mark="true">Settings &gt; Experimental features &gt; Connect Bitcoin full node</strong><span>.</span></span><span style="font-weight: 400;"><span></span></span></p>
+<table class="table table--bordered" style="width: 666px; height: 242px;">
+<thead>
+<tr style="height: 22px;">
+<th style="width: 189px; height: 22px;">Status</th>
+<th style="width: 470px; height: 22px;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr style="height: 44px;">
+<td style="width: 181px; height: 44px;"><strong>Ready</strong></td>
+<td style="width: 462px; height: 44px;">The full node is fully synced. You can add Bitcoin accounts and the account balances are correct.</td>
+</tr>
+<tr style="height: 22px;">
+<td style="width: 181px; height: 22px;"><strong>Loading</strong></td>
+<td style="width: 462px; height: 22px;">SatStack is verifying the total circulating supply.</td>
+</tr>
+<tr style="height: 22px;">
+<td style="width: 181px; height: 22px;"><strong>Node sync in progress...</strong></td>
+<td style="width: 462px; height: 22px;">The full node is synchronizing new blocks. Recent transactions may not yet be visible, so Bitcoin account balances may be incorrect. If possible, run your node continuously to keep it in sync.</td>
+</tr>
+<tr style="height: 44px;">
+<td style="width: 181px; height: 44px;"><strong>Account scan in progress...</strong></td>
+<td style="width: 462px; height: 44px;">The full node is busy scanning the blockchain for your account balances. You can add your accounts in Ledger Live once the account scan is completed.</td>
+</tr>
+<tr style="height: 44px;">
+<td style="width: 181px; height: 44px;"><strong>Could not reach SatStack</strong></td>
+<td style="width: 462px; height: 44px;">There’s a problem preventing Ledger Live from connecting to SatStack. Please verify that SatStack is running in a command-line terminal on the same computer.</td>
+</tr>
+<tr style="height: 22px;">
+<td style="width: 181px; height: 22px;"><strong>Could not reach full node</strong></td>
+<td style="width: 462px; height: 22px;">The full node is either offline or the connection settings you entered are not correct. To edit the node connection settings, go to <strong>Experimental features</strong> &gt; <strong>Connect Bitcoin full node</strong>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Known-bugs-and-limitations" data-renderer-start-pos="6720">Known bugs and limitations</h2>
+<p>Since Bitcoin full node support is still an experimental feature, there are some bugs and known limitations needing to be fixed before it will be released as a general feature. </p>
+<div class="accordion accordion--default">
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>Bugs</strong></div>
+<div class="accordion__item-content">
+<ul>
+<li>Pending transactions do not display in the operations list shortly after sending them. They appear after the first confirmation by the network.</li>
+<li>Confirmed coins are displayed as <strong>pending</strong>.</li>
+<li>No error messages when adding an account that the node has not been configured with. The account will have no operations because the full node hasn’t scanned the blockchain for this account.</li>
+<li>The SatStack configuration file contains duplicate account entries.</li>
+<li>When SatStack is down, the Account sync status displays: <strong>Could not reach full node</strong>.</li>
+<li>Node connection timeout is too long at first step of setup.</li>
+<li>The setup flow can be closed by clicking outside of the modal.</li>
+<li>Some missing or incorrect wordings.</li>
+</ul>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>Limitations</strong></div>
+<div class="accordion__item-content">
+<ul>
+<li>Transactions received from addresses not belonging to the user have no <strong>from</strong> address. This is solved by adding <strong>txindex=1</strong> to the <strong>bitcoin.conf</strong> node configuration file. Without <strong>txindex</strong> enabled, the full node does not track third-party addresses.</li>
+<li>Running SatStack on a pruned node will result in <strong data-renderer-mark="true">txndex=1 not present</strong> error. If you want to use StaStack without txindex=1, you need to run it on a full node. <a class="css-1rn59kg" title="https://github.com/LedgerHQ/satstack#requirements" href="https://github.com/LedgerHQ/satstack#requirements" target="_blank" rel="noopener" data-renderer-mark="true">Learn more</a>
+</li>
+<li>MacOS: SatStack is currently not notarized, meaning users will have to open the application through the right-click menu or through <strong>System Preferences</strong> &gt; <strong>Security &amp; Privacy</strong>.</li>
+<li>Adding accounts from multiple recovery phrases or a passphrase requires repeating the setup flow. This will be improved.</li>
+<li>SatStack version is not yet enforced by Ledger Live. You will not be alerted that you need to update it, and need to look for updates manually.</li>
+<li>Transaction fee estimation needs to be improved.</li>
+</ul>
+</div>
+</div>
+</div></body></html>

@@ -1,0 +1,419 @@
+<html>
+ <head>
+  <meta content="https://www.ledger.com/blog/part-1-genesis-of-ledger-recover-self-custody-without-compromise" name="source"/>
+  <meta content="academy" name="source-type"/>
+  <meta content="en" name="locale"/>
+  <meta content="N/A" name="zd-article-id"/>
+  <meta content="part 1 genesis of ledger recover self custody without compromise" name="title"/>
+  <meta content="public" name="classification"/>
+ </head>
+ <body>
+  <article class="margin-lg" id="article-278726">
+   <header class="header margin-sm">
+    <div class="content">
+     <div class="margin-sm is-hidden-tablet is-hidden-desktop blog-category-breadcrumb">
+      <a href="https://www.ledger.com/company-updates" title="">
+       Blog
+      </a>
+      <i class="icon-chevron-right">
+      </i>
+      <a href="https://www.ledger.com/category/blog-posts" title="Blog posts">
+       Blog posts
+      </a>
+     </div>
+     <p class="datetime caption margin-xs">
+      <a class="is-primary" href="https://www.ledger.com/category/blog-posts" title="Blog posts">
+       Blog posts
+      </a>
+      ,
+      <a class="is-primary" href="https://www.ledger.com/category/tech" title="Tech">
+       Tech
+      </a>
+      |           07/25/2023
+     </p>
+     <h1 class="h2 title margin-s">
+      Part 1: Genesis of Ledger Recover – Self Custody Without Compromise
+     </h1>
+     <p class="font-size-l margin-s">
+      Ledger Recover is a self-custody solution to securely back up your Secret Recovery Phrase to the cloud, allowing you – and only you – to restore it to your hardware device in the future.
+     </p>
+    </div>
+    <div class="illustration" style="background-image: url('https://www.ledger.com/wp-content/uploads/2023/07/Self-custody-without-compromise-1.jpg');">
+    </div>
+   </header>
+   <div class="row no-margin-mobile margin-md is-hidden-mobile">
+    <div class="row blog-category-breadcrumb">
+     <a href="https://www.ledger.com/company-updates" title="">
+      Blog
+     </a>
+     <i class="icon-chevron-right">
+     </i>
+     <a href="https://www.ledger.com/category/blog-posts" title="Blog posts">
+      Blog posts
+     </a>
+    </div>
+   </div>
+   <div class="row margin-lg plain-text">
+    <p>
+     Part 2 of our Genesis of Ledger Recover blog series
+     <a href="https://www.ledger.com/blog/part-2-genesis-of-ledger-recover-securely-distributing-the-shares">
+      is available here.
+     </a>
+    </p>
+    <p>
+     Ledger’s objective has always been to deliver uncompromising security and usability to anyone exploring the world of digital assets. Of all the self-custody solutions to keep your private keys safe and accessible, our hardware devices are second to none.
+    </p>
+    <p>
+     When using a Ledger device, you are guaranteed that no one can interact with your private keys without your consent. Ever. Any interaction with the secrets held by your device will always require a manual action on your end: it’s the core principle behind your hardware wallet’s security.
+    </p>
+    <p>
+     But pure technical security is only part of the equation, and the user experience in crypto has much room for improvement. The first question every newcomer asks when going down the self-custody path and generating their Secret Recovery Phrase is: “What the heck do I do with these 24 words?”.
+    </p>
+    <p>
+     While some people may memorize their Secret Recovery Phrase, I don’t have this kind of trusting relationship with my brain.
+     <a href="https://www.youtube.com/watch?v=zfXG9yv8sXM" rel="noreferrer noopener" target="_blank">
+      The standard advice
+     </a>
+     so far has been to write them down on a piece of paper or in
+     <a href="https://cryptosteel.com/" rel="noreferrer noopener" target="_blank">
+      a metal store
+     </a>
+     , and to keep it in a secure location. These options are not ideal, and make it harder to increase crypto-adoption.
+    </p>
+    <p>
+     In order to make self-custody more easily accessible, Ledger has brought forward a new answer:
+     <a href="https://www.ledger.com/recover" rel="noreferrer noopener" target="_blank">
+      Ledger Recover
+     </a>
+     .
+    </p>
+    <figure class="wp-block-image size-full">
+     <img alt="" class="wp-image-278727" decoding="async" height="157" loading="lazy" sizes="(max-width: 512px) 100vw, 512px" src="https://www.ledger.com/wp-content/uploads/2023/07/unnamed.png" srcset="https://www.ledger.com/wp-content/uploads/2023/07/unnamed.png 512w, https://www.ledger.com/wp-content/uploads/2023/07/unnamed-300x92.png 300w, https://www.ledger.com/wp-content/uploads/2023/07/unnamed-490x150.png 490w" width="512"/>
+    </figure>
+    <p>
+     In short, Ledger Recover is a self-custody solution to securely back up your Secret Recovery Phrase to the cloud, allowing you – and only you – to restore it to your hardware device in the future.
+    </p>
+    <p>
+     Reading this, your crypto-spidey senses should be tingling: Cloud and Secret Recovery Phrase backup don’t usually go well together. But the reality is that a cloud backup can be a perfect solution, as long as it is well-designed and entirely secure.
+    </p>
+    <p>
+     There are several reasons why other cloud backups solutions have a bad reputation: the Secret Recovery Phrase is at some point unencrypted (whether on your computer, browser, or server), the backup is usually held by a single entity, and it’s too easy to access it.
+    </p>
+    <p>
+     While designing Ledger Recover, we carefully considered these objections (and more) and succeeded in building the most secure solution for crypto users looking for a simpler yet robust personal
+     <a href="https://csrc.nist.gov/glossary/term/operations_security" rel="noreferrer noopener" target="_blank">
+      OpSec
+     </a>
+     .
+    </p>
+    <figure class="wp-block-image size-large">
+     <a href="https://www.ledger.com/wp-content/uploads/2023/07/Recover-backup-2xx.png" rel="noopener" target="_blank">
+      <img alt="some image" decoding="async" src="https://www.ledger.com/wp-content/uploads/2023/07/Recover-backup-2xx.png"/>
+     </a>
+     <figcaption class="wp-element-caption">
+      <em>
+       Ledger Recover’s flow: Maybe a bit much to take all at once
+      </em>
+     </figcaption>
+    </figure>
+    <p>
+     To understand its rather complex design, let’s rebuild it together from scratch over the course of a few blog posts. Our starting point will be this simple idea:
+    </p>
+    <p>
+     <strong>
+      I have a Secret Recovery Phrase on a bulletproof hardware wallet and would like to back it up online, without compromising security or control.
+     </strong>
+    </p>
+    <p>
+     First, let’s look at how you could do this yourself, moving away from having your Secret Recovery Phrase written on a piece of paper. Then, we’ll dig a little deeper into how Ledger Recover does the same, or even better, online.
+    </p>
+    <div style="border-radius:10px; border: 2px solid #D4A0FF; padding:30px; margin-bottom:20px;">
+     <b>
+      The Entropy, the Seed, and the Secret Recovery Phrase
+     </b>
+     <br/>
+     <p>
+      In this blog post and various Ledger publications, we often mention the ‘Secret Recovery Phrase’, the ‘seed’ and the ‘entropy’, somewhat interchangeably.
+While not being strictly equivalent, these three concepts are tightly linked, and their usage depends on the technical context.
+     </p>
+     <p>
+      Want to learn more about this?
+      <a href="https://www.ledger.com/academy/private-key-and-seed-phrase-whats-the-difference" rel="noopener" target="_blank">
+       Ledger Academy has got you covered!
+      </a>
+     </p>
+    </div>
+    <h5 class="wp-block-heading">
+     Splitting the Secret Recovery Phrase: A key way to keep control
+    </h5>
+    <p>
+     The first thing you want to avoid is giving your entire Secret Recovery Phrase to any single entity, as secure or trustful as they might be. Once again, self-custody is critical for effective fund management, so giving your entire Secret Recovery Phrase to anyone is never acceptable.
+    </p>
+    <p>
+     Any weakness in the system, whether human or machine, would compromise all your funds, or make you lose your backed-up Secret Recovery Phrase. This is why cloud backups have such a bad reputation in Web3, and why any standard cloud backup system is unsuitable for handling Secret Recovery Phrases.
+    </p>
+    <p>
+     The classic way to avoid this loss of control is to distribute the risk by splitting your Secret Recovery Phrase into multiple parts, also called
+     <em>
+      shares
+     </em>
+     or
+     <em>
+      fragments
+     </em>
+     . Each share is only a part of your secret, so they will need to be combined to obtain the original Secret Recovery Phrase. Individually, they are useless. Therefore, these shares can be given separately to different people such that no single entity can recombine the Secret Recovery Phrase.
+    </p>
+    <p>
+     If you need to recover your Secret Recovery Phrase – maybe because you’ve lost your hardware device and need to initialize a new one – you would ask each ‘backup friend’ for their share.
+    </p>
+    <p>
+     Now, what’s the best way to split your Secret Recovery Phrase?
+    </p>
+    <p>
+     One option is to write your 24-words on a piece of paper, then cut it into three parts, for example, which are each given to different people to hold safely. In this setup, all three of your friends would have to collude to steal your hard-earned crypto.
+    </p>
+    <figure class="wp-block-image size-full">
+     <img alt="" class="wp-image-278766" decoding="async" height="356" loading="lazy" sizes="(max-width: 512px) 100vw, 512px" src="https://www.ledger.com/wp-content/uploads/2023/07/unnamed-2.png" srcset="https://www.ledger.com/wp-content/uploads/2023/07/unnamed-2.png 512w, https://www.ledger.com/wp-content/uploads/2023/07/unnamed-2-300x209.png 300w, https://www.ledger.com/wp-content/uploads/2023/07/unnamed-2-396x275.png 396w" width="512"/>
+     <figcaption class="wp-element-caption">
+      <em>
+       The Secret Recovery Phrase split into three parts
+      </em>
+     </figcaption>
+    </figure>
+    <p>
+     This kind of naive split is easy to perform, but is far from ideal. While it does not readily submit control of your funds, each share reveals a big part of your Secret Recovery Phrase, which heavily reduces the difficulty of guessing the rest of it. The situation is even worse if any two of your backup friends collude because they have enough information to perform a brute-force attack to find the remaining part. Finally, if even a single one of your friends has genuinely lost their share, then the only way for you to recover it is to’ brute-force it’ yourself.
+    </p>
+    <p>
+     There is also a question of how the split is done: You don’t want anyone eavesdropping while you process your most valuable secret. It must be done in a secure and safe environment.
+    </p>
+    <h5 class="wp-block-heading">
+     How Ledger Recover does it: Shamir Secret Sharing
+    </h5>
+    <p>
+     Luckily, in the case of digital secrets, cryptography has a better way of splitting than the method above in the form of the
+     <a href="https://en.wikipedia.org/wiki/Shamir%27s_secret_sharing" rel="noreferrer noopener" target="_blank">
+      Shamir Secret Sharing scheme
+     </a>
+     (abbreviated
+     <em>
+      SSS
+     </em>
+     later).
+    </p>
+    <p>
+     Using SSS to split your Secret Recovery Phrase guarantees that each share provides no extra information on the rest of the Secret Recovery Phrase. In other words, the difficulty of guessing the entire Secret Recovery Phrase remains the same whether you have prior knowledge of one of the shares or not.
+    </p>
+    <p>
+     On top of that, SSS easily supports
+     <code>
+      m-of-n
+     </code>
+     <em>
+     </em>
+     setups, which means you can generate
+     <code>
+      n
+     </code>
+     <em>
+     </em>
+     shares to be distributed but only need
+     <code>
+      m
+     </code>
+     <em>
+     </em>
+     shares to rebuild your Secret Recovery Phrase. In other words you can afford to lose some parts of your backup without impacting its restoring capabilities. This added redundancy is very important to create a resilient system.
+    </p>
+    <div style="border-radius:10px; border: 2px solid #D4A0FF; padding:30px; margin-bottom:20px;">
+     <p>
+      In Ledger Recover, we have chosen to use a
+      <code>
+       2-of-3
+      </code>
+      scheme. It means at least two shares are required to rebuild the original Secret Recovery Phrase. In this way, no single backup provider has control of your secret, but the backup is resilient to the loss of one provider.
+     </p>
+     The initial three backup providers are:
+     <br/>
+     –
+     <a href="https://www.coincover.com/" rel="noopener" target="_blank">
+      Coincover
+     </a>
+     , a company based in the UK,
+     <br/>
+     –
+     <a href="https://www.escrowtech.com/" rel="noopener" target="_blank">
+      EscrowTech
+     </a>
+     , a company based in the US,
+     <br/>
+     – And us,
+     <a href="https://www.ledger.com/" rel="noopener" target="_blank">
+      Ledger
+     </a>
+     , based in France.
+     <br/>
+     <p>
+      In the future, we also intend to have more backup providers to choose from. This will allow users to build the best setup for themselves.
+     </p>
+    </div>
+    <p>
+     You can find an excellent introduction to SSS
+     <a href="https://www.youtube.com/watch?v=K54ildEW9-Q">
+      here
+     </a>
+     , but let us give you a feel of how it works for a simple
+     <code>
+      2-of-n
+     </code>
+     scheme.
+    </p>
+    <p>
+     Using our elementary school math courses, we know that only one straight line goes through two distinct points, but an infinite number of straight lines go through a single point.
+    </p>
+    <p>
+     We’ll be using this to generate the shares of your secret:
+    </p>
+    <ul>
+     <li>
+      Let’s say the secret is the value
+      <code>
+       s
+      </code>
+     </li>
+     <li>
+      We then pick a
+      <strong>
+       random
+      </strong>
+      straight line that goes through the point
+      <code>
+       (0,s)
+      </code>
+     </li>
+     <li>
+      We can define the
+      <code>
+       n
+      </code>
+      shares as the points of the random line at indices
+      <code>
+       {x=1, x=2, x=3, …, x=n}
+      </code>
+     </li>
+    </ul>
+    <div class="wp-block-image">
+     <figure class="aligncenter size-full is-resized">
+      <img alt="" class="wp-image-278799" decoding="async" height="507" loading="lazy" src="https://www.ledger.com/wp-content/uploads/2023/07/img.gif" style="width:416px;height:412px" width="512"/>
+      <figcaption class="wp-element-caption">
+       <em>
+        Share generation in Shamir Secret Sharing scheme
+       </em>
+      </figcaption>
+     </figure>
+    </div>
+    <p>
+     Now, if you have any two shares, you can easily reconstruct the only straight line that goes through them. You will have retrieved your initial secret by intersecting this line with the y-axis (x=0).
+    </p>
+    <div class="wp-block-image">
+     <figure class="aligncenter size-full is-resized">
+      <img alt="" class="wp-image-278810" decoding="async" height="507" loading="lazy" src="https://www.ledger.com/wp-content/uploads/2023/07/unnamed.gif" style="width:404px;height:401px" width="512"/>
+     </figure>
+    </div>
+    <p>
+     But if you only have a
+     <em>
+      single
+     </em>
+     share, an infinite number of straight lines go through it, so the secret could be any number, and guessing the right line is as difficult as guessing the secret in the first place!
+    </p>
+    <div class="wp-block-image">
+     <figure class="aligncenter size-full is-resized">
+      <img alt="" class="wp-image-278821" decoding="async" height="494" loading="lazy" src="https://www.ledger.com/wp-content/uploads/2023/07/unnamed-1.gif" style="width:417px;height:402px" width="512"/>
+     </figure>
+    </div>
+    <div style="border-radius:10px; border: 2px solid #D4A0FF; padding:30px; margin-bottom:20px;">
+     <b>
+      Pedersen Verifiable Secret Sharing
+     </b>
+     <p>
+      Ledger Recover uses a variation of Shamir Secret Sharing, called
+      <b>
+       Pedersen Verifiable Secret Sharing
+      </b>
+      . Like SSS, this scheme securely splits a secret into shares in any
+      <code>
+       m-of-n
+      </code>
+      setup. However, as the name implies, it allows the Ledger Recover Orchestrator to verify that the backup providers have the correct shares. With the Pedersen VSS, backup providers can double-check the shares they protect when a user activates the recovery process of their Secret Recovery Phrase.
+     </p>
+     <p>
+      It allows us to notify all involved parties when the backup is done with a guarantee of correctness. This is extremely useful to make the solution resilient to data loss and bad actors.
+     </p>
+     <p>
+      To learn more about Pedersen’s VSS, you can head over to
+      <a href="https://link.springer.com/chapter/10.1007%2F3-540-46766-1_9" rel="noopener" target="_blank">
+       Non-Interactive and Information-Theoretic Secure Verifiable Secret Sharing
+      </a>
+      .
+     </p>
+    </div>
+    <p>
+     As mentioned before, this cryptographic process needs to be done in a protected environment so no part of the secret is ever revealed to potential attackers. When using Ledger hardware wallets, the share computation is entirely done inside the Secure Element, under the strict control of the user pin code. This ensures that no external software or machine can ever access the Secret Recovery Phrase during the backup process. More on this in the next blog posts of the series!
+    </p>
+    <h5 class="wp-block-heading">
+     Ok, let’s back up a bit
+    </h5>
+    <figure class="wp-block-image size-large is-resized">
+     <img alt="" class="wp-image-278906" decoding="async" height="565" loading="lazy" sizes="(max-width: 1024px) 100vw, 1024px" src="https://www.ledger.com/wp-content/uploads/2023/07/Capture-decran-2023-07-12-a-11.34.53-1024x565.png" srcset="https://www.ledger.com/wp-content/uploads/2023/07/Capture-decran-2023-07-12-a-11.34.53-1024x565.png 1024w, https://www.ledger.com/wp-content/uploads/2023/07/Capture-decran-2023-07-12-a-11.34.53-300x166.png 300w, https://www.ledger.com/wp-content/uploads/2023/07/Capture-decran-2023-07-12-a-11.34.53-768x424.png 768w, https://www.ledger.com/wp-content/uploads/2023/07/Capture-decran-2023-07-12-a-11.34.53-1536x848.png 1536w, https://www.ledger.com/wp-content/uploads/2023/07/Capture-decran-2023-07-12-a-11.34.53-490x270.png 490w, https://www.ledger.com/wp-content/uploads/2023/07/Capture-decran-2023-07-12-a-11.34.53.png 1656w" style="width:621px;height:342px" width="1024"/>
+    </figure>
+    <p>
+     We’ve learned that when designing a backup, it is good practice to split your secret into multiple shares and distribute them to different backup providers (friends, trusted entities, etc.). This is compatible with self-custody, as you remain the only person able to retrieve the entire seed phrase without depending on third-party approval to use your funds. However, the split scheme cannot be left to chance, as it can drastically reduce your overall security if chosen incorrectly.
+    </p>
+    <p>
+     Thanks to a
+     <code>
+      2-of-3
+     </code>
+     setup using Pedersen Verifiable Secret Sharing scheme, we have made Ledger Recover more resilient to backup provider failures. By performing the share split entirely inside your hardware wallet’s Secure Element, the user’s Secret Recovery Phrase is not vulnerable to malicious parties. In addition, we can safely verify that backups are correctly generated, which is crucial if we want to restore them in the future!
+    </p>
+    <p>
+     Now it’s time for
+     <a href="https://www.ledger.com/blog/part-2-genesis-of-ledger-recover-securely-distributing-the-shares/" rel="noreferrer noopener" target="_blank">
+      Part 2
+     </a>
+     to address the next elephant in the room: How can you securely generate and distribute the shares over an open network, without compromising your Secret Recovery Phrase?
+    </p>
+    <p>
+    </p>
+    <blockquote class="wp-block-quote">
+     <p>
+      Laurent CASTILLO / Yacine BADISS
+     </p>
+     <cite>
+      VP Architecture / Software Architect
+     </cite>
+    </blockquote>
+   </div>
+   <footer class="row plain-text footer">
+    <div class="social-icons-footer">
+     <a class="h6 icon-facebook" href="https://www.facebook.com/Ledger/" target="_blank">
+     </a>
+     <a class="h6 icon-insta" href="https://www.instagram.com/ledger/" target="_blank">
+      <i class="fab fa-instagram">
+      </i>
+     </a>
+     <a class="h6 icon-twitter" href="https://twitter.com/Ledger" target="_blank">
+     </a>
+     <a class="h6 icon-linkedin" href="https://www.linkedin.com/company/ledgerhq/" target="_blank">
+     </a>
+     <a class="h6 icon-reddit" href="https://www.reddit.com/r/ledgerwallet/" target="_blank">
+     </a>
+     <a class="h6 icon-tiktok" href="https://www.tiktok.com/@ledger" target="_blank">
+      <i class="fab fa-tiktok">
+      </i>
+     </a>
+    </div>
+   </footer>
+  </article>
+ </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/360018969814-Receive-mining-proceeds"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="360018969814"/><meta name="title" content="Receive mining proceeds"/><meta name="classification" content="public"/></head>                            <body><h1>Receive mining proceeds</h1>
+<p>Sending a large number of transactions to a Ledger hardware wallet is troublesome. If you receive a lot of small transactions from mining please read this article carefully.</p>
+<p><em class="fa fa-info-circle">  </em>Failing to follow these instructions may lead to your funds becoming inaccessible on a Ledger device.</p>
+<h2>Receiving many transactions is troublesome </h2>
+<p>Receiving a large number of small payments, or <em>dust payments</em>, on an address controlled by your hardware wallet causes:</p>
+<ul>
+<li>the saturation of the synchronization of your Blockchain transactions; and</li>
+<li>an extremely long duration of transaction construction or validation.</li>
+</ul>
+<p>Therefore, Ledger hardware wallets are not directly suited to receive mining proceeds for coins that use the UTXO models such as Bitcoin, Litecoin, Bitcoin Cash, etc. </p>
+<div class="callout callout--primary">
+<p>Imagine that you have received 1,000 payments of 0.001 BTC and that you want to spend a total of 1 BTC. The secure chip in the hardware wallet will then have to construct a transaction of 1,000 inputs and sign every single input. This might take a few hours or might not succeed at all, since the chip may overheat or make a computation error.</p>
+</div>
+<h2>If you've received a lot of transactions</h2>
+<p>If you have already received a large number of transactions on your hardware wallet, Ledger Live may show the following symptoms:</p>
+<ul>
+<li>Cannot add an account as the app keeps loading in the <strong>Add account</strong> window.</li>
+<li>Affected accounts never fully synchronize.</li>
+<li>Unable to send a transaction as it takes forever to calculate the <strong>Total to debit </strong>or the Ledger device does not show the transaction to verify and sign it.</li>
+</ul>
+<h2>Consolidate coins of affected accounts </h2>
+<ul class="list-bullet">
+<li>Try to consolidate your coins by sending a few larger payments to yourself. For example, if you have received 1,000 times 0.001 BTC, consolidate these inputs by sending 0.1 BTC to yourself and repeat this 10 times.</li>
+<li>Alternatively, import your 24-word recovery phrase into a software wallet (at your own risk), preferably an offline one, and empty your account balance into an address that is derived from a newly generated seed. </li>
+</ul>
+<h2>Prevent by batching transactions</h2>
+<ul class="list-colored">
+<li>Set up a software wallet that receives all mining payments;</li>
+<li>Regularly batch these proceeds into a larger transaction to send to your Ledger hardware wallet. </li>
+</ul></body></html>

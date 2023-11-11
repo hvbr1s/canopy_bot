@@ -1,0 +1,81 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/360016466114-Stakenet-XSN-"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="360016466114"/><meta name="title" content="Stakenet (XSN)"/><meta name="classification" content="public"/></head>                            <body><h1>Stakenet (XSN)</h1>
+<div class="callout callout--warning callout--dashed">
+<h4 class="callout__title">
+<em class="fa fa-ban"> </em> Stakenet (XSN) is no longer supported in Ledger Live</h4>
+<p>You are no longer able to add Stakenet accounts in Ledger Live. For now, there is no compatible third-party wallet to manage Stakenet with Ledger devices. As a result, installing Stakenet (XSN) app to your device from My Ledger will not be possible. </p>
+</div>
+<p><span class="wysiwyg-color-black30">Install the Stakenet app on your Ledger device to manage XSN with Ledger Live. The XSN app is developed and supported by Ledger.</span></p>
+<h2><span class="wysiwyg-color-black30">Before you start</span></h2>
+<ul class="list-bullet">
+<li><span class="wysiwyg-color-black30"><a href="https://support.ledger.com/hc/en-us/articles/4404389503889" target="_blank" rel="noopener">Set up Ledger Live</a> with your device.</span></li>
+<li><span class="wysiwyg-color-black30">Update the firmware of your Ledger <a href="https://support.ledger.com/hc/en-us/articles/360002731113" target="_blank" rel="noopener">Nano S</a> / <a href="https://support.ledger.com/hc/en-us/articles/4445777839901?docs=true" target="_blank" rel="noopener">Nano S Plus</a> / <a href="https://support.ledger.com/hc/en-us/articles/360013349800" target="_blank" rel="noopener">Nano X</a>.</span></li>
+<li><span class="wysiwyg-color-black30">Install the Bitcoin app, as XSN requires it.</span></li>
+</ul>
+<h2><span class="wysiwyg-color-black30">Instructions</span></h2>
+<div class="accordion accordion--default">
+<div class="accordion__item">
+<div class="accordion__item-title"><span class="wysiwyg-color-black30">Install the XSN app</span></div>
+<div class="accordion__item-content">
+<ol class="list-colored">
+<li><span class="wysiwyg-color-black30">Open My Ledger<strong> </strong>in Ledger Live.</span></li>
+<li><span class="wysiwyg-color-black30">Connect and unlock your device.</span></li>
+<li><span class="wysiwyg-color-black30">If asked, allow My Ledger to access your device.</span></li>
+<li><span class="wysiwyg-color-black30">Find <strong>Stakenet </strong>in the app catalog.</span></li>
+<li>
+<span class="wysiwyg-color-black30">Click the <strong>Install</strong> button of the app.</span>
+<ul>
+<li><span class="wysiwyg-color-black30">An installation window appears.</span></li>
+<li><span class="wysiwyg-color-black30">Your device will display <strong>Processing...</strong> </span></li>
+<li><span class="wysiwyg-color-black30">The app installation is confirmed.</span></li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><span class="wysiwyg-color-black30">Configure public key exports</span></div>
+<div class="accordion__item-content">
+<p><span class="wysiwyg-color-black30">The XSN app can export your extended public key (xpub) to web apps in a U2F compatible web browser (Chrome, Opera, or Firefox). The xpub is privacy-sensitive information, as all public addresses can be generated from it.</span></p>
+<p><span class="wysiwyg-color-black30">Public key exports by default require manual approval on the device to prevent inadvertent sharing of your public addresses. This setting can be configured as follows:</span></p>
+<ol>
+<li><span class="wysiwyg-color-black30">Open the XSN app.</span></li>
+<li><span class="wysiwyg-color-black30">Navigate to <strong>Settings &gt; Public key export approval</strong>.</span></li>
+<li>
+<span class="wysiwyg-color-black30">Choose one of two options:</span>
+<ul>
+<li><span class="wysiwyg-color-black30"><strong>Manual approval (default):</strong> public key exports require a confirmation on the device.</span></li>
+<li><span class="wysiwyg-color-black30"><strong>Auto approval:</strong> public key exports are automatically approved.</span></li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><span class="wysiwyg-color-black30">XSN address formats</span></div>
+<div class="accordion__item-content">
+<p><span class="wysiwyg-color-black30">When you add Stakenet accounts in Ledger Live, the address format is set to SegWit by default. If you need to receive XSN on older address formats such as Legacy, you can change the default address format.</span></p>
+<p><span class="wysiwyg-color-black30">To change the default address format:</span></p>
+<ol class="list-colored">
+<li>
+<span class="wysiwyg-color-black30">In the <strong>Add new account</strong> section of the <strong>Accounts</strong> step, click on the <strong>Show all address types</strong> toggle.</span><br><span class="wysiwyg-color-black30"><img src="https://support.ledger.com/hc/article_attachments/360019733677/stakenet_addressformat.png" alt="addressformat.png" width="338" height="364"></span>
+</li>
+<li>
+<span class="wysiwyg-color-black30">Select one of the following address formats:</span>
+<ul>
+<li><span class="wysiwyg-color-black30"><strong>Segwit </strong><em>(by default)</em><strong>: </strong> <strong>SegWit addresses</strong> start with a <strong>7</strong>. The SegWit upgrade reduces <a href="https://medium.com/@jimmysong/understanding-segwit-block-size-fd901b87c9d4">network fees</a>, speeds up <a href="https://segwit.org/segregated-witness-and-hardware-wallets-cc88ba532fb3">transaction signing</a> on hardware wallets, and enables second-layer solutions like <a href="https://lightning.network/">Lightning Network</a>. By default, new accounts added in Ledger Live are SegWit accounts.</span></li>
+<li><span class="wysiwyg-color-black30"><strong>Legacy: </strong> <strong>Legacy addresses</strong> start with an <strong>X</strong>. This is Stakenet's original address format. <span style="font-weight: 400;">New Legacy accounts can now be added directly in Ledger Live. You no longer need to use a third-party wallet to add Legacy accounts in Ledger Live. </span></span></li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout--primary">
+<h4 class="callout__title"><span class="wysiwyg-color-black30"><em class="fa fa-info-circle"> </em> Address privacy</span></h4>
+<p><span class="wysiwyg-color-black30">XSN transactions are public information. Do not re-use your addresses for optimal privacy. Ledger Live automatically generates new addresses and keeps track of your previous ones. Previous addresses do remain valid, but they don't offer an optimal level of privacy.</span></p>
+</div>
+<h2><span class="wysiwyg-color-black30">Next steps</span></h2>
+<ul>
+<li><span class="wysiwyg-color-black30">Add <a href="https://support.ledger.com/hc/en-us/articles/4404389482641" target="_blank" rel="noopener">your accounts</a> to Portfolio.</span></li>
+<li><span class="wysiwyg-color-black30"><a href="https://support.ledger.com/hc/en-us/articles/4404382228753" target="_blank" rel="noopener">Send</a> or <a href="https://support.ledger.com/hc/en-us/articles/4404389453841" target="_blank" rel="noopener">receive</a> crypto assets.</span></li>
+</ul></body></html>

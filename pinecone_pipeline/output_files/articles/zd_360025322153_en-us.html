@@ -1,0 +1,64 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/360025322153-Wrong-private-keys-for-account"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="360025322153"/><meta name="title" content="Wrong private keys for account"/><meta name="classification" content="public"/></head>                            <body><h1>Wrong private keys for account</h1>
+<p>This article describes the "<strong>Something went wrong - Please check that your hardware wallet is set up with the recovery phrase or passphrase associated to the selected account</strong>" error and how to fix it.</p>
+<div class="callout callout--warning">
+<h4 id="h_01H9TZV7182X7SZTSZP0Q3S5QG" class="callout__title"><strong>False Positive When Swapping with Changelly</strong></h4>
+<p>We are currently investigating a bug causing some users to experience this error when swapping via Changelly despite having the correct recovery phrase stored in their device.</p>
+<p>If your Changelly swap is failing and you’re receiving this error, try the following:</p>
+<ol>
+<li>Take note of the two assets you’re trying to swap (ex. ETH and BTC)</li>
+<li>Navigate to the <strong>accounts</strong> tab.</li>
+<li>Open <strong>the account</strong> you’re swapping FROM (ex. ETH).</li>
+<li>
+<strong>Connect and unlock</strong> your Ledger device.</li>
+<li>Press <strong>Receive</strong>, and follow on-screen prompts to confirm your address.</li>
+<li>Navigate to <strong>the account</strong> you’re swapping TO (ex BTC).</li>
+<li>Repeat steps 4 and 5.</li>
+</ol>
+<p>If you <strong>do not</strong> receive a recovery phrase error, please contact Ledger support. If you <strong>do</strong> receive the error on either account, please read the rest of this article.</p>
+</div>
+<p class="wysiwyg-text-align-center"><iframe src="//www.youtube-nocookie.com/embed/ob2vSqRgAoE" width="560" height="315" frameborder="0" allowfullscreen=""></iframe></p>
+<p><span>When sending crypto from your Ledger account in Ledger Live, you're required to sign the transaction using your private keys. These keys are securely held in your Ledger device and are linked to a unique 24-word recovery phrase created when you first set up your device. If your Ledger device doesn't contain the specific private keys that correspond to the account you wish to spend from, the transaction will fail, and Ledger Live will display the following error:</span></p>
+<p class="wysiwyg-text-align-center">"Something went wrong - Please check that your wallet is set up with the recovery phrase or passphrase associated to the selected account."</p>
+<p><span style="font-weight: 400;"><img src="https://support.ledger.com/hc/article_attachments/4412601778193" alt="something_went_wrong_error_-_Copy.PNG"></span></p>
+<h2><span style="font-weight: 400;">Is my Ledger device defective? Could this be an issue with the Ledge Live app?</span></h2>
+<p><span>No, this issue isn’t a result of a faulty device or a malfunctioning Ledger Live app. It distinctly indicates that your Ledger device contains a different set of private keys than those necessary to access your account, or it means that the device was restored using an incorrect recovery phrase.</span></p>
+<h2 id="h_01H9TZTPM2AB6EN9P8BTAH0TGX"><span style="font-weight: 400;">Why is my Ledger device holding the wrong private keys?</span></h2>
+<div class="accordion accordion--default">
+<div class="accordion__item">
+<div class="accordion__item-title">Your Ledger device was reset</div>
+<div class="accordion__item-content">
+<p>Resetting a Ledger device will cause the device to "forget" the private keys it holds. Fortunately, it's possible to recover these private keys by restoring the corresponding recovery phrase into your Ledger device.<br>If your device was reset, <strong>please use <a href="https://support.ledger.com/hc/en-us/articles/4404382560913-Restore-from-recovery-phrase?support=true" target="_blank" rel="noopener">these instructions</a> to restore the recovery phrase that controls the problematic account into your Ledger device</strong>.</p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title">You own multiple Ledger devices</div>
+<div class="accordion__item-content">If you own multiple Ledger devices that are set up with <strong>different</strong> recovery phrases, please <strong>connect the device which was used to create the problematic account then try the transaction again.</strong>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title">You own multiple recovery phrases</div>
+<div class="accordion__item-content">If you own <strong>multiple</strong> recovery phrases but <strong>only one</strong> Ledger device, please try the following:
+<ol class="list-colored">
+<li>
+<strong>Reset</strong> your Ledger device to factory settings by following <a href="https://support.ledger.com/hc/en-us/articles/360017582434-Reset-to-factory-settings-?docs=true" target="_blank" rel="noopener">these instructions.</a>
+</li>
+<li>
+<strong>Restore the recovery phrase used to create the problematic account</strong> into your Ledger device by following <a href="https://support.ledger.com/hc/en-us/articles/4404382560913-Restore-from-recovery-phrase?support=true" target="_blank" rel="noopener">these instructions.</a>
+</li>
+<li>Try the transaction again.</li>
+</ol>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title">Your account is protected by a passphrase</div>
+<div class="accordion__item-content">
+<span>Did you set up an <strong>optional passphrase</strong>? If the account in Ledger Live is protected by a passphrase, the <strong>correct recovery phrase</strong> <em>and</em> the <strong>correct passphrase</strong> must be set on the Ledger device before the account can be used. </span><a href="https://support.ledger.com/hc/en-us/articles/360019010313" target="_blank" rel="noopener">Learn more</a>.</div>
+</div>
+</div>
+<p>
+<script src="chrome-extension://ldinpeekobnhjjdofggfgjlcehhmanlj/inpage.js" id="stacks-wallet-provider"></script>
+</p>
+<div class="callout callout--primary">
+<h4 id="h_01H9TZTPM2EGT4SCH31RX6Z1K1" class="callout__title"><strong><em class="fa fa-info-circle"> </em>Important note</strong></h4>
+<p>It is possible to encounter this error message when attempting to swap between two accounts that were derived from different seed phrases. For successful swapping from a specific account, ensure that the correct device is connected.</p>
+</div></body></html>

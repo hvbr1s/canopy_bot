@@ -1,0 +1,59 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/6018110754845-EIP-1559-and-Ledger-Live"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="6018110754845"/><meta name="title" content="EIP-1559 and Ledger Live"/><meta name="classification" content="public"/></head>                            <body><h1>EIP-1559 and Ledger Live</h1>
+<p><span style="font-weight: 400;">In August 2021, Ethereum released the Ethereum Improvement Proposal (EIP) 1559 upgrade to optimize network transaction fees and: </span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Make fees more predictable</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Reduce delays in transaction confirmation</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Automate the fee bidding system</span></li>
+</ul>
+<p><span style="font-weight: 400;">Ledger Live implemented EIP-1559 to improve how Ethereum-based fees are calculated and processed.</span></p>
+<p><em class="fa fa-info-circle"> </em> To take advantage of the EIP-1559 model fee, please <a href="https://support.ledger.com/hc/en-us/articles/4410960111889-Update-Ledger-Live-?docs=true" target="_blank" rel="noopener">update your Ledger Live app</a><span style="font-weight: 400;"> to version 2.50 or higher. You also need to </span><a href="https://support.ledger.com/hc/en-us/articles/4404382258961-Install-uninstall-and-update-apps?docs=true" target="_blank" rel="noopener">update the ETH app on your Ledger device</a><span style="font-weight: 400;">. </span></p>
+<h2><span style="font-weight: 400;">First-price auction fee model</span></h2>
+<p><span style="font-weight: 400;">Ethereum’s original fee model is based on the auction mechanism also known as a first-price auction.</span></p>
+<p><span style="font-weight: 400;">For each transaction you would submit a random amount of gas fee that you’re willing to pay:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="2">
+<strong>The gas price:</strong><span style="font-weight: 400;"> how much you're willing to pay per unit of gas. It is measured in gwei (1 gwei equals 0.000000001 ETH).</span>
+</li>
+<li style="font-weight: 400;" aria-level="2">
+<strong>The gas limit:</strong><span style="font-weight: 400;"> how much you're willing to spend on a transaction. It is calculated by default and equals 21,000 gwei for the majority of transactions. </span>
+</li>
+</ul>
+<p><span style="font-weight: 400;">Here is how this looked in Ledger Live 👇</span></p>
+<p class="wysiwyg-text-align-center"><img src="https://support.ledger.com/hc/article_attachments/7128551488413" alt="Ethereum_fees_old_version_1.png" width="508" height="665"></p>
+<p><span style="font-weight: 400;">In <strong>Advanced settings</strong>, you could manually increase or decrease the gas limit and price. </span></p>
+<p class="wysiwyg-text-align-center"><span style="font-weight: 400;"><img src="https://support.ledger.com/hc/article_attachments/7128553499805" alt="Ethereum_fees_old_version.png" width="518" height="645"></span></p>
+<p><span style="font-weight: 400;">With this fee model, predicting the gas price is difficult.</span></p>
+<p><span style="font-weight: 400;">Transactions are picked up and confirmed by validators who are incentivized to sort them by the highest gas prices. Users often end up overpaying fees and transaction confirmation can be delayed, especially during network congestion.</span></p>
+<h2><span style="font-weight: 400;">Changes in gas estimates</span></h2>
+<p><span style="font-weight: 400;">With the EIP-1559 model, the original gas limit is replaced by two values:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">A long-term average target equal to the original gas limit, and </span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">A hard per-block cap equal to twice the original gas limit.</span></li>
+</ul>
+<p><span style="font-weight: 400;">When the Ethereum network traffic gets congested, the block gas limit doubles from 15 million to 30 million, replacing fixed-sized blocks with variable-sized blocks that can be increased during sudden spikes in demand. There is an increase in the base fee, but unlike the original system, this increase is predictable.</span></p>
+<h2><span style="font-weight: 400;">How does this affect Ledger Live users? </span></h2>
+<p><span style="font-weight: 400;">With the integration of the EIP-1559 fee model, Ledger Live UI is updated for all Ethereum-based transactions.</span></p>
+<p class="wysiwyg-text-align-center"><img src="https://support.ledger.com/hc/article_attachments/7640401094557" alt="Send_standard.png" width="471" height="605"></p>
+<p><span style="font-weight: 400;">In </span><strong>Advanced </strong><strong>settings</strong><span style="font-weight: 400;">, you can customize a Max Priority Fee and a Max Fee</span><span style="font-weight: 400;">:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1">
+<strong>Max Priority Fee</strong><span style="font-weight: 400;"> is an optional additional payment to incentivize the validator to pick up the transactions. You determine the amount of the tip. This amount will be used up entirely with no refund possible.</span>
+</li>
+<li style="font-weight: 400;" aria-level="1">
+<strong>Max Fee</strong><span style="font-weight: 400;">— the addition of a standard, minimum fee that must be paid to include a transaction in a block (the base fee) and the priority fee. You can set a Max Fee amount you are willing to pay. When your transaction gets included in a block, any difference between your Max Fee and the actual fee will be refunded.</span>
+</li>
+</ul>
+<div class="callout callout--warning">
+<p>Choosing a too low Max Fee can lead to a pending transaction. You will not be able to make a new transaction from your account until it goes through or it’s deleted. Speeding up a transaction is not available on Ledger Live at the moment.</p>
+</div>
+<p class="wysiwyg-text-align-center"><img src="https://support.ledger.com/hc/article_attachments/7640456442653" alt="Send_advanced.png" width="463" height="636"></p>
+<h3><span style="font-weight: 400;">Max base fee + priority fee = Max fee</span></h3>
+<p><strong>Max fee</strong><span style="font-weight: 400;"> is the absolute maximum amount that a transaction can cost you. This is also the amount displayed in the </span><strong>Standard settings</strong><span style="font-weight: 400;">.</span></p>
+<div class="callout callout--primary">
+<h4 class="callout__title">Things to keep in mind:</h4>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Ledger Live will display a range of priority fees that we consider to be safe. While you can go outside of this range, we strongly recommend staying within it.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">You can send transactions without adding a priority fee, however, keep in mind that setting a very low priority fee is risky—transactions may wait in a pool until the entire gas limit is used up.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">While a transaction is pending, you won’t be able to make new transactions with your account and you might end up being stuck for a while. Please ensure you use reasonable settings before proceeding to send a transaction.</span></li>
+</ul>
+</div></body></html>

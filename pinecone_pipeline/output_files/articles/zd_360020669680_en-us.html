@@ -1,0 +1,31 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/360020669680-U2F-API-deprecation"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="360020669680"/><meta name="title" content="U2F API deprecation"/><meta name="classification" content="public"/></head>                            <body><h1>U2F API deprecation</h1>
+<p>With the release of the Chrome 95 update and future releases, U2F API for interacting with the Ledger devices will be progressively deprecated.</p>
+<p>The third-party wallets and decentralized applications that involve the connection of the Ledger device with the old standard will not be accessible when the full deprecation takes place, expected in February 2022 with the Chrome 98 release. <a href="https://developer.chrome.com/blog/deps-rems-95/" target="_blank" rel="noopener">Learn more</a>.</p>
+<p>Affected third-party wallets and decentralized applications will have to migrate to the new standards. Popular wallets like Metamask, Yoroi, MyEtherWallet, and others already put in place <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebHID_API" target="_blank" rel="noopener">WebHID</a> and/or <a href="https://wicg.github.io/webusb/" target="_blank" rel="noopener">WebUSB</a> connection methods that will replace the deprecated U2F in the future.</p>
+<p>If you will face a U2F error while connecting to a third-party wallet, that could be a result of this standard deprecation. In that case, <strong>reach out</strong> to wallet support with the error screenshot and explain the steps you took.</p>
+<h2>Solutions</h2>
+<p>While the developers of the third-party wallets or of decentralized applications will be adding the support of the new standards to their services, you can connect your Ledger device by using alternative solutions.</p>
+<div class="accordion accordion--default">
+<div class="accordion__item">
+<div class="accordion__item-title">Switching connection method</div>
+<div class="accordion__item-content">
+<p>Some wallets may offer to users manually choose amongst the connection options. For example, a third-party wallet <a href="https://adalite.io/" target="_blank" rel="noopener">Adalite</a> for Cardano (ADA) has an option to choose between U2F (which is going to be deprecated soon), WebUSB, and WebHID. In this case, <strong>the most stable method</strong> to connect your Ledger device will be <strong>WebHID</strong>. </p>
+<p class="wysiwyg-text-align-center"><img src="https://support.ledger.com/hc/article_attachments/4414114439185/adalite.png" alt="adalite.png" width="264" height="337"></p>
+<p class="wysiwyg-text-align-left">If you encounter a U2F error during the connection to the third-party wallet, check in the wallet settings if the wallet provides an option to switch between different connection methods and choose WebHID as the most preferable option. </p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title">Connecting with Metamask</div>
+<div class="accordion__item-content">
+<p>You can connect to most decentralized applications by using the <a href="https://metamask.io/" target="_blank" rel="noopener">Metamask</a> extension in your Browser. An extensive guide is available on our <a href="https://support.ledger.com/hc/en-us/articles/4404366864657-Set-up-and-use-MetaMask-to-access-your-Ledger-Ethereum-ETH-account?docs=true" target="_blank" rel="noopener">Help Center here.</a> If you face a problem during the connection of your Ledger device to Metamask, make sure to check the <a href="https://support.ledger.com/hc/en-us/articles/360020871157-Solving-a-MetaMask-connection-issue-?support=true" target="_blank" rel="noopener">article</a> solving the most common issues during the connection.   </p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title">Using WalletConnect</div>
+<div class="accordion__item-content">
+<p class="wysiwyg-text-align-left">Alternatively, you can use<a href="https://walletconnect.org/" target="_blank" rel="noopener"> <strong>WalletConnect</strong> </a>in <strong>Ledger Live</strong>. <strong>WalletConnect</strong> is an open-source protocol that allows you to securely interact with any decentralized applications on desktop and mobile.</p>
+<p>You can connect to decentralized applications through<strong> WalletConnect</strong> with Ledger Live mobile instead of using the native <strong>Ledger</strong> integration in third-party wallets. Learn how to use <strong>WalletConnect</strong> with <strong>Ledger Live </strong>in <a href="https://support.ledger.com/hc/en-us/articles/360018444599" target="_blank" rel="noopener">this article.</a></p>
+<p class="wysiwyg-text-align-center"><img src="https://support.ledger.com/hc/article_attachments/360024116279/IMG_7681.jpeg" alt="IMG_7681.jpeg" width="305" height="534"></p>
+</div>
+</div>
+</div></body></html>

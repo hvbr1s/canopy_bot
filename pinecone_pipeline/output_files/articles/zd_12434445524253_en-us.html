@@ -1,0 +1,69 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/12434445524253-Access-Ledger-Zcash-account-with-third-party-wallet-YWallet"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="12434445524253"/><meta name="title" content="Access Ledger Zcash account with third-party wallet YWallet"/><meta name="classification" content="public"/></head>                            <body><h1>Access Ledger Zcash account with third-party wallet YWallet</h1>
+<p>This article explains how to access a Ledger Zcash account using a third-party wallet YWallet if you are facing errors such as: </p>
+<ul>
+<li><strong>"Internal error 0x6f01"</strong></li>
+<li><strong>"-26:16: bad-txns-coinbase-spend-has-transparent-outputs"</strong></li>
+<li><strong> "getVarint called with unexpected parameters"</strong></li>
+</ul>
+<h2>Before you start</h2>
+<ul class="list-bullet">
+<li>Make sure you tried to troubleshoot the Zcash errors by following <a href="https://support.ledger.com/hc/en-us/articles/7497812374941-Zcash-transaction-issues-in-Ledger-Live"><span class="wysiwyg-underline" style="color: #1155cc;">these steps</span></a>.</li>
+</ul>
+<div class="callout callout--warning">
+<h4 class="callout__title"><strong><em class="fa fa-exclamation-triangle"> </em>For advanced users only</strong></h4>
+<p><span style="color: #172b4d;">This tutorial involves entering your 24-word recovery phrase into a different third-party wallet YWallet. This is not something to be taken lightly, as anyone with your 24-word recovery phrase can control all accounts derived from it. Entering it into a computer is one of the least safe things you can do with your seed phrase. It can render it vulnerable to hacks, malware, and lots of vectors of attack that were previously impossible before taking this course of action. As such, </span><strong><span style="color: #172b4d;">please do it at your own risk</span></strong><span style="color: #172b4d;">.</span></p>
+</div>
+<h2><span style="color: #434343;">Step-by-step</span></h2>
+<h3><span style="color: #434343;">1- Sending your other assets to temporary addresses</span></h3>
+<ol>
+<li>
+<a href="https://support.ledger.com/hc/en-us/articles/4404382228753?docs=true" target="_blank" rel="noopener">Send all your crypto assets</a> (except the problematic Zcash account) to existing or temporary safe accounts. It can be accounts created on an exchange service, a software wallet, or any account linked to another hardware wallet.</li>
+<li>
+<a href="https://support.ledger.com/hc/en-us/articles/8865593716125-How-to-remove-an-account-from-Ledger-Live" target="_blank" rel="noopener">Remove</a> the empty accounts in Ledger Live to avoid further confusion.</li>
+</ol>
+<h3><span style="color: #434343;">2- Installing YWallet</span></h3>
+<p>Once you have confirmed that all of your funds (except the problematic ZCash account) are now on other addresses and that the only asset left linked to your Ledger device is ZEC, go to the <a href="https://ywallet.app/installation/" target="_blank" rel="noopener">website of the Ywallet</a> and <strong>download</strong> the version suited for your OS.</p>
+<p><em class="fa fa-info-circle"> </em> This method works also with the <strong>mobile version</strong> of this wallet.</p>
+<h3>3- Accessing Ledger Zcash account in YWallet</h3>
+<ol class="list-colored">
+<li>Open <strong>YWallet</strong> on your PC.<br>The welcome screen appears.</li>
+<li>Click on <strong style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">New Account.<span style="color: #172b4d;"><br><img style="height: 186px; width: 392px;" src="https://lh3.googleusercontent.com/uxDuI1oMiXzsc5VEYlLMblbxu6oOwncaiAcBF5xD2CfXZ18_pgsNropfTlbASjyrmzpkfFXxqAAOC6jBCqjyOTStF-vEVjUUpYH-TR0P_Ae3Ro9c-yoQ6Y6Iyd9FRO2997t14DIVHSAy3mVvOfWy5po"></span></strong>
+</li>
+<li>Fill in the account name.</li>
+<li>Select <strong>Zcash</strong> and tick the box next to <strong>Restore an account.</strong><span style="color: #172b4d;"><br><img style="height: 285px; width: 355px;" src="https://lh5.googleusercontent.com/Eyt9KHxK5bJH1BZeQm-Nbk_pQGfjnW_YVwG56GzW0JdmHTh3TALOv_JlfeNAZssGUn9TWw9jrRd7JdR2WknHoCT02x7f5kIuut0z5VC6PdSz2LmwXNovnjfOlo_LsXa5CIvl-QnE6k1SsIHqWMLzUcU"></span><span style="color: #172b4d;"></span>
+</li>
+<li>Enter your 24-word recovery phrase in the field.<br>Make sure to enter all the words in the correct order as written in the recovery sheet.</li>
+<li>Click <strong>Import</strong>.</li>
+<li>Wait until the synchronization with the blockchain is complete. Depending on your internet speed and hardware, it can take from several minutes up to several hours.</li>
+</ol>
+<p><strong><span style="color: #172b4d;">Mobile</span></strong><span style="color: #172b4d;">: mobile version of this wallet will also take time to synchronize with the blockchain. As such, please make sure that your smartphone is charging or has an almost full battery while doing so. Additionally, if the smartphone enters sleep mode during this synchronization, it may end the process and will have to be started anew.</span></p>
+<h3>4- Managing ZEC in YWallet</h3>
+<p>Once the synchronization in YWallet is over, you’ll have access to the dashboard and other features of the wallet.</p>
+<p><em class="fa fa-info-circle"> </em>Ledger Live displays transparent addresses, a feature of the Zcash network. The YWallet usually displays shielded addresses, you’ll have to click or tap on the QR Code to reveal your transparent address and balance!</p>
+<p class="wysiwyg-text-align-center"><img style="height: 356px; width: 213px;" src="https://lh6.googleusercontent.com/lNnd1k2TFwE387EJmO0QOtzRHfgdiVO6LURlJ_ZxpT5BwDmASwacrGi9BUjOkY3ASQJkQgbyvU3LAAkOMh7wCl1C43aWkB-WahpmMUZz3aaqcBQFmakUkV8Nn-CmqwkpIcguFHm6iEyn7yC6FgwIo_U"></p>
+<ol class="list-colored">
+<li>Click on the <strong>Send</strong> button.</li>
+<li>Insert the temporary address where you are sending your ZEC.<br><img style="height: 398px; width: 227px;" src="https://lh5.googleusercontent.com/lcDpErQ5S8p957Ol_GwgpfaqHw9apgTXjbJVA0IgT2FMTC6fe_LkDbkRcQiYgONh-7A446ka1iQtsJlCpO1lZ6fTg3N8m5kEkjuLocprQePHi4EDbrXRhTeuRKe8Chn0T8eZ8g06sLtCPCi5fGpev6U">
+</li>
+<li>Click on the “<strong style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"><span style="color: #172b4d;">MAX</span></strong><span style="color: #172b4d;">” button to send your entire balance.</span>
+</li>
+<li>Click <strong>Send</strong>.</li>
+<li>Double-check the transaction details and confirm again.</li>
+</ol>
+<h3>5 - Setting up a new 24-word recovery phrase on your Ledger device.</h3>
+<p>At this point, you can now reinitialize your Ledger device with a new 24-word recovery phrase and with new accounts.</p>
+<ol class="list-colored">
+<li>Enter 3 times incorrect PIN to reset Ledger device.</li>
+<li>
+<a href="https://support.ledger.com/hc/en-us/articles/360017582434-Reset-to-factory-settings-?docs=true#:~:text=After%20resetting%20your,Nano%20X." target="_blank" rel="noopener">Set up Ledger device as new</a><span style="color: #172b4d;">.</span>
+</li>
+<li>
+<a href="https://support.ledger.com/hc/en-us/articles/4404382258961-Install-uninstall-and-update-apps?docs=true" target="_blank" rel="noopener">Install all the apps back</a><span style="color: #172b4d;"> (except Zcash).</span>
+</li>
+<li>
+<a href="https://support.ledger.com/hc/en-us/articles/4404389482641-Add-your-accounts" target="_blank" rel="noopener">Add new accounts</a><span style="color: #172b4d;"> (except Zcash).</span>
+</li>
+<li>
+<a href="https://support.ledger.com/hc/en-us/articles/4404389453841-Receive-crypto-assets" target="_blank" rel="noopener">Send your assets</a><span style="color: #172b4d;"> from temporary addresses back to Ledger Live.</span>
+</li>
+</ol></body></html>

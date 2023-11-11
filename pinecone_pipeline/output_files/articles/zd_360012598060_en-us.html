@@ -1,0 +1,66 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/360012598060-Ledger-Live-desktop-crashes-"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="360012598060"/><meta name="title" content="Ledger Live desktop crashes "/><meta name="classification" content="public"/></head>                            <body><h1>Ledger Live desktop crashes </h1>
+<div class="callout callout--warning">
+<h4 class="callout__title"><strong>Ledger Live 2.30.0 crashes on Linux</strong></h4>
+<ul>
+<li>Linux users might experience crashes after updating to Ledger Live version 2.30.0.</li>
+<li>This issue is solved by updating to the<a href="https://support.ledger.com/hc/en-us/articles/360020773319" target="_blank" rel="noopener"> latest version of Ledger Live</a>. <span>Please download the latest release of Ledger Live from the </span><a href="https://www.ledger.com/ledger-live/download" target="_blank" rel="noopener">Ledger Live download page</a><span>.</span>
+</li>
+</ul>
+</div>
+<h2>Windows users</h2>
+<p>Affected Windows users should download the <a href="https://aka.ms/vs/16/release/vc_redist.x64.exe" target="_self">Microsoft Visual C++ redistributable</a>. MacOS and Linux users should update the Ledger Live app. Step-by-step instructions are found below.</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.ledger.com/hc/article_attachments/360011126800/crash_screen_2.2.png" alt="crash_screen_2.2.png" width="600" height="381"><br><em>This crash screen may be solved by installing the <a href="https://aka.ms/vs/16/release/vc_redist.x64.exe" target="_self">Microsoft Visual C++ redistributable</a> on Windows</em></p>
+<div class="callout callout--warning callout--dashed">
+<h4 class="callout__title">
+<em class="fa fa-exclamation-triangle"> </em> Windows 7</h4>
+<p>Please note that Ledger Live is not supported on Windows 7. If the solutions provided below do not solve your problem, we cannot provide any further support unless you try on a supported platform (macOS 10.10 (64-bit), Windows 8.1 (64-bit) or Linux Ubuntu 16.10).</p>
+</div>
+<p>Ledger Live may crash for some users, showing an error screen at launch. <strong>Do not click the</strong> <strong>Restart </strong>button, as this will cause device connection and synchronization errors.<span></span></p>
+<h3>Solution</h3>
+<p><strong>If you see a red <span class="wysiwyg-color-red">Reset</span> button on the crash screen: </strong></p>
+<ol>
+<li>Close Ledger Live.</li>
+<li>
+<a href="https://ledger.com/ledger-live/download" target="_self">Download and install the latest version</a> of Ledger Live.<br><em class="fa fa-info-circle">  </em> You can safely ignore the potential antivirus <em>Trojan</em> warning. Our app is built with <span>electron-builder 22.4.1, of which a recent <em>NSIS</em> version is <a href="https://github.com/electron-userland/electron-builder/issues/4793" target="_self">falsely detected</a> by antivirus scanners.</span>
+</li>
+</ol>
+<p><strong>If you only see one <span class="wysiwyg-color-blue">blue</span> button on the crash screen: </strong></p>
+<ol class="list-colored">
+<li>Close Ledger Live.</li>
+<li>Download the <a href="https://aka.ms/vs/16/release/vc_redist.x64.exe" target="_self">Microsoft Visual C++ redistributable package</a>.<br>Learn more about this on <a href="https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads" target="_self">Microsoft's website</a>.</li>
+<li>Open the <strong>vc_redist.x64.exe</strong> file that you just downloaded<strong>.</strong>
+</li>
+<li>The package will install the required components on your computer.</li>
+<li>You can now use Ledger Live again.</li>
+</ol>
+<h2>Linux or macOS</h2>
+<div class="callout callout--warning callout--dashed">
+<h4 class="callout__title">
+<em class="fa fa-exclamation-triangle"> </em> macOS 10.13</h4>
+<p>Ledger Live version 2.33 or higher is not supported on macOS version 10.13. Please note that macOS version 10.13 or below is outdated and no longer supported by Apple. Using outdated macOS versions can lead to potential security risks. We cannot provide any further support unless you update your macOS version to a more recent one.</p>
+</div>
+<p>If you see a crash when starting Ledger Live on macOS or Linux, please install the latest version:</p>
+<ol class="list-colored">
+<li>You can download from<span> </span><a href="https://ledger.com/ledger-live/download" target="_blank" rel="noopener noreferrer">ledger.com/ledger-live/download</a><span> </span>and optionally verify its signature<span> </span><a href="https://ledger-live-tools.now.sh/lld-signatures" target="_blank" rel="noopener noreferrer">here</a>.</li>
+<li>If your password no longer works after the update, please delete the user data folder. The password function is not compatible with the update. Choose your platform below:</li>
+</ol>
+<h3>MacOS</h3>
+<ol class="list-colored">
+<li>Copy the following address:
+<pre><code>~/Library/Application Support</code></pre>
+</li>
+<li>Open a <strong>Finder</strong> window.</li>
+<li>On the top menu bar, navigate to <strong><strong>Go &gt; Go to Folder </strong></strong>or press the keyboard shortcut<strong><strong> </strong></strong>⇧⌘G.</li>
+<li>Paste the address you copied at step 1 and click on <strong>Go</strong>.</li>
+<li>Locate the <strong>Ledger Live</strong> folder and delete it (drag to Trash or press ⌘ + delete keys).</li>
+<li>Start Ledger Live and choose the <strong>Connect a device </strong>option when asked how to set up your device. Then <a href="https://support.ledger.com/hc/en-us/articles/4404389482641" target="_blank" rel="noopener">add your accounts</a> to restore your portfolio.</li>
+</ol>
+<h3>Linux<strong> </strong>
+</h3>
+<ol class="list-colored">
+<li>Navigate to the user data folder:
+<pre><code>~<span>/.config/Ledger\ Live</span></code></pre>
+</li>
+<li>Delete all files in the Ledger Live folder.</li>
+<li>Start Ledger Live and choose the <strong>Connect a device </strong>option when asked how to set up your device. Then <a href="https://support.ledger.com/hc/en-us/articles/4404389482641" target="_blank" rel="noopener">add your accounts</a> to restore your portfolio.</li>
+</ol></body></html>

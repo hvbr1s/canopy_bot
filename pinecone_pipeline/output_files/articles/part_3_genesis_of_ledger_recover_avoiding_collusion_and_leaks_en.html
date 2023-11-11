@@ -1,0 +1,363 @@
+<html>
+ <head>
+  <meta content="https://www.ledger.com/blog/part-3-genesis-of-ledger-recover-avoiding-collusion-and-leaks" name="source"/>
+  <meta content="academy" name="source-type"/>
+  <meta content="en" name="locale"/>
+  <meta content="N/A" name="zd-article-id"/>
+  <meta content="part 3 genesis of ledger recover avoiding collusion and leaks" name="title"/>
+  <meta content="public" name="classification"/>
+ </head>
+ <body>
+  <article class="margin-lg" id="article-280203">
+   <header class="header margin-sm">
+    <div class="content">
+     <div class="margin-sm is-hidden-tablet is-hidden-desktop blog-category-breadcrumb">
+      <a href="https://www.ledger.com/company-updates" title="">
+       Blog
+      </a>
+      <i class="icon-chevron-right">
+      </i>
+      <a href="https://www.ledger.com/category/blog-posts" title="Blog posts">
+       Blog posts
+      </a>
+     </div>
+     <p class="datetime caption margin-xs">
+      <a class="is-primary" href="https://www.ledger.com/category/blog-posts" title="Blog posts">
+       Blog posts
+      </a>
+      ,
+      <a class="is-primary" href="https://www.ledger.com/category/tech" title="Tech">
+       Tech
+      </a>
+      |           08/10/2023
+     </p>
+     <h1 class="h2 title margin-s">
+      Part 3: Genesis of Ledger Recover – Avoiding Collusion and Leaks
+     </h1>
+     <p class="font-size-l margin-s">
+      Providing secure storage is key and raises crucial questions that we need to address: How do we ensure the shares are stored safely and can’t be stolen? How can we prevent collusion between backup providers to reconstruct your seed?
+     </p>
+    </div>
+    <div class="illustration" style="background-image: url('https://www.ledger.com/wp-content/uploads/2023/08/Avoid-Collusion-and-leaks.jpg');">
+    </div>
+   </header>
+   <div class="row no-margin-mobile margin-md is-hidden-mobile">
+    <div class="row blog-category-breadcrumb">
+     <a href="https://www.ledger.com/company-updates" title="">
+      Blog
+     </a>
+     <i class="icon-chevron-right">
+     </i>
+     <a href="https://www.ledger.com/category/blog-posts" title="Blog posts">
+      Blog posts
+     </a>
+    </div>
+   </div>
+   <div class="row margin-lg plain-text">
+    <p>
+     Part 4 of our Genesis of Ledger Recover blog series
+     <a href="https://www.ledger.com/blog/part-4-genesis-of-ledger-recover-controlling-access-to-the-backup-identity-verification">
+      is available here.
+     </a>
+    </p>
+    <p>
+     Welcome back to the third part of our blog series on
+     <a href="https://www.ledger.com/recover" rel="noreferrer noopener" target="_blank">
+      Ledger Recover
+     </a>
+     ’s genesis! Our goal is to explore the many technical hurdles encountered when building a seed recovery service, and how Ledger Recover, provided by Coincover solves them with a secure design and infrastructure.
+    </p>
+    <p>
+     In the previous parts, we explained how the entropy of a Secret Recovery Phrase can be
+     <a href="https://www.ledger.com/blog/part-1-genesis-of-ledger-recover-self-custody-without-compromise" rel="noreferrer noopener" target="_blank">
+      split in multiple shares (or fragments)
+     </a>
+     , and
+     <a href="https://www.ledger.com/blog/part-2-genesis-of-ledger-recover-securely-distributing-the-shares" rel="noreferrer noopener" target="_blank">
+      sent to trusted backup providers
+     </a>
+     , while always maintaining the highest level of security. Thanks to modern cryptography tools and secure hardware, we are able to perform a full backup of a seed, with the guarantee that no attacker can get hold of any of the shares during transit.
+    </p>
+    <p>
+     <a href="https://www.ledger.com/blog/part-1-genesis-of-ledger-recover-self-custody-without-compromise">
+      Genesis of Ledger Recover Part 1 – “Self-custody without compromise,”
+     </a>
+     delves into how we carefully considered all potential challenges when building Ledger Recover, provided by Coincover, to make this feature a great and secure solution to back up your Secret Recovery Phrase.
+    </p>
+    <p>
+     <a href="https://www.ledger.com/blog/part-2-genesis-of-ledger-recover-securely-distributing-the-shares">
+      Genesis of Ledger Recover Part 2 – “Securely distributing the shares,”
+     </a>
+     introduces several cryptographic tools and mathematical concepts that Ledger Recover leverages to securely distribute your seed shares to backup providers.
+    </p>
+    <p>
+     We will now move on to the next logical step, physically backing up the shares. Providing secure storage is key and raises crucial questions that we need to address: How do we ensure the shares are stored safely and can’t be stolen? How can we prevent collusion between backup providers to reconstruct your seed?
+    </p>
+    <h5 class="wp-block-heading">
+     Multiple layers of security
+    </h5>
+    <p>
+     To ensure the safety of share storage, one possible approach is to have each provider store their individual share in a secure location, such as a safe. Alternatively, you might opt to store it in a – different – bank safe yourself. This arrangement allows providers to focus solely on safeguarding their respective keys, making it easier to control access and reducing the risk of leaks from family and friends.
+    </p>
+    <p>
+     Protecting ourselves against potential collusion poses more challenges. You might consider creating multiple shares distributed among different categories of friends or storage providers. You may also bind them with contracts. While these solutions are viable, they still require a certain level of trust.
+    </p>
+    <p>
+     An alternative solution is to
+     <strong>
+      encrypt
+     </strong>
+     the shares before they are sent to your friends. That way, even if they collude, they won’t be able to use the shares to rebuild your seed. But here is the catch-22 of the physical space: To encrypt the shares, you need a new personal secret key. You’re essentially backing up a secret, your seed, by
+     <strong>
+      introducing another secret
+     </strong>
+     that you must protect and remember.
+    </p>
+    <p>
+     We could argue that this new secret is less critical than the original one since it is only used to protect you from collusion between your friends. An attacker getting access to this new key would not be able to directly steal your funds, but if you were to lose it you would also lose access to your seed.
+    </p>
+    <div style="text-align:center;">
+     <figure class="wp-block-image aligncenter size-full is-resized">
+      <img alt="" class="wp-image-280210" decoding="async" height="269" loading="lazy" sizes="(max-width: 291px) 100vw, 291px" src="https://www.ledger.com/wp-content/uploads/2023/08/snake.png" srcset="https://www.ledger.com/wp-content/uploads/2023/08/snake.png 501w, https://www.ledger.com/wp-content/uploads/2023/08/snake-300x277.png 300w, https://www.ledger.com/wp-content/uploads/2023/08/snake-298x275.png 298w" width="291"/>
+     </figure>
+    </div>
+    <h5 class="wp-block-heading">
+     How Ledger Recover does it: Secure Hardware and multiple levels of encryption
+    </h5>
+    <p>
+     In Ledger Recover, provided by Coincover, we use the properties of the secure hardware at our disposal to answer those questions in the most user-friendly way possible. We rely on the Secure Element (SE) contained in your Ledger hardware wallet, as well as Hardware Security Modules (HSM) used by each of the backup providers.
+    </p>
+    <h6 class="wp-block-heading">
+     Secure Elements: The Power Of Security In The Palm Of Your Hand
+    </h6>
+    <p>
+     A Secure Element is a specialized chip commonly used in passports, credit cards, and payment systems to securely store and process sensitive data. SEs are specifically engineered to withstand a wide range of attacks such as physical tampering, side-channel, fault-injection, software exploitation or malwares. These chips are certified by third-party security labs through intensive testing regarding those attacks.
+    </p>
+    <p>
+     Your Ledger Nano relies on this proven and trusted technology to store and protect your seed. The Ledger OS running on this SE will always prompt for your physical consent before using the seed.
+    </p>
+    <div style="text-align:center;">
+     <figure class="wp-block-image aligncenter size-full is-resized">
+      <img alt="" class="wp-image-280222" decoding="async" height="155" loading="lazy" sizes="(max-width: 380px) 100vw, 380px" src="https://www.ledger.com/wp-content/uploads/2023/08/secure-elements.png" srcset="https://www.ledger.com/wp-content/uploads/2023/08/secure-elements.png 656w, https://www.ledger.com/wp-content/uploads/2023/08/secure-elements-300x122.png 300w, https://www.ledger.com/wp-content/uploads/2023/08/secure-elements-490x199.png 490w" width="380"/>
+      <figcaption class="wp-element-caption">
+       Secure elements
+      </figcaption>
+     </figure>
+    </div>
+    <h6 class="wp-block-heading">
+     HSMs: Securing The Servers
+    </h6>
+    <p>
+     Hardware Security Module (HSM) is a security enclave typically available as a plug-in card or external device directly attached to a computer or network server. It leverages cryptographic processors, secure memories, and various anti-tampering countermeasures to securely store and process secrets. These modules safeguard critical infrastructures and are employed by highly security-conscious organizations, including the banking industry, to secure their secret keys and infrastructure.
+    </p>
+    <p>
+     Ledger utilizes multiple HSMs for various use cases, including
+     <a href="https://support.ledger.com/hc/en-us/articles/4404389367057-Is-my-Ledger-device-genuine-?docs=true#f2d68c4">
+      verifying the authenticity of Ledger Nano and Ledger Stax devices
+     </a>
+     , and enabling secure OS updates over an encrypted and authenticated channel.
+    </p>
+    <div style="text-align:center;">
+     <figure class="wp-block-image aligncenter size-full is-resized">
+      <img alt="" class="wp-image-280233" decoding="async" height="106" loading="lazy" sizes="(max-width: 492px) 100vw, 492px" src="https://www.ledger.com/wp-content/uploads/2023/08/hardware-security-modules.png" srcset="https://www.ledger.com/wp-content/uploads/2023/08/hardware-security-modules.png 946w, https://www.ledger.com/wp-content/uploads/2023/08/hardware-security-modules-300x65.png 300w, https://www.ledger.com/wp-content/uploads/2023/08/hardware-security-modules-768x166.png 768w, https://www.ledger.com/wp-content/uploads/2023/08/hardware-security-modules-490x106.png 490w" width="492"/>
+      <figcaption class="wp-element-caption">
+       Hardware Security Modules
+      </figcaption>
+     </figure>
+    </div>
+    <p>
+     Both SEs and HSMs play critical roles in enhancing data security in diverse applications. They help organizations meet regulatory requirements for data privacy and security and secure manipulation of critical data.
+    </p>
+    <h6 class="wp-block-heading">
+     Seed encryption by the Secure Element
+    </h6>
+    <p>
+     The first layer of protection comes from the Secure Element (SE) itself. Prior to splitting the entropy into three shares, the SE encrypts it using an AES 256 symmetric key stored in its Operating System (referred to as the ‘Entropy Encryption Key’). After encryption, the entropy is divided into three shares that are then distributed to backup providers. Of course, you have control over this process, and the SE will always request your explicit consent before initiating it, just like for any other application requesting access to the seed.
+    </p>
+    <div style="text-align:center;">
+     <figure class="wp-block-image aligncenter size-large is-resized">
+      <img alt="" class="wp-image-280246" decoding="async" height="569" loading="lazy" sizes="(max-width: 752px) 100vw, 752px" src="https://www.ledger.com/wp-content/uploads/2023/08/first-entropy-encryption-1024x776.png" srcset="https://www.ledger.com/wp-content/uploads/2023/08/first-entropy-encryption-1024x776.png 1024w, https://www.ledger.com/wp-content/uploads/2023/08/first-entropy-encryption-300x227.png 300w, https://www.ledger.com/wp-content/uploads/2023/08/first-entropy-encryption-768x582.png 768w, https://www.ledger.com/wp-content/uploads/2023/08/first-entropy-encryption-1536x1164.png 1536w, https://www.ledger.com/wp-content/uploads/2023/08/first-entropy-encryption-363x275.png 363w, https://www.ledger.com/wp-content/uploads/2023/08/first-entropy-encryption.png 1844w" width="752"/>
+      <figcaption class="wp-element-caption">
+       First entropy encryption by the Secure Element
+      </figcaption>
+     </figure>
+    </div>
+    <p>
+     Even in the event of collusion among backup providers attempting to reconstruct the seed (a scenario made nearly impossible by other robust protections we’ll discuss later), their efforts would only result in obtaining the encrypted seed. Without the encryption key stored in the Secure Element (SE), they would be unable to utilize the seed.
+    </p>
+    <p>
+     A key point to understand: this Entropy Encryption Key is common to all Ledger Devices, so that you can restore your seed on any legitimate Ledger Device. It is injected into the Operating System during an OS update, itself a very secure operation.
+    </p>
+    <p>
+     By incorporating the Entropy Encryption Key directly into the device, we eliminate the need for users to remember or store an additional encryption key to safeguard against collusion risks (the catch 22 mentioned above). This approach ensures enhanced security without requiring additional trust in Ledger, as it aligns with the existing level of security provided through OS updates.
+    </p>
+    <h6 class="wp-block-heading">
+     Protecting the Entropy Encryption Key
+    </h6>
+    <p>
+     Given its level of criticality, the Entropy Encryption Key is exclusively utilized by the device’s Operating System during authentic Ledger Recover restore and backup processes. This process involves the establishment of authenticated secure channels with multiple HSMs from different companies (each backup provider). Additionally, various other infrastructure components, such as suspicious activity detection (e.g., restoring multiple seeds on the same device) and identity verification, are managed by separate teams, which drastically increases the number of people that are required to perform a successful collusion attack. We will dig deeper into the governance and monitoring we have put in place in the 5th part of this series!
+    </p>
+    <p>
+     Similarly, at Ledger, no single person possesses the authority to deliver new OS upgrades for the device. The process is cryptographically enforced to always require the digital signature from a quorum of several individuals from different teams, each with different interests within the company.
+    </p>
+    <div style="text-align:center;">
+     <figure class="wp-block-image aligncenter size-large is-resized">
+      <img alt="" class="wp-image-280257" decoding="async" height="406" loading="lazy" sizes="(max-width: 698px) 100vw, 698px" src="https://www.ledger.com/wp-content/uploads/2023/08/separation-of-duties-1024x595.png" srcset="https://www.ledger.com/wp-content/uploads/2023/08/separation-of-duties-1024x595.png 1024w, https://www.ledger.com/wp-content/uploads/2023/08/separation-of-duties-300x174.png 300w, https://www.ledger.com/wp-content/uploads/2023/08/separation-of-duties-768x446.png 768w, https://www.ledger.com/wp-content/uploads/2023/08/separation-of-duties-1536x892.png 1536w, https://www.ledger.com/wp-content/uploads/2023/08/separation-of-duties-2048x1190.png 2048w, https://www.ledger.com/wp-content/uploads/2023/08/separation-of-duties-473x275.png 473w" width="698"/>
+      <figcaption class="wp-element-caption">
+       Separation of duties
+      </figcaption>
+     </figure>
+    </div>
+    <p>
+     This practice, known as
+     <a href="https://en.wikipedia.org/wiki/Separation_of_duties">
+      separation of duty
+     </a>
+     , is another crucial cybersecurity measure that we will delve into more deeply in the operational security section.
+    </p>
+    <h6 class="wp-block-heading">
+     Share encryption at rest for Backup Providers
+    </h6>
+    <p>
+     Now on the side of the backup providers, we have a somewhat equivalent setup.
+    </p>
+    <p>
+     Each backup provider uses a Hardware Security Module to manipulate their share of the seed. When their HSM receives the share from the device securely (doubly encrypted by the Entropy Encryption Key and the secure channel ephemeral key described in
+     <a href="https://www.ledger.com/blog/part-2-genesis-of-ledger-recover-securely-distributing-the-shares/">
+      the previous blog post
+     </a>
+     ), Secure Channel encryption is lifted  and share consistency is verified directly within the HSM.
+    </p>
+    <p>
+     Due to limited memory capacity, HSMs cannot store a large number of shares. Therefore, for storage purposes, each share is re-encrypted using an AES 256 symmetric encryption key, known as the ‘Provider Storage Key’. This additional layer of encryption allows the shares to be securely stored outside the bounds of the HSM in an RDMS. In other words, the shares never appear outside of a secure enclave without a double encryption scheme.
+     <br/>
+     The Provider Storage Key is generated inside the HSM by each provider, and never leaves it
+     <a href="https://en.wikipedia.org/wiki/Key_wrap">
+      unwrapped
+     </a>
+     . It is never accessible by anyone, including employees of the backup providers themselves. This is standard cybersecurity practice from companies that handle high secret, highly sensitive data.
+    </p>
+    <p>
+     The shares also never leave the confines of the HSM in clear, and are always encrypted either in transit or at rest.
+    </p>
+    <div style="text-align:center;">
+     <figure class="wp-block-image aligncenter size-large is-resized">
+      <img alt="" class="wp-image-280268" decoding="async" height="581" loading="lazy" sizes="(max-width: 594px) 100vw, 594px" src="https://www.ledger.com/wp-content/uploads/2023/08/double-encryption-1024x1004.png" srcset="https://www.ledger.com/wp-content/uploads/2023/08/double-encryption-1024x1004.png 1024w, https://www.ledger.com/wp-content/uploads/2023/08/double-encryption-300x294.png 300w, https://www.ledger.com/wp-content/uploads/2023/08/double-encryption-768x753.png 768w, https://www.ledger.com/wp-content/uploads/2023/08/double-encryption-1536x1506.png 1536w, https://www.ledger.com/wp-content/uploads/2023/08/double-encryption-281x275.png 281w, https://www.ledger.com/wp-content/uploads/2023/08/double-encryption.png 1778w" width="594"/>
+      <figcaption class="wp-element-caption">
+       Double encryption in transit and at rest
+      </figcaption>
+     </figure>
+    </div>
+    <p>
+     Once again, a robust separation of duties is enforced for individuals who have the ability to manipulate and access the HSMs. Different responsibilities, such as updating the code, physical access to the HSM, accessing the database, and installing software on the HSM’s physical host, are assigned to distinct individuals with limited access rights. Furthermore, any software running on the HSM must undergo digital signing by a quorum of multiple individuals from different teams and with diverse interests within the company.
+    </p>
+    <div style="text-align:center;">
+     <figure class="wp-block-image aligncenter size-large is-resized">
+      <img alt="" class="wp-image-280279" decoding="async" height="328" loading="lazy" sizes="(max-width: 650px) 100vw, 650px" src="https://www.ledger.com/wp-content/uploads/2023/08/separation-of-duties-2-1024x517.png" srcset="https://www.ledger.com/wp-content/uploads/2023/08/separation-of-duties-2-1024x517.png 1024w, https://www.ledger.com/wp-content/uploads/2023/08/separation-of-duties-2-300x151.png 300w, https://www.ledger.com/wp-content/uploads/2023/08/separation-of-duties-2-768x388.png 768w, https://www.ledger.com/wp-content/uploads/2023/08/separation-of-duties-2-1536x775.png 1536w, https://www.ledger.com/wp-content/uploads/2023/08/separation-of-duties-2-2048x1034.png 2048w, https://www.ledger.com/wp-content/uploads/2023/08/separation-of-duties-2-490x247.png 490w" width="650"/>
+      <figcaption class="wp-element-caption">
+       Separation of duties
+      </figcaption>
+     </figure>
+    </div>
+    <p>
+     All of this makes it extremely hard – almost impossible – for a single person in any of the involved companies to have access to the shares.
+    </p>
+    <h5 class="wp-block-heading">
+     HSMs Strike Again: Database diversification
+    </h5>
+    <p>
+     Okay, we’re getting closer to a complete solution to securely store our shares!
+    </p>
+    <p>
+     But what if several insiders within backup providers collectively desired to retrieve an individual’s entropy, orchestrating an effective large collusion among teams and quorum members from each company?
+    </p>
+    <p>
+     Is it possible to introduce technical measures that make it extremely challenging, if not infeasible, to achieve? Can we implement safeguards that provide enough time for any insider within any of the companies to raise the alarm to all users before anything happens?
+    </p>
+    <p>
+     One solution is to use what is known as “Database diversification”. Once again, we harness the capabilities of our HSMs to implement it.
+    </p>
+    <p>
+     If you have been following this blog post from the beginning, you now understand that the processing of shares is exclusively managed within the secure confines of HSMs, but that the actual storage of those encrypted shares takes place in a separate backend database outside the HSM.
+    </p>
+    <p>
+     Here’s what we will do: let the HSM generate unique database IDs for each share, serving as their specific identifiers within the backend database. These IDs will be generated in a ‘diversified’ manner, derived from a secret created by the HSM itself, securely stored within its own secure memory, and never exposed unwrapped. The backend therefore only serves as an external storage, unable to read its database content or decide on the identifiers of its own database entries.
+    </p>
+    <p>
+     What does this mean? The share identifiers will be distinct across different backup providers, including Ledger, Coincover, and EscrowTech. Additionally, as user data also remains encrypted and diversified, even if collusion were to occur between two providers it would not provide any clues regarding which database entry corresponds to which user or to which entry in the other provider’s database.
+    </p>
+    <p>
+     The only possible approach would be to brute force all possible combinations of shares across all databases from all involved backup providers. This process is highly time-consuming, requiring a full recovery flow that involves utilizing the full infrastructure of HSMs and a legitimate Ledger device for decrypting each combination with manual approval by PIN code. As intended, this approach demands substantial time and effort.
+    </p>
+    <div style="text-align:center;">
+     <figure class="wp-block-image aligncenter size-large is-resized">
+      <img alt="" class="wp-image-280290" decoding="async" height="279" loading="lazy" sizes="(max-width: 592px) 100vw, 592px" src="https://www.ledger.com/wp-content/uploads/2023/08/database-diversification-1024x485.png" srcset="https://www.ledger.com/wp-content/uploads/2023/08/database-diversification-1024x485.png 1024w, https://www.ledger.com/wp-content/uploads/2023/08/database-diversification-300x142.png 300w, https://www.ledger.com/wp-content/uploads/2023/08/database-diversification-1536x727.png 1536w, https://www.ledger.com/wp-content/uploads/2023/08/database-diversification-490x232.png 490w, https://www.ledger.com/wp-content/uploads/2023/08/database-diversification.png 1578w" width="592"/>
+      <figcaption class="wp-element-caption">
+       Database diversification
+      </figcaption>
+     </figure>
+    </div>
+    <p>
+     The non-diversified user identifier is of course present within the component responsible for orchestrating the recovery flow (only present on Ledger side). This is precisely why, as mentioned earlier, a strict separation of duties is enforced between the teams and individuals who manage the Orchestration component and those who oversee the Backup Provider HSMs and databases.
+    </p>
+    <h5 class="wp-block-heading">
+     Safe and cozy, now to prove I am me
+    </h5>
+    <p>
+     After splitting and securely sharing Secret Recovery Phrases, we have now devised a solution that ensures the secure storage of the different shares. It relies on hardware devices, cryptographic constructs, and operational separations that are all essential to build a secure product. We are now protected from risks at the source and destination endpoints, but also during transit and storage. We have also reduced collusion risks from individuals within each company, or within companies themselves, as close to zero as possible.
+    </p>
+    <p>
+     At this point, you may be wondering about the last missing part: Releasing the shares encrypted by each backup provider. This process must be heavily protected, so how do we make sure that the actual owner of the seed is the one initiating the request for share release?
+    </p>
+    <p>
+     It is now time to introduce the Identity Verification (or IDV) process, which is the final piece of the puzzle. When a backup provider is asked to release its share of a seed, it expects to receive an authorisation from an IDV provider which is proof that the request has been initiated by the real owner of the seed.
+    </p>
+    <p>
+     By having a different IDV provider for each Backup provider, we add an extra layer of protection against collusion.
+    </p>
+    <div style="text-align:center;">
+     <figure class="wp-block-image aligncenter size-large is-resized">
+      <img alt="" class="wp-image-280301" decoding="async" height="314" loading="lazy" sizes="(max-width: 644px) 100vw, 644px" src="https://www.ledger.com/wp-content/uploads/2023/08/independant-idv-1024x499.png" srcset="https://www.ledger.com/wp-content/uploads/2023/08/independant-idv-1024x499.png 1024w, https://www.ledger.com/wp-content/uploads/2023/08/independant-idv-300x146.png 300w, https://www.ledger.com/wp-content/uploads/2023/08/independant-idv-768x374.png 768w, https://www.ledger.com/wp-content/uploads/2023/08/independant-idv-490x239.png 490w, https://www.ledger.com/wp-content/uploads/2023/08/independant-idv.png 1420w" width="644"/>
+      <figcaption class="wp-element-caption">
+       Independent IDV
+      </figcaption>
+     </figure>
+    </div>
+    <p>
+     Implementing IDVs for multiple backup providers can be quite complex, which is why we will dedicate our next blog post to explaining it in detail.
+     <strong>
+      Tag along if you want to know more!
+     </strong>
+    </p>
+    <blockquote class="wp-block-quote">
+     <p>
+      Pierre AOUN  /  Yacine BADISS
+     </p>
+     <cite>
+      Software Architects
+     </cite>
+    </blockquote>
+   </div>
+   <footer class="row plain-text footer">
+    <div class="social-icons-footer">
+     <a class="h6 icon-facebook" href="https://www.facebook.com/Ledger/" target="_blank">
+     </a>
+     <a class="h6 icon-insta" href="https://www.instagram.com/ledger/" target="_blank">
+      <i class="fab fa-instagram">
+      </i>
+     </a>
+     <a class="h6 icon-twitter" href="https://twitter.com/Ledger" target="_blank">
+     </a>
+     <a class="h6 icon-linkedin" href="https://www.linkedin.com/company/ledgerhq/" target="_blank">
+     </a>
+     <a class="h6 icon-reddit" href="https://www.reddit.com/r/ledgerwallet/" target="_blank">
+     </a>
+     <a class="h6 icon-tiktok" href="https://www.tiktok.com/@ledger" target="_blank">
+      <i class="fab fa-tiktok">
+      </i>
+     </a>
+    </div>
+   </footer>
+  </article>
+ </body>
+</html>

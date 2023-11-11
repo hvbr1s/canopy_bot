@@ -1,0 +1,246 @@
+<!DOCTYPE html><html><head><meta name="source" content="https://support.ledger.com/hc/en-us/articles/360018131260-Staking-Polkadot-DOT-through-Ledger-Live"/><meta name="source-type" content="zendesk"/><meta name="locale" content="en-us"/><meta name="zd-article-id" content="360018131260"/><meta name="title" content="Staking Polkadot (DOT) through Ledger Live"/><meta name="classification" content="public"/></head>                            <body><h1>Staking Polkadot (DOT) through Ledger Live</h1>
+<div class="callout callout--primary">
+<h4 id="h_01HARWDTA2MKEY8CDW8V0B8RE6" class="callout__title"><strong>'Txn version not supported' error</strong></h4>
+<p><span>This error signifies that your Polkadot (DOT) app is currently <strong>out of date</strong>. To continue using your account as usual, please connect your Ledger device to <strong>MyLedger</strong> via <strong>Ledger Live</strong>, and proceed to update the app to the latest version.</span><br><br><img src="https://support.ledger.com/hc/article_attachments/12300623357597"></p>
+</div>
+<div class="callout callout--warning">
+<h4 id="h_01HARWDTA2KAQD6EXBXA8RCZ6H" class="callout__title"><strong>Display bug with DOT accounts</strong></h4>
+<ul>
+<li>A bug in Ledger Live prevents the <strong>unbonding</strong> of DOT stakes and may hide recent transactions. This issue can be resolved by <strong>updating Ledger Live to the latest version</strong>. <a style="background-color: #ffffff;" href="https://www.ledger.com/ledger-live" target="_blank" rel="noopener">Follow this link</a> to update.</li>
+</ul>
+</div>
+<div class="callout callout--warning">
+<h4 id="h_01HARWDTA32KRFFVQPSNTTNH8B" class="callout__title">
+<em class="fas fa-exclamation-triangle"> </em><strong>Important note regarding Polkadot staking rewards</strong>
+</h4>
+<ul>
+<li>
+<span>In order to ensure consistent eligibility, it's best to bond more than the minimum. Typically 20 or more DOT above the minimum is enough to ensure consistent eligibility for rewards:</span><br>
+<ul>
+<li><strong id="stake"> Minimum to earn rewards:</strong></li>
+<li><strong id="bond"><span>Minimum to nominate:</span></strong></li>
+<li>
+<script type="module">
+        //import Polkadot-js API
+        import { ApiPromise, WsProvider } from 'https://cdn.jsdelivr.net/npm/@polkadot/api@10.9.1/+esm'
+        const bn = 0.00000000010;
+        async function getStakingInfo () {
+          try { 
+            let provider = new WsProvider('wss://rpc.polkadot.io'); //set RPC
+            let api = await ApiPromise.create({ provider }); //create api provider
+            const minBond = (await api.query.staking.minNominatorBond()).toString() * bn; //return minimum bond
+            const minStake = (await api.query.staking.minimumActiveStake()).toString() * bn; //return minimum stake
+            const minStakeDisplay = Number(minStake).toFixed(3)
+            document.getElementById('stake').textContent = `Minimum to earn rewards: ${minStakeDisplay} DOT`; //set minimum stake in HTML
+            document.getElementById('bond').textContent = `Minimum to nominate: ${minBond} DOT`; //set minimum bond in HTML
+          } catch(err) {
+              console.log(err) //log error
+          }
+        }
+      getStakingInfo()
+    </script>
+If you are below the minimum to get rewards staking from your account, consider <a href="https://support.ledger.com/hc/articles/7533743296797-How-to-join-a-Polkadot-nomination-pool?support=true" target="_blank" rel="noopener">joining a Polkadot Nomination Pool</a> and get rewards on as little as 2.25 DOT.</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>Earn Polkadot (DOT) rewards* by bonding assets first, and then nominating validators in Ledger Live. The validators you nominated will use your bonded assets to stake and collect rewards for you. <a href="https://www.ledger.com/staking-polkadot">Learn how nomination works &gt;</a></p>
+<p>Check <a href="https://www.ledger.com/coin/wallet/polkadot" target="_blank" rel="noopener">the Polkadot wallet page</a> to learn more. </p>
+<h2 id="h_01HARWDTA39BECZZ000WZP12DF">Before you start</h2>
+<ul class="list-bullet">
+<li>
+<strong>Update</strong> Ledger Live through the notification banner or <a href="https://ledger.com/live">download the latest version</a>.</li>
+<li>Open <strong>Ledger Live</strong>, connect your Ledger device to <strong>My Ledger</strong> and make sure your device is running the <strong>latest firmware</strong> version and <strong>Polkadot (DOT) app</strong>.</li>
+<li>Add a Polkadot (DOT) account. <a href="https://support.ledger.com/hc/en-us/articles/360016289919-Polkadot-DOT-">Learn more</a>
+</li>
+</ul>
+<h2 id="h_01HARWDTA3X6MGXA4TAG1MC1JB">Bonding your assets</h2>
+<p>To earn DOT staking rewards, <strong>you first need to bond your DOTs</strong>.</p>
+<p>Your bonded DOTs can be unbonded at any time but please note it takes <strong>28 days</strong> for a DOT balance to fully unbond.</p>
+<ol class="list-colored">
+<li>On your <strong>Polkadot</strong> account page, click on the <strong>Stake</strong> button.<br><br>
+<p><img src="https://support.ledger.com/hc/article_attachments/7243046602141" alt="mceclip1.png"></p>
+</li>
+<li>Select <strong>Bond</strong>.<br><br>
+<p><img src="https://support.ledger.com/hc/article_attachments/7243081026845" alt="mceclip3.png"></p>
+</li>
+<li>If prompted, select <strong>where</strong> you would like to receive your staking rewards:
+<ul>
+<ul>
+<li>
+<strong>Available balance</strong>: Rewards are credited to your available balance.</li>
+<li>
+<strong>Bonded balance</strong>: Rewards are credited to your bonded balance for <strong>compound earning</strong>.</li>
+</ul>
+</ul>
+<p><em class="fa fa-info-circle"> </em>Note that Ledger Live <strong>doesn’t</strong> allow you to change the rewards destination later. To change the rewards destination, you can use the third-party wallet <a href="https://polkadot.js.org/">Polkadot.js</a>. For detailed instructions, please refer to the <a href="https://support.polkadot.network/support/solutions/articles/65000173734-how-can-i-change-the-destination-account-of-my-staking-rewards-" target="_blank" rel="noopener"> Polkadot guide</a>.</p>
+</li>
+<li>Enter the amount of DOTs to bond. Then click on <strong>Continue</strong>.<br>Make sure to <strong>keep enough DOT in your available balance</strong> to pay transaction <strong>fees</strong> for other operations such as nominating validators, unbonding, or withdrawing assets.<br><br>
+<p><img src="https://support.ledger.com/hc/article_attachments/7243142891805" alt="mceclip4.png"><br><br></p>
+</li>
+<li>Verify and <strong>approve</strong> the bonding transaction on your Ledger device.<br>
+<ul>
+<li>Open the <strong>Polkadot</strong> app on your device after you've connected and unlocked your device.</li>
+<li>Press the right button to review all operation details: <strong>Staking</strong>, <strong>Controller</strong>, <strong>Value</strong>, <strong>Payee</strong>.</li>
+<li>Press both buttons to <strong>Approve</strong> and send the operation. Choose <strong>Reject</strong> to cancel the operation.</li>
+</ul>
+</li>
+</ol>
+<p>Once the bonding transaction is <strong>confirmed</strong> on the Polkadot network, your bonded DOT balance will appear here:<br><br><img src="https://support.ledger.com/hc/article_attachments/7243552520605" alt="mceclip7.png"><br><br>Congratulations, you've successfully bonded your DOTs.<br><br>The next step is to <strong>nominate validators</strong>.</p>
+<h2 id="h_01HARWDTA3QA2WPHAJ486SH9RD">Nominating validators</h2>
+<p>In Polkadot, <strong>staking rewards</strong> are earned by <strong>nominating</strong> validators.</p>
+<p>Validators are <strong>private entities</strong> that are providing a <strong>service</strong> to the Polkadot network and earn <strong>DOT rewards</strong> in return. You can <strong>learn more</strong> about the roles and responsibilities of a validator <a href="https://support.polkadot.network/support/solutions/articles/65000119415-the-roles-responsibilities-of-a-validator" target="_blank" rel="noopener">here</a>.</p>
+<p>Every <strong>24 hours</strong> (also called an <a href="https://support.polkadot.network/support/solutions/articles/65000168050-what-is-an-era-" target="_blank" rel="noopener">era)</a> a new set of validators is <strong>elected</strong> to produce blocks and add them to the Polkadot blockchain. The Polkadot network then <strong>automatically rewards elected validators</strong> for their work by minting <strong>new DOT coins</strong>.</p>
+<p>The validators will then share a portion of this reward <strong>with DOT holders that are nominating them</strong>. This is how rewards are shared across the Polkadot network.</p>
+<p>To <strong>nominate</strong> validators:</p>
+<ol class="list-colored">
+<li>In your <strong>Polkadot</strong> account, click <strong>Nominate</strong>.<br><br>
+<p><img src="https://support.ledger.com/hc/article_attachments/7243467140509" alt="mceclip6.png"><br><br></p>
+</li>
+<li>In the <strong>Nominate</strong> window, select<strong> up to 16 validators</strong>.
+<ul>
+<li>
+<strong>Avoid</strong> nominating a validator that is <strong>oversubscribed.<br><br></strong>
+<div class="callout callout--warning">
+<h4 id="h_01HARWDTA4RSAX2TG780ZMCMZ8" class="callout__title"><strong>Oversubscribed?</strong></h4>
+<ul>
+<li>A validator is oversubscribed when it receives <strong>too many nominations</strong>.</li>
+<li>In Polkadot, <strong>only the</strong> <strong>top 512 nominators</strong> of <strong>each</strong> active validator receive rewards.</li>
+<li>So if a validator is active but over-subscribed, <strong>you must be a part of the 512 highest bonded nominators to receive rewards</strong>. If not, you will <strong>not</strong> receive any rewards.</li>
+<li>
+<p class="definition">If, however, an active nominee is <strong>not</strong> over-subscribed, you will receive staking rewards normally.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>Validators take an <strong>arbitrary</strong> commission <span style="font-weight: 400;">between 0% and 100%</span> on the received rewards. The commission can change over time. Make sure to select nominators who <strong>charge less than a 100% commission</strong> otherwise you will not receive any staking rewards.<br><br>
+<div class="callout callout--primary">
+<p><strong><em class="fa fa-info-circle"> </em>Still unsure </strong>which validators to choose? <strong><a href="https://support.polkadot.network/support/solutions/articles/65000150130-how-do-i-know-which-validators-to-choose-" target="_blank" rel="noopener">This guide</a></strong> can help.</p>
+</div>
+</li>
+<li>
+<p><img src="https://support.ledger.com/hc/article_attachments/7243623001629" alt="mceclip8.png"></p>
+</li>
+</ul>
+</li>
+<li>Click on <strong>Continue</strong>.</li>
+<li>
+<strong>Verify</strong> and <strong>confirm</strong> the nomination operation on your Ledger device.
+<ul>
+<li>Open the <strong>Polkadot</strong> app after you've connected and unlocked your device.</li>
+<li>Press the right button to review all operation details: <strong>Staking</strong>, <strong>Targets</strong>.</li>
+<li>Press both buttons to <strong>Approve</strong> and send the operation. Choose<strong> Reject</strong> to cancel the operation.</li>
+</ul>
+</li>
+</ol>
+<p>You have successfully nominated validators.<br><br><img src="https://support.ledger.com/hc/article_attachments/7243724920733" alt="mceclip9.png"><br><br>You can view the list of current nominations in the <strong>Nominations</strong> section on the Polkadot account page.<br><br></p>
+<p><img src="https://support.ledger.com/hc/article_attachments/7496871263133" alt="mceclip0.png"></p>
+<h2 id="h_01HARWDTA49BHJ1NZHMT6E5FT0">Receiving DOT staking rewards</h2>
+<div class="callout callout--primary">It takes <strong>at least 2-3 days after a new nomination </strong>to begin receiving DOT staking rewards from validators.</div>
+<p>DOT rewards are received when an <strong>active</strong> validator you've nominated claims them for you. Typically, active validators do this daily. Once claimed, rewards will be visible in the 'Latest Operations' section of your Polkadot account.</p>
+<p><a class="image-with-lightbox" href="https://support.ledger.com/hc/article_attachments/360022644120"><img src="https://support.ledger.com/hc/article_attachments/360022644120" width="800"></a></p>
+<p>To claim rewards yourself or track pending rewards, please use the third-party wallet <a href="https://polkadot.js.org/">Polkadot.js</a>.</p>
+<h2 id="h_01HARWDTA41BZ3551DDVNJTWH2">Unstaking your DOT funds</h2>
+<div class="callout callout--warning">
+<p><em class="fas fa-exclamation-triangle"> </em>In Polkadot, <strong>unstaking</strong> a bonded DOT balance is a <strong>multi-step process. </strong>Each step <strong>requires a transaction </strong>which you need to <strong>confirm </strong>on your Ledger device.</p>
+</div>
+<h3 id="h_01HARWDTA476XZKJEKBYQR7BHD">It takes 3 steps to completely unstake your DOT funds:</h3>
+<ol>
+<li>Your <strong>bonded balance</strong> must first be <strong><a href="https://wiki.polkadot.network/docs/maintain-guides-how-to-chill#:~:text=When%20a%20staker%20wants%20to,and%20keep%20their%20funds%20staked." target="_blank" rel="noopener">chilled</a></strong>. In Ledger Live, chilling is called <strong>clearing nominations</strong><em><strong>.</strong></em> </li>
+<li>Your chilled balance must then be <strong>unbonded.</strong> Unbonding takes <strong>28 days</strong> to complete.</li>
+<li>Finally, your <strong>unbonded balance</strong> can be <strong>withdrawn</strong> back to your <strong>available balance</strong>.</li>
+</ol>
+<p>Once your DOT has returned to your available balance, it can be freely traded or transferred to third-party accounts. </p>
+<p>You can find a detailed breakdown of each step below.</p>
+<h2 id="h_01HARWDTA4TKNPVHJ9GFXTC838">Clearing nominations</h2>
+<p>Clearing nominations (also known as <a href="https://wiki.polkadot.network/docs/maintain-guides-how-to-chill#:~:text=When%20a%20staker%20wants%20to,and%20keep%20their%20funds%20staked." target="_blank" rel="noopener"><strong>chilling</strong> your nomination</a>) is the <strong>first step</strong> towards unstaking your DOT funds . Your DOT will <strong>remain bonded</strong> but you will <strong>stop receiving staking rewards</strong>. </p>
+<ol class="list-colored">
+<li>Connect your Ledger device to your computer, unlock it and open the Polkadot (DOT) app.<br>Your Ledger displays: <strong>Polkadot Ready</strong>.</li>
+<li>In your <strong>Polkadot</strong> account, click on the <strong>Stake </strong>button.<br><br><img src="https://support.ledger.com/hc/article_attachments/7291785858333" alt="mceclip1.png"><br><br>
+</li>
+<li>Then select <strong>Clear Nominations</strong>.<br><br><img src="https://support.ledger.com/hc/article_attachments/7243808762781" alt="mceclip11.png"><br><br>
+</li>
+<li>
+<strong>Read</strong> the information displayed in the popup then click on <strong>Continue</strong>.<br>Your Ledger device displays: <strong>Please review</strong>.</li>
+<li>Using the buttons, <strong>review</strong> the transaction on your <strong>Ledger device</strong>. If all looks good, select <strong>APPROVE</strong> and press both buttons simultaneously to <strong>sign</strong> the transaction.<br>Ledger Live displays: <strong>Transaction sent successfully. <br><br><img src="https://support.ledger.com/hc/article_attachments/7291770372765" alt="mceclip0.png"><br></strong>
+</li>
+</ol>
+<p>You have successfully cleared/chilled all nominations and you will no longer earn staking rewards. However, you can still receive any pending rewards that have not yet been claimed.</p>
+<h2 id="h_01HARWDTA4KW4Z38Q57VRAF3ZT">Unbonding your assets</h2>
+<p>To make your bonded DOT available again, you now need to <strong>unbond</strong> them.</p>
+<ol class="list-colored">
+<li>In your <strong>Polkadot</strong> account, click <strong>Stake </strong>&gt; <strong>Unbond</strong>.</li>
+<li>In the <strong>Unbond assets</strong> window, enter the amount to unbond. Then click on <strong>Continue</strong>.<br><em class="fas fa-exclamation-triangle"> </em>Please note that the process to unbond a DOT balance <strong>takes 28 days to complete</strong>.<br><br>
+<p><img src="https://support.ledger.com/hc/article_attachments/7243772411549" alt="mceclip10.png"><br><br></p>
+</li>
+<li>Verify and confirm the<strong> unbond</strong> operation on your Ledger device.
+<ul>
+<li>
+<span style="font-weight: 400;">Open the </span><strong>Polkadot</strong><span style="font-weight: 400;"> app after you've connected and unlocked your device.</span>
+</li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">Press the right button to <strong>review</strong> the transaction.</span></li>
+<li style="font-weight: 400;" aria-level="2">If all looks good, select <strong>APPROVE</strong> <span style="font-weight: 400;">and press both buttons simultaneously to <strong>sign</strong> the transaction to <strong>unbond</strong> your DOTs.<br></span>Ledger Live displays: <strong>Unbond transaction sent successfully</strong><strong style="font-weight: 400;">.<br></strong><br><strong style="font-weight: 400;"><img src="https://support.ledger.com/hc/article_attachments/7291843488285" alt="mceclip2.png"></strong><br><span style="font-weight: 400;"></span>
+</li>
+</ul>
+</li>
+</ol>
+<div class="callout callout--warning">
+<h4 id="h_01HARWDTA40DBA43DYG392VW5Z" class="callout__title"><strong>When will my DOT become available to transfer?</strong></h4>
+<ul>
+<li>The process to unbond a DOT balance takes <strong>28 days</strong> to complete.</li>
+<li>Once the unbonding is complete, you'll need to <strong>create another transaction</strong> to <strong>withdraw</strong> your unbonded DOT balance back to your <strong>available balance</strong>.<br><img src="https://support.ledger.com/hc/article_attachments/7742917001885" alt="mceclip0.png">
+</li>
+<li>Once your DOT is withdrawn back to your available balance, it becomes available to transfer and trade freely.</li>
+</ul>
+</div>
+<h2 id="h_01HARWDTA4T9JQ28YR8QYKT79C">Rebonding your assets</h2>
+<p>You can <strong>rebond</strong> an unbonding or unbound DOT balance at <strong>any time</strong>. These assets will be transferred from the unbonding or unbonded balance to the bonded balance. Assets<span style="font-weight: 400;"> you have most recently unbonded are first rebonded. </span>DOTs in the bonded balance are locked and actively used for staking.</p>
+<ol class="list-colored">
+<li>In the <strong>Unbonding</strong> section, click on the<strong> Rebond</strong> button.
+<p><img src="https://support.ledger.com/hc/article_attachments/7291865462429" alt="mceclip3.png"></p>
+</li>
+<li>In the <strong>Rebond assets</strong> window, enter the amount to rebond. Then click on <strong>Continue</strong>.</li>
+<li>
+<strong>Verify</strong> and confirm the <strong>rebond</strong> transaction on your Ledger device.
+<ul>
+<li>
+<span style="font-weight: 400;">Open the </span><strong>Polkadot</strong><span style="font-weight: 400;"> app after you've connected and unlocked your device.</span>
+</li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">Press the right button to <strong>review</strong> the transaction.</span></li>
+<li style="font-weight: 400;" aria-level="2">If all looks good, select <strong>APPROVE </strong><span style="font-weight: 400;">and press both buttons simultaneously to <strong>sign</strong> the transaction to <strong>rebond</strong> your DOTs.<br></span><span style="font-weight: 400;">Ledger Live displays: <strong>Assets succesfully rebonded.<br><br><img src="https://support.ledger.com/hc/article_attachments/7291847585309" alt="mceclip4.png"><br></strong></span>
+</li>
+</ul>
+</li>
+</ol>
+<p><span style="font-weight: 400;">You have successfully rebonded your assets. Your bonded assets can be unbond at any time. </span></p>
+<h2 id="h_01HARWDTA4SPM8H26QCMCWH6QA">Withdrawing your unbonded assets</h2>
+<p>This is the <strong>final step</strong> for unstaking your DOT funds.</p>
+<p><strong>After the 28-day unbonding period</strong>, you can <strong>withdraw</strong> unbonded DOTs from your <strong>Unbonded balance</strong> to your <strong>Available balance</strong>.</p>
+<p><img src="https://support.ledger.com/hc/article_attachments/7742918588061" alt="mceclip1.png"></p>
+<ol class="list-colored">
+<li>On your<strong> Polkadot</strong> account page, click <strong>Stake</strong> &gt; <strong>Withdraw</strong>.<br><br><img src="https://support.ledger.com/hc/article_attachments/7742926837021" alt="mceclip2.png" width="677" height="337"><br><br>
+</li>
+<li>After reading the information window, click on <strong>Continue</strong>.</li>
+<li>Verify and confirm the <strong>withdraw</strong> operation on your Ledger device.
+<ul>
+<li>Open the <strong>Polkadot</strong> app after you've connected and unlocked your device.</li>
+<li>Press the right button to review all operation details: <strong>Staking</strong>, <strong>Num slashing span</strong>, <strong>Chain</strong>.</li>
+<li>Press both buttons to <strong>Approve</strong> and send the operation. Choose <strong>Reject</strong> to cancel the operation.</li>
+</ul>
+</li>
+</ol>
+<p>You have successfully withdrawn your assets from the unbonded balance. You can track this operation in the <strong>Latest Operations</strong> section on the Polkadot account page. Once the operation is confirmed, your assets will be sent back to your available balance.</p>
+<p> </p>
+<p><em><span data-preserver-spaces="true">*Rewards are not guaranteed. Ledger does not provide any financial advice or recommendation. </span></em></p>
+<p>
+<script src="chrome-extension://ldinpeekobnhjjdofggfgjlcehhmanlj/inpage.js" id="stacks-wallet-provider"></script>
+</p>
+<p>
+<script src="chrome-extension://ldinpeekobnhjjdofggfgjlcehhmanlj/inpage.js" id="stacks-wallet-provider"></script>
+</p>
+<p>
+<script src="chrome-extension://ldinpeekobnhjjdofggfgjlcehhmanlj/inpage.js" id="stacks-wallet-provider"></script>
+</p>
+<p>
+<script src="chrome-extension://ldinpeekobnhjjdofggfgjlcehhmanlj/inpage.js" id="stacks-wallet-provider"></script>
+</p></body></html>

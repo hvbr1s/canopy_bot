@@ -153,6 +153,39 @@ async def generic_exception_handler(request, exc):
         status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
         content={"message": "Snap! Something went wrong, please try again!"},
     )
+    
+@app.post('/categorize')
+async def categorize_input(query: Question):
+    
+    
+    def load_categories():
+        filename = f'classifier_prompt.txt'
+        try:
+            with open(filename, 'r') as categories:
+                return categories.read()
+        except FileNotFoundError:
+            raise HTTPException(status_code=500, detail=f"Categories not found!")
+        
+    classifier_prompt = load_categories()
+    
+    user_input = query.user_input.strip()
+
+    try:
+        resp = openai.ChatCompletion.create(
+            temperature=0.0,
+            model='gpt-3.5-turbo-1106',
+            messages=[
+                {"role": "system", "content": classifier_prompt},
+                {"role": "user", "content": user_input}
+            ],
+            request_timeout=5.0,
+            max_tokens=50,
+        )
+        category = resp['choices'][0]['message']['content']
+        return {"category": category}
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        raise HTTPException(status_code=500, detail="Error in categorization")
 
 # Define supported locales for data retrieval
 SUPPORTED_LOCALES = {'eng', 'fr'}
@@ -191,16 +224,6 @@ async def react_description(query: Question, request: Request, api_key: str = De
                             min_history_messages= 2,
                             history_pruning="raise",
                             )
-    
-    def load_categories():
-        filename = f'classifier_prompt.txt'
-        try:
-            with open(filename, 'r') as categories:
-                return categories.read()
-        except FileNotFoundError:
-            raise HTTPException(status_code=500, detail=f"Categories not found!")
-        
-    classifier_prompt = load_categories()
 
     if user_id not in user_states:
         user_states[user_id] = {
@@ -241,37 +264,7 @@ async def react_description(query: Question, request: Request, api_key: str = De
     else:
         
         try:
-
-            # # Categorize ticket
-            # async def categ(user_input, contexts=None):
-            #     print("Categorizing...")
-            #     try:
-            #         resp = openai.ChatCompletion.create(
-            #             temperature=0.0,
-            #             model='gpt-3.5-turbo-1106',
-            #             messages=[
-            #                 {"role": "system", "content": classifier_prompt},
-            #                 {"role": "user", "content": user_input}
-            #             ],
-            #             request_timeout=5.0,
-            #             max_tokens=50,
-            #         )            
-            #         cat = resp['choices'][0]['message']['content']
-            #         return cat
-            #     except Exception as e:
-            #         print(f"An error occurred: {e}")
-            #         return ""
-            # # Use the categorization function to handle errors
-            # try:
-            #     categorization = await categ(user_input)
-            # except Exception:
-            #     categorization = ""
-
-            # if categorization == "":
-            #     print("Snap something went wrong and I wasn't able to categorize!")
-            # else:
-            #     print("\n\n" + "The issue seems to be about -> " + categorization + "\n\n")
-            
+       
             result = context_engine.query([Query(text=user_input, namespace="eng", top_k=5)], max_context_tokens=512)
             print(result.to_text(indent=2))
             

@@ -155,9 +155,7 @@ async def generic_exception_handler(request, exc):
     )
     
 @app.post('/categorize')
-async def categorize_input(query: Question):
-    
-    
+async def categorize_input(query: Question):  
     def load_categories():
         filename = f'classifier_prompt.txt'
         try:

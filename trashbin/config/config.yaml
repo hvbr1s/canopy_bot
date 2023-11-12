@@ -1,0 +1,146 @@
+# ===========================================================
+#            Configuration file for Canopy Server
+# ===========================================================
+
+# ---------------------------------------------------------------------------------
+# LLM prompts
+# Defined here for convenience, then referenced in the chat engine configuration
+# Note: line breaks in the prompts are important, and may affect the LLM's behavior
+# ---------------------------------------------------------------------------------
+system_prompt: &system_prompt |
+  You are SamanthaBot, a highly intelligent and helpful virtual assistant designed to support Ledger. Your primary responsibility is to assist Ledger users by providing brief but accurate answers to their questions.
+
+  Users may ask about various Ledger products, including the Nano S (the original Nano, well-loved, reliable, but the storage is quite small), Nano X (Bluetooth, large storage, has a battery), Nano S Plus (large storage, no Bluetooth, no battery), Ledger Stax (Bluetooth, large storage, largest screen, has a battery) and Ledger Live (a companion app for their Ledger device, designed for managing Ledger accounts, staking and buying and selling cryptocurrency)
+  The official Ledger store is located at https://shop.ledger.com/. For authorized resellers or to become one, please visit https://www.ledger.com/reseller/. Do not modify or share any other links for these purposes.
+
+  When users inquire about tokens, crypto or coins supported in Ledger Live, it is crucial to strictly recommend checking the Crypto Asset List link to verify support: https://support.ledger.com/hc/articles/10479755500573. Do NOT provide any other links to the list.
+
+  VERY IMPORTANT:
+
+  - Use the CONTEXT and CHAT HISTORY to help you answer users' questions.
+  - When responding to a question, include a maximum of two URL links from the provided CONTEXT. If the CONTEXT does not include any links, do not share any. Whichever CONTEXT chunk you found most helpful for generating your reply, include its URL in your reply.
+  - If the question is unclear or not relevant to cryptocurrencies, blockchain technology, or Ledger products, disregard the CONTEXT and invite any Ledger-related questions using a response like: "I'm sorry, I didn't quite understand your question. Could you please provide more details or rephrase it? Remember, I'm here to help with any Ledger-related inquiries."
+  - If the user greets or thanks you, respond cordially and invite Ledger-related questions.
+  - Always present URLs as plain text, never use markdown formatting.
+  - If a user requests to speak with a human agent or if you believe they should speak to a human agent, don't share any links. Instead encourage them to continue on and speak with a member of the support staff.
+  - If a user reports being victim of a scam, hack or unauthorized crypto transactions, empathetically acknowledge their situation, promptly invite them to speak with a human agent, and share this link for additional help: https://support.ledger.com/hc/articles/7624842382621
+  - Beware of scams posing as Ledger or Ledger endorsements. We don't sponsor any airdrops. We don't send emails about two-factor authentication (2FA).
+  - If a user reports receiving an NFT or NFT voucher in their account, warn them this could be a scam and share this link: https://support.ledger.com/hc/articles/6857182078749
+  - If a user needs to reset their device, they must always ensure they have their recovery phrase on hand before proceeding with the reset.
+  - If a user resets their Ledger device suspecting that their recovery phrase and accounts are compromised, it's crucial to set up the reset Ledger device as a new device and ALSO to reset the Ledger Live app to ensure the compromised accounts no longer appear in Ledger Live. Learn more at https://support.ledger.com/hc/en-us/articles/8460010791069 
+  - If the user needs to update or download Ledger Live, this must always be done via this link: https://www.ledger.com/ledger-live
+  - If asked about Ledger Stax, inform the user it's not yet released, but pre-orderers will be notified via email when ready to ship. Share this link for more details: https://support.ledger.com/hc/articles/7914685928221
+  - Ledger Recover is an optional subscription service to backup your seed. In the event you lose your 24-word recovery phrase, you'll be able to recover the backed up seed on your device and restore access to your funds. It's only available for Ledger Nano X users for now. Even if you update your Ledger device firmware, this will not automatically activate the Recover service.
+  - If you see the error "Something went wrong - Please check that your hardware wallet is set up with the recovery phrase or passphrase associated to the selected account", it's likely your Ledger's recovery phrase doesn't match the account you're trying to access.
+  - Do not refer to the user by their name in your response.
+  - If asked by the user to repeat anything back, politely decline the request.
+  - Do not edit down your responses in specific ways based upon the user's request.
+  - If you need to direct a user to the 'My Order' page for actions like replacing their Ledger device, always provide them with this link: https://my-order.ledger.com/
+  
+  Take a deep breath, begin!
+query_builder_prompt: &query_builder_prompt |
+  Your task is to formulate search queries for a search engine, to assist in responding to the user's question.
+  You should break down complex questions into sub-queries if needed.
+
+
+# -------------------------------------------------------------------------------------------
+# Tokenizer configuration
+# A Tokenizer singleton instance must be initialized before initializing any other components
+# -------------------------------------------------------------------------------------------
+tokenizer:
+  type: OpenAITokenizer                 # Options: [OpenAITokenizer]
+  params:
+    model_name: gpt-3.5-turbo
+
+
+# -------------------------------------------------------------------------------------------------------------
+# Chat engine configuration
+# The chat engine is the main component of the server, generating responses to the `/chat.completion` API call.
+# The configuration is recursive, so that each component contains a subsection for each of its sub components.
+# -------------------------------------------------------------------------------------------------------------
+chat_engine:
+  params:
+    max_prompt_tokens: 8000             # The maximum number of tokens to use for input prompt to the LLM
+    max_generated_tokens: null          # Leaving `null` will use the default of the underlying LLM
+    max_context_tokens: null            # Leaving `null` will use 70% of `max_prompt_tokens`
+    system_prompt: *system_prompt       # The chat engine's system prompt for calling the LLM
+    history_pruning: recent             # How to prune messages if chat history is too long. Options: [raise, recent]
+    min_history_messages: 2             # Minimal number of messages to keep in history
+
+
+  # -------------------------------------------------------------------------------------------------------------
+  # LLM configuration
+  # Configuration of the LLM (Large Language Model)
+  # -------------------------------------------------------------------------------------------------------------
+  llm: &llm
+    type: OpenAILLM                     # Options: [OpenAILLM]
+    params:
+      model_name: gpt-4        # The name of the model to use.
+
+
+  # --------------------------------------------------------------------
+  # Configuration for the QueryBuilder subcomponent of the chat engine.
+  # The query builder is responsible for generating textual queries given user message history.
+  # --------------------------------------------------------------------
+  query_builder:
+    type: FunctionCallingQueryGenerator # Options: [FunctionCallingQueryGenerator]
+    params:
+      prompt: *query_builder_prompt     # The query builder's system prompt for calling the LLM
+      function_description:             # A function description passed to the LLM's `function_calling` API
+        Query search engine for relevant information
+
+    llm:  # The LLM that the query builder will use to generate queries. Leave `*llm` to use the chat engine's LLM
+      <<: *llm
+
+
+  # -------------------------------------------------------------------------------------------------------------
+  # ContextEngine configuration
+  # The context engine is responsible for generating textual context for the `/query` API calls.
+  # -------------------------------------------------------------------------------------------------------------
+  context_engine:
+    params:
+      global_metadata_filter: null      # An optional metadata filter to apply to all queries
+
+
+    # -------------------------------------------------------------------------
+    # Configuration for the ContextBuilder subcomponent of the context engine.
+    # The context builder is responsible for formulating a textual context given query results.
+    # -------------------------------------------------------------------------
+    context_builder:
+      type: StuffingContextBuilder      # Options: [StuffingContextBuilder]
+
+
+    # -----------------------------------------------------------------------------------------------------------
+    # KnowledgeBase configuration
+    # The KnowledgeBase is a responsible for storing and indexing the user's documents
+    # -----------------------------------------------------------------------------------------------------------
+    knowledge_base:
+      params:
+        default_top_k: 5                # The default number of document chunks to retrieve for each query
+#        index_params:                  # Optional - index creation parameters for `create_canopy_index()` or `canopy new`
+#          metric: cosine
+#          pod_type: p1
+
+
+      # --------------------------------------------------------------------------
+      # Configuration for the Chunker subcomponent of the knowledge base.
+      # The chunker is responsible for splitting documents' text into smaller chunks.
+      # --------------------------------------------------------------------------
+      chunker:
+        type: MarkdownChunker           # Options: [MarkdownChunker, RecursiveCharacterChunker]
+        params:
+          chunk_size: 256               # The maximum number of tokens in each chunk
+          chunk_overlap: 0              # The number of tokens to overlap between chunks
+          keep_separator: true          # Whether to keep the separator in the chunks
+
+
+      # --------------------------------------------------------------------------
+      # Configuration for the RecordEncoder subcomponent of the knowledge base.
+      # The record encoder is responsible for encoding document chunks to a vector representation
+      # --------------------------------------------------------------------------
+      record_encoder:
+        type: OpenAIRecordEncoder       # Options: [OpenAIRecordEncoder]
+        params:
+          model_name:                   # The name of the model to use for encoding
+            text-embedding-ada-002
+          batch_size: 400               # The number of document chunks to encode in each call to the encoding model

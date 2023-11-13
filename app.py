@@ -55,8 +55,6 @@ kb.verify_index_connection()
 # create context engine
 context_engine = ContextEngine(kb)
 
-
-
 # Define query class
 class Question(BaseModel):
     user_input: str
@@ -155,7 +153,7 @@ async def generic_exception_handler(request, exc):
     )
     
 @app.post('/categorize')
-async def categorize_input(query: Question):  
+async def categorize_input(query: Question, api_key: str = Depends(get_api_key)):  
     def load_categories():
         filename = f'classifier_prompt.txt'
         try:

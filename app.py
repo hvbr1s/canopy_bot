@@ -28,6 +28,7 @@ from canopy.models.data_models import UserMessage
 from typing import Tuple
 from canopy.models.data_models import Messages, UserMessage, AssistantMessage
 from IPython.display import display, Markdown
+from canopy.llm import OpenAILLM
 
 # Initialize environment variables
 main.load_dotenv()
@@ -215,7 +216,9 @@ async def react_description(query: Question, request: Request, api_key: str = De
     primer = load_sysprompt(locale)
 
     # Create context engine
+    gpt4 = OpenAILLM(model_name="gpt-4")
     chat_engine = ChatEngine(context_engine,
+                            llm=gpt4,
                             system_prompt=primer,
                             min_history_messages= 2,
                             history_pruning="raise",
@@ -309,5 +312,5 @@ async def react_description(query: Question, request: Request, api_key: str = De
 
 # Local start command: uvicorn app:app --reload --port 8800
 # to change system_prompt -> lib/python3.10/site-packages/canopy/chat_engine/query_generator/function_calling.py
-# to change the llm model -> lib/python3.10/site-packages/canopy/llm/models.py
+# to change the llm model -> lib/python3.10/site-packages/canopy/llm/openai.py
 # to change the namespace -> lib/python3.10/site-packages/canopy/knowledge_base/knowledge_base.py
